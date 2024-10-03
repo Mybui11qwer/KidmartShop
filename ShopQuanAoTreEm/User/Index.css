@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5dde6;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #e981a4;
+    padding: 20px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    border-radius: 30px;
+    margin: 20px;
+}
+header a{
+    padding-right: 20px;
+}
+
+header span {
+    padding-right: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+.cart-notification{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding-right: 20px;
+}
+.cart-notification a{
+    justify-content: end;
+    color: #d8859c;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.search-container {
+    position: relative;
+    display: inline-block;
+    align-items: center;
+  }
+
+  /* Style the input field */
+  .search-container input {
+    width: 500px;
+    height: 40px;
+    padding: 10px 0px 10px 15px; /* Adjust padding for icon space */
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+  }
+
+  /* Style the magnifying glass icon */
+  .search-container .icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    border: none;
+    background-color: #ffffff;
+    transform: translateY(-50%);
+    font-size: 20px;
+  }
+
+  .product-advertisement{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  .product{
+    margin: 20px;
+    border-top: 1px solid #333;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .content-product{
+    text-align: center;
+    margin: 20px;
+  }
+  .content-product p{
+    margin: 5px;
+  }
+  .content-product h2{
+    color: red;
+  }
