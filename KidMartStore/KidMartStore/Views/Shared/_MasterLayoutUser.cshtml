@@ -1,0 +1,36 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - KidMartStore</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/Layout/Header.css" />
+</head>
+<body>
+    <div class="above-header">
+    </div>
+    <header>
+        <nav class="accordion-header-toggle-left">
+            <a href="#">HOME</a>
+            <a href="#">PRODUCT</a>
+            <a href="#">SALES</a>
+            <a href="#">CONTACT</a>
+            <a href="#">INTRODUCE</a>
+        </nav>
+        <div class="align-middle"><h1>KIDMART</h1></div>
+        <nav class="accordion-header-toggle-right">
+            <input type="search" id="search" class="search"/>
+            <img src="~/Image/user-icon.png" />
+            <img src="~/Image/bell-icon.png" />
+        </nav>
+    </header>
+    @RenderBody()
+    <footer>
+        <h2>XIN CẢM ƠN ĐÃ SỬ DỤNG DỊCH VỤ</h2>
+    </footer>
+</body>
+</html>
+
