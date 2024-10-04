@@ -1,12 +1,12 @@
 ﻿.selectForm{
     width: max-content;
     height: max-content;
-    border: 1px solid black
+    border: 1px solid black;
 }
 .selectForm h2 {
     background-color: black;
     width: max-content;
-    padding: 15px 100px 15px 5px;
+    padding: 15px 100px 25px 5px;
     color: antiquewhite;
     font-family: cursive;
 }
@@ -30,4 +30,26 @@
 body .firstContent {
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+}
+body .ProductList{
+    text-align: center;
+}
+    body .ProductList h1 {
+        text-align: center;
+        border-bottom: 1px solid black
+    }
+.ProductList .Product-Items {
+    margin: 0px 300px 0px 300px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 60px
+}
+.ProductList .Product-Items .item {
+    max-width: max-content;
+    display: grid;
+    justify-items: center;
+    flex: 1 0 50%;
 }

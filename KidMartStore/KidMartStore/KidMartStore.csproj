@@ -211,6 +211,7 @@
     <Content Include="Image\grocery-store.png" />
     <Content Include="Image\magnifying-glass.png" />
     <Content Include="Image\user-icon.png" />
+    <Content Include="Image\Toys1.jpg" />
     <Content Include="Models\KidMartStore.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>KidMartStore.Context.cs</LastGenOutput>
