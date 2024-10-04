@@ -1,0 +1,89 @@
+create database KidMartStore
+use KidMartStore
+
+CREATE TABLE Khách_Hàng
+(
+  Mã_KH INT NOT NULL,
+  Họ_và_Tên VARCHAR(255) NOT NULL,
+  Email VARCHAR(255) NOT NULL,
+  Số_điện_thoại VARCHAR(15) NOT NULL, -- Số điện thoại thường là chuỗi ký tự vì có thể chứa dấu +
+  Địa_chỉ VARCHAR(255) NOT NULL,
+  Giới_tính CHAR(1) NOT NULL, -- 'M' hoặc 'F' cho giới tính nam/nữ
+  Password VARCHAR(255) NOT NULL,
+  PRIMARY KEY (Mã_KH)
+);
+
+CREATE TABLE Danh_mục_sản_phẩm
+(
+  Mã_danh_mục INT NOT NULL,
+  Tên_danh_mục VARCHAR(255) NOT NULL,
+  PRIMARY KEY (Mã_danh_mục)
+);
+
+CREATE TABLE Sản_phẩm
+(
+  Mã_sản_phẩm INT NOT NULL,
+  Mã_danh_mục INT NOT NULL,
+  Tên_sản_phẩm VARCHAR(255) NOT NULL,
+  Giá_bán DECIMAL(10,2) NOT NULL, -- Giá bán với phần thập phân
+  Số_lượng_tồn_kho INT NOT NULL,
+  Mô_tả TEXT, -- Mô tả có thể dài, nên dùng TEXT
+  PRIMARY KEY (Mã_sản_phẩm),
+  FOREIGN KEY (Mã_danh_mục) REFERENCES Danh_mục_sản_phẩm(Mã_danh_mục)
+);
+
+CREATE TABLE Giỏ_hàng
+(
+  Mã_giỏ_hàng INT NOT NULL,
+  Mã_KH INT NOT NULL,
+  PRIMARY KEY (Mã_giỏ_hàng),
+  FOREIGN KEY (Mã_KH) REFERENCES Khách_Hàng(Mã_KH)
+);
+
+CREATE TABLE Chi_tiết_giỏ_hàng
+(
+  Mã_chi_tiết_giỏ_hàng INT NOT NULL,
+  Mã_giỏ_hàng INT NOT NULL,
+  Mã_sản_phẩm INT NOT NULL,
+  Số_lượng INT NOT NULL,
+  PRIMARY KEY (Mã_chi_tiết_giỏ_hàng),
+  FOREIGN KEY (Mã_giỏ_hàng) REFERENCES Giỏ_hàng(Mã_giỏ_hàng),
+  FOREIGN KEY (Mã_sản_phẩm) REFERENCES Sản_phẩm(Mã_sản_phẩm)
+);
+
+CREATE TABLE Giảm_giá
+(
+  Mã_giảm INT NOT NULL,
+  Phần_trăm_giảm DECIMAL(5,2) NOT NULL, -- Phần trăm giảm với phần thập phân
+  Ngày_bắt_đầu DATE NOT NULL,
+  Ngày_kết_thúc DATE NOT NULL,
+  Code VARCHAR(50) NOT NULL,
+  PRIMARY KEY (Mã_giảm)
+);
+
+CREATE TABLE Đơn_hàng
+(
+  Mã_đơn_hàng INT NOT NULL,
+  Mã_KH INT NOT NULL,
+  Ngày_đặt_hàng DATE NOT NULL,
+  Tổng_tiền DECIMAL(10,2) NOT NULL, -- Tổng tiền với phần thập phân
+  Trạng_thái VARCHAR(50) NOT NULL, -- Ví dụ: 'đang xử lý', 'hoàn tất'
+  Mã_giảm INT, -- Có thể không áp dụng giảm giá nên để kiểu NULL
+  PRIMARY KEY (Mã_đơn_hàng),
+  FOREIGN KEY (Mã_KH) REFERENCES Khách_Hàng(Mã_KH),
+  FOREIGN KEY (Mã_giảm) REFERENCES Giảm_giá(Mã_giảm)
+);
+
+CREATE TABLE Chi_tiết_đơn_hàng
+(
+  Mã_chi_tiết_đơn_hàng INT NOT NULL,
+  Mã_đơn_hàng INT NOT NULL,
+  Mã_sản_phẩm INT NOT NULL,
+  Số_lượng INT NOT NULL,
+  Đơn_giá DECIMAL(10,2) NOT NULL, -- Đơn giá với phần thập phân
+  PRIMARY KEY (Mã_chi_tiết_đơn_hàng),
+  FOREIGN KEY (Mã_đơn_hàng) REFERENCES Đơn_hàng(Mã_đơn_hàng),
+  FOREIGN KEY (Mã_sản_phẩm) REFERENCES Sản_phẩm(Mã_sản_phẩm)
+);
+
+
