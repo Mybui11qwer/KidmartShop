@@ -1,0 +1,28 @@
+﻿.selectForm{
+    width: fit-content;
+    border: 1px solid black
+}
+.selectForm h2 {
+    background-color: black;
+    width: max-content;
+    padding: 15px 100px 15px 5px;
+    color: antiquewhite;
+    font-family: cursive;
+}
+    .selectForm .tab-content{
+    display: grid;
+    padding: 10px;
+    }
+    .selectForm .tab-content label{
+        border-bottom: 1px solid;
+        border-right: 1px solid;
+        padding-bottom: inherit;
+        padding-top:inherit;
+        background-color: white;
+        transition: 0.5s;
+    }
+    .selectForm .tab-content label:hover{
+        background-color: black;
+        color: aliceblue;
+
+    }
