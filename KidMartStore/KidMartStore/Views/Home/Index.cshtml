@@ -3,10 +3,11 @@
     ViewBag.Title = "Trang chủ";
 }
 <head>
-    <link rel="stylesheet" href="~/Content/CSS/Index.css"/>
+    <link rel="stylesheet" href="~/Content/CSS/Index.css" />
+    <link rel="stylesheet" href="~/Content/CSS/Slider.css" />
 </head>
 <body>
-    <div>
+    <div class="firstContent">
         <nav class="selectForm">
             <h2>CATEGORIES</h2>
             <div class="tab-content">
@@ -16,9 +17,40 @@
                 <label>Sữa cho bé</label>
             </div>
         </nav>
-        <section class="advertisementForm">
-
-        </section>
+        <div class="slider">
+            <div class="list">
+                <div class="item">
+                    <img src="~/Image/1.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="~/Image/2.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="~/Image/3.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="~/Image/4.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="~/Image/5.jpg" alt="">
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="prev"><</button>
+                <button id="next">></button>
+            </div>
+            <ul class="dots">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <script src="~/Content/JS/Slider.js"></script>
+        <div>
+            <h2> hello world </h2>
+        </div>
     </div>
 </body>
 

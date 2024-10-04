@@ -8,6 +8,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link rel="stylesheet" href="~/Content/Layout/Header.css" />
+    <link rel="stylesheet" href="~/Content/Layout/Main.css" />
 </head>
 <body>
     <div class="above-header">
@@ -27,7 +28,7 @@
             <a><img src="~/Image/bell-icon.png" /></a>
         </nav>
     </header>
-    <main "bodyFrame">
+    <main class = "bodyFrame">
         @RenderBody()
     </main>
     <footer>

@@ -1,5 +1,6 @@
 ﻿.selectForm{
-    width: fit-content;
+    width: max-content;
+    height: max-content;
     border: 1px solid black
 }
 .selectForm h2 {
@@ -26,3 +27,7 @@
         color: aliceblue;
 
     }
+body .firstContent {
+    display: flex;
+    justify-content: space-between;
+}
