@@ -2,6 +2,8 @@
     Layout = "~/Views/Shared/_MasterLayoutUser.cshtml";
     ViewBag.Title = "Trang chủ";
 }
+@using X.PagedList.Mvc.Core;
+@model X.PagedList.IPagedList<KidMartStore.Models.Danh_mục_sản_phẩm>
 <head>
     <link rel="stylesheet" href="~/Content/CSS/Index.css" />
     <link rel="stylesheet" href="~/Content/CSS/Slider.css" />

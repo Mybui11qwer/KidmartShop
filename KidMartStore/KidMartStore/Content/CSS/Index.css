@@ -31,14 +31,14 @@ body .firstContent {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid black;
-    padding-bottom: 20px;
 }
 body .ProductList{
     text-align: center;
 }
     body .ProductList h1 {
         text-align: center;
-        border-bottom: 1px solid black
+        border-bottom: 1px solid black;
+        background-color: #E981A4;
     }
 .ProductList .Product-Items {
     margin: 0px 300px 0px 300px;

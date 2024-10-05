@@ -17,7 +17,7 @@ namespace KidMartStore.Models
         public int Mã_chi_tiết_giỏ_hàng { get; set; }
         public int Mã_giỏ_hàng { get; set; }
         public int Mã_sản_phẩm { get; set; }
-        public int Số_lượng { get; set; }
+        public Nullable<int> Số_lượng { get; set; }
     
         public virtual Giỏ_hàng Giỏ_hàng { get; set; }
         public virtual Sản_phẩm Sản_phẩm { get; set; }
