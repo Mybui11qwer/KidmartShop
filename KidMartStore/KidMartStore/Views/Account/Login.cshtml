@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+<head>
+    <link rel="stylesheet" href="~/Content/CSS/Login.css"/>
+</head>
+@using (Html.BeginForm("Login", "Account", FormMethod.Post))
+{
+    <body>
+        <form class="container-signin">
+            <h1>SIGN IN</h1>
+            <div>
+                <input type="email" name="Email" placeholder="Email" />
+            </div>
+            <div>
+                <input type="password" name="Password" placeholder="Password" />
+            </div>
+            <a>quên mật khẩu?</a>
+            <input type="submit" class="btn btn-primary" value="Login" />
+            <button>Register</button>
+        </form>
+    </body>
+}

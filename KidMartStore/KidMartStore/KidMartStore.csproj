@@ -312,6 +312,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -378,7 +379,6 @@
     <Content Include="Content\CSS\Index.css" />
     <Content Include="Content\CSS\Login.css" />
     <Content Include="Content\CSS\Slider.css" />
-    <Content Include="Content\JS\Change.js" />
     <Content Include="Content\JS\Slider.js" />
     <Content Include="Content\Layout\Header.css" />
     <Content Include="Content\Layout\Main.css" />
@@ -442,11 +442,12 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_MasterLayoutUser.cshtml" />
     <Content Include="Views\Admin\ManagerPage.cshtml" />
     <Content Include="Views\Shared\AdminLayout.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
