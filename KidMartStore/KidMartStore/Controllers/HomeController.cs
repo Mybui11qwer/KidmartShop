@@ -7,6 +7,8 @@ using System.Web.Mvc;
 using KidMartStore.Models;
 using System.Security.Cryptography;
 using System.Text;
+using System.Web.UI.WebControls;
+using System.Web.Helpers;
 
 namespace KidMartStore.Controllers
 {
@@ -21,20 +23,15 @@ namespace KidMartStore.Controllers
         [HttpPost]
         public ActionResult Login(string Email, string Password)
         {
-            if (!string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Password))
+            if (ModelState.IsValid)
             {
-                var user = database.Khách_Hàng.FirstOrDefault(u => u.Email == Email);
-                if (user != null && VerifyPassword(Password, user.Password))
+                var userCheck = database.Khách_Hàng.Where(x => x.Email.Equals(Email) && x.Password.Equals(Password)).ToList();
+                if (userCheck.Count() > 0)
                 {
                     // Lưu session khi đăng nhập thành công
-                    Session["UserId"] = user.Email;
-                    Session["Username"] = user.Họ_và_Tên;
-
+                    Session["UserId"] = userCheck.FirstOrDefault().Mã_KH;
+                    Session["Username"] = userCheck.FirstOrDefault().Họ_và_Tên;
                     return RedirectToAction("Index", "Home");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "Invalid username or password.");
                 }
             }
             return View();
