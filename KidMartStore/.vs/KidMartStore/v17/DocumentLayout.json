@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "D:\\\u0110\u1ED3 \u00E1n ph\u1EA7n m\u1EC1m\\KidMartStore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\\u0111\u1ED3 \u00E1n ph\u1EA7n m\u1EC1m\\kidmartstore\\kidmartstore\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\\u0111\u1ED3 \u00E1n ph\u1EA7n m\u1EC1m\\kidmartstore\\kidmartstore\\content\\css\\stylelogin.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\content\\css\\stylelogin.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|D:\\\u0110\u1ED3 \u00E1n ph\u1EA7n m\u1EC1m\\KidMartStore\\kidmartstore\\content\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\content\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|D:\\\u0110\u1ED3 \u00E1n ph\u1EA7n m\u1EC1m\\KidMartStore\\kidmartstore\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|D:\\\u0110\u1ED3 \u00E1n ph\u1EA7n m\u1EC1m\\KidMartStore\\kidmartstore\\views\\shared\\_masterlayoutuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\\u0111\u1ED3 \u00E1n ph\u1EA7n m\u1EC1m\\kidmartstore\\kidmartstore\\views\\shared\\_masterlayoutuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\views\\shared\\_masterlayoutuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\\u0111\u1ED3 \u00E1n ph\u1EA7n m\u1EC1m\\kidmartstore\\kidmartstore\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\\u0111\u1ED3 \u00E1n ph\u1EA7n m\u1EC1m\\kidmartstore\\kidmartstore\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|D:\\\u0110\u1ED3 \u00E1n ph\u1EA7n m\u1EC1m\\KidMartStore\\kidmartstore\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -34,82 +26,56 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Web.config",
-              "DocumentMoniker": "D:\\\u0110\u1ED3 \u00E1n ph\u1EA7n m\u1EC1m\\KidMartStore\\KidMartStore\\Web.config",
-              "RelativeDocumentMoniker": "KidMartStore\\Web.config",
-              "ToolTip": "D:\\\u0110\u1ED3 \u00E1n ph\u1EA7n m\u1EC1m\\KidMartStore\\KidMartStore\\Web.config",
-              "RelativeToolTip": "KidMartStore\\Web.config",
-              "ViewState": "AQIAAEUAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-10-06T13:23:19.906Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Login.css",
-              "DocumentMoniker": "D:\\\u0110\u1ED3 \u00E1n ph\u1EA7n m\u1EC1m\\KidMartStore\\KidMartStore\\Content\\CSS\\Login.css",
-              "RelativeDocumentMoniker": "KidMartStore\\Content\\CSS\\Login.css",
-              "ToolTip": "D:\\\u0110\u1ED3 \u00E1n ph\u1EA7n m\u1EC1m\\KidMartStore\\KidMartStore\\Content\\CSS\\Login.css",
-              "RelativeToolTip": "KidMartStore\\Content\\CSS\\Login.css",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-10-06T12:04:07.375Z",
+              "Title": "_MasterLayoutUser.cshtml",
+              "DocumentMoniker": "D:\\\u0110\u1ED3 \u00E1n ph\u1EA7n m\u1EC1m\\KidMartStore\\KidMartStore\\Views\\Shared\\_MasterLayoutUser.cshtml",
+              "RelativeDocumentMoniker": "KidMartStore\\Views\\Shared\\_MasterLayoutUser.cshtml",
+              "ToolTip": "D:\\\u0110\u1ED3 \u00E1n ph\u1EA7n m\u1EC1m\\KidMartStore\\KidMartStore\\Views\\Shared\\_MasterLayoutUser.cshtml",
+              "RelativeToolTip": "KidMartStore\\Views\\Shared\\_MasterLayoutUser.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-06T13:49:00.949Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
+              "Title": "StyleLogin.css",
+              "DocumentMoniker": "D:\\\u0110\u1ED3 \u00E1n ph\u1EA7n m\u1EC1m\\KidMartStore\\KidMartStore\\Content\\CSS\\StyleLogin.css",
+              "RelativeDocumentMoniker": "KidMartStore\\Content\\CSS\\StyleLogin.css",
+              "ToolTip": "D:\\\u0110\u1ED3 \u00E1n ph\u1EA7n m\u1EC1m\\KidMartStore\\KidMartStore\\Content\\CSS\\StyleLogin.css",
+              "RelativeToolTip": "KidMartStore\\Content\\CSS\\StyleLogin.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-10-06T13:41:39.847Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\\u0110\u1ED3 \u00E1n ph\u1EA7n m\u1EC1m\\KidMartStore\\KidMartStore\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "KidMartStore\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "D:\\\u0110\u1ED3 \u00E1n ph\u1EA7n m\u1EC1m\\KidMartStore\\KidMartStore\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "KidMartStore\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAqAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-10-06T12:01:13.65Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_MasterLayoutUser.cshtml",
-              "DocumentMoniker": "D:\\\u0110\u1ED3 \u00E1n ph\u1EA7n m\u1EC1m\\KidMartStore\\KidMartStore\\Views\\Shared\\_MasterLayoutUser.cshtml",
-              "RelativeDocumentMoniker": "KidMartStore\\Views\\Shared\\_MasterLayoutUser.cshtml",
-              "ToolTip": "D:\\\u0110\u1ED3 \u00E1n ph\u1EA7n m\u1EC1m\\KidMartStore\\KidMartStore\\Views\\Shared\\_MasterLayoutUser.cshtml",
-              "RelativeToolTip": "KidMartStore\\Views\\Shared\\_MasterLayoutUser.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA+AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-06T12:01:10.315Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\\u0110\u1ED3 \u00E1n ph\u1EA7n m\u1EC1m\\KidMartStore\\KidMartStore\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "KidMartStore\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\\u0110\u1ED3 \u00E1n ph\u1EA7n m\u1EC1m\\KidMartStore\\KidMartStore\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "KidMartStore\\Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-06T11:57:44.511Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "Login.cshtml",
               "DocumentMoniker": "D:\\\u0110\u1ED3 \u00E1n ph\u1EA7n m\u1EC1m\\KidMartStore\\KidMartStore\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "KidMartStore\\Views\\Account\\Login.cshtml",
               "ToolTip": "D:\\\u0110\u1ED3 \u00E1n ph\u1EA7n m\u1EC1m\\KidMartStore\\KidMartStore\\Views\\Account\\Login.cshtml",
               "RelativeToolTip": "KidMartStore\\Views\\Account\\Login.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAA5AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-10-06T11:54:43.676Z",
               "EditorCaption": ""

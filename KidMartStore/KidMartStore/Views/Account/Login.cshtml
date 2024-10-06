@@ -1,24 +1,29 @@
 ﻿
 @{
+    Layout = "~/Views/Shared/_MasterLayoutUser.cshtml";
     ViewBag.Title = "Login";
 }
+
+
 <head>
-    <link rel="stylesheet" href="~/Content/CSS/Login.css"/>
+    <link rel="stylesheet" href="@Url.Content("~/Content/CSS/StyleLogin.css")" />
 </head>
-@using (Html.BeginForm("Login", "Account", FormMethod.Post))
-{
-    <body>
-        <form class="container-signin">
-            <h1>SIGN IN</h1>
-            <div>
+<main>
+    @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+    {
+        <form class="container">
+            <h1 style="text-align:center">SIGN IN</h1>
+            <div class="Email">
                 <input type="email" name="Email" placeholder="Email" />
             </div>
-            <div>
+            <div class="Password">
                 <input type="password" name="Password" placeholder="Password" />
             </div>
-            <a>quên mật khẩu?</a>
-            <input type="submit" class="btn btn-primary" value="Login" />
-            <button>Register</button>
+                <a  href="#">quên mật khẩu?</a>
+            <div>
+                <input type="submit" class="btn" value="Login" />
+            </div>
+                <button class="btn">Register</button>
         </form>
-    </body>
-}
+    }
+</main>
