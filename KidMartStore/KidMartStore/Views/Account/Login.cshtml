@@ -1,5 +1,4 @@
-﻿@model KidMartStore.Models.KidMartStoreEntities
-@{
+﻿@{
     ViewBag.Title = "Login";
 }
 
@@ -16,8 +15,8 @@
 <body>
     <div class="container" id="container">
 
-        <div class="form-container sign-up" action="~/Controllers/HomeController/Register()" method="post">
-            <form action="@Url.Action("Login", "Account")" method="post">
+        <div class="form-container sign-up">
+            <form action="/Account/Login" method="post">
                 <h1>Create Account</h1>
                 <div class="social-icons">
                     <a href="#" class="icon">
@@ -36,8 +35,8 @@
         </div>
 
 
-        <div class="form-container sign-in" action="~/Controllers/HomeController/Login()" method="post">
-            <form action="@Url.Action("Login", "Account")" method="post">
+        <div class="form-container sign-in">
+            <form action="/Account/Login" method="post">
                 <h1>Sign In</h1>
                 <div class="social-icons">
                     <a href="#" class="icon">
