@@ -11,22 +11,26 @@
     <link rel="stylesheet" href="~/Content/Layout/Main.css" />
 </head>
 <body>
-    <div class="above-header">
+    <div class="above-header" style="height: 6vh ;display:flex; justify-content: space-between; align-items:center">
+        <nav class="Logo-text" style="margin-left: 50px">
+            <h3 style="color:white">KidMart</h3>
+        </nav>
+        <nav class="Location-function" style="margin-right:30px">
+            <a style="color: white; text-decoration:none" href="~/Account/Login">Sign in</a>
+            <a style="color: white; text-decoration:none">/</a>
+            <a style="color: white; text-decoration:none" href="~/Account/Login">Sign up</a>
+        </nav>
     </div>
-    <header>
+    <header style="height: 10vh">
+        <div></div>
         <nav class="accordion-header-toggle-left">
-            <a href="~/Home/Index">HOME</a>
-            <a href="#">PRODUCT</a>
-            <a href="#">SALES</a>
-            <a href="#">CONTACT</a>
-            <a href="#">INTRODUCE</a>
+            <a style="color: black; font-family: Arial; margin: 0px 15px 0px 15px " href="~/Home/Index">HOME</a>
+            <a style="color: black; font-family: Arial; margin: 0px 15px 0px 15px "  href="#">PRODUCT</a>
+            <a style="color: black; font-family: Arial; margin: 0px 15px 0px 15px "  href="#">SALES</a>
+            <a style="color: black; font-family: Arial; margin: 0px 15px 0px 15px "  href="#">CONTACT</a>
+            <a style="color: black; font-family: Arial;"  href="#">INTRODUCE</a>
         </nav>
-        <div class="align-middle"><h1>KIDMART</h1></div>
-        <nav class="accordion-header-toggle-right">
-            <input type="search" id="search" class="search"/>
-            <a href="/Account/Login"><img src="~/Image/user-icon.png" /></a>
-            <a><img src="~/Image/bell-icon.png" /></a>
-        </nav>
+        <div></div>
     </header>
     <main class = "bodyFrame">
         @RenderBody()

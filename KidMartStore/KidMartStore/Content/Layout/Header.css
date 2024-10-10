@@ -8,9 +8,12 @@
     height: 40px;
     width: 100%;
     background-color: black;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 header{
+    height: 20vh;
     margin-bottom: 5px;
     display: flex;
     align-items: center;
