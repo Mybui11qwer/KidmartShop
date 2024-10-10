@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="Mã_chi_tiết_đơn_hàng" />
     </Key>
-    <Property Name="Mã_chi_tiết_đơn_hàng" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Mã_chi_tiết_đơn_hàng" Type="int" Nullable="false" />
     <Property Name="Mã_đơn_hàng" Type="int" Nullable="false" />
     <Property Name="Mã_sản_phẩm" Type="int" Nullable="false" />
     <Property Name="Số_lượng" Type="int" Nullable="false" />
@@ -14,16 +14,16 @@
     <Key>
       <PropertyRef Name="Mã_chi_tiết_giỏ_hàng" />
     </Key>
-    <Property Name="Mã_chi_tiết_giỏ_hàng" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Mã_chi_tiết_giỏ_hàng" Type="int" Nullable="false" />
     <Property Name="Mã_giỏ_hàng" Type="int" Nullable="false" />
     <Property Name="Mã_sản_phẩm" Type="int" Nullable="false" />
-    <Property Name="Số_lượng" Type="int" />
+    <Property Name="Số_lượng" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Danh_mục_sản_phẩm">
     <Key>
       <PropertyRef Name="Mã_danh_mục" />
     </Key>
-    <Property Name="Mã_danh_mục" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Mã_danh_mục" Type="int" Nullable="false" />
     <Property Name="Tên_danh_mục" Type="varchar" MaxLength="255" Nullable="false" />
   </EntityType>
   <EntityType Name="Đơn_hàng">
@@ -41,7 +41,7 @@
     <Key>
       <PropertyRef Name="Mã_giảm" />
     </Key>
-    <Property Name="Mã_giảm" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Mã_giảm" Type="int" Nullable="false" />
     <Property Name="Phần_trăm_giảm" Type="decimal" Precision="5" Scale="2" Nullable="false" />
     <Property Name="Ngày_bắt_đầu" Type="date" Nullable="false" />
     <Property Name="Ngày_kết_thúc" Type="date" Nullable="false" />
@@ -51,30 +51,30 @@
     <Key>
       <PropertyRef Name="Mã_giỏ_hàng" />
     </Key>
-    <Property Name="Mã_giỏ_hàng" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Mã_giỏ_hàng" Type="int" Nullable="false" />
     <Property Name="Mã_KH" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Khách_Hàng">
     <Key>
       <PropertyRef Name="Mã_KH" />
     </Key>
-    <Property Name="Mã_KH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Mã_KH" Type="int" Nullable="false" />
     <Property Name="Họ_và_Tên" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="Email" Type="varchar" MaxLength="255" Nullable="false" />
-    <Property Name="Số_điện_thoại" Type="varchar" MaxLength="15" />
-    <Property Name="Địa_chỉ" Type="varchar" MaxLength="255" />
-    <Property Name="Giới_tính" Type="char" MaxLength="1" />
+    <Property Name="Số_điện_thoại" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Địa_chỉ" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Giới_tính" Type="char" MaxLength="1" Nullable="false" />
     <Property Name="Password" Type="varchar" MaxLength="255" Nullable="false" />
   </EntityType>
   <EntityType Name="Sản_phẩm">
     <Key>
       <PropertyRef Name="Mã_sản_phẩm" />
     </Key>
-    <Property Name="Mã_sản_phẩm" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Mã_danh_mục" Type="int" />
-    <Property Name="Tên_sản_phẩm" Type="varchar" MaxLength="255" />
-    <Property Name="Giá_bán" Type="decimal" Precision="10" Scale="2" />
-    <Property Name="Số_lượng_tồn_kho" Type="int" />
+    <Property Name="Mã_sản_phẩm" Type="int" Nullable="false" />
+    <Property Name="Mã_danh_mục" Type="int" Nullable="false" />
+    <Property Name="Tên_sản_phẩm" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Giá_bán" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Số_lượng_tồn_kho" Type="int" Nullable="false" />
     <Property Name="Mô_tả" Type="text" />
   </EntityType>
   <Association Name="FK__Chi_tiết___Mã_đơ__4AB81AF0">
@@ -162,7 +162,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__Sản_phẩm__Mã_dan__3B75D760">
-    <End Role="Danh_mục_sản_phẩm" Type="Self.Danh_mục_sản_phẩm" Multiplicity="0..1" />
+    <End Role="Danh_mục_sản_phẩm" Type="Self.Danh_mục_sản_phẩm" Multiplicity="1" />
     <End Role="Sản_phẩm" Type="Self.Sản_phẩm" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Danh_mục_sản_phẩm">

@@ -22,10 +22,10 @@ namespace KidMartStore.Models
         }
     
         public int Mã_sản_phẩm { get; set; }
-        public Nullable<int> Mã_danh_mục { get; set; }
+        public int Mã_danh_mục { get; set; }
         public string Tên_sản_phẩm { get; set; }
-        public Nullable<decimal> Giá_bán { get; set; }
-        public Nullable<int> Số_lượng_tồn_kho { get; set; }
+        public decimal Giá_bán { get; set; }
+        public int Số_lượng_tồn_kho { get; set; }
         public string Mô_tả { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

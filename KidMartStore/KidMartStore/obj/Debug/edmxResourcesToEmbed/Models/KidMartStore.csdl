@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="Mã_chi_tiết_đơn_hàng" />
     </Key>
-    <Property Name="Mã_chi_tiết_đơn_hàng" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Mã_chi_tiết_đơn_hàng" Type="Int32" Nullable="false" />
     <Property Name="Mã_đơn_hàng" Type="Int32" Nullable="false" />
     <Property Name="Mã_sản_phẩm" Type="Int32" Nullable="false" />
     <Property Name="Số_lượng" Type="Int32" Nullable="false" />
@@ -16,10 +16,10 @@
     <Key>
       <PropertyRef Name="Mã_chi_tiết_giỏ_hàng" />
     </Key>
-    <Property Name="Mã_chi_tiết_giỏ_hàng" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Mã_chi_tiết_giỏ_hàng" Type="Int32" Nullable="false" />
     <Property Name="Mã_giỏ_hàng" Type="Int32" Nullable="false" />
     <Property Name="Mã_sản_phẩm" Type="Int32" Nullable="false" />
-    <Property Name="Số_lượng" Type="Int32" />
+    <Property Name="Số_lượng" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Giỏ_hàng" Relationship="Self.FK__Chi_tiết___Mã_gi__412EB0B6" FromRole="Chi_tiết_giỏ_hàng" ToRole="Giỏ_hàng" />
     <NavigationProperty Name="Sản_phẩm" Relationship="Self.FK__Chi_tiết___Mã_sả__4222D4EF" FromRole="Chi_tiết_giỏ_hàng" ToRole="Sản_phẩm" />
   </EntityType>
@@ -27,7 +27,7 @@
     <Key>
       <PropertyRef Name="Mã_danh_mục" />
     </Key>
-    <Property Name="Mã_danh_mục" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Mã_danh_mục" Type="Int32" Nullable="false" />
     <Property Name="Tên_danh_mục" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Sản_phẩm" Relationship="Self.FK__Sản_phẩm__Mã_dan__3B75D760" FromRole="Danh_mục_sản_phẩm" ToRole="Sản_phẩm" />
   </EntityType>
@@ -49,7 +49,7 @@
     <Key>
       <PropertyRef Name="Mã_giảm" />
     </Key>
-    <Property Name="Mã_giảm" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Mã_giảm" Type="Int32" Nullable="false" />
     <Property Name="Phần_trăm_giảm" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
     <Property Name="Ngày_bắt_đầu" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="Ngày_kết_thúc" Type="DateTime" Nullable="false" Precision="0" />
@@ -60,7 +60,7 @@
     <Key>
       <PropertyRef Name="Mã_giỏ_hàng" />
     </Key>
-    <Property Name="Mã_giỏ_hàng" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Mã_giỏ_hàng" Type="Int32" Nullable="false" />
     <Property Name="Mã_KH" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Chi_tiết_giỏ_hàng" Relationship="Self.FK__Chi_tiết___Mã_gi__412EB0B6" FromRole="Giỏ_hàng" ToRole="Chi_tiết_giỏ_hàng" />
     <NavigationProperty Name="Khách_Hàng" Relationship="Self.FK__Giỏ_hàng__Mã_KH__3E52440B" FromRole="Giỏ_hàng" ToRole="Khách_Hàng" />
@@ -69,12 +69,12 @@
     <Key>
       <PropertyRef Name="Mã_KH" />
     </Key>
-    <Property Name="Mã_KH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Mã_KH" Type="Int32" Nullable="false" />
     <Property Name="Họ_và_Tên" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Số_điện_thoại" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-    <Property Name="Địa_chỉ" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Name="Giới_tính" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Số_điện_thoại" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Địa_chỉ" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Giới_tính" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Đơn_hàng" Relationship="Self.FK__Đơn_hàng__Mã_KH__46E78A0C" FromRole="Khách_Hàng" ToRole="Đơn_hàng" />
     <NavigationProperty Name="Giỏ_hàng" Relationship="Self.FK__Giỏ_hàng__Mã_KH__3E52440B" FromRole="Khách_Hàng" ToRole="Giỏ_hàng" />
@@ -83,11 +83,11 @@
     <Key>
       <PropertyRef Name="Mã_sản_phẩm" />
     </Key>
-    <Property Name="Mã_sản_phẩm" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Mã_danh_mục" Type="Int32" />
-    <Property Name="Tên_sản_phẩm" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Name="Giá_bán" Type="Decimal" Precision="10" Scale="2" />
-    <Property Name="Số_lượng_tồn_kho" Type="Int32" />
+    <Property Name="Mã_sản_phẩm" Type="Int32" Nullable="false" />
+    <Property Name="Mã_danh_mục" Type="Int32" Nullable="false" />
+    <Property Name="Tên_sản_phẩm" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Giá_bán" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Số_lượng_tồn_kho" Type="Int32" Nullable="false" />
     <Property Name="Mô_tả" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Chi_tiết_đơn_hàng" Relationship="Self.FK__Chi_tiết___Mã_sả__4BAC3F29" FromRole="Sản_phẩm" ToRole="Chi_tiết_đơn_hàng" />
     <NavigationProperty Name="Chi_tiết_giỏ_hàng" Relationship="Self.FK__Chi_tiết___Mã_sả__4222D4EF" FromRole="Sản_phẩm" ToRole="Chi_tiết_giỏ_hàng" />
@@ -142,7 +142,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__Sản_phẩm__Mã_dan__3B75D760">
-    <End Role="Danh_mục_sản_phẩm" Type="Self.Danh_mục_sản_phẩm" Multiplicity="0..1" />
+    <End Role="Danh_mục_sản_phẩm" Type="Self.Danh_mục_sản_phẩm" Multiplicity="1" />
     <End Role="Sản_phẩm" Type="Self.Sản_phẩm" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Danh_mục_sản_phẩm">

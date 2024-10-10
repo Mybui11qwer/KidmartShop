@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\IT-Project DAPM\\KidMartStore\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\it-project dapm\\kidmartstore\\kidmartstore\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\it-project dapm\\kidmartstore\\kidmartstore\\models\\kh\u00E1ch_h\u00E0ng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\models\\kh\u00E1ch_h\u00E0ng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Kh\u00E1ch_H\u00E0ng.cs",
+              "DocumentMoniker": "D:\\IT-Project DAPM\\KidMartStore\\KidMartStore\\Models\\Kh\u00E1ch_H\u00E0ng.cs",
+              "RelativeDocumentMoniker": "KidMartStore\\Models\\Kh\u00E1ch_H\u00E0ng.cs",
+              "ToolTip": "D:\\IT-Project DAPM\\KidMartStore\\KidMartStore\\Models\\Kh\u00E1ch_H\u00E0ng.cs",
+              "RelativeToolTip": "KidMartStore\\Models\\Kh\u00E1ch_H\u00E0ng.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T02:02:26.09Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\IT-Project DAPM\\KidMartStore\\KidMartStore\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "KidMartStore\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\IT-Project DAPM\\KidMartStore\\KidMartStore\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "KidMartStore\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-10T01:57:58.34Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
