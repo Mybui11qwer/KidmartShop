@@ -3,31 +3,31 @@
   "WorkspaceRootPath": "D:\\IT-Project DAPM\\KidMartStore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\it-project dapm\\kidmartstore\\kidmartstore\\content\\css\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\content\\css\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\it-project dapm\\kidmartstore\\kidmartstore\\content\\layout\\header.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\content\\layout\\header.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|D:\\IT-Project DAPM\\KidMartStore\\kidmartstore\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|D:\\IT-Project DAPM\\KidMartStore\\kidmartstore\\content\\css\\slider.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\content\\css\\slider.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\it-project dapm\\kidmartstore\\kidmartstore\\content\\css\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\content\\css\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\it-project dapm\\kidmartstore\\kidmartstore\\content\\css\\infor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\content\\css\\infor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|D:\\IT-Project DAPM\\KidMartStore\\kidmartstore\\views\\shared\\_masterlayoutuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\views\\shared\\_masterlayoutuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\it-project dapm\\kidmartstore\\kidmartstore\\content\\layout\\header.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\content\\layout\\header.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\it-project dapm\\kidmartstore\\kidmartstore\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\it-project dapm\\kidmartstore\\kidmartstore\\content\\css\\loginstyle.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|D:\\IT-Project DAPM\\KidMartStore\\kidmartstore\\content\\css\\loginstyle.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\content\\css\\loginstyle.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
@@ -38,19 +38,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.css",
-              "DocumentMoniker": "D:\\IT-Project DAPM\\KidMartStore\\KidMartStore\\Content\\CSS\\Index.css",
-              "RelativeDocumentMoniker": "KidMartStore\\Content\\CSS\\Index.css",
-              "ToolTip": "D:\\IT-Project DAPM\\KidMartStore\\KidMartStore\\Content\\CSS\\Index.css",
-              "RelativeToolTip": "KidMartStore\\Content\\CSS\\Index.css",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAcwCsAAAAhAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "infor.css",
+              "DocumentMoniker": "D:\\IT-Project DAPM\\KidMartStore\\KidMartStore\\Content\\CSS\\infor.css",
+              "RelativeDocumentMoniker": "KidMartStore\\Content\\CSS\\infor.css",
+              "ToolTip": "D:\\IT-Project DAPM\\KidMartStore\\KidMartStore\\Content\\CSS\\infor.css",
+              "RelativeToolTip": "KidMartStore\\Content\\CSS\\infor.css",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAgwB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-10-24T07:45:10.738Z",
+              "WhenOpened": "2024-10-24T10:39:30.543Z",
               "EditorCaption": ""
             },
             {
@@ -61,7 +61,7 @@
               "RelativeDocumentMoniker": "KidMartStore\\Content\\CSS\\LoginStyle.css",
               "ToolTip": "D:\\IT-Project DAPM\\KidMartStore\\KidMartStore\\Content\\CSS\\LoginStyle.css",
               "RelativeToolTip": "KidMartStore\\Content\\CSS\\LoginStyle.css",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAAgAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAC4AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2024-10-24T07:26:42.334Z",
               "EditorCaption": ""
@@ -74,61 +74,61 @@
               "RelativeDocumentMoniker": "KidMartStore\\Views\\Account\\Login.cshtml",
               "ToolTip": "D:\\IT-Project DAPM\\KidMartStore\\KidMartStore\\Views\\Account\\Login.cshtml",
               "RelativeToolTip": "KidMartStore\\Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABkAAABUAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-24T07:21:20.681Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Header.css",
-              "DocumentMoniker": "D:\\IT-Project DAPM\\KidMartStore\\KidMartStore\\Content\\Layout\\Header.css",
-              "RelativeDocumentMoniker": "KidMartStore\\Content\\Layout\\Header.css",
-              "ToolTip": "D:\\IT-Project DAPM\\KidMartStore\\KidMartStore\\Content\\Layout\\Header.css",
-              "RelativeToolTip": "KidMartStore\\Content\\Layout\\Header.css",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAAEIAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-10-10T09:19:47.134Z",
+              "WhenOpened": "2024-10-24T10:16:42.426Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "Header.css",
+              "DocumentMoniker": "D:\\IT-Project DAPM\\KidMartStore\\KidMartStore\\Content\\Layout\\Header.css",
+              "RelativeDocumentMoniker": "KidMartStore\\Content\\Layout\\Header.css",
+              "ToolTip": "D:\\IT-Project DAPM\\KidMartStore\\KidMartStore\\Content\\Layout\\Header.css",
+              "RelativeToolTip": "KidMartStore\\Content\\Layout\\Header.css",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAC8AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-10-24T09:58:51.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "_MasterLayoutUser.cshtml",
               "DocumentMoniker": "D:\\IT-Project DAPM\\KidMartStore\\KidMartStore\\Views\\Shared\\_MasterLayoutUser.cshtml",
               "RelativeDocumentMoniker": "KidMartStore\\Views\\Shared\\_MasterLayoutUser.cshtml",
               "ToolTip": "D:\\IT-Project DAPM\\KidMartStore\\KidMartStore\\Views\\Shared\\_MasterLayoutUser.cshtml",
               "RelativeToolTip": "KidMartStore\\Views\\Shared\\_MasterLayoutUser.cshtml",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAADEAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-10-10T09:18:01.089Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "Index.css",
+              "DocumentMoniker": "D:\\IT-Project DAPM\\KidMartStore\\KidMartStore\\Content\\CSS\\Index.css",
+              "RelativeDocumentMoniker": "KidMartStore\\Content\\CSS\\Index.css",
+              "ToolTip": "D:\\IT-Project DAPM\\KidMartStore\\KidMartStore\\Content\\CSS\\Index.css",
+              "RelativeToolTip": "KidMartStore\\Content\\CSS\\Index.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-10-24T09:36:34.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\IT-Project DAPM\\KidMartStore\\KidMartStore\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "KidMartStore\\Views\\Home\\Index.cshtml",
               "ToolTip": "D:\\IT-Project DAPM\\KidMartStore\\KidMartStore\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "KidMartStore\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAAD8AAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-10-10T09:14:05.677Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Slider.css",
-              "DocumentMoniker": "D:\\IT-Project DAPM\\KidMartStore\\KidMartStore\\Content\\CSS\\Slider.css",
-              "RelativeDocumentMoniker": "KidMartStore\\Content\\CSS\\Slider.css",
-              "ToolTip": "D:\\IT-Project DAPM\\KidMartStore\\KidMartStore\\Content\\CSS\\Slider.css",
-              "RelativeToolTip": "KidMartStore\\Content\\CSS\\Slider.css",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAACcAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-10-10T09:15:26.637Z",
               "EditorCaption": ""
             }
           ]

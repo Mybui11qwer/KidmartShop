@@ -9,14 +9,16 @@
     @Scripts.Render("~/bundles/modernizr")
     <link rel="stylesheet" href="~/Content/Layout/Header.css" />
     <link rel="stylesheet" href="~/Content/Layout/Main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         header {
-            transition: all 0.2s ease;
+            transition: all 0.5s ease;
         }
+
             header.scrolled {
                 top: 0;
-                height: 15vh;
-                background-color: #CD8C95; /* Màu thay đổi khi cuộn */
+                height: 14vh;
+                background-color: #FFC0CB; /* Màu thay đổi khi cuộn */
                 padding: 10px; /* Giảm chiều cao khi cuộn */
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Thêm bóng đổ */
             }
@@ -25,9 +27,11 @@
 <body>
     <div class="above-header">
         <nav class="Logo-text" style="margin-left: 50px">
-            <h3 style="color:white">KidMart</h3>
+            <a href="~/Home/Index"><h3>KidMart</h3></a>
         </nav>
         <nav class="Location-function" style="margin-right:30px">
+            <a style="color: white; text-decoration:none" href="#"><img src="~/Image/icon-search-white.png" style="width:32px; height: 32px"/></a>
+            <a style="color: white; text-decoration:none" href="#"><img src="~/Image/icon-cart-white.png" style="width:32px; height: 32px; margin-right:5px"/></a>
             <a style="color: white; text-decoration:none" href="~/Account/Login">Sign in</a>
             <a style="color: white; text-decoration:none">/</a>
             <a style="color: white; text-decoration:none" href="~/Account/Login">Sign up</a>
@@ -36,12 +40,12 @@
     <header id="mainHeader">
         <div></div>
         <nav class="accordion-header-toggle-left">
-            <a style="color: black; font-family: Arial; margin: 0px 15px 0px 15px " href="~/Home/Index">Trang chủ</a>
-            <a style="color: black; font-family: Arial; margin: 0px 15px 0px 15px " href="#">Giới thiệu</a>
-            <a style="color: black; font-family: Arial; margin: 0px 15px 0px 15px " href="#">Sản phẩm</a>
-            <a style="color: black; font-family: Arial; margin: 0px 15px 0px 15px " href="#">Blog</a>
-            <a style="color: black; font-family: Arial; margin: 0px 15px 0px 15px " href="#">Liên hệ</a>
-            <a style="color: black; font-family: Arial; margin: 0px 15px 0px 15px " href="#">Kiểm tra đơn hàng</a>
+            <a href="~/Home/Index">Trang chủ</a>
+            <a href="#">Giới thiệu</a>
+            <a href="#">Sản phẩm</a>
+            <a href="#">Blog</a>
+            <a href="#">Liên hệ</a>
+            <a href="#">Kiểm tra đơn hàng</a>
         </nav>
         <div></div>
     </header>

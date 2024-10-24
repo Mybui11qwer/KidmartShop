@@ -7,12 +7,19 @@
 .above-header {
     position:relative;
     background-color: black;
-    height: 6vh;
+    height: 7vh;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+    .above-header a{
+        text-decoration:none;
+    }
+    .above-header h3 {
+        color: white;
+        font-weight: bold;
+    }
 
 header {
     position: fixed;
@@ -32,14 +39,17 @@ header {
     header .accordion-header-toggle-left a {
         position: relative;
         margin-left: 10px;
-        color: black;
-        font-size: medium;
-        font-family: cursive;
+        font-size: large;
+        font-weight: bolder;
         text-decoration: none;
-        transition: ease 0.1s;
+        color: black;
+        font-family: Arial;
+        margin: 0px 15px 0px 15px;
+        transition: 0.5s;
     }
         header .accordion-header-toggle-left a:hover{
             text-decoration: underline;
+            color: #808080;
         }
 
         header .align-middle h1 {
