@@ -9,9 +9,21 @@
     @Scripts.Render("~/bundles/modernizr")
     <link rel="stylesheet" href="~/Content/Layout/Header.css" />
     <link rel="stylesheet" href="~/Content/Layout/Main.css" />
+    <style>
+        header {
+            transition: all 0.2s ease;
+        }
+            header.scrolled {
+                top:0;
+                height:15vh;
+                background-color: #555; /* Màu thay đổi khi cuộn */
+                padding: 10px; /* Giảm chiều cao khi cuộn */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Thêm bóng đổ */
+            }
+    </style>
 </head>
 <body>
-    <div class="above-header" style="height: 6vh ;display:flex; justify-content: space-between; align-items:center">
+    <div class="above-header">
         <nav class="Logo-text" style="margin-left: 50px">
             <h3 style="color:white">KidMart</h3>
         </nav>
@@ -21,14 +33,15 @@
             <a style="color: white; text-decoration:none" href="~/Account/Login">Sign up</a>
         </nav>
     </div>
-    <header style="height: 10vh">
+    <header id="mainHeader">
         <div></div>
         <nav class="accordion-header-toggle-left">
-            <a style="color: black; font-family: Arial; margin: 0px 15px 0px 15px " href="~/Home/Index">HOME</a>
-            <a style="color: black; font-family: Arial; margin: 0px 15px 0px 15px "  href="#">PRODUCT</a>
-            <a style="color: black; font-family: Arial; margin: 0px 15px 0px 15px "  href="#">SALES</a>
-            <a style="color: black; font-family: Arial; margin: 0px 15px 0px 15px "  href="#">CONTACT</a>
-            <a style="color: black; font-family: Arial;"  href="#">INTRODUCE</a>
+            <a style="color: black; font-family: Arial; margin: 0px 15px 0px 15px " href="~/Home/Index">Trang chủ</a>
+            <a style="color: black; font-family: Arial; margin: 0px 15px 0px 15px " href="#">Giới thiệu</a>
+            <a style="color: black; font-family: Arial; margin: 0px 15px 0px 15px " href="#">Sản phẩm</a>
+            <a style="color: black; font-family: Arial; margin: 0px 15px 0px 15px " href="#">Blog</a>
+            <a style="color: black; font-family: Arial; margin: 0px 15px 0px 15px " href="#">Liên hệ</a>
+            <a style="color: black; font-family: Arial; margin: 0px 15px 0px 15px " href="#">Kiểm tra đơn hàng</a>
         </nav>
         <div></div>
     </header>
@@ -38,6 +51,19 @@
     <footer>
         <h2>XIN CẢM ƠN ĐÃ SỬ DỤNG DỊCH VỤ</h2>
     </footer>
+    <script>
+        // Lấy phần tử header
+        const header = document.getElementById('mainHeader');
+
+        // Thêm sự kiện khi cuộn trang
+        window.onscroll = function () {
+            if (window.scrollY > 50) { // Khi cuộn quá 50px
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        };
+    </script>
 </body>
 </html>
 

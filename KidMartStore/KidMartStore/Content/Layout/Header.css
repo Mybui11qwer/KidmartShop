@@ -5,22 +5,30 @@
 }
 
 .above-header {
-    height: 40px;
-    width: 100%;
+    position:relative;
     background-color: black;
+    height: 6vh;
+    width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header{
-    height: 20vh;
+header {
+    position: fixed;
+    width: 100%;
+    top: auto;
+    height: 10vh;
     margin-bottom: 5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 15px 30px;
     background-color: #E981A4;
+    transition:ease 0.5s;
+    z-index: 1000;
 }
+
     header .accordion-header-toggle-left a {
         position: relative;
         margin-left: 10px;
@@ -28,11 +36,15 @@ header{
         font-size: medium;
         font-family: cursive;
         text-decoration: none;
+        transition: all 0.5s ease;
     }
+        header .accordion-header-toggle-left a :focus{
+            text-decoration: underline;
+        }
 
-    header .align-middle h1{
-        font-family: cursive;
-    }
+        header .align-middle h1 {
+            font-family: cursive;
+        }
 
     header .accordion-header-toggle-right{
         display: flex;

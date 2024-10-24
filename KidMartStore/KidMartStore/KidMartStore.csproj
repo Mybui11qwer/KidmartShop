@@ -381,6 +381,7 @@
     <Content Include="Content\CSS\Slider.css" />
     <Content Include="Content\CSS\StyleLogin.css" />
     <Content Include="Content\JS\Change.js" />
+    <Content Include="Content\JS\Scroll-index.js" />
     <Content Include="Content\JS\Slider.js" />
     <Content Include="Content\Layout\Header.css" />
     <Content Include="Content\Layout\Main.css" />

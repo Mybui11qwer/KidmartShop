@@ -1,6 +1,8 @@
 ﻿body .firstContent {
+    position: relative;
     display: flex;
-    justify-content:space-around;
+    padding-bottom: 20px;
+    justify-content: space-around;
     border-bottom: 1px solid black;
 }
 
@@ -12,9 +14,9 @@ body .firstContent .selectForm{
 .selectForm h2 {
     background-color: black;
     width: max-content;
-    padding: 15px 100px 25px 5px;
-    color: antiquewhite;
-    font-family: cursive;
+    color: white;
+    font-family: Arial;
+    padding: 20px 60px 20px 20px
 }
     .selectForm .tab-content{
     display: grid;
