@@ -401,6 +401,10 @@
     <Content Include="Image\img4.jpg" />
     <Content Include="Image\img5.jpg" />
     <Content Include="Image\magnifying-glass.png" />
+    <Content Include="Image\policies_icon_1.png" />
+    <Content Include="Image\policies_icon_2.png" />
+    <Content Include="Image\policies_icon_3.png" />
+    <Content Include="Image\policies_icon_4.png" />
     <Content Include="Image\user-icon.png" />
     <Content Include="Image\Toys1.jpg" />
     <Content Include="Models\KidMartStore.Context.tt">

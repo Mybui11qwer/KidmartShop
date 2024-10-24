@@ -52,9 +52,9 @@ body .ProductList{
     flex-wrap: wrap;
     gap: 60px
 }
-.ProductList .Product-Items .item {
-    max-width: max-content;
-    display: grid;
-    justify-items: center;
-    flex: 1 0 50%;
-}
+    .ProductList .Product-Items .item {
+        max-width: max-content;
+        display: grid;
+        flex: 1 0 50%;
+        border: 1px solid #FFC0CB;
+    }
