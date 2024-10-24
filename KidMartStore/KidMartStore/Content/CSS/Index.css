@@ -45,13 +45,7 @@ body .ProductList{
         border-radius:10px;
         color: black;
     }
-.ProductList .Product-Items {
-    margin: 20px 50px 20px 50px;
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 60px
-}
+
     .ProductList .Product-Items .item {
         max-width: max-content;
         display: grid;
