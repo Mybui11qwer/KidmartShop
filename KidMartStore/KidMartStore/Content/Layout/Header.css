@@ -24,8 +24,8 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 15px 30px;
-    background-color: #E981A4;
-    transition:ease 0.5s;
+    background-color: #FFC0CB;
+    transition: ease 0.5s;
     z-index: 1000;
 }
 
@@ -36,9 +36,9 @@ header {
         font-size: medium;
         font-family: cursive;
         text-decoration: none;
-        transition: all 0.5s ease;
+        transition: ease 0.1s;
     }
-        header .accordion-header-toggle-left a :focus{
+        header .accordion-header-toggle-left a:hover{
             text-decoration: underline;
         }
 
@@ -58,17 +58,17 @@ header {
         header .accordion-header-toggle-right img {
             margin-right: 10px;
         }
-footer{
-    height: 100px;
+footer {
+    height: 130px;
     margin-top: 5px;
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    background-color: black;
+    background-color: #FFC0CB;
 }
 footer h2{
-    color: antiquewhite;
-    font-family: cursive;
+    color: black;
+    font-family: Arial;
 }
 
 

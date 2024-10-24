@@ -41,7 +41,7 @@ body .ProductList{
     body .ProductList h1 {
         text-align: center;
         border-bottom: 1px solid black;
-        background-color: #E981A4;
+        background-color: #FFC0CB;
     }
 .ProductList .Product-Items {
     margin: 0px 300px 0px 300px;

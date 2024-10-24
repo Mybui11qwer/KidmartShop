@@ -1,4 +1,5 @@
 ﻿@{
+    Layout = "~/Views/Shared/_MasterLayoutUser.cshtml";
     ViewBag.Title = "Login";
 }
 
@@ -9,11 +10,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="~/Content/CSS/Login.css">
+    <link rel="stylesheet" href="~/Content/CSS/LoginStyle.css" />
 </head>
 
 <body>
-    
+    <div class="login-container">
+        <div class="login-form">
+            <h2>Login</h2>
+            <form action="">
+                <div class="input-group">
+                    <label for="username">Username <span style="color: red">*</span></label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password <span style="color: red">*</span></label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="input-group">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>

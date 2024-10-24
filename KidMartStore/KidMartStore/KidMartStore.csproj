@@ -377,7 +377,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\CSS\Index.css" />
-    <Content Include="Content\CSS\Login.css" />
+    <Content Include="Content\CSS\LoginStyle.css" />
     <Content Include="Content\CSS\Slider.css" />
     <Content Include="Content\CSS\StyleLogin.css" />
     <Content Include="Content\JS\Change.js" />
