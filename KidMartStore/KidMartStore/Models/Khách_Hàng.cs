@@ -11,7 +11,8 @@ namespace KidMartStore.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Khách_Hàng
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,6 +24,8 @@ namespace KidMartStore.Models
     
         public int Mã_KH { get; set; }
         public string Họ_và_Tên { get; set; }
+
+        
         public string Email { get; set; }
         public string Số_điện_thoại { get; set; }
         public string Địa_chỉ { get; set; }

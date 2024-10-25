@@ -1,4 +1,6 @@
-﻿.bodyFrame {
+﻿@media only screen and (min-width: 320px) and (max-width: 860px) {
+}
+.bodyFrame {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -36,6 +38,9 @@ p {
 form {
     display: flex;
     flex-direction: column;
+}
+form span{
+    color: red;
 }
 
 label {

@@ -6,4 +6,37 @@
 //     Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+using System.ComponentModel.DataAnnotations;
+
+namespace KidMartStore.Models
+{
+    public class Register
+    {
+        [Required]
+        public string Số_điện_thoại { get; set; }
+
+        [Required]
+        [Display(Name = "Full Name")]
+        public string Họ_và_Têns { get; set; }
+
+        [Required(ErrorMessage = "Email không được bỏ trống")]
+        [EmailAddress(ErrorMessage = "Email không hợp lệ")]
+        public string Email { get; set; }
+
+        [Required(ErrorMessage = "Mật khẩu không được bỏ trống")]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+    }
+
+    public class Login
+    {
+        [Required(ErrorMessage = "Email không được bỏ trống")]
+        [EmailAddress(ErrorMessage = "Email không hợp lệ")]
+        public string Email { get; set; }
+
+        [Required(ErrorMessage = "Mật khẩu không được bỏ trống")]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+    }
+}
 

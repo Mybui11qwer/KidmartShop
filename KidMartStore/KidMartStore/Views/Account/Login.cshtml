@@ -1,4 +1,8 @@
-﻿@{
+﻿
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}
+@{
     Layout = "~/Views/Shared/_MasterLayoutUser.cshtml";
     ViewBag.Title = "Đăng nhập";
 }
@@ -10,12 +14,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="~/Content/CSS/LoginUser.css" />
+    <link rel="stylesheet" href="~/Content/CSS/LoginUser.css" />s
 </head>
 <body>
     <div class="login-container">
         <h2>ĐĂNG NHẬP</h2>
-        <p>Bạn chưa có tài khoản? <a href="#">Đăng ký tại đây</a></p>
+        <p>Bạn chưa có tài khoản? <a href="~/Account/Register">Đăng ký tại đây</a></p>
         <form action="#" method="POST">
             <div>
                 <label for="email">Email <span>*</span></label><br />
@@ -34,6 +38,7 @@
             <button type="submit" class="login-button">Đăng nhập</button>
         </form>
     </div>
+
 </body>
 
 </html>
