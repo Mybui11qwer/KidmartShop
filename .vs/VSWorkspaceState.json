@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\KidMartStore",
+    "\\KidMartStore\\KidMartStore",
+    "\\KidMartStore\\KidMartStore\\Views",
+    "\\KidMartStore\\KidMartStore\\Views\\Account"
+  ],
+  "SelectedNode": "\\KidMartStore\\KidMartStore\\Views\\Account\\Login.cshtml",
+  "PreviewInSolutionExplorer": false
+}
