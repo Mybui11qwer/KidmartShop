@@ -389,6 +389,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Image\bell-icon.png" />
+    <Content Include="Image\down-arrow.png" />
     <Content Include="Image\facebook-icon.png" />
     <Content Include="Image\footer_trustbadge.png" />
     <Content Include="Image\google-icon.png" />

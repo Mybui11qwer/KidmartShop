@@ -106,6 +106,38 @@
                 margin: 10px 30px 0px 30px
                 }
     </style>
+    <style>
+        header .accordion-header-toggle-left {
+            display: flex;
+            justify-content: center
+        }
+
+        .menu-content {
+            display: flex;
+            flex-direction: column;
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #FFC0CB;
+            width: 200px;
+            height: max-content;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .menu-product .menu-content div {
+            margin: 10px 0px 0px 0px;
+        }
+            .menu-product .menu-content div a {
+                padding: 30px 0px 15px 10px;
+            }
+        .menu-product{
+            position: relative;
+        }
+        .menu-product:hover .menu-content {
+            display: grid;
+        }
+    </style>
 </head>
 <body>
     <div class="above-header">
@@ -136,7 +168,17 @@
         <nav class="accordion-header-toggle-left">
             <a href="~/Home/Index">Trang chủ</a>
             <a href="#">Giới thiệu</a>
-            <a href="#">Sản phẩm</a>
+            <nav class="menu-product">
+                <a style="align-items:center" href="#">Sản phẩm <span><img src="~/Image/down-arrow.png" style="width: 10px;height: 12px"/></span></a>
+                <div class="menu-content">
+                    <div><a href="#">Quần áo</a></div>
+                    <div><a href="#">Đồ chơi</a></div>
+                    <div><a href="#">Sữa cho bé</a></div>
+                    <div><a href="#">Học tập</a></div>
+                    <div><a href="#">Tả của bé</a></div>
+                    <div><a href="#">Dụng cụ khác</a></div>
+                </div>
+            </nav>       
             <a href="#">Blog</a>
             <a href="#">Liên hệ</a>
             <a href="#">Kiểm tra đơn hàng</a>

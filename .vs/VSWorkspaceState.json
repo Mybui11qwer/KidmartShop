@@ -6,8 +6,10 @@
     "\\KidMartStore\\KidMartStore\\Content",
     "\\KidMartStore\\KidMartStore\\Content\\CSS",
     "\\KidMartStore\\KidMartStore\\Views",
-    "\\KidMartStore\\KidMartStore\\Views\\Account"
+    "\\KidMartStore\\KidMartStore\\Views\\Account",
+    "\\KidMartStore\\KidMartStore\\Views\\Admin",
+    "\\KidMartStore\\KidMartStore\\Views\\Home"
   ],
-  "SelectedNode": "\\KidMartStore\\KidMartStore.sln",
+  "SelectedNode": "\\KidMartStore\\KidMartStore\\Views\\Admin\\ManagerPage.cshtml",
   "PreviewInSolutionExplorer": false
 }
