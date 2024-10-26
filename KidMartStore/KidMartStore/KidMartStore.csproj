@@ -390,6 +390,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Image\bell-icon.png" />
     <Content Include="Image\facebook-icon.png" />
+    <Content Include="Image\footer_trustbadge.png" />
     <Content Include="Image\google-icon.png" />
     <Content Include="Image\grocery-store.png" />
     <Content Include="Image\icon-cart-white.png" />
@@ -399,6 +400,7 @@
     <Content Include="Image\img3.jpg" />
     <Content Include="Image\img4.jpg" />
     <Content Include="Image\img5.jpg" />
+    <Content Include="Image\logo_bct.png" />
     <Content Include="Image\magnifying-glass.png" />
     <Content Include="Image\policies_icon_1.png" />
     <Content Include="Image\policies_icon_2.png" />

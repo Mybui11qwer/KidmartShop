@@ -23,13 +23,21 @@ namespace KidMartStore.Models
         }
     
         public int Mã_KH { get; set; }
+
+        [Required]
         public string Họ_và_Tên { get; set; }
 
-        
+        [Required(ErrorMessage = "Email không được bỏ trống")]
+        [EmailAddress(ErrorMessage = "Email không hợp lệ")]
         public string Email { get; set; }
+
+        [Required]
         public string Số_điện_thoại { get; set; }
         public string Địa_chỉ { get; set; }
         public string Giới_tính { get; set; }
+
+        [Required(ErrorMessage = "Mật khẩu không được bỏ trống")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

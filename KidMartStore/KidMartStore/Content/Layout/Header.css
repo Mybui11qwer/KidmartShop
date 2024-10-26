@@ -9,7 +9,7 @@
 .above-header {
     position:relative;
     background-color: black;
-    height: 7vh;
+    height: 5vh;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -70,17 +70,6 @@ header {
         header .accordion-header-toggle-right img {
             margin-right: 10px;
         }
-footer {
-    height: 130px;
-    margin-top: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #FFC0CB;
-}
-footer h2{
-    color: black;
-    font-family: Arial;
-}
+
 
 

@@ -6,58 +6,51 @@ using System.Text;
 
 public class AccountController : Controller
 {
-    private KidMartStoreEntities db = new KidMartStoreEntities();
+    public KidMartStoreEntities db = new KidMartStoreEntities();
 
     public ActionResult Login()
     {
         return View();
     }
     [HttpPost]
-    public ActionResult Login(Login model)
+    public ActionResult Login(Khách_Hàng KhachHang)
     {
-        if (ModelState.IsValid)
+        var checkEmail = db.Khách_Hàng.Where(s => s.Email == KhachHang.Email).FirstOrDefault();
+        var checkPassword = db.Khách_Hàng.Where(s => s.Password == KhachHang.Password).FirstOrDefault();
+        if (checkEmail == null || checkPassword == null)
         {
-            // Here, you would authenticate the user with the database
-
-            bool isValidUser = AuthenticateUser(model.Email, model.Password); // Define AuthenticateUser
-            if (isValidUser)
+            if (checkEmail == null || checkPassword == null)
             {
-                TempData["Message"] = "Login successful!";
-                // Redirect to the user's dashboard or homepage
-                return RedirectToAction("Index", "Home");
-            }
-            else
-            {
-                ModelState.AddModelError("", "Invalid email or password");
+                ModelState.AddModelError("", "Tài Khoản Không Tồn Tại");
+                return View("Login");
             }
         }
-
-        return View(model);
+        else
+        {
+            Session["Email"] = KhachHang.Email;
+            Session["FullName"] = KhachHang.Số_điện_thoại;
+            return RedirectToAction("Index", "Home");
+        }
+        return View();
     }
     public ActionResult Register()
     {
         return View();
     }
-    [HttpPost]
-    public ActionResult Register(Register model)
-    {
-        if (ModelState.IsValid)
-        {
-            // Here, you would add the user to the database
-            // and possibly send a confirmation email
 
-            TempData["Message"] = "Registration successful!";
+    [HttpPost]
+    public ActionResult Register(Khách_Hàng KhachHangMoi)
+    {
+        try
+        {
+            db.Khách_Hàng.Add(KhachHangMoi);
+            db.SaveChanges();
             return RedirectToAction("Login");
         }
-
-        return View(model);
-    }
-
-    private bool AuthenticateUser(string email, string password)
-    {
-        // You should query the database to validate the user credentials.
-        // For demo purposes, we'll just return false.
-        return false;
+        catch
+        {
+            return View("Register");
+        }       
     }
 
     // Đăng xuất
