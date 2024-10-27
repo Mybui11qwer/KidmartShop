@@ -318,45 +318,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Chi_tiết_giỏ_hàng.cs">
-      <DependentUpon>KidMartStore.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Chi_tiết_đơn_hàng.cs">
-      <DependentUpon>KidMartStore.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Danh_mục_sản_phẩm.cs">
-      <DependentUpon>KidMartStore.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Giảm_giá.cs">
-      <DependentUpon>KidMartStore.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Giỏ_hàng.cs">
-      <DependentUpon>KidMartStore.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Khách_Hàng.cs">
-      <DependentUpon>KidMartStore.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\KidMartStore.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>KidMartStore.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\KidMartStore.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>KidMartStore.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\KidMartStore.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>KidMartStore.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Sản_phẩm.cs">
-      <DependentUpon>KidMartStore.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Đơn_hàng.cs">
-      <DependentUpon>KidMartStore.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -410,29 +371,12 @@
     <Content Include="Image\policies_icon_4.png" />
     <Content Include="Image\user-icon.png" />
     <Content Include="Image\Toys1.jpg" />
-    <Content Include="Models\KidMartStore.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>KidMartStore.edmx</DependentUpon>
-      <LastGenOutput>KidMartStore.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\KidMartStore.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>KidMartStore.edmx</DependentUpon>
-      <LastGenOutput>KidMartStore.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\KidMartStore.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>KidMartStore.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\KidMartStore.edmx.diagram">
-      <DependentUpon>KidMartStore.edmx</DependentUpon>
-    </Content>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -466,6 +410,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
