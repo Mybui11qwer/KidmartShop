@@ -1,4 +1,4 @@
-﻿@model KidMartStore.Models.Khách_Hàng
+﻿@model KidMartStore.Models.Customer
 
 @{
     Layout = "~/Views/Shared/_MasterLayoutUser.cshtml";
@@ -20,12 +20,12 @@
         <form action="/Account/Register" method="post">
             <div>
                 <label for="Name">Họ và tên <span>*</span></label><br />
-                <input type="text" id="name" name="Họ_và_Tên" placeholder="Nhập họ và tên của bạn" required>
+                <input type="text" id="name" name="Username" placeholder="Nhập họ và tên của bạn" required>
             </div>
 
             <div>
                 <label for="Phone">Số điện thoại <span>*</span></label><br />
-                <input type="tel" id="password" name="Số_điện_thoại" placeholder="Nhập số điện thoại của bạn" required>
+                <input type="tel" id="password" name="Phone" placeholder="Nhập số điện thoại của bạn" required>
             </div>
 
             <div>

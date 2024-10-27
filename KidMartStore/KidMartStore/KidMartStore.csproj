@@ -45,12 +45,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNetCore.Antiforgery, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNetCore.Antiforgery.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Antiforgery.dll</HintPath>
     </Reference>
@@ -318,6 +312,45 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cart.cs">
+      <DependentUpon>KidMart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Category.cs">
+      <DependentUpon>KidMart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Customer.cs">
+      <DependentUpon>KidMart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Detail_Cart.cs">
+      <DependentUpon>KidMart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Detail_Order.cs">
+      <DependentUpon>KidMart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KidMart.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KidMart.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KidMart.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KidMart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KidMart.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KidMart.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>KidMart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product.cs">
+      <DependentUpon>KidMart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Promotion.cs">
+      <DependentUpon>KidMart.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -371,12 +404,29 @@
     <Content Include="Image\policies_icon_4.png" />
     <Content Include="Image\user-icon.png" />
     <Content Include="Image\Toys1.jpg" />
+    <Content Include="Models\KidMart.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KidMart.edmx</DependentUpon>
+      <LastGenOutput>KidMart.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\KidMart.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KidMart.edmx</DependentUpon>
+      <LastGenOutput>KidMart.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\KidMart.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KidMart.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\KidMart.edmx.diagram">
+      <DependentUpon>KidMart.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -410,7 +460,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

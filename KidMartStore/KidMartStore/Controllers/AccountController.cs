@@ -13,10 +13,10 @@ public class AccountController : Controller
         return View();
     }
     [HttpPost]
-    public ActionResult Login(Khách_Hàng KhachHang)
+    public ActionResult Login(Customer KhachHang)
     {
-        var checkEmail = db.Khách_Hàng.Where(s => s.Email == KhachHang.Email).FirstOrDefault();
-        var checkPassword = db.Khách_Hàng.Where(s => s.Password == KhachHang.Password).FirstOrDefault();
+        var checkEmail = db.Customers.Where(s => s.Email == KhachHang.Email).FirstOrDefault();
+        var checkPassword = db.Customers.Where(s => s.Password == KhachHang.Password).FirstOrDefault();
         if (checkEmail == null || checkPassword == null)
         {
             if (checkEmail == null || checkPassword == null)
@@ -28,7 +28,7 @@ public class AccountController : Controller
         else
         {
             Session["Email"] = KhachHang.Email;
-            Session["FullName"] = KhachHang.Số_điện_thoại;
+            Session["FullName"] = KhachHang.Phone;
             return RedirectToAction("Index", "Home");
         }
         return View();
@@ -39,11 +39,11 @@ public class AccountController : Controller
     }
 
     [HttpPost]
-    public ActionResult Register(Khách_Hàng KhachHangMoi)
+    public ActionResult Register(Customer KhachHangMoi)
     {
         try
         {
-            db.Khách_Hàng.Add(KhachHangMoi);
+            db.Customers.Add(KhachHangMoi);
             db.SaveChanges();
             return RedirectToAction("Login");
         }
