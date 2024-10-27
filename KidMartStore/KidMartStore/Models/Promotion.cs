@@ -22,6 +22,7 @@ namespace KidMartStore.Models
     
         public int ID_Sale { get; set; }
         public decimal Percent_Discount { get; set; }
+        public string Name_Promotion { get; set; }
         public System.DateTime Start_Date { get; set; }
         public System.DateTime End_Date { get; set; }
         public string Code { get; set; }

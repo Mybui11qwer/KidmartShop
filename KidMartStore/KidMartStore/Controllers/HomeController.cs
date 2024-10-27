@@ -9,16 +9,18 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web.UI.WebControls;
 using System.Web.Helpers;
+using System.Globalization;
+using System.Data.Entity;
 
 namespace KidMartStore.Controllers
 {
     public class HomeController : Controller
     {
-        private KidMartStoreEntities database = new KidMartStoreEntities();
-
+        private readonly KidMartStoreEntities database = new KidMartStoreEntities();
         public ActionResult Index()
         {
-            return View();
+            List<Product> products = database.Products.ToList();
+            return View(products);
         }
         public ActionResult GioiThieu()
         {
@@ -26,7 +28,8 @@ namespace KidMartStore.Controllers
         }
         public ActionResult SanPham()
         {
-            return View();
+            List<Product> products = database.Products.ToList();
+            return View(products);
         }
     }
 }

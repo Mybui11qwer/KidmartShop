@@ -1,0 +1,71 @@
+﻿.product-list{
+    display: flex;
+}
+    .product-list .content1{
+        width: max-content;
+        margin-right: 80px;
+    }
+    .product-list .content2{
+        width: 80%;
+        height: max-content;
+    }
+    .product-list .content2 h3{
+        border-bottom: 1px solid black;
+    }
+
+        .product-list .content2 .Product-Items {
+            text-align: center;
+        }
+        .product-list .content2 .Product-Items {
+            margin: 30px 25px 10px 25px;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 60px
+        }
+            .product-list .content2 .Product-Items .item {
+                max-width: max-content;
+                display: grid;
+                flex: 1 0 50%;
+                border: 2px solid #FFC0CB;
+                border-radius: 25px;
+                padding: 8px;
+            }
+            .product-list .content2 .Product-Items .item {
+                max-width: max-content;
+                display: grid;
+                flex: 1 0 50%;
+                border: 2px solid #FFC0CB;
+                border-radius: 25px;
+                padding: 8px;
+            }
+                .product-list .content2 .Product-Items .item button {
+                    border-radius: 18px;
+                    padding: 8px;
+                    background-color: #FFC0CB;
+                    border: none;
+                    transition: 0.5s ease;
+                }
+                    .product-list .content2 .Product-Items .item button:hover {
+                        background-color: #808080;
+                        color: white;
+                        font-weight: bold;
+                    }
+                .product-list .content2 .Product-Items .item img {
+                    width: 250px;
+                    height: 300px;
+                    transition: 1s ease;
+                }
+                    .product-list .content2 .Product-Items .item img:hover {
+                        transform: scale(1.1);
+                        border: 1px solid #FFC0CB;
+                        border-radius: 360px;
+                    }
+            
+        
+
+            
+
+
+
+    

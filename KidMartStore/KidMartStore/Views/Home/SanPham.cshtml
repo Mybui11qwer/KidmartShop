@@ -1,10 +1,35 @@
-﻿
+﻿@model List<KidMartStore.Models.Product>
 @{
     Layout = "~/Views/Shared/_MasterLayoutUser.cshtml";
-    ViewBag.Title = "SanPham";
+    ViewBag.Title = "Sản phẩm";
 }
-
-<section style="margin-top:80px">
-    <h2>Sản Phẩm</h2>
-</section>
+<link rel="stylesheet" href="~/Content/CSS/ProductPages.css"/>
+<section class="infor-promotion" style="margin-top:80px"></section>
+<main class="product-list" style="margin-top:20px">
+    <div class="content1">
+        <h3>Bộ lọc tìm kiếm</h3>
+        <section class="filter">
+            @foreach(var category in Model)
+            {
+                <label>@category.ID_Category</label>
+            }
+        </section>
+    </div>
+    <div class="content2">
+        <section class="list-content">
+            <h3>Hello world</h3>
+            <div class="Product-Items">
+                @foreach (var product in Model)
+                {
+                    <nav class="item">
+                        <img src="@product.Image" alt="@product.Name" />
+                        <h4>@product.Name</h4>
+                        <h5>@product.Price <span>VNĐ</span></h5>
+                        <button>Mua Hàng</button>
+                    </nav>
+                }
+            </div>
+        </section>
+    </div>
+</main>
 

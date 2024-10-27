@@ -27,8 +27,8 @@
     <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-    <Property Name="Avarta" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Avarta" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Carts" Relationship="Self.FK__Cart__ID_Custome__3E52440B" FromRole="Customer" ToRole="Cart" />
     <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__ID_Custo__45F365D3" FromRole="Customer" ToRole="Orders" />
   </EntityType>
@@ -61,7 +61,7 @@
     <Property Name="ID_Customer" Type="Int32" Nullable="false" />
     <Property Name="Order_Date" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="Total" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
-    <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="ID_Sale" Type="Int32" />
     <NavigationProperty Name="Customer" Relationship="Self.FK__Orders__ID_Custo__45F365D3" FromRole="Orders" ToRole="Customer" />
     <NavigationProperty Name="Detail_Order" Relationship="Self.FK__Detail_Or__ID_Or__49C3F6B7" FromRole="Orders" ToRole="Detail_Order" />
@@ -77,7 +77,7 @@
     <Property Name="Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="Quantity" Type="Int32" Nullable="false" />
     <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Category" Relationship="Self.FK__Product__ID_Cate__3B75D760" FromRole="Product" ToRole="Category" />
   </EntityType>
   <EntityType Name="Promotion">
@@ -86,6 +86,7 @@
     </Key>
     <Property Name="ID_Sale" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Percent_Discount" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="Name_Promotion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Start_Date" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="End_Date" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="Code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />

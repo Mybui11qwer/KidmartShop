@@ -82,6 +82,7 @@
         <MappingFragment StoreEntitySet="Promotion">
           <ScalarProperty Name="ID_Sale" ColumnName="ID_Sale" />
           <ScalarProperty Name="Percent_Discount" ColumnName="Percent_Discount" />
+          <ScalarProperty Name="Name_Promotion" ColumnName="Name_Promotion" />
           <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
           <ScalarProperty Name="End_Date" ColumnName="End_Date" />
           <ScalarProperty Name="Code" ColumnName="Code" />

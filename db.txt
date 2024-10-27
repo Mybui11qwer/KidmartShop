@@ -1,89 +1,86 @@
 create database KidMartStore
 use KidMartStore
 
-CREATE TABLE Khách_Hàng
+CREATE TABLE Customer
 (
-  Mã_KH INT NOT NULL,
-  Họ_và_Tên VARCHAR(255) NOT NULL,
-  Email VARCHAR(255) NOT NULL,
-  Số_điện_thoại VARCHAR(15) NOT NULL, -- Số điện thoại thường là chuỗi ký tự vì có thể chứa dấu +
-  Địa_chỉ VARCHAR(255) NOT NULL,
-  Giới_tính CHAR(1) NOT NULL, -- 'M' hoặc 'F' cho giới tính nam/nữ
-  Password VARCHAR(255) NOT NULL,
-  PRIMARY KEY (Mã_KH)
+  ID_Customer INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+  Username NVARCHAR(50) NOT NULL,
+  Email VARCHAR(100) NOT NULL,
+  Password VARCHAR(100) NOT NULL,
+  Phone VARCHAR(15) NOT NULL,
+  Address VARCHAR(255) ,
+  Gender NVARCHAR(10) ,
+  Avarta VARCHAR(255),
 );
 
-CREATE TABLE Danh_mục_sản_phẩm
+CREATE TABLE Category
 (
-  Mã_danh_mục INT NOT NULL,
-  Tên_danh_mục VARCHAR(255) NOT NULL,
-  PRIMARY KEY (Mã_danh_mục)
+  ID_Category INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+  Name_Category NVARCHAR(50) NOT NULL
 );
 
-CREATE TABLE Sản_phẩm
+CREATE TABLE Product
 (
-  Mã_sản_phẩm INT NOT NULL,
-  Mã_danh_mục INT NOT NULL,
-  Tên_sản_phẩm VARCHAR(255) NOT NULL,
-  Giá_bán DECIMAL(10,2) NOT NULL, -- Giá bán với phần thập phân
-  Số_lượng_tồn_kho INT NOT NULL,
-  Mô_tả TEXT, -- Mô tả có thể dài, nên dùng TEXT
-  PRIMARY KEY (Mã_sản_phẩm),
-  FOREIGN KEY (Mã_danh_mục) REFERENCES Danh_mục_sản_phẩm(Mã_danh_mục)
+  ID_Product INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+  ID_Category INT NOT NULL,
+  Name NVARCHAR(100) NOT NULL,
+  Price DECIMAL(10, 2) NOT NULL,
+  Quantity INT NOT NULL,
+  Description TEXT,
+  Image VARCHAR(255),
+  FOREIGN KEY (ID_Category) REFERENCES Category(ID_Category)
 );
 
-CREATE TABLE Giỏ_hàng
+CREATE TABLE Cart
 (
-  Mã_giỏ_hàng INT NOT NULL,
-  Mã_KH INT NOT NULL,
-  PRIMARY KEY (Mã_giỏ_hàng),
-  FOREIGN KEY (Mã_KH) REFERENCES Khách_Hàng(Mã_KH)
+  ID_Cart INT NOT NULL IDENTITY(1000,1) PRIMARY KEY,
+  ID_Customer INT NOT NULL,
+  FOREIGN KEY (ID_Customer) REFERENCES Customer(ID_Customer)
 );
 
-CREATE TABLE Chi_tiết_giỏ_hàng
+CREATE TABLE Detail_Cart
 (
-  Mã_chi_tiết_giỏ_hàng INT NOT NULL,
-  Mã_giỏ_hàng INT NOT NULL,
-  Mã_sản_phẩm INT NOT NULL,
-  Số_lượng INT NOT NULL,
-  PRIMARY KEY (Mã_chi_tiết_giỏ_hàng),
-  FOREIGN KEY (Mã_giỏ_hàng) REFERENCES Giỏ_hàng(Mã_giỏ_hàng),
-  FOREIGN KEY (Mã_sản_phẩm) REFERENCES Sản_phẩm(Mã_sản_phẩm)
+  ID_Detail_Cart INT NOT NULL PRIMARY KEY,
+  ID_Cart INT NOT NULL,
+  ID_Product INT NOT NULL,
+  Quantity INT NOT NULL,
+  FOREIGN KEY (ID_Cart) REFERENCES Cart(ID_Cart)
 );
 
-CREATE TABLE Giảm_giá
+CREATE TABLE Promotion
 (
-  Mã_giảm INT NOT NULL,
-  Phần_trăm_giảm DECIMAL(5,2) NOT NULL, -- Phần trăm giảm với phần thập phân
-  Ngày_bắt_đầu DATE NOT NULL,
-  Ngày_kết_thúc DATE NOT NULL,
-  Code VARCHAR(50) NOT NULL,
-  PRIMARY KEY (Mã_giảm)
+  ID_Sale INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+  Percent_Discount DECIMAL(5, 2) NOT NULL,
+  Name_Promotion NVarchar(50),
+  Start_Date DATE NOT NULL,
+  End_Date DATE NOT NULL,
+  Code VARCHAR(20) NOT NULL
 );
 
-CREATE TABLE Đơn_hàng
+CREATE TABLE Orders
 (
-  Mã_đơn_hàng INT NOT NULL,
-  Mã_KH INT NOT NULL,
-  Ngày_đặt_hàng DATE NOT NULL,
-  Tổng_tiền DECIMAL(10,2) NOT NULL, -- Tổng tiền với phần thập phân
-  Trạng_thái VARCHAR(50) NOT NULL, -- Ví dụ: 'đang xử lý', 'hoàn tất'
-  Mã_giảm INT, -- Có thể không áp dụng giảm giá nên để kiểu NULL
-  PRIMARY KEY (Mã_đơn_hàng),
-  FOREIGN KEY (Mã_KH) REFERENCES Khách_Hàng(Mã_KH),
-  FOREIGN KEY (Mã_giảm) REFERENCES Giảm_giá(Mã_giảm)
+  ID_Order INT NOT NULL IDENTITY(1000,1) PRIMARY KEY,
+  ID_Customer INT NOT NULL,
+  Order_Date DATE NOT NULL,
+  Total DECIMAL(10, 2) NOT NULL,
+  Status NVARCHAR(20) NOT NULL,
+  ID_Sale INT,
+  FOREIGN KEY (ID_Customer) REFERENCES Customer(ID_Customer),
+  FOREIGN KEY (ID_Sale) REFERENCES Promotion(ID_Sale)
 );
 
-CREATE TABLE Chi_tiết_đơn_hàng
+CREATE TABLE Detail_Order
 (
-  Mã_chi_tiết_đơn_hàng INT NOT NULL,
-  Mã_đơn_hàng INT NOT NULL,
-  Mã_sản_phẩm INT NOT NULL,
-  Số_lượng INT NOT NULL,
-  Đơn_giá DECIMAL(10,2) NOT NULL, -- Đơn giá với phần thập phân
-  PRIMARY KEY (Mã_chi_tiết_đơn_hàng),
-  FOREIGN KEY (Mã_đơn_hàng) REFERENCES Đơn_hàng(Mã_đơn_hàng),
-  FOREIGN KEY (Mã_sản_phẩm) REFERENCES Sản_phẩm(Mã_sản_phẩm)
+  ID_Detail_Order INT NOT NULL IDENTITY(1000,1) PRIMARY KEY,
+  ID_Order INT NOT NULL,
+  ID_Product INT NOT NULL,
+  Quantity INT NOT NULL,
+  Unit_Price DECIMAL(10, 2) NOT NULL,
+  FOREIGN KEY (ID_Order) REFERENCES Orders(ID_Order)
 );
+
+
+
+
 
 

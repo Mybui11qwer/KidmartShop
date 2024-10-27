@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<KidMartStore.Models.Product>
+
+@{
     Layout = "~/Views/Shared/_MasterLayoutUser.cshtml";
     ViewBag.Title = "Trang chủ";
 }
@@ -15,36 +17,41 @@
             flex-wrap: wrap;
             gap: 60px
         }
-        .ProductList .Product-Items .item {
-            max-width: max-content;
-            display: grid;
-            flex: 1 0 50%;
-            border: 2px solid #FFC0CB;
-            border-radius: 25px;
-            padding: 8px;
-        }
-            .ProductList .Product-Items .item button {
-                border-radius: 18px;
+
+            .ProductList .Product-Items .item {
+                max-width: max-content;
+                display: grid;
+                flex: 1 0 50%;
+                border: 2px solid #FFC0CB;
+                border-radius: 25px;
                 padding: 8px;
-                background-color: #FFC0CB;
-                border: none;
-                transition: 0.5s ease;
             }
-                .ProductList .Product-Items .item button:hover {
-                    background-color: #808080;
-                    color: white;
-                    font-weight: bold;
+
+                .ProductList .Product-Items .item button {
+                    border-radius: 18px;
+                    padding: 8px;
+                    background-color: #FFC0CB;
+                    border: none;
+                    transition: 0.5s ease;
                 }
-            .ProductList .Product-Items .item img {
-                width: 250px;
-                height: 300px;
-                transition: 1s ease;
-            }
-                .ProductList .Product-Items .item img:hover {
-                    transform: scale(1.1);
-                    border: 1px solid #FFC0CB;
-                    border-radius: 360px;
+
+                    .ProductList .Product-Items .item button:hover {
+                        background-color: #808080;
+                        color: white;
+                        font-weight: bold;
+                    }
+
+                .ProductList .Product-Items .item img {
+                    width: 250px;
+                    height: 300px;
+                    transition: 1s ease;
                 }
+
+                    .ProductList .Product-Items .item img:hover {
+                        transform: scale(1.1);
+                        border: 1px solid #FFC0CB;
+                        border-radius: 360px;
+                    }
     </style>
 </head>
 <body>
@@ -52,19 +59,10 @@
         <nav class="selectForm">
             <h2>Danh Mục Hàng</h2>
             <div class="tab-content">
-                <label>Quần áo</label>
-                <label>Đồ chơi</label>
-                <label>Đồ dùng cho bé</label>
-                <label>Sữa cho bé</label>
-                <label>Sữa cho bé</label>
-                <label>Quần áo</label>
-                <label>Đồ chơi</label>
-                <label>Đồ dùng cho bé</label>
-                <label>Sữa cho bé</label>
-                <label>Sữa cho bé</label>
-                <label>Đồ dùng cho bé</label>
-                <label>Sữa cho bé</label>
-                <label>Sữa cho bé</label>
+                @foreach (var category in Model)
+                {
+                    <label>@category.ID_Category</label>
+                }
             </div>
         </nav>
         <div class="slider" style="margin-left: 20px;">
@@ -132,42 +130,30 @@
     <section class="ProductList" style="padding-bottom: 20px;">
         <h1>Danh sách sản phẩm</h1>
         <div class="Product-Items">
-            <nav class="item">
-                <img src="~/Image/Toys1.jpg" alt="Tên ảnh" style="" />
-                <h4>Tên sản phẩm</h4>
-                <h5>Giá sản phẩm</h5>
-                <button>Mua Hàng</button>
-            </nav>
-            <nav class="item">
-                <img src="~/Image/Toys1.jpg" alt="Tên ảnh" style="" />
-                <h4>Tên sản phẩm</h4>
-                <h5>Giá sản phẩm</h5>
-                <button>Mua Hàng</button>
-            </nav>
-            <nav class="item">
-                <img src="~/Image/Toys1.jpg" alt="Tên ảnh" style="" />
-                <h4>Tên sản phẩm</h4>
-                <h5>Giá sản phẩm</h5>
-                <button>Mua Hàng</button>
-            </nav>
-            <nav class="item">
-                <img src="~/Image/Toys1.jpg" alt="Tên ảnh" style="" />
-                <h4>Tên sản phẩm</h4>
-                <h5>Giá sản phẩm</h5>
-                <button>Mua Hàng</button>
-            </nav>
+            @foreach (var product in Model)
+            {
+                <nav class="item">
+                    <img src="@product.Image" alt="@product.Name" />
+                    <h4>@product.Name</h4>
+                    <h5>@product.Price <span>VNĐ</span></h5>
+                    <button>Mua Hàng</button>
+                </nav>
+            }
         </div>
     </section>
     <br />
     <section class="ProductList">
         <h1>Danh sách Sales</h1>
         <div class="Product-Items">
-            <nav class="item">
-                <img src="~/Image/Toys1.jpg" alt="Tên ảnh" style="" />
-                <h4>Tên sản phẩm</h4>
-                <h5>Giá sản phẩm</h5>
-                <button>Mua Hàng</button>
-            </nav>
+            @foreach (var product in Model)
+            {
+                <nav class="item">
+                    <img src="@product.Image" alt="@product.Name" />
+                    <h4>@product.Name</h4>
+                    <h5>@product.Price <span>VNĐ</span></h5>
+                    <button>Mua Hàng</button>
+                </nav>
+            }
         </div>
     </section>
 </body>

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1d25b273feaf42c08f4a03868d9d7f71" Name="Diagram1">
+      <Diagram DiagramId="2ca866b2621a4c6a8cdfa3b7409737fc" Name="Diagram1">
         <EntityTypeShape EntityType="KidMartStoreModel.Cart" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="KidMartStoreModel.Category" Width="1.5" PointX="7.75" PointY="2.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KidMartStoreModel.Customer" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
@@ -12,7 +12,7 @@
         <EntityTypeShape EntityType="KidMartStoreModel.Detail_Order" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="KidMartStoreModel.Order" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KidMartStoreModel.Product" Width="1.5" PointX="10" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="KidMartStoreModel.Promotion" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="KidMartStoreModel.Promotion" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
         <AssociationConnector Association="KidMartStoreModel.FK__Cart__ID_Custome__3E52440B" ManuallyRouted="false" />
         <AssociationConnector Association="KidMartStoreModel.FK__Detail_Ca__ID_Ca__412EB0B6" ManuallyRouted="false" />
         <AssociationConnector Association="KidMartStoreModel.FK__Product__ID_Cate__3B75D760" ManuallyRouted="false" />
