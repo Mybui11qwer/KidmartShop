@@ -16,7 +16,15 @@ namespace KidMartStore.Controllers
     {
         private KidMartStoreEntities database = new KidMartStoreEntities();
 
-        public ActionResult Index(Khách_Hàng KhachHang)
+        public ActionResult Index()
+        {
+            return View();
+        }
+        public ActionResult GioiThieu()
+        {
+            return View();
+        }
+        public ActionResult SanPham()
         {
             return View();
         }

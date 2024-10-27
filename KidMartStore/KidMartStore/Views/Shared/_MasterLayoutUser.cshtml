@@ -8,6 +8,7 @@
     <title>@ViewBag.Title - KidMartStore</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link rel="icon" href="~/Image/avarta-kidmart.png" style="width:32px;height:32px"/>
     <link rel="stylesheet" href="~/Content/Layout/Header.css" />
     <link rel="stylesheet" href="~/Content/Layout/Main.css" />
     <style>
@@ -133,6 +134,7 @@
             }
         .menu-product{
             position: relative;
+            transition: all 1s ease;
         }
         .menu-product:hover .menu-content {
             display: grid;
@@ -167,9 +169,9 @@
         <div></div>
         <nav class="accordion-header-toggle-left">
             <a href="~/Home/Index">Trang chủ</a>
-            <a href="#">Giới thiệu</a>
+            <a href="~/Home/GioiThieu">Giới thiệu</a>
             <nav class="menu-product">
-                <a style="align-items:center" href="#">Sản phẩm <span><img src="~/Image/down-arrow.png" style="width: 10px;height: 12px"/></span></a>
+                <a style="align-items:center" href="~/Home/SanPham">Sản phẩm <span><img src="~/Image/down-arrow.png" style="width: 10px;height: 12px"/></span></a>
                 <div class="menu-content">
                     <div><a href="#">Quần áo</a></div>
                     <div><a href="#">Đồ chơi</a></div>
