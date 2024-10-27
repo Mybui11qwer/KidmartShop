@@ -152,7 +152,7 @@
             @if (Session["Email"] != null)
             {
                 <a style="color: white; text-decoration:none" href="#"><img src="~/Image/icon-cart-white.png" style="width:32px; height: 32px; margin-right:5px" /></a>
-                <a style="color: white; text-decoration:none">Hello <span>@(Session["Email"] ?? "Guest")</span>!</a>
+                <a style="color: white; text-decoration:none">Hello <span>@(Session["Name"] ?? "Guest")</span>!</a>
                 <a style="color: white; text-decoration:none" href="~/Account/Logout">Logout</a>
             }
             @if (Session["Email"] == null)

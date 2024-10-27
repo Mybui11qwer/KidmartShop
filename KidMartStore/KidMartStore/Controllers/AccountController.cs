@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using KidMartStore.Models;
 using System.Security.Cryptography;
 using System.Text;
+using System.Net.PeerToPeer;
 
 public class AccountController : Controller
 {
@@ -13,23 +14,21 @@ public class AccountController : Controller
         return View();
     }
     [HttpPost]
-    public ActionResult Login(Customer KhachHang)
+    public ActionResult Login(Customer customer)
     {
-        var checkEmail = db.Customers.Where(s => s.Email == KhachHang.Email).FirstOrDefault();
-        var checkPassword = db.Customers.Where(s => s.Password == KhachHang.Password).FirstOrDefault();
-        if (checkEmail == null || checkPassword == null)
+        if (ModelState.IsValid)
         {
-            if (checkEmail == null || checkPassword == null)
+            // Kiểm tra thông tin đăng nhập
+            var checkUser = db.Customers.FirstOrDefault(u => u.Email == customer.Email && u.Password == customer.Password);
+            if (checkUser != null)
             {
-                ModelState.AddModelError("", "Tài Khoản Không Tồn Tại");
-                return View("Login");
+                // Lưu tên người dùng vào session
+                Session["Email"] = checkUser.Email;
+                Session["Name"] = checkUser.Username;
+
+                return RedirectToAction("Index", "Home");
             }
-        }
-        else
-        {
-            Session["Email"] = KhachHang.Email;
-            Session["FullName"] = KhachHang.Phone;
-            return RedirectToAction("Index", "Home");
+            ModelState.AddModelError("", "Tên đăng nhập hoặc mật khẩu không chính xác.");
         }
         return View();
     }
@@ -39,11 +38,11 @@ public class AccountController : Controller
     }
 
     [HttpPost]
-    public ActionResult Register(Customer KhachHangMoi)
+    public ActionResult Register(Customer NewCustomer)
     {
         try
         {
-            db.Customers.Add(KhachHangMoi);
+            db.Customers.Add(NewCustomer);
             db.SaveChanges();
             return RedirectToAction("Login");
         }

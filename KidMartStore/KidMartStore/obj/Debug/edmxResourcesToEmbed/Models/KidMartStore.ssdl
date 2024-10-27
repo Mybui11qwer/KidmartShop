@@ -1,218 +1,188 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="KidMartStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="Chi_tiết_đơn_hàng">
+  <EntityType Name="Cart">
     <Key>
-      <PropertyRef Name="Mã_chi_tiết_đơn_hàng" />
+      <PropertyRef Name="ID_Cart" />
     </Key>
-    <Property Name="Mã_chi_tiết_đơn_hàng" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Mã_đơn_hàng" Type="int" Nullable="false" />
-    <Property Name="Mã_sản_phẩm" Type="int" Nullable="false" />
-    <Property Name="Số_lượng" Type="int" Nullable="false" />
-    <Property Name="Đơn_giá" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="ID_Cart" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Customer" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="Chi_tiết_giỏ_hàng">
+  <EntityType Name="Category">
     <Key>
-      <PropertyRef Name="Mã_chi_tiết_giỏ_hàng" />
+      <PropertyRef Name="ID_Category" />
     </Key>
-    <Property Name="Mã_chi_tiết_giỏ_hàng" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Mã_giỏ_hàng" Type="int" Nullable="false" />
-    <Property Name="Mã_sản_phẩm" Type="int" Nullable="false" />
-    <Property Name="Số_lượng" Type="int" />
+    <Property Name="ID_Category" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_Category" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
-  <EntityType Name="Danh_mục_sản_phẩm">
+  <EntityType Name="Customer">
     <Key>
-      <PropertyRef Name="Mã_danh_mục" />
+      <PropertyRef Name="ID_Customer" />
     </Key>
-    <Property Name="Mã_danh_mục" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Tên_danh_mục" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ID_Customer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Phone" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="255" />
+    <Property Name="Gender" Type="char" MaxLength="1" />
+    <Property Name="Avarta" Type="varbinary(max)" />
   </EntityType>
-  <EntityType Name="Đơn_hàng">
+  <EntityType Name="Detail_Cart">
     <Key>
-      <PropertyRef Name="Mã_đơn_hàng" />
+      <PropertyRef Name="ID_Detail_Cart" />
     </Key>
-    <Property Name="Mã_đơn_hàng" Type="int" Nullable="false" />
-    <Property Name="Mã_KH" Type="int" Nullable="false" />
-    <Property Name="Ngày_đặt_hàng" Type="date" Nullable="false" />
-    <Property Name="Tổng_tiền" Type="decimal" Precision="10" Scale="2" Nullable="false" />
-    <Property Name="Trạng_thái" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Mã_giảm" Type="int" />
+    <Property Name="ID_Detail_Cart" Type="int" Nullable="false" />
+    <Property Name="ID_Cart" Type="int" Nullable="false" />
+    <Property Name="ID_Product" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="Giảm_giá">
+  <EntityType Name="Detail_Order">
     <Key>
-      <PropertyRef Name="Mã_giảm" />
+      <PropertyRef Name="ID_Detail_Order" />
     </Key>
-    <Property Name="Mã_giảm" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Phần_trăm_giảm" Type="decimal" Precision="5" Scale="2" Nullable="false" />
-    <Property Name="Ngày_bắt_đầu" Type="date" Nullable="false" />
-    <Property Name="Ngày_kết_thúc" Type="date" Nullable="false" />
-    <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID_Detail_Order" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Order" Type="int" Nullable="false" />
+    <Property Name="ID_Product" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Unit_Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
   </EntityType>
-  <EntityType Name="Giỏ_hàng">
+  <EntityType Name="Orders">
     <Key>
-      <PropertyRef Name="Mã_giỏ_hàng" />
+      <PropertyRef Name="ID_Order" />
     </Key>
-    <Property Name="Mã_giỏ_hàng" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Mã_KH" Type="int" Nullable="false" />
+    <Property Name="ID_Order" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Customer" Type="int" Nullable="false" />
+    <Property Name="Order_Date" Type="date" Nullable="false" />
+    <Property Name="Total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ID_Sale" Type="int" />
   </EntityType>
-  <EntityType Name="Khách_Hàng">
+  <EntityType Name="Product">
     <Key>
-      <PropertyRef Name="Mã_KH" />
+      <PropertyRef Name="ID_Product" />
     </Key>
-    <Property Name="Mã_KH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Họ_và_Tên" Type="varchar" MaxLength="255" Nullable="false" />
-    <Property Name="Email" Type="varchar" MaxLength="255" Nullable="false" />
-    <Property Name="Số_điện_thoại" Type="varchar" MaxLength="15" />
-    <Property Name="Địa_chỉ" Type="varchar" MaxLength="255" />
-    <Property Name="Giới_tính" Type="char" MaxLength="1" />
-    <Property Name="Password" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ID_Product" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Category" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Description" Type="text" />
+    <Property Name="Image" Type="varbinary(max)" />
   </EntityType>
-  <EntityType Name="Sản_phẩm">
+  <EntityType Name="Promotion">
     <Key>
-      <PropertyRef Name="Mã_sản_phẩm" />
+      <PropertyRef Name="ID_Sale" />
     </Key>
-    <Property Name="Mã_sản_phẩm" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Mã_danh_mục" Type="int" />
-    <Property Name="Tên_sản_phẩm" Type="varchar" MaxLength="255" />
-    <Property Name="Giá_bán" Type="decimal" Precision="10" Scale="2" />
-    <Property Name="Số_lượng_tồn_kho" Type="int" />
-    <Property Name="Mô_tả" Type="text" />
+    <Property Name="ID_Sale" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Percent_Discount" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="Start_Date" Type="date" Nullable="false" />
+    <Property Name="End_Date" Type="date" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="20" Nullable="false" />
   </EntityType>
-  <Association Name="FK__Chi_tiết___Mã_đơ__4AB81AF0">
-    <End Role="Đơn_hàng" Type="Self.Đơn_hàng" Multiplicity="1" />
-    <End Role="Chi_tiết_đơn_hàng" Type="Self.Chi_tiết_đơn_hàng" Multiplicity="*" />
+  <Association Name="FK__Cart__ID_Custome__3E52440B">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Đơn_hàng">
-        <PropertyRef Name="Mã_đơn_hàng" />
+      <Principal Role="Customer">
+        <PropertyRef Name="ID_Customer" />
       </Principal>
-      <Dependent Role="Chi_tiết_đơn_hàng">
-        <PropertyRef Name="Mã_đơn_hàng" />
+      <Dependent Role="Cart">
+        <PropertyRef Name="ID_Customer" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Chi_tiết___Mã_gi__412EB0B6">
-    <End Role="Giỏ_hàng" Type="Self.Giỏ_hàng" Multiplicity="1" />
-    <End Role="Chi_tiết_giỏ_hàng" Type="Self.Chi_tiết_giỏ_hàng" Multiplicity="*" />
+  <Association Name="FK__Detail_Ca__ID_Ca__412EB0B6">
+    <End Role="Cart" Type="Self.Cart" Multiplicity="1" />
+    <End Role="Detail_Cart" Type="Self.Detail_Cart" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Giỏ_hàng">
-        <PropertyRef Name="Mã_giỏ_hàng" />
+      <Principal Role="Cart">
+        <PropertyRef Name="ID_Cart" />
       </Principal>
-      <Dependent Role="Chi_tiết_giỏ_hàng">
-        <PropertyRef Name="Mã_giỏ_hàng" />
+      <Dependent Role="Detail_Cart">
+        <PropertyRef Name="ID_Cart" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Chi_tiết___Mã_sả__4222D4EF">
-    <End Role="Sản_phẩm" Type="Self.Sản_phẩm" Multiplicity="1" />
-    <End Role="Chi_tiết_giỏ_hàng" Type="Self.Chi_tiết_giỏ_hàng" Multiplicity="*" />
+  <Association Name="FK__Detail_Or__ID_Or__49C3F6B7">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+    <End Role="Detail_Order" Type="Self.Detail_Order" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Sản_phẩm">
-        <PropertyRef Name="Mã_sản_phẩm" />
+      <Principal Role="Orders">
+        <PropertyRef Name="ID_Order" />
       </Principal>
-      <Dependent Role="Chi_tiết_giỏ_hàng">
-        <PropertyRef Name="Mã_sản_phẩm" />
+      <Dependent Role="Detail_Order">
+        <PropertyRef Name="ID_Order" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Chi_tiết___Mã_sả__4BAC3F29">
-    <End Role="Sản_phẩm" Type="Self.Sản_phẩm" Multiplicity="1" />
-    <End Role="Chi_tiết_đơn_hàng" Type="Self.Chi_tiết_đơn_hàng" Multiplicity="*" />
+  <Association Name="FK__Orders__ID_Custo__45F365D3">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Sản_phẩm">
-        <PropertyRef Name="Mã_sản_phẩm" />
+      <Principal Role="Customer">
+        <PropertyRef Name="ID_Customer" />
       </Principal>
-      <Dependent Role="Chi_tiết_đơn_hàng">
-        <PropertyRef Name="Mã_sản_phẩm" />
+      <Dependent Role="Orders">
+        <PropertyRef Name="ID_Customer" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Đơn_hàng__Mã_giả__47DBAE45">
-    <End Role="Giảm_giá" Type="Self.Giảm_giá" Multiplicity="0..1" />
-    <End Role="Đơn_hàng" Type="Self.Đơn_hàng" Multiplicity="*" />
+  <Association Name="FK__Orders__ID_Sale__46E78A0C">
+    <End Role="Promotion" Type="Self.Promotion" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Giảm_giá">
-        <PropertyRef Name="Mã_giảm" />
+      <Principal Role="Promotion">
+        <PropertyRef Name="ID_Sale" />
       </Principal>
-      <Dependent Role="Đơn_hàng">
-        <PropertyRef Name="Mã_giảm" />
+      <Dependent Role="Orders">
+        <PropertyRef Name="ID_Sale" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Đơn_hàng__Mã_KH__46E78A0C">
-    <End Role="Khách_Hàng" Type="Self.Khách_Hàng" Multiplicity="1" />
-    <End Role="Đơn_hàng" Type="Self.Đơn_hàng" Multiplicity="*" />
+  <Association Name="FK__Product__ID_Cate__3B75D760">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Khách_Hàng">
-        <PropertyRef Name="Mã_KH" />
+      <Principal Role="Category">
+        <PropertyRef Name="ID_Category" />
       </Principal>
-      <Dependent Role="Đơn_hàng">
-        <PropertyRef Name="Mã_KH" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Giỏ_hàng__Mã_KH__3E52440B">
-    <End Role="Khách_Hàng" Type="Self.Khách_Hàng" Multiplicity="1" />
-    <End Role="Giỏ_hàng" Type="Self.Giỏ_hàng" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Khách_Hàng">
-        <PropertyRef Name="Mã_KH" />
-      </Principal>
-      <Dependent Role="Giỏ_hàng">
-        <PropertyRef Name="Mã_KH" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Sản_phẩm__Mã_dan__3B75D760">
-    <End Role="Danh_mục_sản_phẩm" Type="Self.Danh_mục_sản_phẩm" Multiplicity="0..1" />
-    <End Role="Sản_phẩm" Type="Self.Sản_phẩm" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Danh_mục_sản_phẩm">
-        <PropertyRef Name="Mã_danh_mục" />
-      </Principal>
-      <Dependent Role="Sản_phẩm">
-        <PropertyRef Name="Mã_danh_mục" />
+      <Dependent Role="Product">
+        <PropertyRef Name="ID_Category" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="KidMartStoreModelStoreContainer">
-    <EntitySet Name="Chi_tiết_đơn_hàng" EntityType="Self.Chi_tiết_đơn_hàng" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Chi_tiết_giỏ_hàng" EntityType="Self.Chi_tiết_giỏ_hàng" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Danh_mục_sản_phẩm" EntityType="Self.Danh_mục_sản_phẩm" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Đơn_hàng" EntityType="Self.Đơn_hàng" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Giảm_giá" EntityType="Self.Giảm_giá" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Giỏ_hàng" EntityType="Self.Giỏ_hàng" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Khách_Hàng" EntityType="Self.Khách_Hàng" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Sản_phẩm" EntityType="Self.Sản_phẩm" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__Chi_tiết___Mã_đơ__4AB81AF0" Association="Self.FK__Chi_tiết___Mã_đơ__4AB81AF0">
-      <End Role="Đơn_hàng" EntitySet="Đơn_hàng" />
-      <End Role="Chi_tiết_đơn_hàng" EntitySet="Chi_tiết_đơn_hàng" />
+    <EntitySet Name="Cart" EntityType="Self.Cart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Detail_Cart" EntityType="Self.Detail_Cart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Detail_Order" EntityType="Self.Detail_Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Promotion" EntityType="Self.Promotion" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Cart__ID_Custome__3E52440B" Association="Self.FK__Cart__ID_Custome__3E52440B">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Cart" EntitySet="Cart" />
     </AssociationSet>
-    <AssociationSet Name="FK__Chi_tiết___Mã_gi__412EB0B6" Association="Self.FK__Chi_tiết___Mã_gi__412EB0B6">
-      <End Role="Giỏ_hàng" EntitySet="Giỏ_hàng" />
-      <End Role="Chi_tiết_giỏ_hàng" EntitySet="Chi_tiết_giỏ_hàng" />
+    <AssociationSet Name="FK__Detail_Ca__ID_Ca__412EB0B6" Association="Self.FK__Detail_Ca__ID_Ca__412EB0B6">
+      <End Role="Cart" EntitySet="Cart" />
+      <End Role="Detail_Cart" EntitySet="Detail_Cart" />
     </AssociationSet>
-    <AssociationSet Name="FK__Chi_tiết___Mã_sả__4222D4EF" Association="Self.FK__Chi_tiết___Mã_sả__4222D4EF">
-      <End Role="Sản_phẩm" EntitySet="Sản_phẩm" />
-      <End Role="Chi_tiết_giỏ_hàng" EntitySet="Chi_tiết_giỏ_hàng" />
+    <AssociationSet Name="FK__Detail_Or__ID_Or__49C3F6B7" Association="Self.FK__Detail_Or__ID_Or__49C3F6B7">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="Detail_Order" EntitySet="Detail_Order" />
     </AssociationSet>
-    <AssociationSet Name="FK__Chi_tiết___Mã_sả__4BAC3F29" Association="Self.FK__Chi_tiết___Mã_sả__4BAC3F29">
-      <End Role="Sản_phẩm" EntitySet="Sản_phẩm" />
-      <End Role="Chi_tiết_đơn_hàng" EntitySet="Chi_tiết_đơn_hàng" />
+    <AssociationSet Name="FK__Orders__ID_Custo__45F365D3" Association="Self.FK__Orders__ID_Custo__45F365D3">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Orders" EntitySet="Orders" />
     </AssociationSet>
-    <AssociationSet Name="FK__Đơn_hàng__Mã_giả__47DBAE45" Association="Self.FK__Đơn_hàng__Mã_giả__47DBAE45">
-      <End Role="Giảm_giá" EntitySet="Giảm_giá" />
-      <End Role="Đơn_hàng" EntitySet="Đơn_hàng" />
+    <AssociationSet Name="FK__Orders__ID_Sale__46E78A0C" Association="Self.FK__Orders__ID_Sale__46E78A0C">
+      <End Role="Promotion" EntitySet="Promotion" />
+      <End Role="Orders" EntitySet="Orders" />
     </AssociationSet>
-    <AssociationSet Name="FK__Đơn_hàng__Mã_KH__46E78A0C" Association="Self.FK__Đơn_hàng__Mã_KH__46E78A0C">
-      <End Role="Khách_Hàng" EntitySet="Khách_Hàng" />
-      <End Role="Đơn_hàng" EntitySet="Đơn_hàng" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Giỏ_hàng__Mã_KH__3E52440B" Association="Self.FK__Giỏ_hàng__Mã_KH__3E52440B">
-      <End Role="Khách_Hàng" EntitySet="Khách_Hàng" />
-      <End Role="Giỏ_hàng" EntitySet="Giỏ_hàng" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Sản_phẩm__Mã_dan__3B75D760" Association="Self.FK__Sản_phẩm__Mã_dan__3B75D760">
-      <End Role="Danh_mục_sản_phẩm" EntitySet="Danh_mục_sản_phẩm" />
-      <End Role="Sản_phẩm" EntitySet="Sản_phẩm" />
+    <AssociationSet Name="FK__Product__ID_Cate__3B75D760" Association="Self.FK__Product__ID_Cate__3B75D760">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Product" EntitySet="Product" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

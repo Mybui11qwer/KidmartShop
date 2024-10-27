@@ -24,12 +24,7 @@ namespace KidMartStore.Models
         {
             throw new UnintentionalCodeFirstException();
         }
-
-        internal void SaveChanges()
-        {
-            throw new NotImplementedException();
-        }
-
+    
         public virtual DbSet<Cart> Carts { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }

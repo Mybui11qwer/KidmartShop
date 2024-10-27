@@ -665,3 +665,24 @@ D:\IT-Project DAPM\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.RemoteCo
 D:\IT-Project DAPM\KidMartStore\KidMartStore\bin\Microsoft.AspNet.Scaffolding.EntityFramework.12.0.xml
 D:\IT-Project DAPM\KidMartStore\KidMartStore\bin\Microsoft.AspNet.Scaffolding.12.0.xml
 D:\IT-Project DAPM\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.GraphModel.xml
+D:\IT_DAPM_Kidmart\KidMartStore\KidMartStore\bin\Microsoft.AspNet.Scaffolding.EntityFramework.12.0.dll
+D:\IT_DAPM_Kidmart\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.Interop.dll
+D:\IT_DAPM_Kidmart\KidMartStore\KidMartStore\bin\Microsoft.AspNet.Scaffolding.12.0.dll
+D:\IT_DAPM_Kidmart\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime.dll
+D:\IT_DAPM_Kidmart\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.Shell.Design.dll
+D:\IT_DAPM_Kidmart\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.TextTemplating.Interfaces.11.0.dll
+D:\IT_DAPM_Kidmart\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.TextTemplating.Interfaces.10.0.dll
+D:\IT_DAPM_Kidmart\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.ComponentModelHost.dll
+D:\IT_DAPM_Kidmart\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.Shell.Framework.dll
+D:\IT_DAPM_Kidmart\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.Shell.15.0.dll
+D:\IT_DAPM_Kidmart\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.Telemetry.dll
+D:\IT_DAPM_Kidmart\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.GraphModel.dll
+D:\IT_DAPM_Kidmart\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.RpcContracts.dll
+D:\IT_DAPM_Kidmart\KidMartStore\KidMartStore\bin\System.Collections.Immutable.dll
+D:\IT_DAPM_Kidmart\KidMartStore\KidMartStore\bin\Microsoft.Bcl.AsyncInterfaces.dll
+D:\IT_DAPM_Kidmart\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.ProjectAggregator.dll
+D:\IT_DAPM_Kidmart\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.Utilities.Internal.dll
+D:\IT_DAPM_Kidmart\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.RemoteControl.dll
+D:\IT_DAPM_Kidmart\KidMartStore\KidMartStore\bin\Microsoft.AspNet.Scaffolding.EntityFramework.12.0.xml
+D:\IT_DAPM_Kidmart\KidMartStore\KidMartStore\bin\Microsoft.AspNet.Scaffolding.12.0.xml
+D:\IT_DAPM_Kidmart\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.GraphModel.xml

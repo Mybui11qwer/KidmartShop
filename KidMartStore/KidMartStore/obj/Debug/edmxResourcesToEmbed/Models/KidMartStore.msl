@@ -1,88 +1,90 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="KidMartStoreModelStoreContainer" CdmEntityContainer="KidMartStoreEntities">
-    <EntitySetMapping Name="Chi_tiết_đơn_hàng">
-      <EntityTypeMapping TypeName="KidMartStoreModel.Chi_tiết_đơn_hàng">
-        <MappingFragment StoreEntitySet="Chi_tiết_đơn_hàng">
-          <ScalarProperty Name="Mã_chi_tiết_đơn_hàng" ColumnName="Mã_chi_tiết_đơn_hàng" />
-          <ScalarProperty Name="Mã_đơn_hàng" ColumnName="Mã_đơn_hàng" />
-          <ScalarProperty Name="Mã_sản_phẩm" ColumnName="Mã_sản_phẩm" />
-          <ScalarProperty Name="Số_lượng" ColumnName="Số_lượng" />
-          <ScalarProperty Name="Đơn_giá" ColumnName="Đơn_giá" />
+    <EntitySetMapping Name="Carts">
+      <EntityTypeMapping TypeName="KidMartStoreModel.Cart">
+        <MappingFragment StoreEntitySet="Cart">
+          <ScalarProperty Name="ID_Cart" ColumnName="ID_Cart" />
+          <ScalarProperty Name="ID_Customer" ColumnName="ID_Customer" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Chi_tiết_giỏ_hàng">
-      <EntityTypeMapping TypeName="KidMartStoreModel.Chi_tiết_giỏ_hàng">
-        <MappingFragment StoreEntitySet="Chi_tiết_giỏ_hàng">
-          <ScalarProperty Name="Mã_chi_tiết_giỏ_hàng" ColumnName="Mã_chi_tiết_giỏ_hàng" />
-          <ScalarProperty Name="Mã_giỏ_hàng" ColumnName="Mã_giỏ_hàng" />
-          <ScalarProperty Name="Mã_sản_phẩm" ColumnName="Mã_sản_phẩm" />
-          <ScalarProperty Name="Số_lượng" ColumnName="Số_lượng" />
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="KidMartStoreModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="ID_Category" ColumnName="ID_Category" />
+          <ScalarProperty Name="Name_Category" ColumnName="Name_Category" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Danh_mục_sản_phẩm">
-      <EntityTypeMapping TypeName="KidMartStoreModel.Danh_mục_sản_phẩm">
-        <MappingFragment StoreEntitySet="Danh_mục_sản_phẩm">
-          <ScalarProperty Name="Mã_danh_mục" ColumnName="Mã_danh_mục" />
-          <ScalarProperty Name="Tên_danh_mục" ColumnName="Tên_danh_mục" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Đơn_hàng">
-      <EntityTypeMapping TypeName="KidMartStoreModel.Đơn_hàng">
-        <MappingFragment StoreEntitySet="Đơn_hàng">
-          <ScalarProperty Name="Mã_đơn_hàng" ColumnName="Mã_đơn_hàng" />
-          <ScalarProperty Name="Mã_KH" ColumnName="Mã_KH" />
-          <ScalarProperty Name="Ngày_đặt_hàng" ColumnName="Ngày_đặt_hàng" />
-          <ScalarProperty Name="Tổng_tiền" ColumnName="Tổng_tiền" />
-          <ScalarProperty Name="Trạng_thái" ColumnName="Trạng_thái" />
-          <ScalarProperty Name="Mã_giảm" ColumnName="Mã_giảm" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Giảm_giá">
-      <EntityTypeMapping TypeName="KidMartStoreModel.Giảm_giá">
-        <MappingFragment StoreEntitySet="Giảm_giá">
-          <ScalarProperty Name="Mã_giảm" ColumnName="Mã_giảm" />
-          <ScalarProperty Name="Phần_trăm_giảm" ColumnName="Phần_trăm_giảm" />
-          <ScalarProperty Name="Ngày_bắt_đầu" ColumnName="Ngày_bắt_đầu" />
-          <ScalarProperty Name="Ngày_kết_thúc" ColumnName="Ngày_kết_thúc" />
-          <ScalarProperty Name="Code" ColumnName="Code" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Giỏ_hàng">
-      <EntityTypeMapping TypeName="KidMartStoreModel.Giỏ_hàng">
-        <MappingFragment StoreEntitySet="Giỏ_hàng">
-          <ScalarProperty Name="Mã_giỏ_hàng" ColumnName="Mã_giỏ_hàng" />
-          <ScalarProperty Name="Mã_KH" ColumnName="Mã_KH" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Khách_Hàng">
-      <EntityTypeMapping TypeName="KidMartStoreModel.Khách_Hàng">
-        <MappingFragment StoreEntitySet="Khách_Hàng">
-          <ScalarProperty Name="Mã_KH" ColumnName="Mã_KH" />
-          <ScalarProperty Name="Họ_và_Tên" ColumnName="Họ_và_Tên" />
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="KidMartStoreModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="ID_Customer" ColumnName="ID_Customer" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
           <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Số_điện_thoại" ColumnName="Số_điện_thoại" />
-          <ScalarProperty Name="Địa_chỉ" ColumnName="Địa_chỉ" />
-          <ScalarProperty Name="Giới_tính" ColumnName="Giới_tính" />
           <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Avarta" ColumnName="Avarta" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Sản_phẩm">
-      <EntityTypeMapping TypeName="KidMartStoreModel.Sản_phẩm">
-        <MappingFragment StoreEntitySet="Sản_phẩm">
-          <ScalarProperty Name="Mã_sản_phẩm" ColumnName="Mã_sản_phẩm" />
-          <ScalarProperty Name="Mã_danh_mục" ColumnName="Mã_danh_mục" />
-          <ScalarProperty Name="Tên_sản_phẩm" ColumnName="Tên_sản_phẩm" />
-          <ScalarProperty Name="Giá_bán" ColumnName="Giá_bán" />
-          <ScalarProperty Name="Số_lượng_tồn_kho" ColumnName="Số_lượng_tồn_kho" />
-          <ScalarProperty Name="Mô_tả" ColumnName="Mô_tả" />
+    <EntitySetMapping Name="Detail_Cart">
+      <EntityTypeMapping TypeName="KidMartStoreModel.Detail_Cart">
+        <MappingFragment StoreEntitySet="Detail_Cart">
+          <ScalarProperty Name="ID_Detail_Cart" ColumnName="ID_Detail_Cart" />
+          <ScalarProperty Name="ID_Cart" ColumnName="ID_Cart" />
+          <ScalarProperty Name="ID_Product" ColumnName="ID_Product" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Detail_Order">
+      <EntityTypeMapping TypeName="KidMartStoreModel.Detail_Order">
+        <MappingFragment StoreEntitySet="Detail_Order">
+          <ScalarProperty Name="ID_Detail_Order" ColumnName="ID_Detail_Order" />
+          <ScalarProperty Name="ID_Order" ColumnName="ID_Order" />
+          <ScalarProperty Name="ID_Product" ColumnName="ID_Product" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Unit_Price" ColumnName="Unit_Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="KidMartStoreModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="ID_Order" ColumnName="ID_Order" />
+          <ScalarProperty Name="ID_Customer" ColumnName="ID_Customer" />
+          <ScalarProperty Name="Order_Date" ColumnName="Order_Date" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ID_Sale" ColumnName="ID_Sale" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="KidMartStoreModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="ID_Product" ColumnName="ID_Product" />
+          <ScalarProperty Name="ID_Category" ColumnName="ID_Category" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Promotions">
+      <EntityTypeMapping TypeName="KidMartStoreModel.Promotion">
+        <MappingFragment StoreEntitySet="Promotion">
+          <ScalarProperty Name="ID_Sale" ColumnName="ID_Sale" />
+          <ScalarProperty Name="Percent_Discount" ColumnName="Percent_Discount" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+          <ScalarProperty Name="End_Date" ColumnName="End_Date" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

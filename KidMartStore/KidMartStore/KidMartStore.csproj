@@ -321,43 +321,43 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Cart.cs">
-      <DependentUpon>KidMart.tt</DependentUpon>
+      <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Category.cs">
-      <DependentUpon>KidMart.tt</DependentUpon>
+      <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Customer.cs">
-      <DependentUpon>KidMart.tt</DependentUpon>
+      <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Detail_Cart.cs">
-      <DependentUpon>KidMart.tt</DependentUpon>
+      <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Detail_Order.cs">
-      <DependentUpon>KidMart.tt</DependentUpon>
+      <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\KidMart.Context.cs">
+    <Compile Include="Models\KidMartStore.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>KidMart.Context.tt</DependentUpon>
+      <DependentUpon>KidMartStore.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\KidMart.cs">
+    <Compile Include="Models\KidMartStore.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>KidMart.tt</DependentUpon>
+      <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\KidMart.Designer.cs">
+    <Compile Include="Models\KidMartStore.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>KidMart.edmx</DependentUpon>
+      <DependentUpon>KidMartStore.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Order.cs">
-      <DependentUpon>KidMart.tt</DependentUpon>
+      <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Product.cs">
-      <DependentUpon>KidMart.tt</DependentUpon>
+      <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Promotion.cs">
-      <DependentUpon>KidMart.tt</DependentUpon>
+      <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -412,15 +412,15 @@
     <Content Include="Image\policies_icon_4.png" />
     <Content Include="Image\user-icon.png" />
     <Content Include="Image\Toys1.jpg" />
-    <Content Include="Models\KidMart.Context.tt">
+    <Content Include="Models\KidMartStore.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>KidMart.edmx</DependentUpon>
-      <LastGenOutput>KidMart.Context.cs</LastGenOutput>
+      <DependentUpon>KidMartStore.edmx</DependentUpon>
+      <LastGenOutput>KidMartStore.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\KidMart.tt">
+    <Content Include="Models\KidMartStore.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>KidMart.edmx</DependentUpon>
-      <LastGenOutput>KidMart.cs</LastGenOutput>
+      <DependentUpon>KidMartStore.edmx</DependentUpon>
+      <LastGenOutput>KidMartStore.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -428,12 +428,12 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\KidMart.edmx">
+    <EntityDeploy Include="Models\KidMartStore.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>KidMart.Designer.cs</LastGenOutput>
+      <LastGenOutput>KidMartStore.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\KidMart.edmx.diagram">
-      <DependentUpon>KidMart.edmx</DependentUpon>
+    <Content Include="Models\KidMartStore.edmx.diagram">
+      <DependentUpon>KidMartStore.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
