@@ -27,6 +27,7 @@ public class AccountController : Controller
                 Session["Name"] = checkUser.Username;
                 Session["Address"] = checkUser.Address;
                 Session["Phone"] = checkUser.Phone;
+                Session["ID_Customer"] = checkUser.ID_Customer;
 
                 return RedirectToAction("Index", "Home");
             }

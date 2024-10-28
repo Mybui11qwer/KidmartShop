@@ -378,6 +378,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\CSS\Address.css" />
     <Content Include="Content\CSS\Index.css" />
     <Content Include="Content\CSS\infor.css" />
     <Content Include="Content\CSS\LoginUser.css" />

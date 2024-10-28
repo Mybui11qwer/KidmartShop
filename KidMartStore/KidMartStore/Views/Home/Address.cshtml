@@ -4,26 +4,23 @@
     Layout = "~/Views/Shared/_MasterLayoutUser.cshtml";
 }
 
-<link rel="stylesheet" href="~/Content/CSS/Profile.css" />
-<section class="information-top" style="margin-top:80px;"></section>
-<main class="Infor-Account" style="margin-top:20px">
+<link rel="stylesheet" href="~/Content/CSS/Address.css" />
+<section class="address-top" style="margin-top:80px;"></section>
+<main class="Address-Account" style="margin-top:20px">
     <div class="content1">
         <h3>Thông tin tài khoản</h3>
-        <section class="Information-content-left">
+        <section class="Address-content-left">
             <h5>Xin chào <span>@(Session["Name"] ?? "Guest")!</span></h5>
-            <a href="/Home/Profile">Thông tin tài khoản</a><br />
-            <a href="/Home/Address">Địa chỉ</a>
+            <a href="~/Home/Profile">Thông tin tài khoản</a><br />
+            <a href="~/Home/Address">Địa chỉ</a>
         </section>
     </div>
     <div class="content2">
-        <section class="Information-content-right">
-            <h3>Tài khoản của bạn</h3>
-            <div class="Information-User">
-                <h6>Tên người dùng: <span>@Session["Name"]</span></h6>
-                <h6>Địa chỉ: <span>@Session["Address"]</span></h6>
-                <h6>Địa chỉ Email: <span>@Session["Email"]</span></h6>
-                <h6>Số điện thoại: <span>@Session["Phone"]</span></h6>
-                <a>Chỉnh sửa thông tin cá nhân</a>
+        <section class="Address-content-right">
+            <h3>Địa chỉ bạn</h3>
+            <div class="Address-User">
+                <h5>Địa chỉ người dùng: <span>@(Session["Address"] ?? "Người dùng chưa đăng ký địa chỉ")</span></h5>
+                <button>Thay đổi địa chỉ</button>
             </div>
         </section>
     </div>

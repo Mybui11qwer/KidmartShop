@@ -61,7 +61,8 @@
             <div class="tab-content">
                 @foreach (var category in Model)
                 {
-                    <label>@category.ID_Category</label>
+
+                    <label><span>Danh mục</span> @category.Category.Name_Category</label>
                 }
             </div>
         </nav>
