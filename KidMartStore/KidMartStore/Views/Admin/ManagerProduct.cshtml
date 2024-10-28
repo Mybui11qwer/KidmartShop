@@ -1,0 +1,36 @@
+﻿@model List<KidMartStore.Models.Product>
+@{
+    ViewBag.Title = "ManagerProduct";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<link rel="stylesheet" href="~/Content/Admin/ManagerProduct.css" />
+<section class="product-table">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tên Sản phẩm</th>
+                <th>Mô tả</th>
+                <th>Giá (VNĐ)</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var products in Model)
+            {
+                <tr>
+                    <td>@products.ID_Product</td>
+                    <td>@products.Name</td>
+                    <td>@products.Description</td>
+                    <td>@products.Price</td>
+                    <td>
+                        <a href="#" class="edit">Chỉnh sửa</a>
+                        <a href="#" class="delete">Xóa</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <button class="add-product" onclick="window.location.href='AddNewProduct'">Thêm sản phẩm</button>
+</section>
+
