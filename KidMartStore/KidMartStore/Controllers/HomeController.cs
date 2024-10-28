@@ -31,5 +31,13 @@ namespace KidMartStore.Controllers
             List<Product> products = database.Products.ToList();
             return View(products);
         }
+        public ActionResult Profile()
+        {
+            return View();
+        }
+        public ActionResult Address()
+        {
+            return View();
+        }
     }
 }

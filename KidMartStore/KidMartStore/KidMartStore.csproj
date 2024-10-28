@@ -382,6 +382,7 @@
     <Content Include="Content\CSS\infor.css" />
     <Content Include="Content\CSS\LoginUser.css" />
     <Content Include="Content\CSS\ProductPages.css" />
+    <Content Include="Content\CSS\Profile.css" />
     <Content Include="Content\CSS\Slider.css" />
     <Content Include="Content\JS\Change.js" />
     <Content Include="Content\JS\Scroll-index.js" />
@@ -411,6 +412,7 @@
     <Content Include="Image\policies_icon_2.png" />
     <Content Include="Image\policies_icon_3.png" />
     <Content Include="Image\policies_icon_4.png" />
+    <Content Include="Image\User-icon-white.png" />
     <Content Include="Image\user-icon.png" />
     <Content Include="Image\Toys1.jpg" />
     <Content Include="Models\KidMartStore.Context.tt">
@@ -466,6 +468,8 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Home\GioiThieu.cshtml" />
     <Content Include="Views\Home\SanPham.cshtml" />
+    <Content Include="Views\Home\Profile.cshtml" />
+    <Content Include="Views\Home\Address.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

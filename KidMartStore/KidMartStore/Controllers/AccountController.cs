@@ -25,6 +25,8 @@ public class AccountController : Controller
                 // Lưu tên người dùng vào session
                 Session["Email"] = checkUser.Email;
                 Session["Name"] = checkUser.Username;
+                Session["Address"] = checkUser.Address;
+                Session["Phone"] = checkUser.Phone;
 
                 return RedirectToAction("Index", "Home");
             }

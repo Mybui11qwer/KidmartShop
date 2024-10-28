@@ -1,15 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\KidMartStore",
-    "\\KidMartStore\\KidMartStore",
-    "\\KidMartStore\\KidMartStore\\Content",
-    "\\KidMartStore\\KidMartStore\\Content\\CSS",
-    "\\KidMartStore\\KidMartStore\\Views",
-    "\\KidMartStore\\KidMartStore\\Views\\Account",
-    "\\KidMartStore\\KidMartStore\\Views\\Admin",
-    "\\KidMartStore\\KidMartStore\\Views\\Home"
+    ""
   ],
-  "SelectedNode": "\\KidMartStore\\KidMartStore\\Views\\Admin\\ManagerPage.cshtml",
+  "SelectedNode": "\\KidMartStore.sln",
   "PreviewInSolutionExplorer": false
 }

@@ -1,0 +1,19 @@
+﻿.Infor-Account {
+    display: flex;
+    margin-bottom: 100px;
+}
+
+    .Infor-Account .content1 {
+        width: max-content;
+        margin-right: 80px;
+    }
+
+    .Infor-Account .content2 {
+        width: 80%;
+        height: max-content;
+    }
+
+        .Infor-Account .content2 h3 {
+            border-bottom: 1px solid black;
+        }
+
