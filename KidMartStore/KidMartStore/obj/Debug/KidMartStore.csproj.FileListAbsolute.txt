@@ -686,3 +686,4 @@ D:\IT_DAPM_Kidmart\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.RemoteCo
 D:\IT_DAPM_Kidmart\KidMartStore\KidMartStore\bin\Microsoft.AspNet.Scaffolding.EntityFramework.12.0.xml
 D:\IT_DAPM_Kidmart\KidMartStore\KidMartStore\bin\Microsoft.AspNet.Scaffolding.12.0.xml
 D:\IT_DAPM_Kidmart\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.GraphModel.xml
+D:\IT-Project DAPM\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.ComponentModelHost.dll

@@ -26,9 +26,9 @@
     <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="Avarta" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Avatar" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Carts" Relationship="Self.FK__Cart__ID_Custome__3E52440B" FromRole="Customer" ToRole="Cart" />
     <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__ID_Custo__45F365D3" FromRole="Customer" ToRole="Orders" />
   </EntityType>
@@ -50,7 +50,7 @@
     <Property Name="ID_Order" Type="Int32" Nullable="false" />
     <Property Name="ID_Product" Type="Int32" Nullable="false" />
     <Property Name="Quantity" Type="Int32" Nullable="false" />
-    <Property Name="Unit_Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Unit_Price" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
     <NavigationProperty Name="Order" Relationship="Self.FK__Detail_Or__ID_Or__49C3F6B7" FromRole="Detail_Order" ToRole="Orders" />
   </EntityType>
   <EntityType Name="Order">
@@ -79,18 +79,29 @@
     <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Category" Relationship="Self.FK__Product__ID_Cate__3B75D760" FromRole="Product" ToRole="Category" />
+    <NavigationProperty Name="Promotions" Relationship="Self.Product_Promotion" FromRole="Product" ToRole="Promotion" />
+    <NavigationProperty Name="Sizes" Relationship="Self.Product_Size" FromRole="Product" ToRole="Size" />
   </EntityType>
   <EntityType Name="Promotion">
     <Key>
-      <PropertyRef Name="ID_Sale" />
+      <PropertyRef Name="ID_Promotion" />
     </Key>
-    <Property Name="ID_Sale" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Percent_Discount" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="ID_Promotion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Percent_Discount" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
     <Property Name="Name_Promotion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Start_Date" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="End_Date" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="Code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__ID_Sale__46E78A0C" FromRole="Promotion" ToRole="Orders" />
+    <NavigationProperty Name="Products" Relationship="Self.Product_Promotion" FromRole="Promotion" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Size">
+    <Key>
+      <PropertyRef Name="ID_Size" />
+    </Key>
+    <Property Name="ID_Size" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Size_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Products" Relationship="Self.Product_Size" FromRole="Size" ToRole="Product" />
   </EntityType>
   <Association Name="FK__Cart__ID_Custome__3E52440B">
     <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
@@ -157,12 +168,20 @@
     <End Role="Orders" Type="Self.Order" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Promotion">
-        <PropertyRef Name="ID_Sale" />
+        <PropertyRef Name="ID_Promotion" />
       </Principal>
       <Dependent Role="Orders">
         <PropertyRef Name="ID_Sale" />
       </Dependent>
     </ReferentialConstraint>
+  </Association>
+  <Association Name="Product_Promotion">
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <End Role="Promotion" Type="Self.Promotion" Multiplicity="*" />
+  </Association>
+  <Association Name="Product_Size">
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <End Role="Size" Type="Self.Size" Multiplicity="*" />
   </Association>
   <EntityContainer Name="KidMartStoreEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Carts" EntityType="Self.Cart" />
@@ -173,6 +192,7 @@
     <EntitySet Name="Orders" EntityType="Self.Order" />
     <EntitySet Name="Products" EntityType="Self.Product" />
     <EntitySet Name="Promotions" EntityType="Self.Promotion" />
+    <EntitySet Name="Sizes" EntityType="Self.Size" />
     <AssociationSet Name="FK__Cart__ID_Custome__3E52440B" Association="Self.FK__Cart__ID_Custome__3E52440B">
       <End Role="Customer" EntitySet="Customers" />
       <End Role="Cart" EntitySet="Carts" />
@@ -196,6 +216,14 @@
     <AssociationSet Name="FK__Orders__ID_Sale__46E78A0C" Association="Self.FK__Orders__ID_Sale__46E78A0C">
       <End Role="Promotion" EntitySet="Promotions" />
       <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="Product_Promotion" Association="Self.Product_Promotion">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Promotion" EntitySet="Promotions" />
+    </AssociationSet>
+    <AssociationSet Name="Product_Size" Association="Self.Product_Size">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Size" EntitySet="Sizes" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

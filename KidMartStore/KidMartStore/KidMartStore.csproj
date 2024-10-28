@@ -359,6 +359,9 @@
     <Compile Include="Models\Promotion.cs">
       <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Size.cs">
+      <DependentUpon>KidMartStore.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -385,9 +388,11 @@
     <Content Include="Content\CSS\ProductPages.css" />
     <Content Include="Content\CSS\Profile.css" />
     <Content Include="Content\CSS\Slider.css" />
+    <Content Include="Content\Admin\Dashboard.css" />
     <Content Include="Content\JS\Change.js" />
     <Content Include="Content\JS\Scroll-index.js" />
     <Content Include="Content\JS\Slider.js" />
+    <Content Include="Content\Layout\AdminLayout.css" />
     <Content Include="Content\Layout\Header.css" />
     <Content Include="Content\Layout\Main.css" />
     <Content Include="favicon.ico" />
@@ -463,7 +468,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_MasterLayoutUser.cshtml" />
-    <Content Include="Views\Admin\ManagerPage.cshtml" />
+    <Content Include="Views\Admin\Dashboard.cshtml" />
     <Content Include="Views\Shared\AdminLayout.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />

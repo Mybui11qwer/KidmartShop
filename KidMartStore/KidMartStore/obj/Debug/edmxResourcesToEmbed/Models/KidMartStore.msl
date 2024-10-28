@@ -27,7 +27,7 @@
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Address" ColumnName="Address" />
           <ScalarProperty Name="Gender" ColumnName="Gender" />
-          <ScalarProperty Name="Avarta" ColumnName="Avarta" />
+          <ScalarProperty Name="Avatar" ColumnName="Avatar" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -80,7 +80,7 @@
     <EntitySetMapping Name="Promotions">
       <EntityTypeMapping TypeName="KidMartStoreModel.Promotion">
         <MappingFragment StoreEntitySet="Promotion">
-          <ScalarProperty Name="ID_Sale" ColumnName="ID_Sale" />
+          <ScalarProperty Name="ID_Promotion" ColumnName="ID_Promotion" />
           <ScalarProperty Name="Percent_Discount" ColumnName="Percent_Discount" />
           <ScalarProperty Name="Name_Promotion" ColumnName="Name_Promotion" />
           <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
@@ -89,5 +89,29 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Sizes">
+      <EntityTypeMapping TypeName="KidMartStoreModel.Size">
+        <MappingFragment StoreEntitySet="Size">
+          <ScalarProperty Name="ID_Size" ColumnName="ID_Size" />
+          <ScalarProperty Name="Size_Name" ColumnName="Size_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Product_Promotion" TypeName="KidMartStoreModel.Product_Promotion" StoreEntitySet="Product_Promotion">
+      <EndProperty Name="Product">
+        <ScalarProperty Name="ID_Product" ColumnName="ID_Product" />
+      </EndProperty>
+      <EndProperty Name="Promotion">
+        <ScalarProperty Name="ID_Promotion" ColumnName="ID_Promotion" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Product_Size" TypeName="KidMartStoreModel.Product_Size" StoreEntitySet="Product_Size">
+      <EndProperty Name="Product">
+        <ScalarProperty Name="ID_Product" ColumnName="ID_Product" />
+      </EndProperty>
+      <EndProperty Name="Size">
+        <ScalarProperty Name="ID_Size" ColumnName="ID_Size" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

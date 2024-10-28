@@ -12,24 +12,17 @@ namespace KidMartStore.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Promotion
+    public partial class Size
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Promotion()
+        public Size()
         {
-            this.Orders = new HashSet<Order>();
             this.Products = new HashSet<Product>();
         }
     
-        public int ID_Promotion { get; set; }
-        public decimal Percent_Discount { get; set; }
-        public string Name_Promotion { get; set; }
-        public System.DateTime Start_Date { get; set; }
-        public System.DateTime End_Date { get; set; }
-        public string Code { get; set; }
+        public int ID_Size { get; set; }
+        public string Size_Name { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Products { get; set; }
     }

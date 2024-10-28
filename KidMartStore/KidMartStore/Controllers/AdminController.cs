@@ -9,7 +9,7 @@ namespace KidMartStore.Controllers
     public class AdminController : Controller
     {
         // GET: Admin
-        public ActionResult ManagerPage()
+        public ActionResult Dashboard()
         {
             return View();
         }
