@@ -59,10 +59,10 @@
         <nav class="selectForm">
             <h2>Danh Mục Hàng</h2>
             <div class="tab-content">
-                @foreach (var category in Model)
+                @foreach (var category in Model.Select(m => m.Category).GroupBy(c => c.Name_Category).Select(g => g.First()))
                 {
 
-                    <label><span>Danh mục</span> @category.Category.Name_Category</label>
+                    <label><span>Danh mục</span> @category.Name_Category</label>
                 }
             </div>
         </nav>
@@ -134,7 +134,7 @@
             @foreach (var product in Model)
             {
                 <nav class="item">
-                    <img src="@product.Image" alt="@product.Name" />
+                    <p alt="@product.Name">@product.Image</p>
                     <h4>@product.Name</h4>
                     <h5>@product.Price <span>VNĐ</span></h5>
                     <button>Mua Hàng</button>

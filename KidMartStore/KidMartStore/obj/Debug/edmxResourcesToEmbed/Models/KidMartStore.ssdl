@@ -26,6 +26,7 @@
     <Property Name="Address" Type="nvarchar" MaxLength="255" />
     <Property Name="Gender" Type="nvarchar" MaxLength="10" />
     <Property Name="Avatar" Type="varchar" MaxLength="255" />
+    <Property Name="Role" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Detail_Cart">
     <Key>
@@ -55,7 +56,7 @@
     <Property Name="Order_Date" Type="date" Nullable="false" />
     <Property Name="Total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="Status" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="ID_Sale" Type="int" />
+    <Property Name="ID_Promotion" Type="int" />
   </EntityType>
   <EntityType Name="Product">
     <Key>
@@ -66,7 +67,7 @@
     <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="Quantity" Type="int" Nullable="false" />
-    <Property Name="Description" Type="text" />
+    <Property Name="Description" Type="nvarchar(max)" />
     <Property Name="Image" Type="varchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="Product_Promotion">
@@ -151,7 +152,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Orders__ID_Sale__46E78A0C">
+  <Association Name="FK__Orders__ID_Promo__46E78A0C">
     <End Role="Promotion" Type="Self.Promotion" Multiplicity="0..1" />
     <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
     <ReferentialConstraint>
@@ -159,7 +160,7 @@
         <PropertyRef Name="ID_Promotion" />
       </Principal>
       <Dependent Role="Orders">
-        <PropertyRef Name="ID_Sale" />
+        <PropertyRef Name="ID_Promotion" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -251,7 +252,7 @@
       <End Role="Customer" EntitySet="Customer" />
       <End Role="Orders" EntitySet="Orders" />
     </AssociationSet>
-    <AssociationSet Name="FK__Orders__ID_Sale__46E78A0C" Association="Self.FK__Orders__ID_Sale__46E78A0C">
+    <AssociationSet Name="FK__Orders__ID_Promo__46E78A0C" Association="Self.FK__Orders__ID_Promo__46E78A0C">
       <End Role="Promotion" EntitySet="Promotion" />
       <End Role="Orders" EntitySet="Orders" />
     </AssociationSet>

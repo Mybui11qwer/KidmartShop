@@ -31,6 +31,7 @@
           <Property Name="Address" Type="nvarchar" MaxLength="255" />
           <Property Name="Gender" Type="nvarchar" MaxLength="10" />
           <Property Name="Avatar" Type="varchar" MaxLength="255" />
+          <Property Name="Role" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Detail_Cart">
           <Key>
@@ -60,7 +61,7 @@
           <Property Name="Order_Date" Type="date" Nullable="false" />
           <Property Name="Total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Status" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="ID_Sale" Type="int" />
+          <Property Name="ID_Promotion" Type="int" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -71,7 +72,7 @@
           <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Quantity" Type="int" Nullable="false" />
-          <Property Name="Description" Type="text" />
+          <Property Name="Description" Type="nvarchar(max)" />
           <Property Name="Image" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="Product_Promotion">
@@ -156,7 +157,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Orders__ID_Sale__46E78A0C">
+        <Association Name="FK__Orders__ID_Promo__46E78A0C">
           <End Role="Promotion" Type="Self.Promotion" Multiplicity="0..1" />
           <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
           <ReferentialConstraint>
@@ -164,7 +165,7 @@
               <PropertyRef Name="ID_Promotion" />
             </Principal>
             <Dependent Role="Orders">
-              <PropertyRef Name="ID_Sale" />
+              <PropertyRef Name="ID_Promotion" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -256,7 +257,7 @@
             <End Role="Customer" EntitySet="Customer" />
             <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
-          <AssociationSet Name="FK__Orders__ID_Sale__46E78A0C" Association="Self.FK__Orders__ID_Sale__46E78A0C">
+          <AssociationSet Name="FK__Orders__ID_Promo__46E78A0C" Association="Self.FK__Orders__ID_Promo__46E78A0C">
             <End Role="Promotion" EntitySet="Promotion" />
             <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
@@ -315,6 +316,7 @@
           <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Avatar" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Carts" Relationship="Self.FK__Cart__ID_Custome__3E52440B" FromRole="Customer" ToRole="Cart" />
           <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__ID_Custo__45F365D3" FromRole="Customer" ToRole="Orders" />
         </EntityType>
@@ -348,10 +350,10 @@
           <Property Name="Order_Date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Total" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ID_Sale" Type="Int32" />
+          <Property Name="ID_Promotion" Type="Int32" />
           <NavigationProperty Name="Customer" Relationship="Self.FK__Orders__ID_Custo__45F365D3" FromRole="Orders" ToRole="Customer" />
           <NavigationProperty Name="Detail_Order" Relationship="Self.FK__Detail_Or__ID_Or__49C3F6B7" FromRole="Orders" ToRole="Detail_Order" />
-          <NavigationProperty Name="Promotion" Relationship="Self.FK__Orders__ID_Sale__46E78A0C" FromRole="Orders" ToRole="Promotion" />
+          <NavigationProperty Name="Promotion" Relationship="Self.FK__Orders__ID_Promo__46E78A0C" FromRole="Orders" ToRole="Promotion" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -362,7 +364,7 @@
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Quantity" Type="Int32" Nullable="false" />
-          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Category" Relationship="Self.FK__Product__ID_Cate__3B75D760" FromRole="Product" ToRole="Category" />
           <NavigationProperty Name="Promotions" Relationship="Self.Product_Promotion" FromRole="Product" ToRole="Promotion" />
@@ -378,7 +380,7 @@
           <Property Name="Start_Date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="End_Date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__ID_Sale__46E78A0C" FromRole="Promotion" ToRole="Orders" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__ID_Promo__46E78A0C" FromRole="Promotion" ToRole="Orders" />
           <NavigationProperty Name="Products" Relationship="Self.Product_Promotion" FromRole="Promotion" ToRole="Product" />
         </EntityType>
         <EntityType Name="Size">
@@ -449,7 +451,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Orders__ID_Sale__46E78A0C">
+        <Association Name="FK__Orders__ID_Promo__46E78A0C">
           <End Role="Promotion" Type="Self.Promotion" Multiplicity="0..1" />
           <End Role="Orders" Type="Self.Order" Multiplicity="*" />
           <ReferentialConstraint>
@@ -457,7 +459,7 @@
               <PropertyRef Name="ID_Promotion" />
             </Principal>
             <Dependent Role="Orders">
-              <PropertyRef Name="ID_Sale" />
+              <PropertyRef Name="ID_Promotion" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -499,7 +501,7 @@
             <End Role="Orders" EntitySet="Orders" />
             <End Role="Detail_Order" EntitySet="Detail_Order" />
           </AssociationSet>
-          <AssociationSet Name="FK__Orders__ID_Sale__46E78A0C" Association="Self.FK__Orders__ID_Sale__46E78A0C">
+          <AssociationSet Name="FK__Orders__ID_Promo__46E78A0C" Association="Self.FK__Orders__ID_Promo__46E78A0C">
             <End Role="Promotion" EntitySet="Promotions" />
             <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
@@ -545,6 +547,7 @@
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
                 <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -577,7 +580,7 @@
                 <ScalarProperty Name="Order_Date" ColumnName="Order_Date" />
                 <ScalarProperty Name="Total" ColumnName="Total" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="ID_Sale" ColumnName="ID_Sale" />
+                <ScalarProperty Name="ID_Promotion" ColumnName="ID_Promotion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

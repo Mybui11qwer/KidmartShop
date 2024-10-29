@@ -8,8 +8,47 @@
     <link rel="stylesheet" href="~/Content/Layout/AdminLayout.css" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        .above-header {
+            position: relative;
+            background-color: black;
+            height: 6vh;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+            .above-header a {
+                text-decoration: none;
+            }
+
+            .above-header h3 {
+                color: white;
+                font-weight: bold;
+            }
+    </style>
 </head>
 <body>
+    <div class="above-header">
+        <nav class="Logo-text" style="margin-left: 50px">
+            <a href="~/Home/Index"><h3>KidMart</h3></a>
+        </nav>
+        <nav class="Location-function" style="margin-right:30px">
+
+            @if (Session["Role"]?.ToString() == "Quản lý")
+            {
+                <a style="color: white; text-decoration:none" href="~/Home/Index">PageIndex</a>
+                <a style="color: white; text-decoration:none">|</a>
+            }
+
+            @if (Session["Email"] != null)
+            {
+                <a style="color: white; text-decoration:none; cursor: pointer" href="~/Home/Profile">Hello <span>@(Session["Name"] ?? "Guest")</span>!</a>
+            }
+        </nav>
+    </div>
     <div class="sidebar">
         <h2>Quản trị viên</h2>
         <ul>
@@ -41,8 +80,8 @@
         <header>
             <h1>Chào mừng đến với trang quản trị</h1>
             <div class="user-info">
-                <span>Xin chào, Admin</span>
-                <a href="#" class="logout">Đăng xuất</a>
+                <span>Xin chào, @Session["Name"]</span>
+                <a href="~/Account/Logout" class="logout">LogOut</a>
             </div>
         </header>
         @RenderBody()

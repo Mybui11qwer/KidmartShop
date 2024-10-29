@@ -4,6 +4,7 @@ using KidMartStore.Models;
 using System.Security.Cryptography;
 using System.Text;
 using System.Net.PeerToPeer;
+using System.Web.UI.WebControls;
 
 public class AccountController : Controller
 {
@@ -28,6 +29,7 @@ public class AccountController : Controller
                 Session["Address"] = checkUser.Address;
                 Session["Phone"] = checkUser.Phone;
                 Session["ID_Customer"] = checkUser.ID_Customer;
+                Session["Role"] = checkUser.Role;
 
                 return RedirectToAction("Index", "Home");
             }
@@ -45,6 +47,7 @@ public class AccountController : Controller
     {
         try
         {
+            NewCustomer.Role = "Khách Hàng";
             db.Customers.Add(NewCustomer);
             db.SaveChanges();
             return RedirectToAction("Login");

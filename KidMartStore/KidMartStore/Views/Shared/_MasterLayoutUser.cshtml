@@ -21,6 +21,25 @@
                 padding: 10px; /* Giảm chiều cao khi cuộn */
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Thêm bóng đổ */
             }
+
+        .above-header {
+            position: relative;
+            background-color: black;
+            height: 6vh;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+            .above-header a {
+                text-decoration: none;
+            }
+
+            .above-header h3 {
+                color: white;
+                font-weight: bold;
+            }
     </style>
     <style>
         footer {
@@ -145,6 +164,13 @@
             <a href="~/Home/Index"><h3>KidMart</h3></a>
         </nav>
         <nav class="Location-function" style="margin-right:30px">
+
+            @if (Session["Role"]?.ToString() == "Quản lý")
+            {
+                <a style="color: white; text-decoration:none" href="~/Admin/Dashboard">PageAdmin</a>
+                <a style="color: white; text-decoration:none">|</a>
+            }
+
             <a style="color: white; text-decoration:none" href="#"><img src="~/Image/icon-search-white.png" style="width:32px; height: 32px" /></a>
 
             @if (Session["Email"] != null)

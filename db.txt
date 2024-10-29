@@ -11,7 +11,8 @@ CREATE TABLE Customer
   Phone VARCHAR(15) NOT NULL,
   Address NVARCHAR(255),
   Gender NVARCHAR(10),
-  Avatar VARCHAR(255)
+  Avatar VARCHAR(255),
+  Role NVarchar(50)
 );
 
 -- Category Table
@@ -29,7 +30,7 @@ CREATE TABLE Product
   Name NVARCHAR(100) NOT NULL,
   Price DECIMAL(10, 2) NOT NULL,
   Quantity INT NOT NULL,
-  Description TEXT,
+  Description NVarchar(max),
   Image VARCHAR(255),
   FOREIGN KEY (ID_Category) REFERENCES Category(ID_Category)
 );
@@ -71,9 +72,9 @@ CREATE TABLE Orders
   Order_Date DATE NOT NULL,
   Total DECIMAL(10, 2) NOT NULL,
   Status NVARCHAR(20) NOT NULL,
-  ID_Sale INT,
+  ID_Promotion INT,
   FOREIGN KEY (ID_Customer) REFERENCES Customer(ID_Customer),
-  FOREIGN KEY (ID_Sale) REFERENCES Promotion(ID_Sale)
+  FOREIGN KEY (ID_Promotion) REFERENCES Promotion(ID_Promotion)
 );
 
 -- Detail_Order Table

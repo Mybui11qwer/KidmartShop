@@ -28,6 +28,7 @@
           <ScalarProperty Name="Address" ColumnName="Address" />
           <ScalarProperty Name="Gender" ColumnName="Gender" />
           <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -60,7 +61,7 @@
           <ScalarProperty Name="Order_Date" ColumnName="Order_Date" />
           <ScalarProperty Name="Total" ColumnName="Total" />
           <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="ID_Sale" ColumnName="ID_Sale" />
+          <ScalarProperty Name="ID_Promotion" ColumnName="ID_Promotion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
