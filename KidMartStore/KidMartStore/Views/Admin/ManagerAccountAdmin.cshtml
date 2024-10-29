@@ -1,8 +1,9 @@
 ﻿@model List<KidMartStore.Models.Customer>
 @{
-    ViewBag.Title = "Danh sách người dùng";
+    ViewBag.Title = "ManagerAccountAdmin";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
+
 <link rel="stylesheet" href="~/Content/Admin/ManagerAccount.css" />
 <section class="user-table">
     <table>
@@ -16,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var customer in Model.Where(c => c.Role == "Khách Hàng"))
+            @foreach (var customer in Model.Where(c => c.Role == "Quản Lý" || c.Role == "Nhân Viên"))
             {
                 <tr>
                     <td>@customer.Username</td>

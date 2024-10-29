@@ -23,9 +23,28 @@ namespace KidMartStore.Controllers
             List<Customer> customers = database.Customers.ToList();
             return View(customers);
         }
+        public ActionResult ManagerAccountAdmin()
+        {
+            List<Customer> customers = database.Customers.ToList();
+            return View(customers);
+        }
         public ActionResult AddNewAccount()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult AddNewAccount(Customer NewCustomer)
+        {
+            try
+            {
+                database.Customers.Add(NewCustomer);
+                database.SaveChanges();
+                return RedirectToAction("ManagerAccount");
+            }
+            catch
+            {
+                return View("AddNewAccount");
+            }
         }
         public ActionResult ManagerProduct()
         {
@@ -89,6 +108,29 @@ namespace KidMartStore.Controllers
                 return RedirectToAction("ManagerProduct"); // Redirect back to the product manager
             } // Redirect to the product list
             return View(product);
+        }
+        public ActionResult ManagerCategory()
+        {
+            List<Category> categories = database.Categories.ToList();
+            return View(categories);
+        }
+        public ActionResult AddNewCategory()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddNewCategory(Category NewCategory)
+        {
+            try
+            {
+                database.Categories.Add(NewCategory);
+                database.SaveChanges();
+                return RedirectToAction("ManagerCategory");
+            }
+            catch
+            {
+                return View("AddNewCategory");
+            }
         }
     }
 }

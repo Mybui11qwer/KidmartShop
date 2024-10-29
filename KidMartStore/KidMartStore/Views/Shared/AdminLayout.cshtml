@@ -37,7 +37,7 @@
         </nav>
         <nav class="Location-function" style="margin-right:30px">
 
-            @if (Session["Role"]?.ToString() == "Quản lý")
+            @if (Session["Role"]?.ToString() == "Quản Lý")
             {
                 <a style="color: white; text-decoration:none" href="~/Home/Index">PageIndex</a>
                 <a style="color: white; text-decoration:none">|</a>
@@ -57,7 +57,7 @@
                 <a>Người dùng</a>
                 <ul class="sub-menu">
                     <li><a href="~/Admin/ManagerAccount">Danh sách người dùng</a></li>
-                    <li><a href="#">Danh sách nhân viên</a></li>
+                    <li><a href="~/Admin/ManagerAccountAdmin">Danh sách nhân viên</a></li>
                     <li><a href="~/Admin/AddNewAccount">Thêm tài khoản mới</a></li>
                 </ul>
             </li>
@@ -66,6 +66,13 @@
                 <ul class="sub-menu">
                     <li><a href="~/Admin/ManagerProduct">Danh sách sản phẩm</a></li>
                     <li><a href="~/Admin/AddNewProduct">Thêm sản phẩm</a></li>
+                </ul>
+            </li>
+            <li>
+                <a>Loại sản phẩm</a>
+                <ul class="sub-menu">
+                    <li><a href="~/Admin/ManagerCategory">Danh sách loại sản phẩm</a></li>
+                    <li><a href="~/Admin/AddNewCategory">Thêm loại sản phẩm</a></li>
                 </ul>
             </li>
             <li><a href="../User/donhang.html">Đơn hàng</a></li>

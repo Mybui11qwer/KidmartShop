@@ -1,11 +1,11 @@
-﻿
+﻿@model KidMartStore.Models.Customer
 @{
     ViewBag.Title = "AddNewAccount";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 <link rel="stylesheet" href="~/Content/Admin/AddNewUser.css" />
 <section class="add-user-form">
-    <form action="#" method="POST">
+    <form action="/Admin/AddNewAccount" method="POST">
         <label for="username">Tên: </label>
         <input type="text" id="username" name="Username" required>
 
@@ -22,11 +22,12 @@
         <input type="password" id="password" name="Password" required>
 
         <label for="role">Vai trò:</label>
-        <select id="role" name="role" required>
-            <option value="admin">Nhân viên</option>
-            <option value="user">Khách hàng</option>
+        <select id="role" name="Role" required>
+            <option value="Nhân Viên">Nhân Viên</option>
+            <option value="Khách Hàng">Khách Hàng</option>
+            <option value="Quản Lý">Quản Lý</option>
         </select>
 
-        <input type="submit" value="Thêm Người dùng"/>
+        <input type="submit" value="Thêm Người dùng" />
     </form>
 </section>
