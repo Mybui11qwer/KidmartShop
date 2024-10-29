@@ -134,7 +134,7 @@
             @foreach (var product in Model)
             {
                 <nav class="item">
-                    <p alt="@product.Name">@product.Image</p>
+                    <img src="~/Image/@product.Image" alt="@product.Name" />
                     <h4>@product.Name</h4>
                     <h5>@product.Price <span>VNĐ</span></h5>
                     <button>Mua Hàng</button>
@@ -149,7 +149,7 @@
             @foreach (var product in Model)
             {
                 <nav class="item">
-                    <img src="@product.Image" alt="@product.Name" />
+                    <img src="~/Image/@product.Image" alt="@product.Name" />
                     <h4>@product.Name</h4>
                     <h5>@product.Price <span>VNĐ</span></h5>
                     <button>Mua Hàng</button>

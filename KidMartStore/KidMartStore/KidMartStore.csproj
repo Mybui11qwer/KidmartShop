@@ -483,9 +483,11 @@
     <Content Include="Views\Admin\AddNewAccount.cshtml" />
     <Content Include="Views\Admin\ManagerProduct.cshtml" />
     <Content Include="Views\Admin\AddNewProduct.cshtml" />
+    <Content Include="Views\Admin\UpdateProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Image\Products\" />
     <Folder Include="Views\ProductRepository\" />
   </ItemGroup>
   <ItemGroup>
