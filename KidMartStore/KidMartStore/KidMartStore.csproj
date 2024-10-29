@@ -487,7 +487,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Image\Products\" />
     <Folder Include="Views\ProductRepository\" />
   </ItemGroup>
   <ItemGroup>

@@ -55,7 +55,7 @@ namespace KidMartStore.Controllers
                     database.SaveChanges();
 
                     Session["Email"] = user.Email;
-                    Session["Username"] = user.Username;
+                    Session["Name"] = user.Username;
                     Session["Phone"] = user.Phone;
                     Session["Address"] = user.Address;
 
