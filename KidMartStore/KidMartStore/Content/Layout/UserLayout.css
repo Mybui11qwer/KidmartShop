@@ -124,7 +124,7 @@
 main {
     width: 100%;
     height: max-content;
-    margin: 20px 30px 20px 30px;
+    position: relative;
 }
 footer {
     display: flex;
