@@ -1,7 +1,9 @@
-﻿@{
-    ViewBag.Title = "Login";
-}
+﻿@model KidMartStore.Models.Customer
 
+@{
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+    ViewBag.Title = "Đăng nhập";
+}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,67 +11,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="~/Content/CSS/Login.css">
+    <link rel="stylesheet" href="~/Content/CSS/LoginUser.css" />
 </head>
-
 <body>
-    <div class="container" id="container">
+    <div class="login-container">
+        <h2>ĐĂNG NHẬP</h2>
+        <p>Bạn chưa có tài khoản? <a href="~/Account/Register">Đăng ký tại đây</a></p>
+        <form action="/Account/Login" method="post">
 
-        <div class="form-container sign-up">
-            <form action="/Account/Login" method="post">
-                <h1>Create Account</h1>
-                <div class="social-icons">
-                    <a href="#" class="icon">
-                        <img src="~/Image/google-icon.png" height="20px" width="20px"><i class="fa-brands fa-google-plus-g"></i>
-                    </a>
-                    <a href="#" class="icon">
-                        <img src="~/Image/facebook-icon.png" height="20px" width="20px"><i class="fa-brands fa-google-plus-g"></i>
-                    </a>
-                </div>
-                <span>or use your email for registeration</span>
-                <input type="text" id="nameRe" name="Họ_và_Tên" placeholder="Name Parrent">
-                <input type="email" id="emailRe" name="Email" placeholder="Email">
-                <input type="password" id="passwordRe" name="Password" placeholder="Password">
-                <input type="submit" class="btnLoRe" name="Login" value="Register" />
-            </form>
-        </div>
-
-
-        <div class="form-container sign-in">
-            <form action="/Account/Login" method="post">
-                <h1>Sign In</h1>
-                <div class="social-icons">
-                    <a href="#" class="icon">
-                        <img src="~/Image/google-icon.png" height="20px" width="20px"><i class="fa-brands fa-google-plus-g"></i>
-                    </a>
-                    <a href="#" class="icon">
-                        <img src="~/Image/facebook-icon.png" height="20px" width="20px"><i class="fa-brands fa-google-plus-g"></i>
-                    </a>
-                </div>
-                <span>or use your email password</span>
-                <input type="email" id="emailLog" name="Email" placeholder="Email">
-                <input type="password" id="passwordLog" name="Password" placeholder="Password">
-                <a href="#">Forget Your Password?</a>
-                <input type="submit" class="btnLoRe" name="Login" value="Login" />
-            </form>
-        </div>
-
-        <div class="toggle-container">
-            <div class="toggle">
-                <div class="toggle-panel toggle-left">
-                    <h1>Welcome Back!</h1>
-                    <p>Enter your personal details to use all of site features</p>
-                    <button class="hidden" id="login">Sign In</button>
-                </div>
-                <div class="toggle-panel toggle-right">
-                    <h1>Hello, Parrent</h1>
-                    <p>Register with your personal details to use all of site features</p>
-                    <button class="hidden" id="register">Sign Up</button>
-                </div>
+            <div>
+                <label for="email">Email <span>*</span></label><br />
+                <input type="email" id="email" name="Email" placeholder="Nhập email của bạn" required>
             </div>
-        </div>
+
+            <div>
+                <label for="password">Mật khẩu <span>*</span></label><br />
+                <input type="password" id="password" name="Password" placeholder="Nhập mật khẩu" required>
+            </div>
+
+            <div class="forgot-password">
+                <a href="#">Quên mật khẩu? Nhấn vào đây</a>
+            </div>
+
+            <button type="submit" class="login-button">Đăng nhập</button>
+        </form>
     </div>
-    <script src="~/Content/JS/Change.js"></script>
+
 </body>
 
 </html>

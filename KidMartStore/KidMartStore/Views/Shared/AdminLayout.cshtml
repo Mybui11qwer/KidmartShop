@@ -5,11 +5,73 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - KidMartStore</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/Layout/AdminLayout.css" />
+
+    <style>
+        
+    </style>
 </head>
 <body>
-    <div>
+    <div class="above-header">
+        <nav class="Logo-text" style="margin-left: 50px">
+            <a href="~/Home/Index"><h3>KidMart</h3></a>
+        </nav>
+        <nav class="Location-function" style="margin-right:30px">
+
+            @if (Session["Role"]?.ToString() == "Quản Lý" || Session["Role"]?.ToString() == "Nhân Viên")
+            {
+                <a style="color: white; text-decoration:none" href="~/Home/Index">PageIndex</a>
+                <a style="color: white; text-decoration:none">|</a>
+            }
+
+            @if (Session["Email"] != null)
+            {
+                <a style="color: white; text-decoration:none; cursor: pointer" href="~/Home/Profile">Hello <span>@(Session["Name"] ?? "Guest")</span>!</a>
+            }
+        </nav>
+    </div>
+    <div class="sidebar">
+        <h2>Quản trị viên</h2>
+        <ul>
+            <li><a href="~/Admin/Dashboard">Dashboard</a></li>
+            <li>
+                <a>Người dùng</a>
+                <ul class="sub-menu">
+                    <li><a href="~/Admin/ManagerAccount">Danh sách người dùng</a></li>
+                    <li><a href="~/Admin/ManagerAccountAdmin">Danh sách nhân viên</a></li>
+                    <li><a href="~/Admin/AddNewAccount">Thêm tài khoản mới</a></li>
+                </ul>
+            </li>
+            <li>
+                <a>Sản phẩm</a>
+                <ul class="sub-menu">
+                    <li><a href="~/Admin/ManagerProduct">Danh sách sản phẩm</a></li>
+                    <li><a href="~/Admin/AddNewProduct">Thêm sản phẩm</a></li>
+                </ul>
+            </li>
+            <li>
+                <a>Loại sản phẩm</a>
+                <ul class="sub-menu">
+                    <li><a href="~/Admin/ManagerCategory">Danh sách loại sản phẩm</a></li>
+                    <li><a href="~/Admin/AddNewCategory">Thêm loại sản phẩm</a></li>
+                </ul>
+            </li>
+            <li><a href="../User/donhang.html">Đơn hàng</a></li>
+            <li><a href="#">Báo cáo</a></li>
+            <li><a href="#">Cài đặt</a></li>
+            <li><a href="#">Quản lý Giới thiệu</a></li>
+            <li><a href="../User/quanlysale.html">Quản lý Hình Quảng cáo</a></li>
+            <li><a href="#">Quản lý Sale</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Chào mừng đến với trang quản trị</h1>
+            <div class="user-info">
+                <span>Xin chào, @Session["Name"]</span>
+                <a href="~/Account/Logout" class="logout">LogOut</a>
+            </div>
+        </header>
         @RenderBody()
     </div>
 </body>

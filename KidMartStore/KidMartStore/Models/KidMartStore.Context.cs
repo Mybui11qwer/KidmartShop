@@ -25,13 +25,14 @@ namespace KidMartStore.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Chi_tiết_đơn_hàng> Chi_tiết_đơn_hàng { get; set; }
-        public virtual DbSet<Chi_tiết_giỏ_hàng> Chi_tiết_giỏ_hàng { get; set; }
-        public virtual DbSet<Danh_mục_sản_phẩm> Danh_mục_sản_phẩm { get; set; }
-        public virtual DbSet<Đơn_hàng> Đơn_hàng { get; set; }
-        public virtual DbSet<Giảm_giá> Giảm_giá { get; set; }
-        public virtual DbSet<Giỏ_hàng> Giỏ_hàng { get; set; }
-        public virtual DbSet<Khách_Hàng> Khách_Hàng { get; set; }
-        public virtual DbSet<Sản_phẩm> Sản_phẩm { get; set; }
+        public virtual DbSet<Cart> Carts { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<Detail_Cart> Detail_Cart { get; set; }
+        public virtual DbSet<Detail_Order> Detail_Order { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Promotion> Promotions { get; set; }
+        public virtual DbSet<Size> Sizes { get; set; }
     }
 }

@@ -1,0 +1,103 @@
+﻿.bodyFrame {
+    margin: 20px 30px 20px 30px;
+}
+.bodyFrame .firstContent {
+    width: 100%;
+    position: relative;
+    display: flex;
+    padding-bottom: 20px;
+    justify-content: space-around;
+}
+
+    .bodyFrame .firstContent .selectForm {
+        width: max-content;
+        height: max-content;
+        background-color: black;
+        border-radius: 10px;
+        padding: 30px;
+    }
+
+        .bodyFrame .firstContent .selectForm h2 {
+            color: white;
+            font-size: 30px;
+            font-family: Arial;
+            font-weight: bold;
+        }
+
+        .bodyFrame.firstContent .selectForm .tab-content {
+            display: grid;
+            flex-wrap: wrap;
+        }
+
+            .bodyFrame .firstContent .selectForm .tab-content label {
+                background-color: black;
+                color: white;
+                border-bottom: 1px solid white;
+                font-family: Arial;
+                font-size: 20px;
+            }
+
+.bodyFrame .ProductList {
+    text-align: center;
+}
+
+    .bodyFrame .ProductList h1 {
+        padding: 10px 0px 10px 0px;
+        text-align: center;
+        border-bottom: 4px solid black;
+        color: black;
+        font-size: 30px;
+        font-family: Arial;
+        font-weight: bold;
+    }
+
+    .bodyFrame .ProductList .Product-Items {
+        margin: 40px 12% 40px 12%;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 100px;
+    }
+
+        .bodyFrame .ProductList .Product-Items .item {
+            max-width: max-content;
+            height: max-content;
+            display: grid;
+            flex: 0 1 50%;
+            border: 2px solid #FFC0CB;
+            border-radius: 25px;
+            padding: 8px;
+        }
+
+            .bodyFrame .ProductList .Product-Items .item button {
+                width: 100%;
+                border-radius: 18px;
+                padding: 8px;
+                background-color: #FFC0CB;
+                border: none;
+                transition: 0.5s ease;
+            }
+
+                .bodyFrame .ProductList .Product-Items .item button:hover {
+                    background-color: #808080;
+                    color: white;
+                    font-weight: bold;
+                }
+
+            .bodyFrame .ProductList .Product-Items .item img {
+                width: 250px;
+                height: 300px;
+                transition: 1s ease;
+            }
+
+                .bodyFrame.ProductList .Product-Items .item img:hover {
+                    transform: scale(1.1);
+                    border: 1px solid #FFC0CB;
+                    border-radius: 360px;
+                }
+            .bodyFrame .ProductList .Product-Items .item h5 {
+                font-size: 15px;
+                font-family: Arial;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }

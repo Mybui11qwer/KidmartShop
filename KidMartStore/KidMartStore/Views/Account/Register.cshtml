@@ -1,0 +1,47 @@
+﻿@model KidMartStore.Models.Customer
+
+@{
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+    ViewBag.Title = "Register";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/Content/CSS/LoginUser.css" />
+</head>
+<body>
+    <div class="login-container">
+        <h2>ĐĂNG KÝ</h2>
+        <p>Bạn đã có tài khoản? Đăng nhập <a href="~/Account/Login"> tại đây</a></p>
+        <form action="/Account/Register" method="post">
+            <div>
+                <label for="Name">Họ và tên <span>*</span></label><br />
+                <input type="text" id="name" name="Username" placeholder="Nhập họ và tên của bạn" required>
+            </div>
+
+            <div>
+                <label for="Phone">Số điện thoại <span>*</span></label><br />
+                <input type="tel" id="password" name="Phone" placeholder="Nhập số điện thoại của bạn" required>
+            </div>
+
+            <div>
+                <label for="email">Email <span>*</span></label><br />
+                <input type="email" id="email" name="Email" placeholder="Nhập email của bạn" required>
+            </div>
+
+            <div>
+                <label for="password">Mật khẩu <span>*</span></label><br />
+                <input type="password" id="password" name="Password" placeholder="Nhập mật khẩu" required>
+            </div>
+
+            <input type="submit" value="Đăng ký" class="login-button" />
+        </form>
+    </div>
+</body>
+
+</html>
+

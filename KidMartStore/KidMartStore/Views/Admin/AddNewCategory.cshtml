@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "AddNewCategory";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/Admin/AddNewProdcut.css" />
+<section class="add-product-form">
+    <h2>Thông tin sản phẩm</h2>
+    <form action="/Admin/AddNewCategory" method="POST">
+        <div class="form-group">
+            <label for="product-name">Tên sản phẩm</label>
+            <input type="number" id="product-name" name="ID_Category" required  min="1" step="1">
+        </div>
+
+        <div class="form-group">
+            <label for="product-price">Giá</label>
+            <input type="text" id="product-price" name="Name_Category" required>
+        </div>
+
+        <button type="submit" class="submit-button">Thêm loại sản phẩm</button>
+        <button class="submit-button" onclick="window.location.href='ManagerCategory'">Danh sách sản phẩm</button>
+    </form>
+</section>
+
