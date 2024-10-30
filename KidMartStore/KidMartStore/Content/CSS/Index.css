@@ -1,54 +1,87 @@
-﻿body .firstContent {
+﻿.bodyFrame .firstContent {
     position: relative;
     display: flex;
     padding-bottom: 20px;
     justify-content: space-around;
 }
 
-body .firstContent .selectForm{
-    width: max-content;
-    height: max-content;
-    border: 1px solid black;
-    border-radius: 30px;
-}
-.selectForm h2 {
-    background-color: black;
-    width: max-content;
-    color: white;
-    font-family: Arial;
-    padding: 20px 40px 20px 40px;
-    border-radius: 30px 30px 0px 0px;
-}
-    .selectForm .tab-content{
-    display: grid;
-    padding: 10px;
-    }
-    .selectForm .tab-content label{
-        border-bottom: 1px solid;
-        padding-bottom: inherit;
-        padding-top:inherit;
-        background-color: white;
-        transition: 0.5s;
-    }
-    .selectForm .tab-content label:hover{
-        background-color: black;
-        color: aliceblue;
+    .bodyFrame .firstContent .selectForm {
+        width: max-content;
+        height: max-content;
     }
 
-body .ProductList{
+        .bodyFrame .firstContent .selectForm h2 {
+            background-color: black;
+            width: max-content;
+            color: white;
+            font-family: Arial;
+        }
+
+        .bodyFrame.firstContent .selectForm .tab-content {
+            display: grid;
+        }
+
+            .bodyFrame .firstContent .selectForm .tab-content label {
+                background-color: white;
+                transition: 0.5s;
+            }
+
+                .bodyFrame .firstContent .selectForm .tab-content label:hover {
+                    background-color: black;
+                    color: aliceblue;
+                }
+
+.bodyFrame .ProductList {
     text-align: center;
 }
-    body .ProductList h1 {
+
+    .bodyFrame .ProductList h1 {
         padding: 10px 0px 10px 0px;
         text-align: center;
         border-bottom: 4px solid black;
-        border-radius:10px;
+        border-radius: 10px;
         color: black;
     }
 
-    .ProductList .Product-Items .item {
-        max-width: max-content;
-        display: grid;
-        flex: 1 0 50%;
-        border: 1px solid #FFC0CB;
+    .bodyFrame .ProductList .Product-Items {
+        margin: 30px 25px 10px 25px;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 60px
     }
+
+        .bodyFrame .ProductList .Product-Items .item {
+            max-width: max-content;
+            display: grid;
+            flex: 1 0 50%;
+            border: 2px solid #FFC0CB;
+            border-radius: 25px;
+            padding: 8px;
+        }
+
+            .bodyFrame .ProductList .Product-Items .item button {
+                border-radius: 18px;
+                padding: 8px;
+                background-color: #FFC0CB;
+                border: none;
+                transition: 0.5s ease;
+            }
+
+                .bodyFrame .ProductList .Product-Items .item button:hover {
+                    background-color: #808080;
+                    color: white;
+                    font-weight: bold;
+                }
+
+            .bodyFrame .ProductList .Product-Items .item img {
+                width: 250px;
+                height: 300px;
+                transition: 1s ease;
+            }
+
+                .bodyFrame.ProductList .Product-Items .item img:hover {
+                    transform: scale(1.1);
+                    border: 1px solid #FFC0CB;
+                    border-radius: 360px;
+                }

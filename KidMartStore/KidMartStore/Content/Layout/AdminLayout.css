@@ -50,6 +50,25 @@ body {
     padding: 20px;
 }
 
+.above-header {
+    position: relative;
+    background-color: black;
+    height: 6vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .above-header a {
+        text-decoration: none;
+    }
+
+    .above-header h3 {
+        color: white;
+        font-weight: bold;
+    }
+
 header {
     display: flex;
     justify-content: space-between;

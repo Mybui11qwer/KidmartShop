@@ -6,28 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - KidMartStore</title>
     <link rel="stylesheet" href="~/Content/Layout/AdminLayout.css" />
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
 
     <style>
-        .above-header {
-            position: relative;
-            background-color: black;
-            height: 6vh;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-            .above-header a {
-                text-decoration: none;
-            }
-
-            .above-header h3 {
-                color: white;
-                font-weight: bold;
-            }
+        
     </style>
 </head>
 <body>
@@ -37,7 +18,7 @@
         </nav>
         <nav class="Location-function" style="margin-right:30px">
 
-            @if (Session["Role"]?.ToString() == "Quản Lý")
+            @if (Session["Role"]?.ToString() == "Quản Lý" || Session["Role"]?.ToString() == "Nhân Viên")
             {
                 <a style="color: white; text-decoration:none" href="~/Home/Index">PageIndex</a>
                 <a style="color: white; text-decoration:none">|</a>

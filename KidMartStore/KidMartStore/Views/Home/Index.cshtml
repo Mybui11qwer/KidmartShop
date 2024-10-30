@@ -1,61 +1,16 @@
 ﻿@model List<KidMartStore.Models.Product>
 
 @{
-    Layout = "~/Views/Shared/_MasterLayoutUser.cshtml";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
     ViewBag.Title = "Trang chủ";
 }
-@using X.PagedList.Mvc.Core;
 <head>
     <link rel="stylesheet" href="~/Content/CSS/Index.css" />
     <link rel="stylesheet" href="~/Content/CSS/infor.css" />
     <link rel="stylesheet" href="~/Content/CSS/Slider.css" />
-    <style>
-        .ProductList .Product-Items {
-            margin: 30px 25px 10px 25px;
-            display: flex;
-            justify-content: flex-start;
-            flex-wrap: wrap;
-            gap: 60px
-        }
-
-            .ProductList .Product-Items .item {
-                max-width: max-content;
-                display: grid;
-                flex: 1 0 50%;
-                border: 2px solid #FFC0CB;
-                border-radius: 25px;
-                padding: 8px;
-            }
-
-                .ProductList .Product-Items .item button {
-                    border-radius: 18px;
-                    padding: 8px;
-                    background-color: #FFC0CB;
-                    border: none;
-                    transition: 0.5s ease;
-                }
-
-                    .ProductList .Product-Items .item button:hover {
-                        background-color: #808080;
-                        color: white;
-                        font-weight: bold;
-                    }
-
-                .ProductList .Product-Items .item img {
-                    width: 250px;
-                    height: 300px;
-                    transition: 1s ease;
-                }
-
-                    .ProductList .Product-Items .item img:hover {
-                        transform: scale(1.1);
-                        border: 1px solid #FFC0CB;
-                        border-radius: 360px;
-                    }
-    </style>
 </head>
-<body>
-    <div class="firstContent" style="margin-top:80px">
+<div class="bodyFrame">
+    <div class="firstContent">
         <nav class="selectForm">
             <h2>Danh Mục Hàng</h2>
             <div class="tab-content">
@@ -69,19 +24,19 @@
         <div class="slider" style="margin-left: 20px;">
             <div class="list">
                 <div class="item">
-                    <img src="~/Image/img1.jpg" alt="">
+                    <img src="~/Image/Advertisement/img1.jpg" alt="">
                 </div>
                 <div class="item">
-                    <img src="~/Image/img2.jpg" alt="">
+                    <img src="~/Image/Advertisement/img2.jpg" alt="">
                 </div>
                 <div class="item">
-                    <img src="~/Image/img3.jpg" alt="">
+                    <img src="~/Image/Advertisement/img3.jpg" alt="">
                 </div>
                 <div class="item">
-                    <img src="~/Image/img4.jpg" alt="">
+                    <img src="~/Image/Advertisement/img4.jpg" alt="">
                 </div>
                 <div class="item">
-                    <img src="~/Image/img5.jpg" alt="">
+                    <img src="~/Image/Advertisement/img5.jpg" alt="">
                 </div>
             </div>
             <div class="buttons">
@@ -100,28 +55,28 @@
     </div>
     <div class="info-section">
         <div class="info-item">
-            <img src="~/Image/policies_icon_1.png" alt="Shipping">
+            <img src="~/Image/Policies/policies_icon_1.png" alt="Shipping">
             <div class="info-text">
                 <h3>Vận chuyển toàn quốc</h3>
                 <p>Vận chuyển nhanh chóng</p>
             </div>
         </div>
         <div class="info-item">
-            <img src="~/Image/policies_icon_2.png" alt="Offers">
+            <img src="~/Image/Policies/policies_icon_2.png" alt="Offers">
             <div class="info-text">
                 <h3>Ưu đãi hấp dẫn</h3>
                 <p>Nhiều ưu đãi khuyến mãi hot</p>
             </div>
         </div>
         <div class="info-item">
-            <img src="~/Image/policies_icon_3.png" alt="Quality">
+            <img src="~/Image/Policies/policies_icon_3.png" alt="Quality">
             <div class="info-text">
                 <h3>Bảo đảm chất lượng</h3>
                 <p>Sản phẩm đã được kiểm định</p>
             </div>
         </div>
         <div class="info-item">
-            <img src="~/Image/policies_icon_4.png" alt="Hotline">
+            <img src="~/Image/Policies/policies_icon_4.png" alt="Hotline">
             <div class="info-text">
                 <h3>Hotline: 0789580048</h3>
                 <p>Vui lòng gọi hotline để hỗ trợ</p>
@@ -157,5 +112,5 @@
             }
         </div>
     </section>
-</body>
+</div>
 

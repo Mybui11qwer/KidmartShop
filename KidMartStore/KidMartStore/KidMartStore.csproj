@@ -397,33 +397,27 @@
     <Content Include="Content\JS\Scroll-index.js" />
     <Content Include="Content\JS\Slider.js" />
     <Content Include="Content\Layout\AdminLayout.css" />
-    <Content Include="Content\Layout\Header.css" />
-    <Content Include="Content\Layout\Main.css" />
+    <Content Include="Content\Layout\UserLayout.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Image\avarta-kidmart.png" />
-    <Content Include="Image\bell-icon.png" />
-    <Content Include="Image\down-arrow.png" />
-    <Content Include="Image\facebook-icon.png" />
-    <Content Include="Image\footer_trustbadge.png" />
-    <Content Include="Image\google-icon.png" />
-    <Content Include="Image\grocery-store.png" />
-    <Content Include="Image\icon-cart-white.png" />
-    <Content Include="Image\icon-search-white.png" />
-    <Content Include="Image\img1.jpg" />
-    <Content Include="Image\img2.jpg" />
-    <Content Include="Image\img3.jpg" />
-    <Content Include="Image\img4.jpg" />
-    <Content Include="Image\img5.jpg" />
-    <Content Include="Image\logo_bct.png" />
-    <Content Include="Image\magnifying-glass.png" />
-    <Content Include="Image\policies_icon_1.png" />
-    <Content Include="Image\policies_icon_2.png" />
-    <Content Include="Image\policies_icon_3.png" />
-    <Content Include="Image\policies_icon_4.png" />
-    <Content Include="Image\User-icon-white.png" />
-    <Content Include="Image\user-icon.png" />
-    <Content Include="Image\Toys1.jpg" />
+    <Content Include="Image\Avartar_Logo\Avarta-kidmart.png" />
+    <Content Include="Image\Icons\Icon-down-arrow.png" />
+    <Content Include="Image\Icons\icon-facebook.png" />
+    <Content Include="Image\Avartar_Logo\Logo-trustbadge.png" />
+    <Content Include="Image\Icons\icon-google.png" />
+    <Content Include="Image\Icons\icon-cart.png" />
+    <Content Include="Image\Icons\icon-search.png" />
+    <Content Include="Image\Advertisement\img1.jpg" />
+    <Content Include="Image\Advertisement\img2.jpg" />
+    <Content Include="Image\Advertisement\img3.jpg" />
+    <Content Include="Image\Advertisement\img4.jpg" />
+    <Content Include="Image\Advertisement\img5.jpg" />
+    <Content Include="Image\Avartar_Logo\Logo_bct.png" />
+    <Content Include="Image\Policies\policies_icon_1.png" />
+    <Content Include="Image\Policies\policies_icon_2.png" />
+    <Content Include="Image\Policies\policies_icon_3.png" />
+    <Content Include="Image\Policies\policies_icon_4.png" />
+    <Content Include="Image\Icons\Icon-user.png" />
     <Content Include="Models\KIdMartStore.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>KIdMartStore.edmx</DependentUpon>
@@ -469,8 +463,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Shared\_MasterLayoutUser.cshtml" />
+    <Content Include="Views\Shared\UserLayout.cshtml" />
     <Content Include="Views\Admin\Dashboard.cshtml" />
     <Content Include="Views\Shared\AdminLayout.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
@@ -487,9 +480,11 @@
     <Content Include="Views\Admin\ManagerCategory.cshtml" />
     <Content Include="Views\Admin\AddNewCategory.cshtml" />
     <Content Include="Views\Admin\ManagerAccountAdmin.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Image\Products\" />
     <Folder Include="Views\ProductRepository\" />
   </ItemGroup>
   <ItemGroup>
