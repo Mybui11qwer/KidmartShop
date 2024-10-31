@@ -73,9 +73,19 @@ namespace KidMartStore.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult AddNewProduct(Product NewProduct)
+        public ActionResult AddNewProduct(Product NewProduct, HttpPostedFileBase Image)
         {
-            try {
+            try{
+                // Handle file upload if a new image is provided
+                if (Image != null && Image.ContentLength > 0)
+                {
+                    var fileName = Path.GetFileName(Image.FileName);
+                    var path = Path.Combine(Server.MapPath("~/Image/Products/"), fileName);
+                    // Lưu ảnh vào thư mục
+                    Image.SaveAs(path);
+                    NewProduct.Image = "~/Image/Products/" + fileName; // Cập nhật đường dẫn ảnh vào model
+                }
+
                 database.Products.Add(NewProduct);
                 database.SaveChanges();
                 return RedirectToAction("ManagerProduct");
@@ -95,18 +105,10 @@ namespace KidMartStore.Controllers
             return View(product);
         }
         [HttpPost]
-        public ActionResult UpdateProduct(Product product, HttpPostedFileBase Image)
+        public ActionResult UpdateProduct(Product product)
         {
             if (ModelState.IsValid)
             {
-                // Handle file upload if a new image is provided
-                if (Image != null && Image.ContentLength > 0)
-                {
-                    var fileName = Path.GetFileName(Image.FileName);
-                    var path = Path.Combine(Server.MapPath("~/Content/Images/"), fileName);
-                    Image.SaveAs(path);
-                    product.Image = "~/Content/Images/" + fileName; // Update the model with new image path
-                }
 
                 // Update the product in the database
                 var existingProduct = database.Products.Find(product.ID_Product);

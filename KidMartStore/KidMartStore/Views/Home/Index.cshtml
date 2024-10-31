@@ -89,8 +89,8 @@
             {
                 <nav class="item">
                     <img src="~/Image/@product.Image" alt="@product.Name" />
-                    <h4>@product.Name</h4>
-                    <h5>@product.Price <span>VNĐ</span></h5>
+                    <h5>@product.Name</h5>
+                    <h5>@product.Price.ToString("N0") <span>VNĐ</span></h5>
                     <button>Mua Hàng</button>
                 </nav>
             }
@@ -105,7 +105,7 @@
                 <nav class="item">
                     <img src="~/Image/Products/@product.Image" alt="@product.Name" />
                     <h5>@product.Name</h5>
-                    <h5>@product.Price <span>VNĐ</span></h5>
+                    <h5>@product.Price.ToString("N0") <span>VNĐ</span></h5>
                     <button>Mua Hàng</button>
                 </nav>
             }

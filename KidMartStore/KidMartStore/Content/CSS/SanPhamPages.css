@@ -47,15 +47,8 @@
                 border-radius: 25px;
                 padding: 8px;
             }
-            .product-list .content2 .Product-Items .item {
-                max-width: max-content;
-                display: grid;
-                flex: 1 0 50%;
-                border: 2px solid #FFC0CB;
-                border-radius: 25px;
-                padding: 8px;
-            }
                 .product-list .content2 .Product-Items .item button {
+                    margin-top: 10px;
                     border-radius: 18px;
                     padding: 8px;
                     background-color: #FFC0CB;
@@ -77,7 +70,13 @@
                         border: 1px solid #FFC0CB;
                         border-radius: 360px;
                     }
-            
+                .product-list .content2 .Product-Items .item h5 {
+                    font-size: 15px;
+                    font-family: Arial;
+                    font-weight: bold;
+                    margin: 10px 0px 5px 0px;
+                    padding: 0;
+                }
         
 
             

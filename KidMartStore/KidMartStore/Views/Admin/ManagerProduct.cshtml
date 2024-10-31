@@ -23,7 +23,7 @@
                     <td>@products.ID_Product</td>
                     <td>@products.Name</td>
                     <td>@products.Description</td>
-                    <td>@products.Price</td>
+                    <td>@products.Price.ToString("N0")</td>
                     <td>@products.Category.Name_Category</td>
                     <td>
                         <a href="@Url.Action("UpdateProduct", "Admin", new { id = products.ID_Product })" class="edit">Chỉnh sửa</a>
