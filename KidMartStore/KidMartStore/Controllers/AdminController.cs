@@ -75,17 +75,16 @@ namespace KidMartStore.Controllers
         [HttpPost]
         public ActionResult AddNewProduct(Product NewProduct, HttpPostedFileBase Image)
         {
-            try{
-                // Handle file upload if a new image is provided
-                if (Image != null && Image.ContentLength > 0)
-                {
-                    var fileName = Path.GetFileName(Image.FileName);
-                    var path = Path.Combine(Server.MapPath("~/Image/Products/"), fileName);
-                    // Lưu ảnh vào thư mục
-                    Image.SaveAs(path);
-                    NewProduct.Image = "~/Image/Products/" + fileName; // Cập nhật đường dẫn ảnh vào model
-                }
-
+            // Handle file upload if a new image is provided
+            if (Image != null && Image.ContentLength > 0)
+            {
+                var urlImage = "/Image/Products/";
+                var path = Server.MapPath(urlImage);
+                // Lưu ảnh vào thư mục
+                Image.SaveAs(path + Image.FileName);
+            }
+            try
+            {               
                 database.Products.Add(NewProduct);
                 database.SaveChanges();
                 return RedirectToAction("ManagerProduct");
