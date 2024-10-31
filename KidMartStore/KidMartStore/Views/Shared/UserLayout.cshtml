@@ -18,7 +18,7 @@
                 <a href="~/Admin/Dashboard">PageAdmin</a>
                 <a style="cursor: default">|</a>
             }
-            <a href="#"><img src="~/Image/Icons/icon-search.png" /></a>
+            <a class="search" id="search"><img src="~/Image/Icons/icon-search.png" /></a>
             @if (Session["Email"] != null)
             {
                 <a href="#"><img src="~/Image/Icons/icon-cart.png" /></a>
@@ -37,11 +37,14 @@
     </div>
     <header id="mainHeader">
         <div></div>
+        <div class="toolbar">
+            <button id="menuToggle" class="menu-btn">☰</button>
+        </div>
         <nav class="accordion-header-toggle">
             <a href="~/Home/Index">Trang chủ</a>
             <a href="~/Home/GioiThieu">Giới thiệu</a>
             <nav class="menu-product">
-                <a style="align-items:center" href="~/Home/SanPham">Sản phẩm <span><img src="~/Image/down-arrow.png" style="width: 10px;height: 12px"/></span></a>
+                <a href="~/Home/SanPham">Sản phẩm <span><img src="~/Image/Icons/Icon-down-arrow.png" style="width: 10px;height: 12px" /></span></a>
                 <div class="menu-content">
                     <div><a href="#">Quần áo</a></div>
                     <div><a href="#">Đồ chơi</a></div>
@@ -50,7 +53,7 @@
                     <div><a href="#">Tả của bé</a></div>
                     <div><a href="#">Dụng cụ khác</a></div>
                 </div>
-            </nav>       
+            </nav>
             <a href="#">Blog</a>
             <a href="#">Liên hệ</a>
             <a href="#">Kiểm tra đơn hàng</a>
@@ -128,6 +131,12 @@
             if (!sessionStorage.getItem('isLoggedIn')) {
                 alert('Bạn phải đăng nhập mới sử dụng được tính năng này! \nHãy đăng nhập tài khoản');
             }
+        });
+    </script>
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function () {
+            const nav = document.querySelector('.accordion-header-toggle');
+            nav.classList.toggle('active');
         });
     </script>
 </body>

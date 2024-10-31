@@ -1,22 +1,35 @@
-﻿    
-@{
+﻿@{
     Layout = "~/Views/Shared/AdminLayout.cshtml";
     ViewBag.Title = "Trang chủ quản lý";
 }
 <link rel="stylesheet" href="~/Content/Admin/Dashboard.css" />
+<h1>Quản lý số liệu</h1><br />
 <section class="cards">
     <div class="card">
-        <h3>Tổng người dùng</h3>
-        <p>1200</p>
+        <h3>Số lượng người dùng</h3>
+        <p>@ViewBag.TotalUsers</p>
     </div>
+
     <div class="card">
-        <h3>Tổng sản phẩm</h3>
-        <p>350</p>
+        <h3>Số lượng nhân viên</h3>
+        <p>@ViewBag.TotalAdmins</p>
     </div>
+
     <div class="card">
-        <h3>Tổng đơn hàng</h3>
-        <p>75</p>
+        <h3>Số lượng sản phẩm</h3>
+        <p>@ViewBag.TotalProducts</p>
     </div>
+
+    <div class="card">
+        <h3>Số lượng đơn hàng</h3>
+        <p>@ViewBag.TotalOrders</p>
+    </div>
+
+    <div class="card">
+        <h3>Đánh giá</h3>
+        <p>@ViewBag.TotalProducts</p>
+    </div>
+
     <div class="card">
         <h3>Doanh thu</h3>
         <p>25,000,000 VNĐ</p>

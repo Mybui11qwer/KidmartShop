@@ -3,21 +3,21 @@
     Layout = "~/Views/Shared/UserLayout.cshtml";
     ViewBag.Title = "Sản phẩm";
 }
-<link rel="stylesheet" href="~/Content/CSS/ProductPages.css"/>
-<section class="infor-promotion" style="margin-top:80px"></section>
-<main class="product-list" style="margin-top:20px">
-    <div class="content1">
-        <h3>Bộ lọc tìm kiếm</h3>
+<link rel="stylesheet" href="~/Content/CSS/SanPhamPages.css"/>
+<section class="infor-promotion"></section>
+<main class="product-list">
+    <div class="search-content">
+        <h2>Bộ lọc tìm kiếm</h2>
         <section class="filter">
-            @foreach(var category in Model)
+            @foreach(var category in Model.Select(m => m.Category).GroupBy(c => c.Name_Category).Select(g => g.First()))
             {
-                <label>@category.Category.Name_Category</label>
+                <label>Danh mục @category.Name_Category</label><br /><br />
             }
         </section>
     </div>
     <div class="content2">
         <section class="list-content">
-            <h3>Sản phẩm KidMart</h3>
+            <h2>Sản phẩm KidMart</h2>
             <div class="Product-Items">
                 @foreach (var product in Model)
                 {

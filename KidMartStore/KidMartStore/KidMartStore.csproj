@@ -387,11 +387,11 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\CSS\Address.css" />
     <Content Include="Content\CSS\Register.css" />
-    <Content Include="Content\CSS\Trangchu.css" />
+    <Content Include="Content\CSS\IndexPage.css" />
     <Content Include="Content\CSS\infor.css" />
     <Content Include="Content\CSS\Login.css" />
-    <Content Include="Content\CSS\ProductPages.css" />
-    <Content Include="Content\CSS\Profile.css" />
+    <Content Include="Content\CSS\SanPhamPages.css" />
+    <Content Include="Content\CSS\Thongtinnguoidung.css" />
     <Content Include="Content\CSS\Slider.css" />
     <Content Include="Content\Admin\Dashboard.css" />
     <Content Include="Content\JS\Change.js" />

@@ -4,25 +4,23 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-
-
 <link rel="stylesheet" href="~/Content/Admin/AddNewProdcut.css" />
 <section class="add-product-form">
-    <h2>Thông tin sản phẩm</h2>
+    <h2>Cập nhật thông tin sản phẩm</h2>
     <form action="/Admin/AddNewProduct" method="POST">
         <div class="form-group">
             <label for="product-name">Tên sản phẩm</label>
-            <input type="text" id="product-name" name="Name" placeholder="@Model.Name" required>
+            <input type="text" id="product-name" name="Name" value="@Model.Name" required>
         </div>
 
         <div class="form-group">
             <label for="product-price">Giá</label>
-            <input type="number" id="product-price" name="Price" placeholder="@Model.Price" required min="1000" step="1000">
+            <input type="number" id="product-price" name="Price" value="@Model.Price" required min="1000" step="1000">
         </div>
 
         <div class="form-group">
             <label for="product-price">Loại sản phẩm</label>
-            <input type="text" id="product-price" name="ID_Category" @Model.ID_Category required>
+            <input type="text" id="product-price" name="ID_Category" value="@Model.ID_Category" required>
         </div>
 
         <div class="form-group">
@@ -37,7 +35,7 @@
 
         <div class="form-group">
             <label for="product-quantity">Số lượng</label>
-            <input type="number" id="product-quantity" name="Quantity" placeholder="@Model.Quantity" required>
+            <input type="number" id="product-quantity" name="Quantity" value="@Model.Quantity" required>
         </div>
 
         <div class="form-group">
