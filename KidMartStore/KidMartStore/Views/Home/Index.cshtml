@@ -16,7 +16,6 @@
             <div class="tab-content">
                 @foreach (var category in Model.Select(m => m.Category).GroupBy(c => c.Name_Category).Select(g => g.First()))
                 {
-
                     <label><span>Danh mục</span> @category.Name_Category</label><br />
                 }
             </div>

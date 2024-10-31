@@ -7,13 +7,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="~/Content/CSS/LoginUser.css" />
+    <link rel="stylesheet" href="~/Content/CSS/Login.css" />
 </head>
 <div class="body">
     <div></div>
     <div class="login-container">
         <h2>ĐĂNG NHẬP TÀI KHOẢN</h2>
-        <p>Bạn chưa có tài khoản? <a href="~/Account/Register">Đăng ký tại đây</a></p>
+        <p class="RegisterText">Bạn chưa có tài khoản? <a href="~/Account/Register">Đăng ký tại đây</a></p>
         <form action="/Account/Login" method="post">
 
             <div class="form-email-password">
@@ -30,7 +30,11 @@
                 <p>Quên mật khẩu? Nhấn vào <a href="#">đây</a></p>
             </div>
 
-            <button type="submit" class="login-button">Đăng nhập</button>
+            <div class="formLogin">
+                <div></div>
+                <input type="submit" value="Đăng nhập" class="buttonLogin" />
+                <div></div>
+            </div>
         </form>
     </div>
     <div></div>

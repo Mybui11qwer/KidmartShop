@@ -386,9 +386,10 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\CSS\Address.css" />
+    <Content Include="Content\CSS\Register.css" />
     <Content Include="Content\CSS\Trangchu.css" />
     <Content Include="Content\CSS\infor.css" />
-    <Content Include="Content\CSS\LoginUser.css" />
+    <Content Include="Content\CSS\Login.css" />
     <Content Include="Content\CSS\ProductPages.css" />
     <Content Include="Content\CSS\Profile.css" />
     <Content Include="Content\CSS\Slider.css" />
@@ -397,7 +398,7 @@
     <Content Include="Content\JS\Scroll-index.js" />
     <Content Include="Content\JS\Slider.js" />
     <Content Include="Content\Layout\AdminLayout.css" />
-    <Content Include="Content\Layout\UserLayout.css" />
+    <Content Include="Content\Layout\LayoutUser.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Image\Avartar_Logo\Avarta-kidmart.png" />
