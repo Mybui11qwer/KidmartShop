@@ -4,39 +4,34 @@
     Layout = "~/Views/Shared/UserLayout.cshtml";
     ViewBag.Title = "Đăng nhập";
 }
-
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
     <link rel="stylesheet" href="~/Content/CSS/LoginUser.css" />
 </head>
-<body>
+<div class="body">
+    <div></div>
     <div class="login-container">
-        <h2>ĐĂNG NHẬP</h2>
+        <h2>ĐĂNG NHẬP TÀI KHOẢN</h2>
         <p>Bạn chưa có tài khoản? <a href="~/Account/Register">Đăng ký tại đây</a></p>
         <form action="/Account/Login" method="post">
 
-            <div>
+            <div class="form-email-password">
                 <label for="email">Email <span>*</span></label><br />
                 <input type="email" id="email" name="Email" placeholder="Nhập email của bạn" required>
             </div>
 
-            <div>
+            <div class="form-email-password">
                 <label for="password">Mật khẩu <span>*</span></label><br />
                 <input type="password" id="password" name="Password" placeholder="Nhập mật khẩu" required>
             </div>
 
             <div class="forgot-password">
-                <a href="#">Quên mật khẩu? Nhấn vào đây</a>
+                <p>Quên mật khẩu? Nhấn vào <a href="#">đây</a></p>
             </div>
 
             <button type="submit" class="login-button">Đăng nhập</button>
         </form>
     </div>
-
-</body>
-
-</html>
+    <div></div>
+</div>

@@ -13,7 +13,7 @@
             <a href="~/Home/Index">KIDMART</a>
         </nav>
         <nav class="Location-function">
-            @if (Session["Role"]?.ToString() == "Quản lý")
+            @if (Session["Role"]?.ToString() == "Quản Lý")
             {
                 <a href="~/Admin/Dashboard">PageAdmin</a>
                 <a style="cursor: default">|</a>
@@ -96,8 +96,8 @@
                         <input type="submit" style="color: black; background-color: #FFC0CB; " value="Đăng ký"/>
                     </form>
                     <ul class="social" style="margin: 20px">
-                        <li><a href="#"><i class="fab fa-facebook-f"><img src="~/Image/facebook-icon.png" /></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"><img src="~/Image/google-icon.png" /></i></a></li>
+                        <li><a href="#"><i class="fab fa-facebook-f"><img src="~/Image/Icons/icon-facebook.png" /></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"><img src="~/Image/Icons/icon-google.png" /></i></a></li>
                     </ul>
                 </div>
             </div>

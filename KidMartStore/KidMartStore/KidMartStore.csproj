@@ -321,46 +321,46 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Cart.cs">
-      <DependentUpon>KIdMartStore.tt</DependentUpon>
+      <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Category.cs">
-      <DependentUpon>KIdMartStore.tt</DependentUpon>
+      <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Customer.cs">
-      <DependentUpon>KIdMartStore.tt</DependentUpon>
+      <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Detail_Cart.cs">
-      <DependentUpon>KIdMartStore.tt</DependentUpon>
+      <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Detail_Order.cs">
-      <DependentUpon>KIdMartStore.tt</DependentUpon>
+      <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\KIdMartStore.Context.cs">
+    <Compile Include="Models\KidMartStore.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>KIdMartStore.Context.tt</DependentUpon>
+      <DependentUpon>KidMartStore.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\KIdMartStore.cs">
+    <Compile Include="Models\KidMartStore.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>KIdMartStore.tt</DependentUpon>
+      <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\KIdMartStore.Designer.cs">
+    <Compile Include="Models\KidMartStore.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>KIdMartStore.edmx</DependentUpon>
+      <DependentUpon>KidMartStore.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Order.cs">
-      <DependentUpon>KIdMartStore.tt</DependentUpon>
+      <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Product.cs">
-      <DependentUpon>KIdMartStore.tt</DependentUpon>
+      <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Promotion.cs">
-      <DependentUpon>KIdMartStore.tt</DependentUpon>
+      <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Size.cs">
-      <DependentUpon>KIdMartStore.tt</DependentUpon>
+      <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -418,15 +418,15 @@
     <Content Include="Image\Policies\policies_icon_3.png" />
     <Content Include="Image\Policies\policies_icon_4.png" />
     <Content Include="Image\Icons\Icon-user.png" />
-    <Content Include="Models\KIdMartStore.Context.tt">
+    <Content Include="Models\KidMartStore.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>KIdMartStore.edmx</DependentUpon>
-      <LastGenOutput>KIdMartStore.Context.cs</LastGenOutput>
+      <DependentUpon>KidMartStore.edmx</DependentUpon>
+      <LastGenOutput>KidMartStore.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\KIdMartStore.tt">
+    <Content Include="Models\KidMartStore.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>KIdMartStore.edmx</DependentUpon>
-      <LastGenOutput>KIdMartStore.cs</LastGenOutput>
+      <DependentUpon>KidMartStore.edmx</DependentUpon>
+      <LastGenOutput>KidMartStore.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -434,12 +434,12 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\KIdMartStore.edmx">
+    <EntityDeploy Include="Models\KidMartStore.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>KIdMartStore.Designer.cs</LastGenOutput>
+      <LastGenOutput>KidMartStore.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\KIdMartStore.edmx.diagram">
-      <DependentUpon>KIdMartStore.edmx</DependentUpon>
+    <Content Include="Models\KidMartStore.edmx.diagram">
+      <DependentUpon>KidMartStore.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />

@@ -50,24 +50,46 @@ body {
     padding: 20px;
 }
 
-.above-header {
+body .above-header {
+    width: 100%;
+    height: 6vh;
     position: relative;
     background-color: black;
-    height: 6vh;
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-    .above-header a {
-        text-decoration: none;
+    body .above-header .Logo-text {
+        margin-left: 60px;
     }
 
-    .above-header h3 {
-        color: white;
-        font-weight: bold;
+        body .above-header .Logo-text a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-family: Arial;
+            font-size: 30px;
+        }
+
+    body .above-header .Location-function {
+        margin-right: 30px;
+        display: flex;
+        align-items: center;
     }
+
+        body .above-header .Location-function a {
+            color: white;
+            text-decoration: none;
+            margin-right: 7px;
+            font-family: Arial;
+            font-size: medium;
+        }
+
+            body .above-header .Location-function a img {
+                width: 32px;
+                height: 32px;
+            }
 
 header {
     display: flex;
