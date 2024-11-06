@@ -73,18 +73,19 @@ namespace KidMartStore.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult AddNewProduct(Product NewProduct, HttpPostedFileBase Image)
+        public ActionResult AddNewProduct(Product NewProduct)
         {
-            // Handle file upload if a new image is provided
-            if (Image != null && Image.ContentLength > 0)
-            {
-                var urlImage = "/Image/Products/";
-                var path = Server.MapPath(urlImage);
-                // Lưu ảnh vào thư mục
-                Image.SaveAs(path + Image.FileName);
-            }
             try
-            {               
+            {
+                if (NewProduct.UploadImage != null)
+                {
+                    string filename = Path.GetFileNameWithoutExtension(NewProduct.UploadImage.FileName);
+                    string extent = Path.GetExtension(NewProduct.UploadImage.FileName);
+                    filename = filename + extent;
+                    NewProduct.Image = "~/Image/Products/" + filename;
+                    NewProduct.UploadImage.SaveAs(Path.Combine(Server.MapPath("~/Image/Products/"), filename));
+                }
+
                 database.Products.Add(NewProduct);
                 database.SaveChanges();
                 return RedirectToAction("ManagerProduct");
