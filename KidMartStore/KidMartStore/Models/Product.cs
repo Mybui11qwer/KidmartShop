@@ -48,11 +48,9 @@ namespace KidMartStore.Models
         [Display(Name = "Hình ảnh")]
         [DataType(DataType.ImageUrl)]
         public string Image { get; set; }
-
         [Display(Name = "Tải lên hình ảnh")]
         [NotMapped]
         public HttpPostedFileBase UploadImage { get; set; }
-
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Promotion> Promotions { get; set; }

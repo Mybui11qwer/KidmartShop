@@ -419,6 +419,7 @@
     <Content Include="Image\Policies\policies_icon_3.png" />
     <Content Include="Image\Policies\policies_icon_4.png" />
     <Content Include="Image\Icons\Icon-user.png" />
+    <Content Include="Image\Product\bd93cda4-0206-4f8b-8f33-6fc76c43e60e.jpg" />
     <Content Include="Models\KidMartStore.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>KidMartStore.edmx</DependentUpon>
