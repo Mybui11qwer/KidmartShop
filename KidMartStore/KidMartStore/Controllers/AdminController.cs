@@ -63,6 +63,19 @@ namespace KidMartStore.Controllers
                 return View("AddNewAccount");
             }
         }
+        [HttpPost]
+        public ActionResult DeleteAccount(int id)
+        {
+            var customer = database.Customers.SingleOrDefault(c => c.ID_Customer == id);
+            if (customer != null)
+            {
+                database.Customers.Remove(customer);
+                database.SaveChanges();
+                return RedirectToAction("ManagerAccount");
+            }
+            return Json(new { success = false, message = "Người dùng không tồn tại." });
+        }
+
         public ActionResult ManagerProduct()
         {
             List<Product> products = database.Products.ToList();

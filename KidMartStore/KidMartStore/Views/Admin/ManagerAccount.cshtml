@@ -25,7 +25,7 @@
                     <td>@customer.Address</td>
                     <td>
                         <a href="#" class="edit">Chỉnh sửa</a>
-                        <a href="#" class="delete">Xóa</a>
+                        <a href="@Url.Action("DeleteAccount", "Admin", new {id = customer.ID_Customer})" data-id="@customer.ID_Customer" class="delete">Xóa</a>
                     </td>
                 </tr>
             }
