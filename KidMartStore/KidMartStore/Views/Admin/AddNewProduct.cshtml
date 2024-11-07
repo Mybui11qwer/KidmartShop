@@ -1,9 +1,9 @@
-﻿@model KidMartStore.Models.Product
+﻿@model List<KidMartStore.Models.Category>
 @{
     ViewBag.Title = "Thêm sản phẩm mới";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
-<link rel="stylesheet" href="~/Content/Admin/AddNewProdcut.css"/>
+<link rel="stylesheet" href="~/Content/Admin/AddNewProduct.css"/>
 <section class="add-product-form">
     <h2>Thêm sản phẩm mới</h2>
     <form action="/Admin/AddNewProduct" method="POST" enctype="multipart/form-data">
@@ -19,17 +19,17 @@
 
         <div class="form-group">
             <label for="product-price">Loại sản phẩm</label>
-            <input type="text" id="product-price" name="ID_Category" required>
+            <select id="role" name="ID_Category" required>
+                @foreach (var category in Model)
+                {
+                    <option value="@category.ID_Category">@category.Name_Category</option>
+                }
+            </select>
         </div>
 
         <div class="form-group">
             <label for="product-description">Mô tả</label>
             <textarea id="product-description" name="Description" rows="4"></textarea>
-        </div>
-
-        <div class="form-group">
-            <label for="product-color">Màu sắc</label>
-            <input type="number" id="product-quantity" name="Color" />
         </div>
 
         <div class="form-group">

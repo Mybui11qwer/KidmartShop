@@ -70,11 +70,12 @@ namespace KidMartStore.Controllers
         }
         public ActionResult AddNewProduct()
         {
-            return View();
+            List<Category> categories = database.Categories.ToList();
+            return View(categories);
         }
         [HttpPost]
         public ActionResult AddNewProduct(Product NewProduct)
-        {
+        {           
             try
             {
                 if (NewProduct.UploadImage != null && NewProduct.UploadImage.ContentLength > 0)

@@ -317,6 +317,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -365,7 +367,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Admin\AddNewProdcut.css" />
+    <Content Include="Content\Admin\AddNewProduct.css" />
     <Content Include="Content\Admin\AddNewUser.css" />
     <Content Include="Content\Admin\ManagerAccount.css" />
     <Content Include="Content\Admin\ManagerProduct.css" />
@@ -387,7 +389,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\CSS\Address.css" />
     <Content Include="Content\CSS\Register.css" />
-    <Content Include="Content\CSS\IndexPage.css" />
+    <Content Include="Content\CSS\Index.css" />
     <Content Include="Content\CSS\infor.css" />
     <Content Include="Content\CSS\Login.css" />
     <Content Include="Content\CSS\SanPhamPages.css" />
@@ -483,10 +485,11 @@
     <Content Include="Views\Admin\AddNewCategory.cshtml" />
     <Content Include="Views\Admin\ManagerAccountAdmin.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Product\ChiTietSanPham.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\ProductRepository\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
