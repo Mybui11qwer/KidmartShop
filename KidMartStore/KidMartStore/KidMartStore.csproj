@@ -419,9 +419,6 @@
     <Content Include="Image\Policies\policies_icon_3.png" />
     <Content Include="Image\Policies\policies_icon_4.png" />
     <Content Include="Image\Icons\Icon-user.png" />
-    <Content Include="Image\Products\ao-be-gai-animo-hong.jpg" />
-    <Content Include="Image\Products\bo-be-trai-ngan-animo-easy-hn0924025-1y-trang.jpg" />
-    <Content Include="Image\Products\bo-yem-be-trai-ngan-bst-gau-mup-animo-hs1122063-18-24m-blue.jpg" />
     <Content Include="Models\KidMartStore.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>KidMartStore.edmx</DependentUpon>

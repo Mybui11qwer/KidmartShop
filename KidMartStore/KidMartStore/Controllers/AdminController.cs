@@ -77,13 +77,30 @@ namespace KidMartStore.Controllers
         {
             try
             {
-                if (NewProduct.UploadImage != null)
+                if (NewProduct.UploadImage != null && NewProduct.UploadImage.ContentLength > 0)
                 {
-                    string filename = Path.GetFileNameWithoutExtension(NewProduct.UploadImage.FileName);
-                    string extent = Path.GetExtension(NewProduct.UploadImage.FileName);
-                    filename = filename + extent;
-                    NewProduct.Image = "~/Image/Products/" + filename;
-                    NewProduct.UploadImage.SaveAs(Path.Combine(Server.MapPath("~/Image/Products/"), filename));
+                    try
+                    {
+                        string directoryPath = Server.MapPath("~/Image/");
+                        if (!Directory.Exists(directoryPath))
+                        {
+                            Directory.CreateDirectory(directoryPath);
+                        }
+
+                        string filename = Path.GetFileNameWithoutExtension(NewProduct.UploadImage.FileName);
+                        string extension = Path.GetExtension(NewProduct.UploadImage.FileName);
+                        filename = filename + "_" + Guid.NewGuid().ToString() + extension;
+                        string path = Path.Combine(directoryPath, filename);
+
+                        // Lưu đường dẫn vào thuộc tính Image
+                        NewProduct.Image = "~/Image/" + filename;  
+                        NewProduct.UploadImage.SaveAs(path);
+                    }
+                    catch (Exception ex)
+                    {
+                        // Ghi log lỗi hoặc xử lý lỗi
+                        Console.WriteLine("Lỗi khi lưu tệp: " + ex.Message);
+                    }
                 }
 
                 database.Products.Add(NewProduct);
