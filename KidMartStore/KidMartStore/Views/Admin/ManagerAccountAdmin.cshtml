@@ -26,7 +26,7 @@
                     <td>@customer.Address</td>
                     <td>
                         <a href="#" class="edit">Chỉnh sửa</a>
-                        <a href="#" class="delete">Xóa</a>
+                        <a href="@Url.Action("DeleteAccountAdmin", "Admin", new { id = customer.ID_Customer })" class="delete" onclick="return confirm('Bạn chắc chắn muốn xóa người dùng này không?');">Xóa</a>
                     </td>
                 </tr>
             }

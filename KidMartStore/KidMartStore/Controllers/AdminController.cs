@@ -40,6 +40,40 @@ namespace KidMartStore.Controllers
             List<Customer> customers = database.Customers.ToList();
             return View(customers);
         }
+
+        public ActionResult UpdateAccount(int id)
+        {
+            var product = database.Products.Find(id); // Adjust this line based on your data access method
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            return View(product);
+        }
+        [HttpPost]
+        public ActionResult UpdateAccount(Customer customer)
+        {
+            if (ModelState.IsValid)
+            {
+
+                // Update the customer in the database
+                var existingCustomer = database.Customers.Find(customer.ID_Customer);
+                if (existingCustomer != null)
+                {
+                    existingCustomer.Username = customer.Username;
+                    existingCustomer.Phone = customer.Phone;
+                    existingCustomer.Email = customer.Email;
+                    existingCustomer.Address = customer.Address;
+                    existingCustomer.Gender = customer.Gender;
+
+                    database.SaveChanges(); // Save changes to the database
+                }
+
+                return RedirectToAction("ManagerAccount"); // Redirect back to the customer manager
+            } // Redirect to the customer list
+            return View(customer);
+        }
+
         public ActionResult ManagerAccountAdmin()
         {
             List<Customer> customers = database.Customers.ToList();
@@ -63,17 +97,26 @@ namespace KidMartStore.Controllers
                 return View("AddNewAccount");
             }
         }
-        [HttpPost]
         public ActionResult DeleteAccount(int id)
         {
-            var customer = database.Customers.SingleOrDefault(c => c.ID_Customer == id);
+            var customer = database.Customers.Find(id);
             if (customer != null)
             {
                 database.Customers.Remove(customer);
                 database.SaveChanges();
-                return RedirectToAction("ManagerAccount");
             }
-            return Json(new { success = false, message = "Người dùng không tồn tại." });
+            return RedirectToAction("ManagerAccount"); // Hoặc trang danh sách người dùng.
+        }
+
+        public ActionResult DeleteAccountAdmin(int id)
+        {
+            var customer = database.Customers.Find(id);
+            if (customer != null)
+            {
+                database.Customers.Remove(customer);
+                database.SaveChanges();
+            }
+            return RedirectToAction("ManagerAccountAdmin"); // Hoặc trang danh sách người dùng.
         }
 
         public ActionResult ManagerProduct()

@@ -24,8 +24,8 @@
                     <td>@customer.Email</td>
                     <td>@customer.Address</td>
                     <td>
-                        <a href="#" class="edit">Chỉnh sửa</a>
-                        <a href="@Url.Action("DeleteAccount", "Admin", new {id = customer.ID_Customer})" data-id="@customer.ID_Customer" class="delete">Xóa</a>
+                        <a href="@Url.Action("UpdateCustomer", "Admin", new { id = customer.ID_Customer })" class="edit">Chỉnh sửa</a>
+                        <a href="@Url.Action("DeleteAccount", "Admin", new { id = customer.ID_Customer })" class="delete" onclick="return confirm('Bạn chắc chắn muốn xóa người dùng này không?');">Xóa</a>
                     </td>
                 </tr>
             }
