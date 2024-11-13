@@ -11,7 +11,19 @@ namespace KidMartStore.Controllers
     {
         private readonly KidMartStoreEntities database = new KidMartStoreEntities();
         // GET: User
-        public ActionResult ChiTietSanPham()
+        public ActionResult ChiTietSanPham(int id)
+        {
+            // Retrieve the product from the database based on the product ID
+            var product = database.Products.FirstOrDefault(p => p.ID_Product == id);
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+
+            // Pass product data to the view
+            return View(product);
+        }
+        public ActionResult GioHanng()
         {
             return View();
         }

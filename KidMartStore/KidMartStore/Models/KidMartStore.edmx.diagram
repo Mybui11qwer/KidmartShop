@@ -4,7 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="06776242021a4d89b0d09f780ccbe076" Name="Diagram1">
+      <Diagram DiagramId="3c463783f02d4d82b51cd62c7b63666f" Name="Diagram1">
+        <EntityTypeShape EntityType="KidMartStoreModel.AdvertisingImage" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KidMartStoreModel.Category" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
         <EntityTypeShape EntityType="KidMartStoreModel.Detail_Order" Width="1.5" PointX="10.25" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="KidMartStoreModel.Material" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
@@ -12,7 +13,7 @@
         <EntityTypeShape EntityType="KidMartStoreModel.Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="KidMartStoreModel.Promotion" Width="1.5" PointX="5.75" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="KidMartStoreModel.Size" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="KidMartStoreModel.User" Width="1.5" PointX="5.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KidMartStoreModel.User" Width="1.5" PointX="5.75" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="KidMartStoreModel.Warranty_Policy" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
         <AssociationConnector Association="KidMartStoreModel.FK__Product__ID_Cate__4D94879B" ManuallyRouted="false" />
         <AssociationConnector Association="KidMartStoreModel.FK__Detail_Or__ID_Or__4316F928" ManuallyRouted="false" />

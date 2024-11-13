@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="KidMartStoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AdvertisingImage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
   <EntityType Name="Category">
     <Key>
       <PropertyRef Name="ID_Category" />
@@ -94,6 +102,7 @@
     <Property Name="Gender" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
     <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Avatar" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Orders" Relationship="Self.FK__Order__ID_User__3F466844" FromRole="User" ToRole="Order" />
   </EntityType>
   <EntityType Name="Warranty_Policy">
@@ -189,6 +198,7 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="KidMartStoreEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AdvertisingImages" EntityType="Self.AdvertisingImage" />
     <EntitySet Name="Categories" EntityType="Self.Category" />
     <EntitySet Name="Detail_Order" EntityType="Self.Detail_Order" />
     <EntitySet Name="Materials" EntityType="Self.Material" />

@@ -5,7 +5,7 @@
     ViewBag.Title = "Trang chủ";
 }
 <head>
-    <link rel="stylesheet" href="~/Content/CSS/IndexPage.css" />
+    <link rel="stylesheet" href="~/Content/CSS/Index.css" />
     <link rel="stylesheet" href="~/Content/CSS/infor.css" />
     <link rel="stylesheet" href="~/Content/CSS/Slider.css" />
 </head>
@@ -91,7 +91,7 @@
                     <img src="~/Image/Product/@product.Image" alt="@product.Name" />
                     <h5>@product.Name</h5>
                     <h5>@product.Price.ToString("N0") <span>VNĐ</span></h5>
-                    <a href="~/Product/ChiTietSanPham" class="button">Mua Hàng</a>
+                    <a href="@Url.Action("ChiTietSanPham", "Product", new { id = product.ID_Product })" class="button">Mua Hàng</a>
                 </nav>
             }
         </div>

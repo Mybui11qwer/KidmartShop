@@ -25,6 +25,7 @@ namespace KidMartStore.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<AdvertisingImage> AdvertisingImages { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Detail_Order> Detail_Order { get; set; }
         public virtual DbSet<Material> Materials { get; set; }

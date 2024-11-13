@@ -42,7 +42,7 @@ namespace KidMartStore.Controllers
         {
             if (ModelState.IsValid)
             {
-                var userId = Convert.ToInt64(Session["ID_Customer"]); // Retrieve the current user ID
+                var userId = Convert.ToInt64(Session["ID_User"]); // Retrieve the current user ID
                 var user = database.Users.Find(userId);
 
                 if (user != null)

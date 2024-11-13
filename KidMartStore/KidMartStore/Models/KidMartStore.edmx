@@ -5,6 +5,14 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="KidMartStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AdvertisingImage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Image" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="ID_Category" />
@@ -87,6 +95,7 @@
           <Property Name="Gender" Type="nvarchar" MaxLength="3" />
           <Property Name="Password" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Avatar" Type="varchar(max)" />
+          <Property Name="Role" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Warranty_Policy">
           <Key>
@@ -180,6 +189,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="KidMartStoreModelStoreContainer">
+          <EntitySet Name="AdvertisingImage" EntityType="Self.AdvertisingImage" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Detail_Order" EntityType="Self.Detail_Order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Material" EntityType="Self.Material" Schema="dbo" store:Type="Tables" />
@@ -223,6 +233,14 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="KidMartStoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AdvertisingImage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="ID_Category" />
@@ -317,6 +335,7 @@
           <Property Name="Gender" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Avatar" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Orders" Relationship="Self.FK__Order__ID_User__3F466844" FromRole="User" ToRole="Order" />
         </EntityType>
         <EntityType Name="Warranty_Policy">
@@ -412,6 +431,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="KidMartStoreEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AdvertisingImages" EntityType="Self.AdvertisingImage" />
           <EntitySet Name="Categories" EntityType="Self.Category" />
           <EntitySet Name="Detail_Order" EntityType="Self.Detail_Order" />
           <EntitySet Name="Materials" EntityType="Self.Material" />
@@ -456,6 +476,15 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="KidMartStoreModelStoreContainer" CdmEntityContainer="KidMartStoreEntities">
+          <EntitySetMapping Name="AdvertisingImages">
+            <EntityTypeMapping TypeName="KidMartStoreModel.AdvertisingImage">
+              <MappingFragment StoreEntitySet="AdvertisingImage">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Categories">
             <EntityTypeMapping TypeName="KidMartStoreModel.Category">
               <MappingFragment StoreEntitySet="Category">
@@ -544,6 +573,7 @@
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
