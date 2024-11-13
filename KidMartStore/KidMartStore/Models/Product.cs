@@ -11,50 +11,34 @@ namespace KidMartStore.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations.Schema;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
     using System.Web;
 
     public partial class Product
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Product()
-        {
-            this.Promotions = new HashSet<Promotion>();
-            this.Sizes = new HashSet<Size>();
-        }
-    
         public int ID_Product { get; set; }
-
-        [Display(Name = "Loại sản phẩm")]
-        public int ID_Category { get; set; }
-
-        [Display(Name = "Tên sản phẩm")]
-        [Required(ErrorMessage = "Vui lòng nhập tên sản phẩm")]
+        public string ProductCode { get; set; }
+        public Nullable<int> ID_Category { get; set; }
         public string Name { get; set; }
-
-        [Display(Name = "Giá")]
-        [Required(ErrorMessage = "Vui lòng nhập giá sản phẩm")]
-        [Range(1000, double.MaxValue, ErrorMessage = "Giá sản phẩm phải lớn hơn 1000")]
         public decimal Price { get; set; }
-
-        [Display(Name = "Số lượng")]
-        [Required(ErrorMessage = "Vui lòng nhập số lượng sản phẩm")]
         public int Quantity { get; set; }
-
-        [Display(Name = "Mô tả")]
         public string Description { get; set; }
 
         [Display(Name = "Hình ảnh")]
         [DataType(DataType.ImageUrl)]
         public string Image { get; set; }
+        public Nullable<int> ID_Size { get; set; }
+        public Nullable<int> ID_Material { get; set; }
+        public Nullable<int> ID_Warranty { get; set; }
+
         [Display(Name = "Tải lên hình ảnh")]
         [NotMapped]
         public HttpPostedFileBase UploadImage { get; set; }
+
         public virtual Category Category { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Promotion> Promotions { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Size> Sizes { get; set; }
+        public virtual Material Material { get; set; }
+        public virtual Size Size { get; set; }
+        public virtual Warranty_Policy Warranty_Policy { get; set; }
     }
 }

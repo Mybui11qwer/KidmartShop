@@ -21,6 +21,7 @@ namespace KidMartStore.Models
         }
     
         public int ID_Category { get; set; }
+        public string CategoryCode { get; set; }
         public string Name_Category { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

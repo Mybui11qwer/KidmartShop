@@ -322,16 +322,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Cart.cs">
-      <DependentUpon>KidMartStore.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Category.cs">
-      <DependentUpon>KidMartStore.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Customer.cs">
-      <DependentUpon>KidMartStore.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Detail_Cart.cs">
       <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Detail_Order.cs">
@@ -352,6 +343,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>KidMartStore.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Material.cs">
+      <DependentUpon>KidMartStore.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Order.cs">
       <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
@@ -362,6 +356,12 @@
       <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Size.cs">
+      <DependentUpon>KidMartStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>KidMartStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Warranty_Policy.cs">
       <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -389,10 +389,10 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\CSS\Address.css" />
     <Content Include="Content\CSS\Register.css" />
-    <Content Include="Content\CSS\Index.css" />
+    <Content Include="Content\CSS\IndexPage.css" />
     <Content Include="Content\CSS\infor.css" />
     <Content Include="Content\CSS\Login.css" />
-    <Content Include="Content\CSS\SanPhamPages.css" />
+    <Content Include="Content\CSS\ProductPage.css" />
     <Content Include="Content\CSS\Thongtinnguoidung.css" />
     <Content Include="Content\CSS\Slider.css" />
     <Content Include="Content\Admin\Dashboard.css" />

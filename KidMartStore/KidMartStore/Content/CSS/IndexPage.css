@@ -10,11 +10,11 @@
 }
 
     .bodyFrame .firstContent .selectForm {
-        width: max-content;
+        width: 350px;
         height: max-content;
         background-color: black;
         border-radius: 10px;
-        padding: 30px;
+        padding-bottom: 15px;
     }
 
         .bodyFrame .firstContent .selectForm h2 {
@@ -22,6 +22,7 @@
             font-size: 30px;
             font-family: Arial;
             font-weight: bold;
+            text-align: center
         }
 
         .bodyFrame.firstContent .selectForm .tab-content {
@@ -29,17 +30,28 @@
             flex-wrap: wrap;
         }
 
-            .bodyFrame .firstContent .selectForm .tab-content label {
+            .bodyFrame .firstContent .selectForm .tab-content div {
                 background-color: black;
+                border-bottom: 1px solid #FFC0CB;
+                padding: 10px;
                 color: white;
-                border-bottom: 1px solid white;
                 font-family: Arial;
                 font-size: 20px;
+                transition:all 0.5s ease;
             }
+                .bodyFrame .firstContent .selectForm .tab-content div:hover {
+                    color: black;
+                    background-color: #FFC0CB;
+                    border-bottom: 1px solid black;
+                }
+                .bodyFrame .firstContent .selectForm .tab-content div span {
+                    
+                    margin-left: 20px;
+                }
 
-.bodyFrame .ProductList {
-    text-align: center;
-}
+                .bodyFrame .ProductList {
+                    text-align: center;
+                }
 
     .bodyFrame .ProductList h1 {
         padding: 10px 0px 10px 0px;
@@ -68,7 +80,7 @@
             border-radius: 25px;
             padding: 8px;
         }
-            .bodyFrame .ProductList .Product-Items .item button {
+            .bodyFrame .ProductList .Product-Items .item .button {
                 width: 100%;
                 border-radius: 18px;
                 margin-top: 10px;
@@ -78,7 +90,7 @@
                 transition: 0.5s ease;
             }
 
-                .bodyFrame .ProductList .Product-Items .item button:hover {
+                .bodyFrame .ProductList .Product-Items .item .button:hover {
                     background-color: #808080;
                     color: white;
                     font-weight: bold;

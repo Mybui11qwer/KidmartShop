@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/UserLayout.cshtml";
     ViewBag.Title = "Sản phẩm";
 }
-<link rel="stylesheet" href="~/Content/CSS/SanPhamPages.css"/>
+<link rel="stylesheet" href="~/Content/CSS/ProductPage.css"/>
 <section class="infor-promotion"></section>
 <main class="product-list">
     <div class="search-content">
@@ -11,7 +11,7 @@
         <section class="filter">
             @foreach(var category in Model.Select(m => m.Category).GroupBy(c => c.Name_Category).Select(g => g.First()))
             {
-                <label>Danh mục @category.Name_Category</label><br /><br />
+                <div><span>- Danh mục @category.Name_Category</span></div>
             }
         </section>
     </div>

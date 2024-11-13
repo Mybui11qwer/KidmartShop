@@ -12,19 +12,18 @@ namespace KidMartStore.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Cart
+    public partial class Material
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Cart()
+        public Material()
         {
-            this.Detail_Cart = new HashSet<Detail_Cart>();
+            this.Products = new HashSet<Product>();
         }
     
-        public int ID_Cart { get; set; }
-        public int ID_Customer { get; set; }
+        public int ID_Material { get; set; }
+        public string Name_Material { get; set; }
     
-        public virtual Customer Customer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Detail_Cart> Detail_Cart { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

@@ -38,12 +38,12 @@ namespace KidMartStore.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Profile(Customer customer)
+        public ActionResult Profile(User customer)
         {
             if (ModelState.IsValid)
             {
                 var userId = Convert.ToInt64(Session["ID_Customer"]); // Retrieve the current user ID
-                var user = database.Customers.Find(userId);
+                var user = database.Users.Find(userId);
 
                 if (user != null)
                 {

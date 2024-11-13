@@ -3,28 +3,50 @@
     margin: 10px 0px 10px 10px;
 }
     .product-list .search-content {
-        width: max-content;
+        width: 300px;
         height: max-content;
-        margin-right: 80px;
-        padding: 0px 20px 20px 20px;
-        border: 1px solid black;
+        background-color: black;
+        border-radius: 10px;
+        padding-bottom: 15px;
     }
         .product-list .search-content h2 {
-            color: black;
+            color: white;
+            font-size: 30px;
             font-family: Arial;
-            font-weight: bolder;
+            font-weight: bold;
+            text-align: center
         }
         .product-list .search-content .filter {
-            font-family: Arial;
-            font-weight: normal;
+            display: grid;
+            flex-wrap: wrap;
         }
-        .product-list .content2 {
-            width: 70%;
-            position: relative;
-            height: max-content;
-        }
+            .product-list .search-content .filter div {
+                background-color: black;
+                border-bottom: 1px solid #FFC0CB;
+                padding: 10px;
+                color: white;
+                font-family: Arial;
+                font-size: 15px;
+                transition: all 0.5s ease;
+            }
+                .product-list .search-content .filter div:hover {
+                    color: black;
+                    background-color: #FFC0CB;
+                    border-bottom: 1px solid black;
+                }
+                .product-list .search-content .filter div span {
+                    margin-left: 20px;
+                }
+
+
+                .product-list .content2 {
+                    width: 70%;
+                    margin-left: 20px;
+                    position: relative;
+                    height: max-content;
+                }
             .product-list .content2 h2 {
-                border-bottom: 1px solid black;
+                border-bottom: 2px solid black;
                 font-family: Arial;
                 font-weight: bolder;
             }
@@ -64,6 +86,7 @@
                     width: 250px;
                     height: 300px;
                     transition: 1s ease;
+                    border-radius: 25px;
                 }
                     .product-list .content2 .Product-Items .item img:hover {
                         transform: scale(1.1);

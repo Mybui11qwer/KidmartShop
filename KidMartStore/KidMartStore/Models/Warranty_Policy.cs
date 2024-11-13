@@ -12,28 +12,18 @@ namespace KidMartStore.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Customer
+    public partial class Warranty_Policy
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Customer()
+        public Warranty_Policy()
         {
-            this.Carts = new HashSet<Cart>();
-            this.Orders = new HashSet<Order>();
+            this.Products = new HashSet<Product>();
         }
     
-        public int ID_Customer { get; set; }
-        public string Username { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public string Phone { get; set; }
-        public string Address { get; set; }
-        public string Gender { get; set; }
-        public string Avatar { get; set; }
-        public string Role { get; set; }
+        public int ID_Warranty { get; set; }
+        public string Content { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cart> Carts { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }
