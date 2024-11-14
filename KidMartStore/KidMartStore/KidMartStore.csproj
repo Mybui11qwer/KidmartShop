@@ -491,6 +491,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Product\ChiTietSanPham.cshtml" />
     <Content Include="Views\Product\GioHanng.cshtml" />
+    <Content Include="Views\Product\CheckOut_Success.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
