@@ -20,7 +20,7 @@
             <h3>Tài khoản của bạn</h3>
             <div class="Information-User" id="section1">
                 <h6>Tên người dùng: <span>@Session["Name"]</span></h6>
-                <h6>Địa chỉ: <span>@(Session["Address"] ?? "Người dùng chưa đăng ký địa chỉ")</span></h6>
+                <h6>Địa chỉ: <span>@(Model.Address ?? "Người dùng chưa đăng ký địa chỉ")</span></h6>
                 <h6>Địa chỉ Email: <span>@Session["Email"]</span></h6>
                 <h6>Số điện thoại: <span>@Session["Phone"]</span></h6>
                 <button onclick="changeSection()">Chỉnh sửa thông tin</button>

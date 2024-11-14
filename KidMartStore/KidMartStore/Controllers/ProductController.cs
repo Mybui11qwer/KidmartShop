@@ -25,7 +25,27 @@ namespace KidMartStore.Controllers
         }
         public ActionResult GioHanng()
         {
-            return View();
+            Cart _cart = Session["Cart"] as Cart;
+            return View(_cart);
+        }
+        public Cart GetCart()
+        {
+            Cart cart = Session["Cart"] as Cart;
+            if(cart == null | Session["Cart"] == null)
+            {
+                cart = new Cart();
+                Session["Cart"] = cart;
+            }
+            return cart;
+        }
+        public ActionResult AddToCart(int id)
+        {
+            var product = database.Products.SingleOrDefault(s => s.ID_Product == id);
+            if(product != null)
+            {
+                GetCart().Add_Product_Cart(product);
+            }
+            return RedirectToAction("Index", "Home");
         }
     }
 }
