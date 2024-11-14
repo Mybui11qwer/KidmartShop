@@ -1,6 +1,7 @@
 ﻿.Details {
     display: inline-flex;
     margin: 20px 150px 20px 150px;
+    width: 100%;
 }
     .Details .Image-Product{
         max-width: max-content;
@@ -56,6 +57,7 @@
         .Details .Information-product .form-buy .select {
             display: inline-flex;
             align-items: center;
+            width: 100%;
         }
             .Details .Information-product .form-buy .select .quantity {
                 display: flex;
@@ -88,6 +90,8 @@
                 margin-left: 30px;
                 border: 1px solid black;
                 padding: 5px 100px 5px 100px;
+                width: 100%;
+                text-align: center;
             }
             .Details .Information-product .form-buy .btn-buynow {
                 margin-top: 10px;

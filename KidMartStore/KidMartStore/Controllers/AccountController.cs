@@ -15,12 +15,12 @@ public class AccountController : Controller
         return View();
     }
     [HttpPost]
-    public ActionResult Login(User customer)
+    public ActionResult Login(Customer customer)
     {
         if (ModelState.IsValid)
         {
             // Kiểm tra thông tin đăng nhập
-            var checkUser = db.Users.FirstOrDefault(u => u.Email == customer.Email && u.Password == customer.Password);
+            var checkUser = db.Customers.FirstOrDefault(u => u.Email == customer.Email && u.Password == customer.Password);
             if (checkUser != null)
             {
                 // Lưu tên người dùng vào session
@@ -28,7 +28,7 @@ public class AccountController : Controller
                 Session["Name"] = checkUser.Username;
                 Session["Address"] = checkUser.Address;
                 Session["Phone"] = checkUser.Phone;
-                Session["ID_Customer"] = checkUser.ID_User;
+                Session["ID_Customer"] = checkUser.ID_Customer;
                 Session["Role"] = checkUser.Role;
 
                 return RedirectToAction("Index", "Home");
@@ -43,12 +43,12 @@ public class AccountController : Controller
     }
 
     [HttpPost]
-    public ActionResult Register(User NewCustomer)
+    public ActionResult Register(Customer NewCustomer)
     {
         try
         {
             NewCustomer.Role = "Khách Hàng";
-            db.Users.Add(NewCustomer);
+            db.Customers.Add(NewCustomer);
             db.SaveChanges();
             return RedirectToAction("Login");
         }

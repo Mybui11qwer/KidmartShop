@@ -1,32 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="KidMartStoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="AdvertisingImage">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-  </EntityType>
   <EntityType Name="Category">
     <Key>
       <PropertyRef Name="ID_Category" />
     </Key>
     <Property Name="ID_Category" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CategoryCode" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
     <Property Name="Name_Category" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Products" Relationship="Self.FK__Product__ID_Cate__4D94879B" FromRole="Category" ToRole="Product" />
+    <NavigationProperty Name="Products" Relationship="Self.FK__Product__ID_Cate__49C3F6B7" FromRole="Category" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="ID_Customer" />
+    </Key>
+    <Property Name="ID_Customer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Avatar" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Role" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Order__ID_Custom__3D5E1FD2" FromRole="Customer" ToRole="Order" />
   </EntityType>
   <EntityType Name="Detail_Order">
     <Key>
       <PropertyRef Name="ID_Detail_Order" />
     </Key>
-    <Property Name="ID_Detail_Order" Type="Int32" Nullable="false" />
+    <Property Name="ID_Detail_Order" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ID_Order" Type="Int32" Nullable="false" />
     <Property Name="ID_Product" Type="Int32" Nullable="false" />
     <Property Name="Quantity" Type="Int32" Nullable="false" />
     <Property Name="Unit_Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
-    <NavigationProperty Name="Order" Relationship="Self.FK__Detail_Or__ID_Or__4316F928" FromRole="Detail_Order" ToRole="Order" />
+    <NavigationProperty Name="Order" Relationship="Self.FK__Detail_Or__ID_Or__412EB0B6" FromRole="Detail_Order" ToRole="Order" />
   </EntityType>
   <EntityType Name="Material">
     <Key>
@@ -34,29 +40,27 @@
     </Key>
     <Property Name="ID_Material" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name_Material" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Products" Relationship="Self.FK__Product__ID_Mate__4F7CD00D" FromRole="Material" ToRole="Product" />
+    <NavigationProperty Name="Products" Relationship="Self.FK__Product__ID_Mate__4BAC3F29" FromRole="Material" ToRole="Product" />
   </EntityType>
   <EntityType Name="Order">
     <Key>
       <PropertyRef Name="ID_Order" />
     </Key>
     <Property Name="ID_Order" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="OrderCode" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
-    <Property Name="ID_User" Type="Int32" Nullable="false" />
+    <Property Name="ID_Customer" Type="Int32" Nullable="false" />
     <Property Name="Order_Date" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="Total" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
-    <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ID_Promotion" Type="Int32" />
-    <NavigationProperty Name="Detail_Order" Relationship="Self.FK__Detail_Or__ID_Or__4316F928" FromRole="Order" ToRole="Detail_Order" />
-    <NavigationProperty Name="Promotion" Relationship="Self.FK__Order__ID_Promot__403A8C7D" FromRole="Order" ToRole="Promotion" />
-    <NavigationProperty Name="User" Relationship="Self.FK__Order__ID_User__3F466844" FromRole="Order" ToRole="User" />
+    <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ID_Sale" Type="Int32" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK__Order__ID_Custom__3D5E1FD2" FromRole="Order" ToRole="Customer" />
+    <NavigationProperty Name="Detail_Order" Relationship="Self.FK__Detail_Or__ID_Or__412EB0B6" FromRole="Order" ToRole="Detail_Order" />
+    <NavigationProperty Name="Promotion" Relationship="Self.FK__Order__ID_Sale__3E52440B" FromRole="Order" ToRole="Promotion" />
   </EntityType>
   <EntityType Name="Product">
     <Key>
       <PropertyRef Name="ID_Product" />
     </Key>
     <Property Name="ID_Product" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ProductCode" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
     <Property Name="ID_Category" Type="Int32" />
     <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
@@ -66,44 +70,30 @@
     <Property Name="ID_Size" Type="Int32" />
     <Property Name="ID_Material" Type="Int32" />
     <Property Name="ID_Warranty" Type="Int32" />
-    <NavigationProperty Name="Category" Relationship="Self.FK__Product__ID_Cate__4D94879B" FromRole="Product" ToRole="Category" />
-    <NavigationProperty Name="Material" Relationship="Self.FK__Product__ID_Mate__4F7CD00D" FromRole="Product" ToRole="Material" />
-    <NavigationProperty Name="Size" Relationship="Self.FK__Product__ID_Size__4E88ABD4" FromRole="Product" ToRole="Size" />
-    <NavigationProperty Name="Warranty_Policy" Relationship="Self.FK__Product__ID_Warr__5070F446" FromRole="Product" ToRole="Warranty_Policy" />
+    <NavigationProperty Name="Category" Relationship="Self.FK__Product__ID_Cate__49C3F6B7" FromRole="Product" ToRole="Category" />
+    <NavigationProperty Name="Material" Relationship="Self.FK__Product__ID_Mate__4BAC3F29" FromRole="Product" ToRole="Material" />
+    <NavigationProperty Name="Size" Relationship="Self.FK__Product__ID_Size__4AB81AF0" FromRole="Product" ToRole="Size" />
+    <NavigationProperty Name="Warranty_Policy" Relationship="Self.FK__Product__ID_Warr__4CA06362" FromRole="Product" ToRole="Warranty_Policy" />
   </EntityType>
   <EntityType Name="Promotion">
     <Key>
-      <PropertyRef Name="ID_Promotion" />
+      <PropertyRef Name="ID_Sale" />
     </Key>
-    <Property Name="ID_Promotion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Sale" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Percent_Discount" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
     <Property Name="Start_Date" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="End_Date" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="Code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Orders" Relationship="Self.FK__Order__ID_Promot__403A8C7D" FromRole="Promotion" ToRole="Order" />
+    <Property Name="NamePromotion" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Order__ID_Sale__3E52440B" FromRole="Promotion" ToRole="Order" />
   </EntityType>
   <EntityType Name="Size">
     <Key>
       <PropertyRef Name="ID_Size" />
     </Key>
     <Property Name="ID_Size" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Products" Relationship="Self.FK__Product__ID_Size__4E88ABD4" FromRole="Size" ToRole="Product" />
-  </EntityType>
-  <EntityType Name="User">
-    <Key>
-      <PropertyRef Name="ID_User" />
-    </Key>
-    <Property Name="ID_User" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Gender" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
-    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Avatar" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Orders" Relationship="Self.FK__Order__ID_User__3F466844" FromRole="User" ToRole="Order" />
+    <Property Name="Name" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Products" Relationship="Self.FK__Product__ID_Size__4AB81AF0" FromRole="Size" ToRole="Product" />
   </EntityType>
   <EntityType Name="Warranty_Policy">
     <Key>
@@ -111,9 +101,9 @@
     </Key>
     <Property Name="ID_Warranty" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Products" Relationship="Self.FK__Product__ID_Warr__5070F446" FromRole="Warranty_Policy" ToRole="Product" />
+    <NavigationProperty Name="Products" Relationship="Self.FK__Product__ID_Warr__4CA06362" FromRole="Warranty_Policy" ToRole="Product" />
   </EntityType>
-  <Association Name="FK__Product__ID_Cate__4D94879B">
+  <Association Name="FK__Product__ID_Cate__49C3F6B7">
     <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
     <End Role="Product" Type="Self.Product" Multiplicity="*" />
     <ReferentialConstraint>
@@ -125,7 +115,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Detail_Or__ID_Or__4316F928">
+  <Association Name="FK__Order__ID_Custom__3D5E1FD2">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="ID_Customer" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="ID_Customer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Detail_Or__ID_Or__412EB0B6">
     <End Role="Order" Type="Self.Order" Multiplicity="1" />
     <End Role="Detail_Order" Type="Self.Detail_Order" Multiplicity="*" />
     <ReferentialConstraint>
@@ -137,7 +139,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Product__ID_Mate__4F7CD00D">
+  <Association Name="FK__Product__ID_Mate__4BAC3F29">
     <End Role="Material" Type="Self.Material" Multiplicity="0..1" />
     <End Role="Product" Type="Self.Product" Multiplicity="*" />
     <ReferentialConstraint>
@@ -149,31 +151,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Order__ID_Promot__403A8C7D">
+  <Association Name="FK__Order__ID_Sale__3E52440B">
     <End Role="Promotion" Type="Self.Promotion" Multiplicity="0..1" />
     <End Role="Order" Type="Self.Order" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Promotion">
-        <PropertyRef Name="ID_Promotion" />
+        <PropertyRef Name="ID_Sale" />
       </Principal>
       <Dependent Role="Order">
-        <PropertyRef Name="ID_Promotion" />
+        <PropertyRef Name="ID_Sale" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Order__ID_User__3F466844">
-    <End Role="User" Type="Self.User" Multiplicity="1" />
-    <End Role="Order" Type="Self.Order" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="User">
-        <PropertyRef Name="ID_User" />
-      </Principal>
-      <Dependent Role="Order">
-        <PropertyRef Name="ID_User" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Product__ID_Size__4E88ABD4">
+  <Association Name="FK__Product__ID_Size__4AB81AF0">
     <End Role="Size" Type="Self.Size" Multiplicity="0..1" />
     <End Role="Product" Type="Self.Product" Multiplicity="*" />
     <ReferentialConstraint>
@@ -185,7 +175,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Product__ID_Warr__5070F446">
+  <Association Name="FK__Product__ID_Warr__4CA06362">
     <End Role="Warranty_Policy" Type="Self.Warranty_Policy" Multiplicity="0..1" />
     <End Role="Product" Type="Self.Product" Multiplicity="*" />
     <ReferentialConstraint>
@@ -198,41 +188,40 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="KidMartStoreEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="AdvertisingImages" EntityType="Self.AdvertisingImage" />
     <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
     <EntitySet Name="Detail_Order" EntityType="Self.Detail_Order" />
     <EntitySet Name="Materials" EntityType="Self.Material" />
     <EntitySet Name="Orders" EntityType="Self.Order" />
     <EntitySet Name="Products" EntityType="Self.Product" />
     <EntitySet Name="Promotions" EntityType="Self.Promotion" />
     <EntitySet Name="Sizes" EntityType="Self.Size" />
-    <EntitySet Name="Users" EntityType="Self.User" />
     <EntitySet Name="Warranty_Policy" EntityType="Self.Warranty_Policy" />
-    <AssociationSet Name="FK__Product__ID_Cate__4D94879B" Association="Self.FK__Product__ID_Cate__4D94879B">
+    <AssociationSet Name="FK__Product__ID_Cate__49C3F6B7" Association="Self.FK__Product__ID_Cate__49C3F6B7">
       <End Role="Category" EntitySet="Categories" />
       <End Role="Product" EntitySet="Products" />
     </AssociationSet>
-    <AssociationSet Name="FK__Detail_Or__ID_Or__4316F928" Association="Self.FK__Detail_Or__ID_Or__4316F928">
+    <AssociationSet Name="FK__Order__ID_Custom__3D5E1FD2" Association="Self.FK__Order__ID_Custom__3D5E1FD2">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Detail_Or__ID_Or__412EB0B6" Association="Self.FK__Detail_Or__ID_Or__412EB0B6">
       <End Role="Order" EntitySet="Orders" />
       <End Role="Detail_Order" EntitySet="Detail_Order" />
     </AssociationSet>
-    <AssociationSet Name="FK__Product__ID_Mate__4F7CD00D" Association="Self.FK__Product__ID_Mate__4F7CD00D">
+    <AssociationSet Name="FK__Product__ID_Mate__4BAC3F29" Association="Self.FK__Product__ID_Mate__4BAC3F29">
       <End Role="Material" EntitySet="Materials" />
       <End Role="Product" EntitySet="Products" />
     </AssociationSet>
-    <AssociationSet Name="FK__Order__ID_Promot__403A8C7D" Association="Self.FK__Order__ID_Promot__403A8C7D">
+    <AssociationSet Name="FK__Order__ID_Sale__3E52440B" Association="Self.FK__Order__ID_Sale__3E52440B">
       <End Role="Promotion" EntitySet="Promotions" />
       <End Role="Order" EntitySet="Orders" />
     </AssociationSet>
-    <AssociationSet Name="FK__Order__ID_User__3F466844" Association="Self.FK__Order__ID_User__3F466844">
-      <End Role="User" EntitySet="Users" />
-      <End Role="Order" EntitySet="Orders" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Product__ID_Size__4E88ABD4" Association="Self.FK__Product__ID_Size__4E88ABD4">
+    <AssociationSet Name="FK__Product__ID_Size__4AB81AF0" Association="Self.FK__Product__ID_Size__4AB81AF0">
       <End Role="Size" EntitySet="Sizes" />
       <End Role="Product" EntitySet="Products" />
     </AssociationSet>
-    <AssociationSet Name="FK__Product__ID_Warr__5070F446" Association="Self.FK__Product__ID_Warr__5070F446">
+    <AssociationSet Name="FK__Product__ID_Warr__4CA06362" Association="Self.FK__Product__ID_Warr__4CA06362">
       <End Role="Warranty_Policy" EntitySet="Warranty_Policy" />
       <End Role="Product" EntitySet="Products" />
     </AssociationSet>

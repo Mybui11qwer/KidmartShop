@@ -20,11 +20,12 @@ namespace KidMartStore.Models
             this.Orders = new HashSet<Order>();
         }
     
-        public int ID_Promotion { get; set; }
+        public int ID_Sale { get; set; }
         public decimal Percent_Discount { get; set; }
         public System.DateTime Start_Date { get; set; }
         public System.DateTime End_Date { get; set; }
         public string Code { get; set; }
+        public string NamePromotion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }

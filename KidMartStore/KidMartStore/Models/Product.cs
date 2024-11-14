@@ -9,13 +9,15 @@
 
 namespace KidMartStore.Models
 {
+    using Microsoft.AspNetCore.Http;
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Web;
+
     public partial class Product
     {
         public int ID_Product { get; set; }
-        public string ProductCode { get; set; }
         public Nullable<int> ID_Category { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
@@ -25,7 +27,10 @@ namespace KidMartStore.Models
         public Nullable<int> ID_Size { get; set; }
         public Nullable<int> ID_Material { get; set; }
         public Nullable<int> ID_Warranty { get; set; }
-    
+
+        [NotMapped]
+        public HttpPostedFileBase UploadImage { get; set; }
+
         public virtual Category Category { get; set; }
         public virtual Material Material { get; set; }
         public virtual Size Size { get; set; }

@@ -25,7 +25,7 @@
                         <img src="~/Image/Product/@product.Image" alt="@product.Name" />
                         <h5>@product.Name</h5>
                         <h5>@product.Price.ToString("N0") <span>VNĐ</span></h5>
-                        <button>Mua Hàng</button>
+                        <a href="@Url.Action("ChiTietSanPham", "Product", new { id = product.ID_Product })" class="button">Mua Hàng</a>
                     </nav>
                 }
             </div>

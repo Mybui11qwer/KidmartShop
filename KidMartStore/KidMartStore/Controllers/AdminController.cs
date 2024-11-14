@@ -17,9 +17,9 @@ namespace KidMartStore.Controllers
         public ActionResult Dashboard()
         {
             // Lấy tổng số người dùng
-            var totalUsers = database.Users.Count(c => c.Role == "Khách Hàng");
+            var totalUsers = database.Customers.Count(c => c.Role == "Khách Hàng");
             // Lấy tổng số nhân viên
-            var totalAdmins = database.Users.Count(c => c.Role == "Nhân Viên" || c.Role == "Quản Lý");
+            var totalAdmins = database.Customers.Count(c => c.Role == "Nhân Viên" || c.Role == "Quản Lý");
 
             // Lấy tổng số sản phẩm
             var totalProducts = database.Products.Count();
@@ -37,7 +37,7 @@ namespace KidMartStore.Controllers
         }
         public ActionResult ManagerAccount()
         {
-            List<User> customers = database.Users.ToList();
+            List<Customer> customers = database.Customers.ToList();
             return View(customers);
         }
 
@@ -51,13 +51,13 @@ namespace KidMartStore.Controllers
             return View(product);
         }
         [HttpPost]
-        public ActionResult UpdateAccount(User customer)
+        public ActionResult UpdateAccount(Customer customer)
         {
             if (ModelState.IsValid)
             {
 
                 // Update the customer in the database
-                var existingCustomer = database.Users.Find(customer.ID_User);
+                var existingCustomer = database.Customers.Find(customer.ID_Customer);
                 if (existingCustomer != null)
                 {
                     existingCustomer.Username = customer.Username;
@@ -76,7 +76,7 @@ namespace KidMartStore.Controllers
 
         public ActionResult ManagerAccountAdmin()
         {
-            List<User> customers = database.Users.ToList();
+            List<Customer> customers = database.Customers.ToList();
             return View(customers);
         }
         public ActionResult AddNewAccount()
@@ -84,11 +84,11 @@ namespace KidMartStore.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult AddNewAccount(User NewCustomer)
+        public ActionResult AddNewAccount(Customer NewCustomer)
         {
             try
             {
-                database.Users.Add(NewCustomer);
+                database.Customers.Add(NewCustomer);
                 database.SaveChanges();
                 return RedirectToAction("ManagerAccount");
             }
@@ -99,10 +99,10 @@ namespace KidMartStore.Controllers
         }
         public ActionResult DeleteAccount(int id)
         {
-            var customer = database.Users.Find(id);
+            var customer = database.Customers.Find(id);
             if (customer != null)
             {
-                database.Users.Remove(customer);
+                database.Customers.Remove(customer);
                 database.SaveChanges();
             }
             return RedirectToAction("ManagerAccount"); // Hoặc trang danh sách người dùng.
@@ -110,10 +110,10 @@ namespace KidMartStore.Controllers
 
         public ActionResult DeleteAccountAdmin(int id)
         {
-            var customer = database.Users.Find(id);
+            var customer = database.Customers.Find(id);
             if (customer != null)
             {
-                database.Users.Remove(customer);
+                database.Customers.Remove(customer);
                 database.SaveChanges();
             }
             return RedirectToAction("ManagerAccountAdmin"); // Hoặc trang danh sách người dùng.

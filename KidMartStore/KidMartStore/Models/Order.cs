@@ -21,16 +21,15 @@ namespace KidMartStore.Models
         }
     
         public int ID_Order { get; set; }
-        public string OrderCode { get; set; }
-        public int ID_User { get; set; }
+        public int ID_Customer { get; set; }
         public System.DateTime Order_Date { get; set; }
         public decimal Total { get; set; }
         public string Status { get; set; }
-        public Nullable<int> ID_Promotion { get; set; }
+        public Nullable<int> ID_Sale { get; set; }
     
+        public virtual Customer Customer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Detail_Order> Detail_Order { get; set; }
         public virtual Promotion Promotion { get; set; }
-        public virtual User User { get; set; }
     }
 }

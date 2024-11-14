@@ -3,7 +3,7 @@
     ViewBag.Title = "Chi Tiết Sản Phẩm";
     Layout = "~/Views/Shared/UserLayout.cshtml";
 }
-<link rel="stylesheet" href="~/Content/CSS/Detail.css" />
+<link rel="stylesheet" href="~/Content/CSS/DetailProduct.css" />
 <div class="Details">
     <section class="Image-Product">
         <img src="~/Image/Product/@Model.Image" alt="@Model.Image" />
@@ -20,7 +20,7 @@
         </div>
         <div>
             <h3>Số lượng đã bán: @Model.Quantity</h3>
-            <h2>Giá bán: @Model.Price.ToString("N0")</h2>
+            <h2>Giá bán: @Model.Price.ToString("N0") VNĐ</h2>
         </div>
         <div class="product-promotion">
             <h3 class="product-prodomtion-heading"><img src="~/Image/Icons/gift.png" /> KHUYẾN MÃI - ƯU ĐÃI</h3>

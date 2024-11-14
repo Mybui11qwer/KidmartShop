@@ -322,10 +322,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AdvertisingImage.cs">
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\Category.cs">
       <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Category.cs">
+    <Compile Include="Models\Customer.cs">
       <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Detail_Order.cs">
@@ -361,9 +362,6 @@
     <Compile Include="Models\Size.cs">
       <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\User.cs">
-      <DependentUpon>KidMartStore.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Warranty_Policy.cs">
       <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
@@ -392,7 +390,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\CSS\Address.css" />
     <Content Include="Content\CSS\Cart.css" />
-    <Content Include="Content\CSS\Detail.css" />
+    <Content Include="Content\CSS\DetailProduct.css" />
     <Content Include="Content\CSS\Register.css" />
     <Content Include="Content\CSS\Index.css" />
     <Content Include="Content\CSS\infor.css" />

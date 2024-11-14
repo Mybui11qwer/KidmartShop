@@ -1,115 +1,16 @@
-CREATE DATABASE KidMartStore;
-USE KidMartStore;
-
--- Customer Table
-CREATE TABLE Customer
-(
-  ID_Customer INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
-  Username NVARCHAR(50) NOT NULL,
-  Email VARCHAR(100) NOT NULL,
-  Password VARCHAR(100) NOT NULL,
-  Phone VARCHAR(15) NOT NULL,
-  Address NVARCHAR(255),
-  Gender NVARCHAR(10),
-  Avatar VARCHAR(255),
-  Role NVarchar(50)
-);
-
--- Category Table
-CREATE TABLE Category
-(
-  ID_Category INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
-  Name_Category NVARCHAR(50) NOT NULL
-);
-
--- Product Table
-CREATE TABLE Product
-(
+CREATE TABLE Product (
   ID_Product INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
-  ID_Category INT NOT NULL,
-  Name NVARCHAR(100) NOT NULL,
-  Price DECIMAL(10, 2) NOT NULL,
+  ID_Category INT NULL,
+  [Name] NVARCHAR(100) NOT NULL,
+  Price DECIMAL(10,2) NOT NULL,
   Quantity INT NOT NULL,
-  Description NVarchar(max),
-  Image VARCHAR(255),
-  FOREIGN KEY (ID_Category) REFERENCES Category(ID_Category)
-);
-
--- Cart Table
-CREATE TABLE Cart
-(
-  ID_Cart INT NOT NULL IDENTITY(1000,1) PRIMARY KEY,
-  ID_Customer INT NOT NULL,
-  FOREIGN KEY (ID_Customer) REFERENCES Customer(ID_Customer)
-);
-
--- Detail_Cart Table
-CREATE TABLE Detail_Cart
-(
-  ID_Detail_Cart INT NOT NULL PRIMARY KEY,
-  ID_Cart INT NOT NULL,
-  ID_Product INT NOT NULL,
-  Quantity INT NOT NULL,
-  FOREIGN KEY (ID_Cart) REFERENCES Cart(ID_Cart)
-);
-
--- Promotion Table
-CREATE TABLE Promotion
-(
-  ID_Promotion INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
-  Percent_Discount DECIMAL(5, 0) NOT NULL,
-  Name_Promotion NVARCHAR(50),
-  Start_Date DATE NOT NULL,
-  End_Date DATE NOT NULL,
-  Code VARCHAR(20) NOT NULL
-);
-
--- Orders Table
-CREATE TABLE Orders
-(
-  ID_Order INT NOT NULL IDENTITY(1000,1) PRIMARY KEY,
-  ID_Customer INT NOT NULL,
-  Order_Date DATE NOT NULL,
-  Total DECIMAL(10, 2) NOT NULL,
-  Status NVARCHAR(20) NOT NULL,
-  ID_Promotion INT,
-  FOREIGN KEY (ID_Customer) REFERENCES Customer(ID_Customer),
-  FOREIGN KEY (ID_Promotion) REFERENCES Promotion(ID_Promotion)
-);
-
--- Detail_Order Table
-CREATE TABLE Detail_Order
-(
-  ID_Detail_Order INT NOT NULL IDENTITY(1000,1) PRIMARY KEY,
-  ID_Order INT NOT NULL,
-  ID_Product INT NOT NULL,
-  Quantity INT NOT NULL,
-  Unit_Price DECIMAL(18, 0) NOT NULL,
-  FOREIGN KEY (ID_Order) REFERENCES Orders(ID_Order)
-);
-
--- Size Table
-CREATE TABLE Size
-(
-  ID_Size INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
-  Size_Name NVARCHAR(50) NOT NULL
-);
-
--- Product_Size Junction Table
-CREATE TABLE Product_Size
-(
-  ID_Product INT NOT NULL,
-  ID_Size INT NOT NULL,
-  PRIMARY KEY (ID_Product, ID_Size),
-  FOREIGN KEY (ID_Product) REFERENCES Product(ID_Product),
-  FOREIGN KEY (ID_Size) REFERENCES Size(ID_Size)
-);
-
-CREATE TABLE Product_Promotion
-(
-  ID_Product INT NOT NULL,
-  ID_Promotion INT NOT NULL,
-  PRIMARY KEY (ID_Product, ID_Promotion),
-  FOREIGN KEY (ID_Product) REFERENCES Product(ID_Product),
-  FOREIGN KEY (ID_Promotion) REFERENCES Promotion(ID_Promotion)
+  [Description] TEXT,
+  [Image] VARCHAR(MAX),
+  ID_Size INT,
+  ID_Material INT,
+  ID_Warranty INT,
+  FOREIGN KEY (ID_Category) REFERENCES Category(ID_Category),
+  FOREIGN KEY (ID_Size) REFERENCES Size(ID_Size),
+  FOREIGN KEY (ID_Material) REFERENCES Material(ID_Material),
+  FOREIGN KEY (ID_Warranty) REFERENCES Warranty_Policy(ID_Warranty)
 );

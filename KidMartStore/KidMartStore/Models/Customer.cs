@@ -12,15 +12,15 @@ namespace KidMartStore.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Customer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User()
+        public Customer()
         {
             this.Orders = new HashSet<Order>();
         }
     
-        public int ID_User { get; set; }
+        public int ID_Customer { get; set; }
         public string Username { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
