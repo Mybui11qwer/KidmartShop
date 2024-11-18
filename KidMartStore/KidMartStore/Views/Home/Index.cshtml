@@ -88,13 +88,29 @@
             @foreach (var product in Model)
             {
                 <nav class="item">
-                    <img src="~/Image/Product/@product.Image" alt="@product.Name" />
+                    <a href="@Url.Action("ChiTietSanPham", "Product", new { id = product.ID_Product })"><img src="~/Image/Product/@product.Image" alt="@product.Name" /></a>
                     <h5>@product.Name</h5>
                     <h5>@product.Price.ToString("N0") <span>VNĐ</span></h5>
-                    <a href="@Url.Action("ChiTietSanPham", "Product", new { id = product.ID_Product })" class="button">Mua Hàng</a>
+                    @if (product.Quantity > 0)
+                    {
+                        <a id="Not-Login" href="@Url.Action("ChiTietSanPham", "Product", new { id = product.ID_Product })" class="button">Mua Hàng</a>
+                    }
+                    @if (product.Quantity == 0)
+                    {
+                        <a style="color: red; font-weight: bold">Đã hết hàng !</a>
+                    }
                 </nav>
             }
         </div>
     </section>
 </div>
+<script>
+    document.getElementById('Not-Login').addEventListener('click', function () {
+        // Kiểm tra xem người dùng có đăng nhập hay không
+        if (!sessionStorage.getItem('isLoggedIn')) {
+            alert('Bạn phải đăng nhập mới sử dụng được tính năng này! \nHãy đăng nhập tài khoản');
+            window.location.href = '/Account/Login';
+        }
+    });
+</script>
 

@@ -3,14 +3,14 @@
     ViewBag.Title = "GioHanng";
     Layout = "~/Views/Shared/UserLayout.cshtml";
 }
-<link rel="stylesheet" href="~/Content/CSS/Cart.css" />
+<link rel="stylesheet" href="~/Content/CSS/GioHang.css" />
 @if (Session["Cart"] != null)
 {
     <div class="cart-container">
         @foreach (var item in Model.Items)
         {
-            <div class="cart-item">
-                <div class="item-remove">x</div>
+            <div class="cart-item" data-product-id="@item._product.ID_Product">
+                <div class="item-remove"><a href="/Product/RemoveCart/@item._product.ID_Product">x</a></div>
                 <div class="item-image">
                     <img src="~/Image/Product/@item._product.Image" alt="Product Image">
                 </div>
@@ -20,37 +20,91 @@
                 </div>
                 <div class="item-price">@item._product.Price.ToString("N0") VNĐ</div>
                 <div class="item-quantity">
-                    <button>-</button>
-                    <input type="text" value="1">
-                    <button>+</button>
+                    <button class="decrease">-</button>
+                    <input type="text" value="@item._quantity" class="quantity-input">
+                    <button class="increase">+</button>
                 </div>
             </div>
-        }
-        <div class="checkout">
-            <h3>HẸN GIỜ CHECK ĐƠN</h3>
-            <div class="check-time">
-                <label for="check-date">Ngày nhận check đơn</label>
-                <input type="date" id="check-date" value="2024-11-13">
+                }         
+            <div class="checkout">
+                <h3>HẸN GIỜ CHECK ĐƠN</h3>
+                <div class="check-time">
+                    <label for="check-date">Ngày nhận check đơn</label>
+                    <input type="date" id="check-date" value="2024-11-13">
+                </div>
+                <div class="check-time">
+                    <label for="check-time">Thời gian nhận check đơn</label>
+                    <select id="check-time">
+                        <option>Chọn thời gian</option>
+                        <option>08:00</option>
+                        <option>12:00</option>
+                        <option>16:00</option>
+                    </select>
+                </div>
+                <div class="total">
+                    <span>TỔNG CỘNG</span>
+                    <span class="total-amount">@Model.TotalMoney().ToString("N0") VNĐ</span>
+                </div>
+                <button onclick="window.location.href='/Product/CheckOut'" class="checkout-button">Thanh Toán</button>
             </div>
-            <div class="check-time">
-                <label for="check-time">Thời gian nhận check đơn</label>
-                <select id="check-time">
-                    <option>Chọn thời gian</option>
-                    <option>08:00</option>
-                    <option>12:00</option>
-                    <option>16:00</option>
-                </select>
-            </div>
-            <div class="total">
-                <span>TỔNG CỘNG</span>
-                <span class="total-amount">@Model.TotalMoney().ToString("N0") VNĐ</span>
-            </div>
-            <a href="/Product/CheckOut" class="checkout-button">Thanh Toán</a>
         </div>
-    </div>
 }
 @if (Session["Cart"] == null)
-            {
-                <h1>Bajn chua co don hang nao ca ??</h1>
-            }
+{
+    <h1>Bajn chua co don hang nao ca ??</h1>
+}
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // Hàm gửi AJAX cập nhật số lượng sản phẩm
+        function updateCartQuantity(productId, quantity) {
+            $.ajax({
+                url: '/Product/Update_Cart_Quantity',
+                type: 'POST',
+                data: { idPro: productId, cartQuantity: quantity },
+                success: function (response) {
+                    if (response.success) {
+                        // Cập nhật tổng tiền
+                        document.querySelector('.total-amount').textContent =
+                            response.totalMoney.toLocaleString() + " VNĐ";
+                    } else {
+                        alert("Cập nhật giỏ hàng thất bại.");
+                    }
+                },
+                error: function () {
+                    alert("Có lỗi xảy ra khi cập nhật giỏ hàng.");
+                }
+            });
+        }
+
+        // Giảm số lượng
+        document.querySelectorAll('.decrease').forEach(button => {
+            button.addEventListener('click', function () {
+                const quantityInput = this.nextElementSibling;
+                const productId = this.closest('.cart-item').dataset.productId;
+                let quantity = parseInt(quantityInput.value);
+                if (quantity > 1) {
+                    quantity--;
+                    quantityInput.value = quantity;
+
+                    // Gọi AJAX cập nhật số lượng
+                    updateCartQuantity(productId, quantity);
+                }
+            });
+        });
+
+        // Tăng số lượng
+        document.querySelectorAll('.increase').forEach(button => {
+            button.addEventListener('click', function () {
+                const quantityInput = this.previousElementSibling;
+                const productId = this.closest('.cart-item').dataset.productId;
+                let quantity = parseInt(quantityInput.value);
+                quantity++;
+                quantityInput.value = quantity;
+
+                // Gọi AJAX cập nhật số lượng
+                updateCartQuantity(productId, quantity);
+            });
+        });
+    });
+</script>
 

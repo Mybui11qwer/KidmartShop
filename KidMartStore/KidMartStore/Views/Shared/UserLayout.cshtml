@@ -130,6 +130,7 @@
             // Kiểm tra xem người dùng có đăng nhập hay không
             if (!sessionStorage.getItem('isLoggedIn')) {
                 alert('Bạn phải đăng nhập mới sử dụng được tính năng này! \nHãy đăng nhập tài khoản');
+                window.location.href = '/Account/Login';
             }
         });
     </script>

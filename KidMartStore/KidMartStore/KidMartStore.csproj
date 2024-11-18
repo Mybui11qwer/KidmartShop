@@ -389,7 +389,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\CSS\Address.css" />
-    <Content Include="Content\CSS\Cart.css" />
+    <Content Include="Content\CSS\GioHang.css" />
     <Content Include="Content\CSS\DetailProduct.css" />
     <Content Include="Content\CSS\Register.css" />
     <Content Include="Content\CSS\Index.css" />

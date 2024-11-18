@@ -1,14 +1,9 @@
-﻿* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+﻿
 .cart-container {
     display: flex;
-    max-width: 1200px;
-    margin: 20px auto;
-    gap: 20px;
+    max-width: max-content;
+    margin: 40px auto;
+    gap: 80px;
 }
 
 .cart-items {
@@ -25,7 +20,7 @@ h2 {
     align-items: center;
     border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
-    gap: 15px;
+    gap: 50px;
     position: relative;
 }
 
@@ -35,16 +30,16 @@ h2 {
 }
 
 .item-remove {
-    position: absolute;
     left: -15px;
     color: #888;
     font-size: 20px;
     cursor: pointer;
+    margin: 0px 20px;
 }
 
 .item-image img {
-    width: 70px;
-    height: auto;
+    width: 150px;
+    height: 150px;    
 }
 
 .item-details p {
@@ -162,3 +157,4 @@ h2 {
     border-radius: 4px;
     margin-top: 15px;
 }
+
