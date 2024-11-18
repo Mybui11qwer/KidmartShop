@@ -40,12 +40,21 @@ namespace KidMartStore.Controllers
         }
         public ActionResult AddToCart(int id)
         {
-            var product = database.Products.SingleOrDefault(s => s.ID_Product == id);
-            if (product != null)
+            if (Session["ID_Customer"] != null)
             {
-                GetCart().Add_Product_Cart(product);
+                var product = database.Products.SingleOrDefault(s => s.ID_Product == id);
+                if (product != null)
+                {
+                    GetCart().Add_Product_Cart(product);
+                }
+                return RedirectToAction("GioHanng", "Product");
             }
-            return RedirectToAction("GioHanng", "Product");
+            if (Session["ID_Customer"] == null)
+            {
+                
+                return RedirectToAction("Login", "Account");
+            }
+            return View();
         }
         [HttpPost]
         public JsonResult Update_Cart_Quantity(int id, int cartQuantity)

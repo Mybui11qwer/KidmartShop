@@ -72,5 +72,9 @@ namespace KidMartStore.Controllers
         {
             return View();
         }
+        public ActionResult ShowOrder()
+        {
+            return View();
+        }
     }
 }

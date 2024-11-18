@@ -51,7 +51,8 @@
 }
 @if (Session["Cart"] == null)
 {
-    <h1>Bajn chua co don hang nao ca ??</h1>
+    <h1>Bạn chưa có sản phẩm trong giỏ hàng.</h1>
+    <h2>Mua hàng <a href="/Home/SanPham">tại đây</a></h2>
 }
 <script>
     document.addEventListener("DOMContentLoaded", () => {

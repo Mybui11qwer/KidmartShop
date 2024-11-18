@@ -1,0 +1,24 @@
+﻿@model KidMartStore.Models.Customer
+@{
+    ViewBag.Title = "ShowOrder";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/CSS/Thongtinnguoidung.css" />
+<section class="information-top"></section>
+<main class="Infor-Account">
+    <div class="content1">
+        <h3>Thông tin tài khoản</h3>
+        <section class="Information-content-left">
+            <h5>Xin chào <span>@(Session["Name"] ?? "Guest")!</span></h5>
+            <a href="~/Home/Profile">Thông tin tài khoản</a><br />
+            <a href="~/Home/Address">Địa chỉ</a><br />
+            <a href="~/Home/ShowOrder">Đơn hàng của bạn</a>
+        </section>
+    </div>
+    <div class="content2">
+    </div>
+</main>
+
+
+
