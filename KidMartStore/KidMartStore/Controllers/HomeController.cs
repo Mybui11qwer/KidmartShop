@@ -35,8 +35,8 @@ namespace KidMartStore.Controllers
         }
         public ActionResult Profile()
         {
-            var MSSV = Session["ID_Customer"];
-            var customer = database.Customers.Find(MSSV);
+            var MaKH = Session["ID_Customer"];
+            var customer = database.Customers.Find(MaKH);
             return View(customer);
         }
         [HttpPost]
@@ -74,6 +74,19 @@ namespace KidMartStore.Controllers
         }
         public ActionResult ShowOrder()
         {
+            if (Session["ID_Customer"]!= null)
+            {
+                var customerID = Convert.ToInt64(Session["ID_Customer"]);
+                var orders = database.Detail_Order
+                    .Include(d => d.Order) // Include để truy cập bảng liên quan Order // Include để truy cập bảng liên quan Product
+                    .Where(d => d.Order.ID_Customer == customerID) // Lọc theo ID_Customer trong Order
+                    .ToList();
+                return View(orders);
+            }
+            if (Session["ID_Customer"] == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
             return View();
         }
     }

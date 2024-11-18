@@ -19,7 +19,7 @@ namespace KidMartStore.Models
         public int ID_Product { get; set; }
         public int Quantity { get; set; }
         public decimal Unit_Price { get; set; }
-    
+
         public virtual Order Order { get; set; }
     }
 }

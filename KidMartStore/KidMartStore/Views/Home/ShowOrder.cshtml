@@ -1,4 +1,4 @@
-﻿@model KidMartStore.Models.Customer
+﻿@model List<KidMartStore.Models.Detail_Order>
 @{
     ViewBag.Title = "ShowOrder";
     Layout = "~/Views/Shared/UserLayout.cshtml";
@@ -17,6 +17,15 @@
         </section>
     </div>
     <div class="content2">
+        @foreach (var order in Model)
+        {
+            <tr>
+                <td>@order.Order.ID_Order</td>
+                <td>@order.ID_Product</td>
+                <td>@order.Quantity</td>
+                <td>@order.ID_Product</td>
+            </tr>
+        }
     </div>
 </main>
 
