@@ -186,16 +186,12 @@ namespace KidMartStore.Controllers
                     existingProduct.Name = product.Name;
                     existingProduct.Description = product.Description;
                     existingProduct.Price = product.Price;
-                    existingProduct.ID_Category = product.ID_Category;
                     existingProduct.Quantity = product.Quantity;
-                    existingProduct.Image = product.Image; // Only update if a new image is uploaded
 
                     database.SaveChanges(); // Save changes to the database
                 }
-
-                return RedirectToAction("ManagerProduct"); // Redirect back to the product manager
             } // Redirect to the product list
-            return View(product);
+            return RedirectToAction("ManagerProduct");
         }
         public ActionResult ManagerCategory()
         {
