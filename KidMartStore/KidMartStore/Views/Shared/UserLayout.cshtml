@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - KidMartStore</title>
     <link rel="icon" href="~/Image/Avartar_Logo/Avarta-kidmart.png" style="width:32px;height:32px;"/>
+<<<<<<< HEAD
     <link rel="stylesheet" href="~/Content/Layout/UserLayout.css" />
+=======
+    <link rel="stylesheet" href="~/Content/Layout/LayoutUser.css" />
+>>>>>>> Laptop-My
 </head>
 <body>
     <div class="above-header">
@@ -13,15 +17,26 @@
             <a href="~/Home/Index">KIDMART</a>
         </nav>
         <nav class="Location-function">
+<<<<<<< HEAD
             @if (Session["Role"]?.ToString() == "Quản lý")
+=======
+            @if (Session["Role"]?.ToString() == "Quản Lý")
+>>>>>>> Laptop-My
             {
                 <a href="~/Admin/Dashboard">PageAdmin</a>
                 <a style="cursor: default">|</a>
             }
+<<<<<<< HEAD
             <a href="#"><img src="~/Image/Icons/icon-search.png" /></a>
             @if (Session["Email"] != null)
             {
                 <a href="#"><img src="~/Image/Icons/icon-cart.png" /></a>
+=======
+            <a class="search" id="search"><img src="~/Image/Icons/icon-search.png" /></a>
+            @if (Session["Email"] != null)
+            {
+                <a href="~/Product/GioHanng"><img src="~/Image/Icons/icon-cart.png" /></a>
+>>>>>>> Laptop-My
                 <a href="~/Home/Profile"><img src="~/Image/Icons/Icon-user.png" /></a>
                 <a href="~/Home/Profile">Hello <span>@(Session["Name"] ?? "Guest")</span>!</a>
                 <a href="~/Account/Logout">Logout</a>
@@ -37,11 +52,21 @@
     </div>
     <header id="mainHeader">
         <div></div>
+<<<<<<< HEAD
+=======
+        <div class="toolbar">
+            <button id="menuToggle" class="menu-btn">☰</button>
+        </div>
+>>>>>>> Laptop-My
         <nav class="accordion-header-toggle">
             <a href="~/Home/Index">Trang chủ</a>
             <a href="~/Home/GioiThieu">Giới thiệu</a>
             <nav class="menu-product">
+<<<<<<< HEAD
                 <a style="align-items:center" href="~/Home/SanPham">Sản phẩm <span><img src="~/Image/down-arrow.png" style="width: 10px;height: 12px"/></span></a>
+=======
+                <a href="~/Home/SanPham">Sản phẩm <span><img src="~/Image/Icons/Icon-down-arrow.png" style="width: 10px;height: 12px" /></span></a>
+>>>>>>> Laptop-My
                 <div class="menu-content">
                     <div><a href="#">Quần áo</a></div>
                     <div><a href="#">Đồ chơi</a></div>
@@ -50,10 +75,17 @@
                     <div><a href="#">Tả của bé</a></div>
                     <div><a href="#">Dụng cụ khác</a></div>
                 </div>
+<<<<<<< HEAD
             </nav>       
             <a href="#">Blog</a>
             <a href="#">Liên hệ</a>
             <a href="#">Kiểm tra đơn hàng</a>
+=======
+            </nav>
+            <a href="#">Blog</a>
+            <a href="#">Liên hệ</a>
+            <a href="~/Home/ShowOrder">Kiểm tra đơn hàng</a>
+>>>>>>> Laptop-My
         </nav>
         <div></div>
     </header>
@@ -65,9 +97,17 @@
             <div class="row">
                 <div class="col-md-4">
                     <h3>Địa chỉ</h3>
+<<<<<<< HEAD
                     <p>Yên Lăng, Hà Nội</p>
                     <p>Điện thoại: 0822221992</p>
                     <p>Email: Midishop@gmail.com</p>
+=======
+                    <ul>
+                        <li>Yên Lăng, Hà Nội</li>
+                        <li>Điện thoại: 0822221992</li>
+                        <li>Email: Midishop@gmail.com</li>
+                    </ul>
+>>>>>>> Laptop-My
                 </div>
                 <div class="col-md-4">
                     <h3>Chính sách</h3>
@@ -96,15 +136,25 @@
                         <input type="submit" style="color: black; background-color: #FFC0CB; " value="Đăng ký"/>
                     </form>
                     <ul class="social" style="margin: 20px">
+<<<<<<< HEAD
                         <li><a href="#"><i class="fab fa-facebook-f"><img src="~/Image/facebook-icon.png" /></i></a></li>
                         <li><a href="#"><i class="fab fa-instagram"><img src="~/Image/google-icon.png" /></i></a></li>
+=======
+                        <li><a href="#"><i class="fab fa-facebook-f"><img src="~/Image/Icons/icon-facebook.png" alt="facebook"/></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"><img src="~/Image/Icons/icon-google.png" alt="google"/></i></a></li>
+>>>>>>> Laptop-My
                     </ul>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
+<<<<<<< HEAD
             <a href="#"><img src="~/Image/logo_bct.png"/></a>
             <a href="#"><img src="~/Image/footer_trustbadge.png"/></a>
+=======
+            <a href="#"><img src="~/Image/Avartar_Logo/Logo_bct.png" alt="Logo bộ công thương"/></a>
+            <a href="#"><img src="~/Image/Avartar_Logo/Logo-trustbadge.png" alt="Phương thức thanh toán"/></a>
+>>>>>>> Laptop-My
         </div>
     </footer>
     <script>
@@ -113,7 +163,11 @@
 
         // Thêm sự kiện khi cuộn trang
         window.onscroll = function () {
+<<<<<<< HEAD
             if (window.scrollY > 100) { // Khi cuộn quá 50px
+=======
+            if (window.scrollY > 60) { // Khi cuộn quá 50px
+>>>>>>> Laptop-My
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
@@ -125,9 +179,22 @@
             // Kiểm tra xem người dùng có đăng nhập hay không
             if (!sessionStorage.getItem('isLoggedIn')) {
                 alert('Bạn phải đăng nhập mới sử dụng được tính năng này! \nHãy đăng nhập tài khoản');
+<<<<<<< HEAD
             }
         });
     </script>
+=======
+                window.location.href = '/Account/Login';
+            }
+        });
+    </script>
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function () {
+            const nav = document.querySelector('.accordion-header-toggle');
+            nav.classList.toggle('active');
+        });
+    </script>
+>>>>>>> Laptop-My
 </body>
 </html>
 

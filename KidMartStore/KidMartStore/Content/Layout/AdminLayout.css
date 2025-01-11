@@ -50,16 +50,25 @@ body {
     padding: 20px;
 }
 
+<<<<<<< HEAD
 .above-header {
     position: relative;
     background-color: black;
     height: 6vh;
     width: 100%;
+=======
+body .above-header {
+    width: 100%;
+    height: 6vh;
+    position: relative;
+    background-color: black;
+>>>>>>> Laptop-My
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+<<<<<<< HEAD
     .above-header a {
         text-decoration: none;
     }
@@ -69,6 +78,39 @@ body {
         font-weight: bold;
     }
 
+=======
+    body .above-header .Logo-text {
+        margin-left: 60px;
+    }
+
+        body .above-header .Logo-text a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-family: Arial;
+            font-size: 30px;
+        }
+
+    body .above-header .Location-function {
+        margin-right: 30px;
+        display: flex;
+        align-items: center;
+    }
+
+        body .above-header .Location-function a {
+            color: white;
+            text-decoration: none;
+            margin-right: 7px;
+            font-family: Arial;
+            font-size: medium;
+        }
+
+            body .above-header .Location-function a img {
+                width: 32px;
+                height: 32px;
+            }
+
+>>>>>>> Laptop-My
 header {
     display: flex;
     justify-content: space-between;

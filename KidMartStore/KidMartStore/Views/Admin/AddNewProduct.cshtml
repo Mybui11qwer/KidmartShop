@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿@model KidMartStore.Models.Product
 @{
     ViewBag.Title = "AddNewProduct";
@@ -7,6 +8,17 @@
 <section class="add-product-form">
     <h2>Thông tin sản phẩm</h2>
     <form action="/Admin/AddNewProduct" method="POST">
+=======
+﻿@model List<KidMartStore.Models.Category>
+@{
+    ViewBag.Title = "Thêm sản phẩm mới";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<link rel="stylesheet" href="~/Content/Admin/AddNewProduct.css"/>
+<section class="add-product-form">
+    <h2>Thêm sản phẩm mới</h2>
+    <form action="/Admin/AddNewProduct" method="POST" enctype="multipart/form-data">
+>>>>>>> Laptop-My
         <div class="form-group">
             <label for="product-name">Tên sản phẩm</label>
             <input type="text" id="product-name" name="Name" required>
@@ -19,7 +31,16 @@
 
         <div class="form-group">
             <label for="product-price">Loại sản phẩm</label>
+<<<<<<< HEAD
             <input type="text" id="product-price" name="ID_Category" required>
+=======
+            <select id="role" name="ID_Category" required>
+                @foreach (var category in Model)
+                {
+                    <option value="@category.ID_Category">@category.Name_Category</option>
+                }
+            </select>
+>>>>>>> Laptop-My
         </div>
 
         <div class="form-group">
@@ -28,23 +49,34 @@
         </div>
 
         <div class="form-group">
+<<<<<<< HEAD
             <label for="product-color">Màu sắc</label>
             <input type="number" id="product-quantity" name="Color" />
         </div>
 
         <div class="form-group">
+=======
+>>>>>>> Laptop-My
             <label for="product-quantity">Số lượng</label>
             <input type="number" id="product-quantity" name="Quantity" required>
         </div>
 
         <div class="form-group">
             <label for="product-image">Hình ảnh</label>
+<<<<<<< HEAD
             <input type="file" id="product-image" name="Image" accept="image/*" required>
+=======
+            <input type="file" id="product-image" name="UploadImage" accept="image/*" required>
+>>>>>>> Laptop-My
             <img id="preview" src="#" alt="Image Preview" style="display: none; max-width: 300px; margin-top: 10px;">
         </div>
 
         <button type="submit" class="submit-button">Thêm sản phẩm</button>
+<<<<<<< HEAD
         <button class="submit-button" onclick="window.location.href='ManagerProduct'">Danh sách sản phẩm</button>
+=======
+        <button type="button" class="submit-button" onclick="window.location.href='ManagerProduct'">Danh sách sản phẩm</button>
+>>>>>>> Laptop-My
     </form>
 </section>
 <script>

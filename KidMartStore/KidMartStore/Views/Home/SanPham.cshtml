@@ -3,6 +3,7 @@
     Layout = "~/Views/Shared/UserLayout.cshtml";
     ViewBag.Title = "Sản phẩm";
 }
+<<<<<<< HEAD
 <link rel="stylesheet" href="~/Content/CSS/ProductPages.css"/>
 <section class="infor-promotion" style="margin-top:80px"></section>
 <main class="product-list" style="margin-top:20px">
@@ -12,20 +13,42 @@
             @foreach(var category in Model)
             {
                 <label>@category.Category.Name_Category</label>
+=======
+<link rel="stylesheet" href="~/Content/CSS/ProductPage.css"/>
+<section class="infor-promotion"></section>
+<main class="product-list">
+    <div class="search-content">
+        <h2>Bộ lọc tìm kiếm</h2>
+        <section class="filter">
+            @foreach(var category in Model.Select(m => m.Category).GroupBy(c => c.Name_Category).Select(g => g.First()))
+            {
+                <div><span>- Danh mục @category.Name_Category</span></div>
+>>>>>>> Laptop-My
             }
         </section>
     </div>
     <div class="content2">
         <section class="list-content">
+<<<<<<< HEAD
             <h3>Sản phẩm KidMart</h3>
+=======
+            <h2>Sản phẩm KidMart</h2>
+>>>>>>> Laptop-My
             <div class="Product-Items">
                 @foreach (var product in Model)
                 {
                     <nav class="item">
+<<<<<<< HEAD
                         <img src="@product.Image" alt="@product.Name" />
                         <h4>@product.Name</h4>
                         <h5>@product.Price <span>VNĐ</span></h5>
                         <button>Mua Hàng</button>
+=======
+                        <img src="~/Image/Product/@product.Image" alt="@product.Name" />
+                        <h5>@product.Name</h5>
+                        <h5>@product.Price.ToString("N0") <span>VNĐ</span></h5>
+                        <a href="@Url.Action("ChiTietSanPham", "Product", new { id = product.ID_Product })" class="button">Mua Hàng</a>
+>>>>>>> Laptop-My
                     </nav>
                 }
             </div>

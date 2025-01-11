@@ -25,7 +25,11 @@ namespace KidMartStore.Models
         public System.DateTime Order_Date { get; set; }
         public decimal Total { get; set; }
         public string Status { get; set; }
+<<<<<<< HEAD
         public Nullable<int> ID_Promotion { get; set; }
+=======
+        public Nullable<int> ID_Sale { get; set; }
+>>>>>>> Laptop-My
     
         public virtual Customer Customer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

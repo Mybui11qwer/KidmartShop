@@ -9,6 +9,7 @@
 
 namespace KidMartStore.Models
 {
+<<<<<<< HEAD
     using System;
     using System.Collections.Generic;
     
@@ -23,16 +24,42 @@ namespace KidMartStore.Models
     
         public int ID_Product { get; set; }
         public int ID_Category { get; set; }
+=======
+    using Microsoft.AspNetCore.Http;
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Web;
+
+    public partial class Product
+    {
+        public int ID_Product { get; set; }
+        public Nullable<int> ID_Category { get; set; }
+>>>>>>> Laptop-My
         public string Name { get; set; }
         public decimal Price { get; set; }
         public int Quantity { get; set; }
         public string Description { get; set; }
         public string Image { get; set; }
+<<<<<<< HEAD
     
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Promotion> Promotions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Size> Sizes { get; set; }
+=======
+        public Nullable<int> ID_Size { get; set; }
+        public Nullable<int> ID_Material { get; set; }
+        public Nullable<int> ID_Warranty { get; set; }
+
+        [NotMapped]
+        public HttpPostedFileBase UploadImage { get; set; }
+
+        public virtual Category Category { get; set; }
+        public virtual Material Material { get; set; }
+        public virtual Size Size { get; set; }
+        public virtual Warranty_Policy Warranty_Policy { get; set; }
+>>>>>>> Laptop-My
     }
 }

@@ -12,6 +12,7 @@ namespace KidMartStore.Models
     using System;
     using System.Collections.Generic;
     
+<<<<<<<< HEAD:KidMartStore/KidMartStore/Models/Detail_Cart.cs
     public partial class Detail_Cart
     {
         public int ID_Detail_Cart { get; set; }
@@ -20,5 +21,16 @@ namespace KidMartStore.Models
         public int Quantity { get; set; }
     
         public virtual Cart Cart { get; set; }
+========
+    public partial class Detail_Order
+    {
+        public int ID_Detail_Order { get; set; }
+        public int ID_Order { get; set; }
+        public int ID_Product { get; set; }
+        public int Quantity { get; set; }
+        public decimal Unit_Price { get; set; }
+
+        public virtual Order Order { get; set; }
+>>>>>>>> Laptop-My:KidMartStore/KidMartStore/Models/Detail_Order.cs
     }
 }

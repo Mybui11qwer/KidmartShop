@@ -12,6 +12,10 @@ namespace KidMartStore.Models
     using System;
     using System.Collections.Generic;
     
+<<<<<<< HEAD
+<<<<<<<< HEAD:KidMartStore/KidMartStore/Models/Size.cs
+=======
+>>>>>>> Laptop-My
     public partial class Size
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,9 +25,35 @@ namespace KidMartStore.Models
         }
     
         public int ID_Size { get; set; }
+<<<<<<< HEAD
         public string Size_Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Products { get; set; }
+========
+    public partial class Promotion
+    {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Promotion()
+        {
+            this.Orders = new HashSet<Order>();
+        }
+    
+        public int ID_Sale { get; set; }
+        public decimal Percent_Discount { get; set; }
+        public System.DateTime Start_Date { get; set; }
+        public System.DateTime End_Date { get; set; }
+        public string Code { get; set; }
+        public string NamePromotion { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order> Orders { get; set; }
+>>>>>>>> Laptop-My:KidMartStore/KidMartStore/Models/Promotion.cs
+=======
+        public string Name { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Product> Products { get; set; }
+>>>>>>> Laptop-My
     }
 }

@@ -4,15 +4,26 @@
     ViewBag.Title = "Thông tin cá nhân";
     Layout = "~/Views/Shared/UserLayout.cshtml";
 }
+<<<<<<< HEAD
 <link rel="stylesheet" href="~/Content/CSS/Profile.css" />
 <section class="information-top" style="margin-top:80px;"></section>
 <main class="Infor-Account" style="margin-top:20px">
+=======
+<link rel="stylesheet" href="~/Content/CSS/Thongtinnguoidung.css" />
+<section class="information-top"></section>
+<main class="Infor-Account">
+>>>>>>> Laptop-My
     <div class="content1">
         <h3>Thông tin tài khoản</h3>
         <section class="Information-content-left">
             <h5>Xin chào <span>@(Session["Name"] ?? "Guest")!</span></h5>
             <a href="~/Home/Profile">Thông tin tài khoản</a><br />
+<<<<<<< HEAD
             <a href="~/Home/Address">Địa chỉ</a>
+=======
+            <a href="~/Home/Address">Địa chỉ</a><br />
+            <a href="~/Home/ShowOrder">Đơn hàng của bạn</a>
+>>>>>>> Laptop-My
         </section>
     </div>
     <div class="content2">
@@ -20,7 +31,11 @@
             <h3>Tài khoản của bạn</h3>
             <div class="Information-User" id="section1">
                 <h6>Tên người dùng: <span>@Session["Name"]</span></h6>
+<<<<<<< HEAD
                 <h6>Địa chỉ: <span>@(Session["Address"] ?? "Người dùng chưa đăng ký địa chỉ")</span></h6>
+=======
+                <h6>Địa chỉ: <span>@(Model.Address ?? "Người dùng chưa đăng ký địa chỉ")</span></h6>
+>>>>>>> Laptop-My
                 <h6>Địa chỉ Email: <span>@Session["Email"]</span></h6>
                 <h6>Số điện thoại: <span>@Session["Phone"]</span></h6>
                 <button onclick="changeSection()">Chỉnh sửa thông tin</button>

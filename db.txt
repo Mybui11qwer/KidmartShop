@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CREATE DATABASE KidMartStore;
 USE KidMartStore;
 
@@ -113,3 +114,21 @@ CREATE TABLE Product_Promotion
   FOREIGN KEY (ID_Product) REFERENCES Product(ID_Product),
   FOREIGN KEY (ID_Promotion) REFERENCES Promotion(ID_Promotion)
 );
+=======
+CREATE TABLE Product (
+  ID_Product INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+  ID_Category INT NULL,
+  [Name] NVARCHAR(100) NOT NULL,
+  Price DECIMAL(10,2) NOT NULL,
+  Quantity INT NOT NULL,
+  [Description] TEXT,
+  [Image] VARCHAR(MAX),
+  ID_Size INT,
+  ID_Material INT,
+  ID_Warranty INT,
+  FOREIGN KEY (ID_Category) REFERENCES Category(ID_Category),
+  FOREIGN KEY (ID_Size) REFERENCES Size(ID_Size),
+  FOREIGN KEY (ID_Material) REFERENCES Material(ID_Material),
+  FOREIGN KEY (ID_Warranty) REFERENCES Warranty_Policy(ID_Warranty)
+);
+>>>>>>> Laptop-My

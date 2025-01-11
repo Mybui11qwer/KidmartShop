@@ -25,14 +25,25 @@ namespace KidMartStore.Models
             throw new UnintentionalCodeFirstException();
         }
     
+<<<<<<< HEAD
         public virtual DbSet<Cart> Carts { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Detail_Cart> Detail_Cart { get; set; }
         public virtual DbSet<Detail_Order> Detail_Order { get; set; }
+=======
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<Detail_Order> Detail_Order { get; set; }
+        public virtual DbSet<Material> Materials { get; set; }
+>>>>>>> Laptop-My
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Promotion> Promotions { get; set; }
         public virtual DbSet<Size> Sizes { get; set; }
+<<<<<<< HEAD
+=======
+        public virtual DbSet<Warranty_Policy> Warranty_Policy { get; set; }
+>>>>>>> Laptop-My
     }
 }

@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="KidMartStoreModelStoreContainer" CdmEntityContainer="KidMartStoreEntities">
+<<<<<<< HEAD
     <EntitySetMapping Name="Carts">
       <EntityTypeMapping TypeName="KidMartStoreModel.Cart">
         <MappingFragment StoreEntitySet="Cart">
@@ -17,21 +18,39 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+=======
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="KidMartStoreModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="ID_Category" ColumnName="ID_Category" />
+          <ScalarProperty Name="Name_Category" ColumnName="Name_Category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+>>>>>>> Laptop-My
     <EntitySetMapping Name="Customers">
       <EntityTypeMapping TypeName="KidMartStoreModel.Customer">
         <MappingFragment StoreEntitySet="Customer">
           <ScalarProperty Name="ID_Customer" ColumnName="ID_Customer" />
           <ScalarProperty Name="Username" ColumnName="Username" />
           <ScalarProperty Name="Email" ColumnName="Email" />
+<<<<<<< HEAD
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Address" ColumnName="Address" />
           <ScalarProperty Name="Gender" ColumnName="Gender" />
+=======
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+>>>>>>> Laptop-My
           <ScalarProperty Name="Avatar" ColumnName="Avatar" />
           <ScalarProperty Name="Role" ColumnName="Role" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+<<<<<<< HEAD
     <EntitySetMapping Name="Detail_Cart">
       <EntityTypeMapping TypeName="KidMartStoreModel.Detail_Cart">
         <MappingFragment StoreEntitySet="Detail_Cart">
@@ -42,6 +61,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+=======
+>>>>>>> Laptop-My
     <EntitySetMapping Name="Detail_Order">
       <EntityTypeMapping TypeName="KidMartStoreModel.Detail_Order">
         <MappingFragment StoreEntitySet="Detail_Order">
@@ -53,15 +74,33 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+<<<<<<< HEAD
     <EntitySetMapping Name="Orders">
       <EntityTypeMapping TypeName="KidMartStoreModel.Order">
         <MappingFragment StoreEntitySet="Orders">
+=======
+    <EntitySetMapping Name="Materials">
+      <EntityTypeMapping TypeName="KidMartStoreModel.Material">
+        <MappingFragment StoreEntitySet="Material">
+          <ScalarProperty Name="ID_Material" ColumnName="ID_Material" />
+          <ScalarProperty Name="Name_Material" ColumnName="Name_Material" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="KidMartStoreModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+>>>>>>> Laptop-My
           <ScalarProperty Name="ID_Order" ColumnName="ID_Order" />
           <ScalarProperty Name="ID_Customer" ColumnName="ID_Customer" />
           <ScalarProperty Name="Order_Date" ColumnName="Order_Date" />
           <ScalarProperty Name="Total" ColumnName="Total" />
           <ScalarProperty Name="Status" ColumnName="Status" />
+<<<<<<< HEAD
           <ScalarProperty Name="ID_Promotion" ColumnName="ID_Promotion" />
+=======
+          <ScalarProperty Name="ID_Sale" ColumnName="ID_Sale" />
+>>>>>>> Laptop-My
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -75,18 +114,33 @@
           <ScalarProperty Name="Quantity" ColumnName="Quantity" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Image" ColumnName="Image" />
+<<<<<<< HEAD
+=======
+          <ScalarProperty Name="ID_Size" ColumnName="ID_Size" />
+          <ScalarProperty Name="ID_Material" ColumnName="ID_Material" />
+          <ScalarProperty Name="ID_Warranty" ColumnName="ID_Warranty" />
+>>>>>>> Laptop-My
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Promotions">
       <EntityTypeMapping TypeName="KidMartStoreModel.Promotion">
         <MappingFragment StoreEntitySet="Promotion">
+<<<<<<< HEAD
           <ScalarProperty Name="ID_Promotion" ColumnName="ID_Promotion" />
           <ScalarProperty Name="Percent_Discount" ColumnName="Percent_Discount" />
           <ScalarProperty Name="Name_Promotion" ColumnName="Name_Promotion" />
           <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
           <ScalarProperty Name="End_Date" ColumnName="End_Date" />
           <ScalarProperty Name="Code" ColumnName="Code" />
+=======
+          <ScalarProperty Name="ID_Sale" ColumnName="ID_Sale" />
+          <ScalarProperty Name="Percent_Discount" ColumnName="Percent_Discount" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+          <ScalarProperty Name="End_Date" ColumnName="End_Date" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="NamePromotion" ColumnName="NamePromotion" />
+>>>>>>> Laptop-My
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -94,7 +148,19 @@
       <EntityTypeMapping TypeName="KidMartStoreModel.Size">
         <MappingFragment StoreEntitySet="Size">
           <ScalarProperty Name="ID_Size" ColumnName="ID_Size" />
+<<<<<<< HEAD
           <ScalarProperty Name="Size_Name" ColumnName="Size_Name" />
+=======
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Warranty_Policy">
+      <EntityTypeMapping TypeName="KidMartStoreModel.Warranty_Policy">
+        <MappingFragment StoreEntitySet="Warranty_Policy">
+          <ScalarProperty Name="ID_Warranty" ColumnName="ID_Warranty" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+>>>>>>> Laptop-My
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

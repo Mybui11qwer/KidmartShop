@@ -12,12 +12,31 @@ namespace KidMartStore.Models
     using System;
     using System.Collections.Generic;
     
+<<<<<<< HEAD
+=======
+<<<<<<<< HEAD:KidMartStore/KidMartStore/Models/Size.cs
+    public partial class Size
+    {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Size()
+        {
+            this.Products = new HashSet<Product>();
+        }
+    
+        public int ID_Size { get; set; }
+        public string Size_Name { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Product> Products { get; set; }
+========
+>>>>>>> Laptop-My
     public partial class Promotion
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Promotion()
         {
             this.Orders = new HashSet<Order>();
+<<<<<<< HEAD
             this.Products = new HashSet<Product>();
         }
     
@@ -32,5 +51,19 @@ namespace KidMartStore.Models
         public virtual ICollection<Order> Orders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Products { get; set; }
+=======
+        }
+    
+        public int ID_Sale { get; set; }
+        public decimal Percent_Discount { get; set; }
+        public System.DateTime Start_Date { get; set; }
+        public System.DateTime End_Date { get; set; }
+        public string Code { get; set; }
+        public string NamePromotion { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order> Orders { get; set; }
+>>>>>>>> Laptop-My:KidMartStore/KidMartStore/Models/Promotion.cs
+>>>>>>> Laptop-My
     }
 }

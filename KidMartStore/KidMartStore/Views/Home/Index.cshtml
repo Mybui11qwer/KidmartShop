@@ -5,7 +5,11 @@
     ViewBag.Title = "Trang chủ";
 }
 <head>
+<<<<<<< HEAD
     <link rel="stylesheet" href="~/Content/CSS/Trangchu.css" />
+=======
+    <link rel="stylesheet" href="~/Content/CSS/Index.css" />
+>>>>>>> Laptop-My
     <link rel="stylesheet" href="~/Content/CSS/infor.css" />
     <link rel="stylesheet" href="~/Content/CSS/Slider.css" />
 </head>
@@ -16,8 +20,12 @@
             <div class="tab-content">
                 @foreach (var category in Model.Select(m => m.Category).GroupBy(c => c.Name_Category).Select(g => g.First()))
                 {
+<<<<<<< HEAD
 
                     <label><span>Danh mục</span> @category.Name_Category</label><br />
+=======
+                    <div><span>- Danh mục @category.Name_Category</span></div>
+>>>>>>> Laptop-My
                 }
             </div>
         </nav>
@@ -89,14 +97,29 @@
             @foreach (var product in Model)
             {
                 <nav class="item">
+<<<<<<< HEAD
                     <img src="~/Image/@product.Image" alt="@product.Name" />
                     <h4>@product.Name</h4>
                     <h5>@product.Price <span>VNĐ</span></h5>
                     <button>Mua Hàng</button>
+=======
+                    <a href="@Url.Action("ChiTietSanPham", "Product", new { id = product.ID_Product })"><img src="~/Image/Product/@product.Image" alt="@product.Name" /></a>
+                    <h5>@product.Name</h5>
+                    <h5>@product.Price.ToString("N0") <span>VNĐ</span></h5>
+                    @if (product.Quantity > 0)
+                    {
+                        <a href="@Url.Action("ChiTietSanPham", "Product", new { id = product.ID_Product })" class="button">Mua Hàng</a>
+                    }
+                    @if (product.Quantity == 0)
+                    {
+                        <a style="color: red; font-weight: bold">Đã hết hàng !</a>
+                    }
+>>>>>>> Laptop-My
                 </nav>
             }
         </div>
     </section>
+<<<<<<< HEAD
     <br />
     <section class="ProductList">
         <h1>Danh sách Sales</h1>
@@ -112,5 +135,7 @@
             }
         </div>
     </section>
+=======
+>>>>>>> Laptop-My
 </div>
 
