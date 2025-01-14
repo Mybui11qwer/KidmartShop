@@ -25,7 +25,14 @@
                         <img src="~/Image/Product/@product.Image" alt="@product.Name" />
                         <h5>@product.Name</h5>
                         <h5>@product.Price.ToString("N0") <span>VNĐ</span></h5>
-                        <a href="@Url.Action("ChiTietSanPham", "Product", new { id = product.ID_Product })" class="button">Mua Hàng</a>
+                        @if (product.Quantity > 0)
+                        {
+                            <a href="@Url.Action("ChiTietSanPham", "Product", new { id = product.ID_Product })" class="button">Mua Hàng</a>
+                        }
+                        @if (product.Quantity == 0)
+                        {
+                            <a style="color: red; font-weight: bold">Đã hết hàng !</a>
+                        }
                     </nav>
                 }
             </div>

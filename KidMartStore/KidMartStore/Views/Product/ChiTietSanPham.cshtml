@@ -11,7 +11,7 @@
     <section class="Information-product">
         <div class="Header-details">
             <div class="Name-product">
-                <h2>Tên sản phẩm: @Model.Name</h2>
+                <h2>@Model.Name</h2>
                 <h4>Mã sản phẩm: @Model.ID_Product</h4>
             </div>
             <div class="Icon-love">
@@ -42,12 +42,20 @@
                     <button class="plus">+</button>
                 </div>
                 <div class="btn-buy">
-                    <a href="@Url.Action("AddToCart", "Product", new { id = Model.ID_Product })">Thêm vào giỏ hàng</a>
+                    @if (Model.Quantity > 0)
+                    {
+                        <a href="@Url.Action("AddToCart", "Product", new { id = Model.ID_Product })">Thêm vào giỏ hàng</a>
+                        <div class="btn-buynow">
+                            <a>Mua ngay</a>
+                        </div>
+                    }
+                    @if (Model.Quantity == 0)
+                    {
+                        <a style="color:red">Đã hết hàng!</a>
+                    }
                 </div>
             </div>
-            <div class="btn-buynow">
-                <a>Mua ngay</a>
-            </div>
+            
         </div>
         <div class="content-another">
             <h3>Mô tả</h3>
