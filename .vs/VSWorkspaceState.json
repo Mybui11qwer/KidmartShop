@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\KidMartStore",
+    "\\KidMartStore\\KidMartStore",
+    "\\KidMartStore\\KidMartStore\\Content",
+    "\\KidMartStore\\KidMartStore\\Content\\Layout"
   ],
-  "SelectedNode": "\\KidMartStore.sln",
+  "SelectedNode": "\\KidMartStore\\KidMartStore\\Content\\Layout\\UserLayout.css",
   "PreviewInSolutionExplorer": false
 }
