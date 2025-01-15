@@ -4,37 +4,41 @@
     ViewBag.Title = "Thông tin cá nhân";
     Layout = "~/Views/Shared/UserLayout.cshtml";
 }
-<link rel="stylesheet" href="~/Content/CSS/Thongtinnguoidung.css" />
+<link rel="stylesheet" href="~/Content/CSS/Profile.css" />
 <section class="information-top"></section>
 <main class="Infor-Account">
     <div class="content1">
-        <h3>Thông tin tài khoản</h3>
+        <h2>Thông tin tài khoản</h2>
         <section class="Information-content-left">
-            <h5>Xin chào <span>@(Session["Name"] ?? "Guest")!</span></h5>
-            <a href="~/Home/Profile">Thông tin tài khoản</a><br />
-            <a href="~/Home/Address">Địa chỉ</a><br />
-            <a href="~/Home/ShowOrder">Đơn hàng của bạn</a>
+            <h3>Xin chào <span>@(Session["Name"] ?? "Guest")!</span></h3>
+            <a class="profile" href="~/Home/Profile">Thông tin tài khoản</a><br />
+            <a class="address" href="~/Home/Address">Địa chỉ</a><br />
+            <a class="order" href="~/Home/ShowOrder">Đơn hàng của bạn</a>
         </section>
     </div>
     <div class="content2">
         <section class="Information-content-right">
-            <h3>Tài khoản của bạn</h3>
             <div class="Information-User" id="section1">
-                <h6>Tên người dùng: <span>@Session["Name"]</span></h6>
-                <h6>Địa chỉ: <span>@(Model.Address ?? "Người dùng chưa đăng ký địa chỉ")</span></h6>
-                <h6>Địa chỉ Email: <span>@Session["Email"]</span></h6>
-                <h6>Số điện thoại: <span>@Session["Phone"]</span></h6>
-                <button onclick="changeSection()">Chỉnh sửa thông tin</button>
+                <h2>Tài khoản của bạn</h2>
+                <h4>Tên người dùng: <span>@Session["Name"]</span></h4>
+                <h4>Địa chỉ: <span>@(Model.Address ?? "Người dùng chưa đăng ký địa chỉ")</span></h4>
+                <h4>Địa chỉ Email: <span>@Session["Email"]</span></h4>
+                <h4>Số điện thoại: <span>@Session["Phone"]</span></h4>
+                <button class="SetProfile" onclick="changeSection()">Chỉnh sửa thông tin</button>
             </div>
             <div class="Information-User" id="section2" style="display: none">
-                <form action="/Home/Profile" method="post">
-                    <input type="email" name="Email" style="cursor:not-allowed" placeholder="@Session["Email"]" readonly />
-                    <input type="text" name="Username" placeholder="@Session["Name"]" required />
-                    <input type="text" name="Address" placeholder="@Session["Address"]" required />
-                    <input type="tel" name="Phone" placeholder="@Session["Phone"]" required />
-                    <input type="submit" value="Hoàn tất" />
+                <h2 class="SetPro">
+                    <button class="back" onclick="changeSection()">Trở về</button>
+                    Tài khoản của bạn
+                </h2>
+                <form action="/Home/Profile" method="post" onsubmit="return validateForm()">
+                    <input type="email" name="Email" style="cursor:not-allowed" value="@Session["Email"]" readonly />
+                    <input type="text" name="Username" value="@Session["Name"]" required />
+                    <input type="text" name="Address" value="@Session["Address"]" required />
+                    <input type="tel" name="Phone" value="@Session["Phone"]" required />
+                    <input class="button" type="submit" value="Hoàn tất" />
                 </form>
-                <button onclick="changeSection()">Quay lại</button>
+
             </div>
         </section>
     </div>
@@ -54,6 +58,34 @@
             }
         }
     </script>
+    <script>
+        function validateForm() {
+            const username = document.getElementsByName('Username')[0].value.trim();
+            const address = document.getElementsByName('Address')[0].value.trim();
+            const phone = document.getElementsByName('Phone')[0].value.trim();
 
+            if (username === '') {
+                alert('Tên không được bỏ trống');
+                return false;
+            }
+
+            if (address === '') {
+                alert('Địa chỉ không được bỏ trống');
+                return false;
+            }
+
+            if (phone === '') {
+                alert('Số điện thoại không được bỏ trống');
+                return false;
+            }
+
+            if (phone.length < 10 || phone.length > 12) {
+                alert('Số điện thoại phải có độ dài từ 10 đến 12 ký tự');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </main>
 
