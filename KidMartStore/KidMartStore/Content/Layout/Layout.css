@@ -57,19 +57,19 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background-color: #FFC0CB;
+            background-color: #B0E0E6;
             transition: height 0.5s ease-in-out, background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
             z-index: 1;
         }
         /*Cuộn cố định header */
-        body header.scrolled {
-            top: 0;
-            position: fixed;
-            height: 14vh;
-            background-color: #FFC0CB;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            transition: 0.5s;
-        }
+            body header.scrolled {
+                top: 0;
+                position: fixed;
+                height: 14vh;
+                background-color: #ADD8E6;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+                transition: 0.5s;
+            }
 
         body header .toolbar {
             display: none;

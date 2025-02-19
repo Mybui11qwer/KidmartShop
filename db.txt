@@ -22,35 +22,35 @@ CREATE TABLE Category
   Name_Category NVARCHAR(50) NOT NULL
 );
 
+-- Material Table
+CREATE TABLE Material
+(
+  ID_Material INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+  Name_Material NVARCHAR NOT NULL
+);
+
+-- Warranty_Policy Table
+CREATE TABLE Warranty_Policy
+(
+  ID_Warranty INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+  Content TEXT NOT NULL
+);
+
 -- Product Table
 CREATE TABLE Product
 (
   ID_Product INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
   ID_Category INT NOT NULL,
+  ID_Material INT NULL,
+  ID_Warranty INT NULL,
   Name NVARCHAR(100) NOT NULL,
   Price DECIMAL(10, 2) NOT NULL,
   Quantity INT NOT NULL,
   Description NVarchar(max),
   Image VARCHAR(255),
-  FOREIGN KEY (ID_Category) REFERENCES Category(ID_Category)
-);
-
--- Cart Table
-CREATE TABLE Cart
-(
-  ID_Cart INT NOT NULL IDENTITY(1000,1) PRIMARY KEY,
-  ID_Customer INT NOT NULL,
-  FOREIGN KEY (ID_Customer) REFERENCES Customer(ID_Customer)
-);
-
--- Detail_Cart Table
-CREATE TABLE Detail_Cart
-(
-  ID_Detail_Cart INT NOT NULL PRIMARY KEY,
-  ID_Cart INT NOT NULL,
-  ID_Product INT NOT NULL,
-  Quantity INT NOT NULL,
-  FOREIGN KEY (ID_Cart) REFERENCES Cart(ID_Cart)
+  FOREIGN KEY (ID_Category) REFERENCES Category(ID_Category),
+  FOREIGN KEY (ID_Material) REFERENCES Material(ID_Material),
+  FOREIGN KEY (ID_Warranty) REFERENCES Warranty_Policy(ID_Warranty)
 );
 
 -- Promotion Table
@@ -93,23 +93,4 @@ CREATE TABLE Size
 (
   ID_Size INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
   Size_Name NVARCHAR(50) NOT NULL
-);
-
--- Product_Size Junction Table
-CREATE TABLE Product_Size
-(
-  ID_Product INT NOT NULL,
-  ID_Size INT NOT NULL,
-  PRIMARY KEY (ID_Product, ID_Size),
-  FOREIGN KEY (ID_Product) REFERENCES Product(ID_Product),
-  FOREIGN KEY (ID_Size) REFERENCES Size(ID_Size)
-);
-
-CREATE TABLE Product_Promotion
-(
-  ID_Product INT NOT NULL,
-  ID_Promotion INT NOT NULL,
-  PRIMARY KEY (ID_Product, ID_Promotion),
-  FOREIGN KEY (ID_Product) REFERENCES Product(ID_Product),
-  FOREIGN KEY (ID_Promotion) REFERENCES Promotion(ID_Promotion)
 );

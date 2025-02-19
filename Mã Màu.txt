@@ -1,0 +1,5 @@
+Mã Màu
+
+Menu title : #B0E0E6 chuyển đ #ADD8E6
+button : #B0E0E6
+
