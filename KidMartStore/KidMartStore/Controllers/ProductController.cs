@@ -38,14 +38,14 @@ namespace KidMartStore.Controllers
             }
             return cart;
         }
-        public ActionResult AddToCart(int id)
+        public ActionResult AddToCart(int id, int quantity = 1)
         {
             if (Session["ID_Customer"] != null)
             {
                 var product = database.Products.SingleOrDefault(s => s.ID_Product == id);
                 if (product != null)
                 {
-                    GetCart().Add_Product_Cart(product);
+                    GetCart().Add_Product_Cart(product, quantity);
                 }
                 return RedirectToAction("GioHanng", "Product");
             }

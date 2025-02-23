@@ -77,9 +77,9 @@ namespace KidMartStore.Controllers
             if (Session["ID_Customer"]!= null)
             {
                 var customerID = Convert.ToInt64(Session["ID_Customer"]);
-                var orders = database.Detail_Order
-                    .Include(d => d.Order) // Include để truy cập bảng liên quan Order // Include để truy cập bảng liên quan Product
-                    .Where(d => d.Order.ID_Customer == customerID) // Lọc theo ID_Customer trong Order
+                var orders = database.Orders
+                    .Include(d => d.ID_Order)
+                    .Where(d => d.ID_Customer == customerID)
                     .ToList();
                 return View(orders);
             }

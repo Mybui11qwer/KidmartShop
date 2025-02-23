@@ -24,7 +24,7 @@ namespace KidMartStore.Models
                 items.Add(new CartItem
                 {
                     _product = _pro,
-                    _quantity = _quan
+                   _quantity = _quan
                 });
             else
                 item._quantity += _quan; // tổng số lượng trong giỏ hàng được cộng dồn

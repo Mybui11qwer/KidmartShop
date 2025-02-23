@@ -1,4 +1,4 @@
-﻿@model List<KidMartStore.Models.Detail_Order>
+﻿@model List<KidMartStore.Models.Order>
 @{
     ViewBag.Title = "ShowOrder";
     Layout = "~/Views/Shared/UserLayout.cshtml";
@@ -26,13 +26,13 @@
                         <td>Số lượng</td>
                         <td>Tên</td>
                     </tr>
-                    @foreach (var order in Model)
+                    @foreach (var List in Model)
                     {
                         <tr>
-                            <td>@order.Order.ID_Order</td>
-                            <td>@order.ID_Product</td>
-                            <td>@order.Quantity</td>
-                            <td>@order.ID_Product</td>
+                            <td>@List.ID_Order</td>
+                            <td>@List.Status</td>
+                            <td>Số lượng</td>
+                            <td>Tên</td>
                         </tr>
                     }
                 </table>
