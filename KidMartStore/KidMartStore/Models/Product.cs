@@ -9,7 +9,6 @@
 
 namespace KidMartStore.Models
 {
-    using Microsoft.AspNetCore.Http;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations.Schema;
@@ -17,6 +16,12 @@ namespace KidMartStore.Models
 
     public partial class Product
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Product()
+        {
+            this.Detail_Order = new HashSet<Detail_Order>();
+        }
+    
         public int ID_Product { get; set; }
         public Nullable<int> ID_Category { get; set; }
         public string Name { get; set; }
@@ -30,8 +35,9 @@ namespace KidMartStore.Models
 
         [NotMapped]
         public HttpPostedFileBase UploadImage { get; set; }
-
         public virtual Category Category { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Detail_Order> Detail_Order { get; set; }
         public virtual Material Material { get; set; }
         public virtual Size Size { get; set; }
         public virtual Warranty_Policy Warranty_Policy { get; set; }

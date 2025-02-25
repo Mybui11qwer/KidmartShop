@@ -82,6 +82,16 @@
     <Property Name="ID_Size" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="3" Nullable="false" />
   </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
   <EntityType Name="Warranty_Policy">
     <Key>
       <PropertyRef Name="ID_Warranty" />
@@ -173,6 +183,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Detail_Order_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Detail_Order" Type="Self.Detail_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ID_Product" />
+      </Principal>
+      <Dependent Role="Detail_Order">
+        <PropertyRef Name="ID_Product" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="KidMartStoreModelStoreContainer">
     <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
@@ -182,6 +204,7 @@
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Promotion" EntityType="Self.Promotion" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Size" EntityType="Self.Size" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Warranty_Policy" EntityType="Self.Warranty_Policy" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__Detail_Or__ID_Or__412EB0B6" Association="Self.FK__Detail_Or__ID_Or__412EB0B6">
       <End Role="Order" EntitySet="Order" />
@@ -210,6 +233,10 @@
     <AssociationSet Name="FK__Product__ID_Warr__4CA06362" Association="Self.FK__Product__ID_Warr__4CA06362">
       <End Role="Warranty_Policy" EntitySet="Warranty_Policy" />
       <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Detail_Order_Product" Association="Self.FK_Detail_Order_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Detail_Order" EntitySet="Detail_Order" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

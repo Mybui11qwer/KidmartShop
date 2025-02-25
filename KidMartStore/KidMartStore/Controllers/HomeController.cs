@@ -74,12 +74,12 @@ namespace KidMartStore.Controllers
         }
         public ActionResult ShowOrder()
         {
-            if (Session["ID_Customer"]!= null)
+            if (Session["ID_Customer"] != null)
             {
                 var customerID = Convert.ToInt64(Session["ID_Customer"]);
                 var orders = database.Orders
-                    .Include(d => d.ID_Order)
                     .Where(d => d.ID_Customer == customerID)
+                    .Include(o => o.Detail_Order.Select(p => p.Product))
                     .ToList();
                 return View(orders);
             }

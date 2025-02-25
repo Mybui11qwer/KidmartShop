@@ -353,6 +353,9 @@
     <Compile Include="Models\Size.cs">
       <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>KidMartStore.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Warranty_Policy.cs">
       <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
@@ -431,6 +434,12 @@
       <DependentUpon>KidMartStore.edmx</DependentUpon>
       <LastGenOutput>KidMartStore.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\KidMartStore.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>KidMartStore.Designer.cs</LastGenOutput>
@@ -438,12 +447,6 @@
     <Content Include="Models\KidMartStore.edmx.diagram">
       <DependentUpon>KidMartStore.edmx</DependentUpon>
     </Content>
-    <Content Include="Scripts\bootstrap.bundle.js" />
-    <Content Include="Scripts\bootstrap.bundle.min.js" />
-    <Content Include="Scripts\bootstrap.esm.js" />
-    <Content Include="Scripts\bootstrap.esm.min.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />

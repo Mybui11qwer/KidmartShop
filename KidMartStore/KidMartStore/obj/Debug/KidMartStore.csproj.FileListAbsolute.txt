@@ -1236,7 +1236,6 @@ D:\ShopBanQuanAo\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.Imaging.In
 D:\ShopBanQuanAo\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.Shell.Design.dll
 D:\ShopBanQuanAo\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.TextTemplating.Interfaces.11.0.dll
 D:\ShopBanQuanAo\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.TextTemplating.Interfaces.10.0.dll
-D:\ShopBanQuanAo\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.ComponentModelHost.dll
 D:\ShopBanQuanAo\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.Shell.Framework.dll
 D:\ShopBanQuanAo\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.Shell.15.0.dll
 D:\ShopBanQuanAo\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.Telemetry.dll

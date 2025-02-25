@@ -33,6 +33,7 @@
     <Property Name="Quantity" Type="Int32" Nullable="false" />
     <Property Name="Unit_Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
     <NavigationProperty Name="Order" Relationship="Self.FK__Detail_Or__ID_Or__412EB0B6" FromRole="Detail_Order" ToRole="Order" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_Detail_Order_Product" FromRole="Detail_Order" ToRole="Product" />
   </EntityType>
   <EntityType Name="Material">
     <Key>
@@ -71,6 +72,7 @@
     <Property Name="ID_Material" Type="Int32" />
     <Property Name="ID_Warranty" Type="Int32" />
     <NavigationProperty Name="Category" Relationship="Self.FK__Product__ID_Cate__49C3F6B7" FromRole="Product" ToRole="Category" />
+    <NavigationProperty Name="Detail_Order" Relationship="Self.FK_Detail_Order_Product" FromRole="Product" ToRole="Detail_Order" />
     <NavigationProperty Name="Material" Relationship="Self.FK__Product__ID_Mate__4BAC3F29" FromRole="Product" ToRole="Material" />
     <NavigationProperty Name="Size" Relationship="Self.FK__Product__ID_Size__4AB81AF0" FromRole="Product" ToRole="Size" />
     <NavigationProperty Name="Warranty_Policy" Relationship="Self.FK__Product__ID_Warr__4CA06362" FromRole="Product" ToRole="Warranty_Policy" />
@@ -94,6 +96,16 @@
     <Property Name="ID_Size" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Products" Relationship="Self.FK__Product__ID_Size__4AB81AF0" FromRole="Size" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="Warranty_Policy">
     <Key>
@@ -136,6 +148,18 @@
       </Principal>
       <Dependent Role="Detail_Order">
         <PropertyRef Name="ID_Order" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Detail_Order_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Detail_Order" Type="Self.Detail_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ID_Product" />
+      </Principal>
+      <Dependent Role="Detail_Order">
+        <PropertyRef Name="ID_Product" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -196,6 +220,7 @@
     <EntitySet Name="Products" EntityType="Self.Product" />
     <EntitySet Name="Promotions" EntityType="Self.Promotion" />
     <EntitySet Name="Sizes" EntityType="Self.Size" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="Warranty_Policy" EntityType="Self.Warranty_Policy" />
     <AssociationSet Name="FK__Product__ID_Cate__49C3F6B7" Association="Self.FK__Product__ID_Cate__49C3F6B7">
       <End Role="Category" EntitySet="Categories" />
@@ -207,6 +232,10 @@
     </AssociationSet>
     <AssociationSet Name="FK__Detail_Or__ID_Or__412EB0B6" Association="Self.FK__Detail_Or__ID_Or__412EB0B6">
       <End Role="Order" EntitySet="Orders" />
+      <End Role="Detail_Order" EntitySet="Detail_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Detail_Order_Product" Association="Self.FK_Detail_Order_Product">
+      <End Role="Product" EntitySet="Products" />
       <End Role="Detail_Order" EntitySet="Detail_Order" />
     </AssociationSet>
     <AssociationSet Name="FK__Product__ID_Mate__4BAC3F29" Association="Self.FK__Product__ID_Mate__4BAC3F29">
