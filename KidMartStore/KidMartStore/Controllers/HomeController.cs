@@ -89,5 +89,20 @@ namespace KidMartStore.Controllers
             }
             return View();
         }
+        public ActionResult CancelOrder(int id)
+        {
+            var order = database.Orders.FirstOrDefault(o => o.ID_Order == id);
+            if (order != null && order.Status != "Đã giao")
+            {
+                order.Status = "Đã hủy";
+                database.SaveChanges();
+                TempData["Message"] = "Đơn hàng đã được hủy thành công!";
+            }
+            else
+            {
+                TempData["Error"] = "Không thể hủy đơn hàng này!";
+            }
+            return RedirectToAction("ShowOrder");
+        }
     }
 }
