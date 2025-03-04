@@ -3,7 +3,7 @@
     ViewBag.Title = "GioHanng";
     Layout = "~/Views/Shared/UserLayout.cshtml";
 }
-<link rel="stylesheet" href="~/Content/CSS/GioHang.css" />
+<link rel="stylesheet" href="~/Content/CSS/Cart.css" />
 @if (Session["Cart"] != null)
 {
     <div class="cart-container">
@@ -53,8 +53,10 @@
 }
 @if (Session["Cart"] == null)
 {
-    <h1>Bạn chưa có sản phẩm trong giỏ hàng.</h1>
-    <h2>Mua hàng <a href="/Home/SanPham">tại đây</a></h2>
+    <div class="empty-cart">
+        <h1>Bạn chưa có sản phẩm trong giỏ hàng.</h1>
+        <h2>Mua hàng <a href="/Home/SanPham">tại đây</a></h2>
+    </div>
 }
 <script>
     // Giảm số lượng

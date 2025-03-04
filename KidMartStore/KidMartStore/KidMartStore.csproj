@@ -383,7 +383,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\CSS\address.css" />
-    <Content Include="Content\CSS\GioHang.css" />
+    <Content Include="Content\CSS\Cart.css" />
     <Content Include="Content\CSS\detailProduct.css" />
     <Content Include="Content\CSS\Introduce.css" />
     <Content Include="Content\CSS\Order.css" />
@@ -391,7 +391,7 @@
     <Content Include="Content\CSS\index.css" />
     <Content Include="Content\CSS\infor.css" />
     <Content Include="Content\CSS\Login.css" />
-    <Content Include="Content\CSS\ProductPage.css" />
+    <Content Include="Content\CSS\Sanpham.css" />
     <Content Include="Content\CSS\Profile.css" />
     <Content Include="Content\CSS\Slider.css" />
     <Content Include="Content\Admin\Dashboard.css" />

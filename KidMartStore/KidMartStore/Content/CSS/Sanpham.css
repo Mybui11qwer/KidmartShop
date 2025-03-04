@@ -65,8 +65,6 @@
                 max-width: max-content;
                 display: grid;
                 flex: 1 0 50%;
-                border: 2px solid #FFC0CB;
-                border-radius: 25px;
                 padding: 8px;
             }
 a.button {
