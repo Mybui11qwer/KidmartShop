@@ -33,7 +33,11 @@ public class AccountController : Controller
 
                 return RedirectToAction("Index", "Home");
             }
-            ModelState.AddModelError("", "Tên đăng nhập hoặc mật khẩu không chính xác.");
+            if (checkUser == null)
+            {
+                ViewBag.Error = "Email hoặc password sai, vui lòng thử lại!";
+                return View();
+            }
         }
         return View();
     }
@@ -45,6 +49,12 @@ public class AccountController : Controller
     [HttpPost]
     public ActionResult Register(Customer NewCustomer)
     {
+        var existingCustomer = db.Customers.FirstOrDefault(c => c.Email == NewCustomer.Email);
+        if (existingCustomer != null)
+        {
+            ViewBag.Error = "Email đã tồn tại";
+            return View();
+        }
         try
         {
             NewCustomer.Role = "Khách Hàng";

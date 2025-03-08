@@ -28,6 +28,10 @@
             <div class="form-email-password">
                 <label for="email">Email <span>*</span></label><br />
                 <input type="email" id="email" name="Email" placeholder="Nhập email của bạn" required>
+                @if (!string.IsNullOrEmpty(ViewBag.Error))
+                {
+                    <div style="color: red">@ViewBag.Error</div>
+                }
             </div>
 
             <div class="form-email-password">
