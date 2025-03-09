@@ -5,25 +5,27 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Net.PeerToPeer;
 using System.Web.UI.WebControls;
+using KidMartStore.Controllers;
 
 public class AccountController : Controller
 {
-    public KidMartStoreEntities db = new KidMartStoreEntities();
-
     public ActionResult Login()
     {
         return View();
     }
+
     [HttpPost]
     public ActionResult Login(Customer customer)
     {
         if (ModelState.IsValid)
         {
-            // Kiểm tra thông tin đăng nhập
+            // Sử dụng Singleton thay vì tạo mới đối tượng DbContext
+            var db = DbContextSingleton.Instance;
+
             var checkUser = db.Customers.FirstOrDefault(u => u.Email == customer.Email && u.Password == customer.Password);
             if (checkUser != null)
             {
-                // Lưu tên người dùng vào session
+                // Lưu thông tin vào session
                 Session["Email"] = checkUser.Email;
                 Session["Name"] = checkUser.Username;
                 Session["Address"] = checkUser.Address;
@@ -33,39 +35,40 @@ public class AccountController : Controller
 
                 return RedirectToAction("Index", "Home");
             }
-            if (checkUser == null)
-            {
-                ViewBag.Error = "Email hoặc password sai, vui lòng thử lại!";
-                return View();
-            }
+
+            ViewBag.Error = "Email hoặc password sai, vui lòng thử lại!";
         }
         return View();
     }
+
     public ActionResult Register()
     {
         return View();
     }
 
     [HttpPost]
-    public ActionResult Register(Customer NewCustomer)
+    public ActionResult Register(Customer newCustomer)
     {
-        var existingCustomer = db.Customers.FirstOrDefault(c => c.Email == NewCustomer.Email);
+        var db = DbContextSingleton.Instance; // Sử dụng Singleton
+        var existingCustomer = db.Customers.FirstOrDefault(c => c.Email == newCustomer.Email);
         if (existingCustomer != null)
         {
             ViewBag.Error = "Email đã tồn tại";
             return View();
         }
+
         try
         {
-            NewCustomer.Role = "Khách Hàng";
-            db.Customers.Add(NewCustomer);
+            //Sử dụng Factory
+            var customer = CustomerFactory.CreateCustomer(newCustomer.Username, newCustomer.Email, newCustomer.Password);
+            db.Customers.Add(customer);
             db.SaveChanges();
             return RedirectToAction("Login");
         }
         catch
         {
             return View("Register");
-        }       
+        }
     }
 
     // Đăng xuất
