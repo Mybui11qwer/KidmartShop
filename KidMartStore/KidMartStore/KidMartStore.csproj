@@ -491,6 +491,7 @@
     <Content Include="Views\Product\GioHanng.cshtml" />
     <Content Include="Views\Product\CheckOut_Success.cshtml" />
     <Content Include="Views\Home\ShowOrder.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

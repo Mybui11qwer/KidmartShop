@@ -30,8 +30,14 @@ public class AccountController : Controller
                 Session["Phone"] = checkUser.Phone;
                 Session["ID_Customer"] = checkUser.ID_Customer;
                 Session["Role"] = checkUser.Role;
-
-                return RedirectToAction("Index", "Home");
+                if (checkUser.Role == "Khách hàng")
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                if(checkUser.Role != "Khách hàng")
+                {
+                    return RedirectToAction("Dashboard", "Admin");
+                }
             }
             if (checkUser == null)
             {

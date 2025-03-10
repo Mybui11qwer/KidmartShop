@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Configuration;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 using KidMartStore.Models;
 
 namespace KidMartStore.Controllers
@@ -14,6 +15,10 @@ namespace KidMartStore.Controllers
     {
         public KidMartStoreEntities database = new KidMartStoreEntities();
         // GET: Admin
+        public ActionResult Login()
+        {
+            return View();
+        }
         public ActionResult Dashboard()
         {
             // Lấy tổng số người dùng
