@@ -99,28 +99,52 @@
 </script>
 <script>
     function addToCart(url) {
-        let quantity = document.getElementById("quantity").value; // Lấy số lượng từ input
-        let isLoggedIn = @((Session["ID_Customer"] != null).ToString().ToLower());
-        if (!isLoggedIn) {
-            alert("Bạn cần đăng nhập để mua hàng!");
-            window.location.href = "@Url.Action("Login", "Account")";
-            return;
-        }
-        else {
-            fetch(url + "?quantity=" + quantity) // Gửi số lượng đến server
-                .then(response => {
-                    if (response.ok) {
-                        alert("Bạn đã thêm " + quantity + " sản phẩm vào giỏ hàng!");
-                    } else {
-                        alert("Có lỗi xảy ra, vui lòng thử lại!");
-                    }
-                })
-                .catch(error => {
-                    console.error("Lỗi:", error);
+    let quantity = document.getElementById("quantity").value; // Lấy số lượng từ input
+    let isLoggedIn = @((Session["ID_Customer"] != null).ToString().ToLower());
+
+    if (!isLoggedIn) {
+        alert("Bạn cần đăng nhập để mua hàng!");
+        window.location.href = "@Url.Action("Login", "Account")";
+        return;
+    } else {
+        fetch(url + "?quantity=" + quantity) // Gửi số lượng đến server
+            .then(response => {
+                if (response.ok) {
+                    showTemporaryMessage("Bạn đã thêm " + quantity + " sản phẩm vào giỏ hàng!", 2000);
+                } else {
                     alert("Có lỗi xảy ra, vui lòng thử lại!");
-                });
-        }
+                }
+            })
+            .catch(error => {
+                console.error("Lỗi:", error);
+                alert("Có lỗi xảy ra, vui lòng thử lại!");
+            });
     }
+}
+
+function showTemporaryMessage(message, duration) {
+    let messageDiv = document.createElement("div");
+    messageDiv.innerText = message;
+    messageDiv.style.position = "fixed";
+    messageDiv.style.top = "50%";
+    messageDiv.style.left = "50%";
+    messageDiv.style.transform = "translate(-50%, -50%)"; // Canh giữa màn hình
+    messageDiv.style.backgroundColor = "none";
+    messageDiv.style.color = "black";
+    messageDiv.style.padding = "15px 30px";
+    messageDiv.style.borderRadius = "8px";
+    messageDiv.style.zIndex = "1000";
+    messageDiv.style.fontSize = "18px";
+    messageDiv.style.fontWeight = "bold";
+    messageDiv.style.textAlign = "center";
+
+    document.body.appendChild(messageDiv);
+
+    setTimeout(() => {
+        messageDiv.remove();
+    }, duration);
+}
+
     function buyNow(url) {
         let quantity = document.getElementById("quantity").value;
 
