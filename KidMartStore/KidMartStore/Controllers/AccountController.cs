@@ -55,6 +55,11 @@ public class AccountController : Controller
             ViewBag.Error = "Email đã tồn tại";
             return View();
         }
+        if(NewCustomer.Password.ToString().Length <= 9)
+        {
+            ViewBag.Error1 = "Mật khẩu phải dài hơn 9 ký tự";
+            return View();
+        }
         try
         {
             NewCustomer.Role = "Khách Hàng";

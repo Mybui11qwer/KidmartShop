@@ -23,7 +23,7 @@
             {
                 <a href="~/Product/GioHanng"><img src="~/Image/Icons/icon-cart.png" /></a>
                 <a href="~/Home/Profile"><img src="~/Image/Icons/Icon-user.png" /></a>
-                <a href="~/Home/Profile">Hello <span>@(Session["Name"] ?? "Guest")</span>!</a>
+                <a href="~/Home/Profile" id="WelcomeUser">Hello <span class="NameUser">@(Session["Name"] ?? "Guest")</span>!</a>
                 <a href="~/Account/Logout">Logout</a>
             }
             @if (Session["Email"] == null)

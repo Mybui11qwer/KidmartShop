@@ -22,7 +22,7 @@
 
             <div class="form-email-password">
                 <label for="Phone">Số điện thoại <span>*</span></label><br />
-                <input type="tel" id="password" name="Phone" placeholder="Nhập số điện thoại của bạn" required>
+                <input type="tel" id="phone" name="Phone" placeholder="Nhập số điện thoại của bạn" required>
             </div>
 
             <div class="form-email-password">
@@ -37,6 +37,10 @@
             <div class="form-email-password">
                 <label for="password">Mật khẩu <span>*</span></label><br />
                 <input type="password" id="password" name="Password" placeholder="Nhập mật khẩu" required>
+                @if (!string.IsNullOrEmpty(ViewBag.Error1))
+                {
+                    <div style="color: red">@ViewBag.Error1</div>
+                }
             </div>
 
             <div class="formRegister">
