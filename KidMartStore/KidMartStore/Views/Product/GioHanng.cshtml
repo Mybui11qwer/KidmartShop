@@ -22,6 +22,14 @@
                     <div class="item-price">@item._product.Price.ToString("N0") VNĐ</div>
                     <div class="item-quantity">
                         <button class="decrease">-</button>
+                        @if (item._quantity > item._product.Quantity)
+                        {
+                            <input type="text" value="@item._product.Quantity" class="quantity-input">
+                        }
+                        @if (item._quantity < item._product.Quantity)
+                        {
+                            <input type="text" value="@item._quantity" class="quantity-input">
+                        }
                         <input type="text" value="@item._quantity" class="quantity-input">
                         <button class="increase">+</button>
                     </div>

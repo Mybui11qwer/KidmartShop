@@ -30,19 +30,29 @@ public class AccountController : Controller
                 Session["Phone"] = checkUser.Phone;
                 Session["ID_Customer"] = checkUser.ID_Customer;
                 Session["Role"] = checkUser.Role;
-                if (checkUser.Role == "Khách hàng")
+                if (checkUser.Role == "Khách Hàng")
                 {
                     return RedirectToAction("Index", "Home");
                 }
-                if(checkUser.Role != "Khách hàng")
+                if(checkUser.Role != "Khách Hàng")
                 {
                     return RedirectToAction("Dashboard", "Admin");
                 }
             }
-            if (checkUser == null)
+            else
             {
-                ViewBag.Error = "Email hoặc password sai, vui lòng thử lại!";
-                return View();
+                // Kiểm tra nếu email không tồn tại
+                var user = db.Customers.FirstOrDefault(u => u.Email == customer.Email);
+                if (user == null)
+                {
+                    ViewBag.ErrorEmail = "Email không tồn tại";
+                    return View();
+                }
+                else
+                {
+                    ViewBag.ErrorPassword = "Sai mật khẩu";
+                    return View();
+                }
             }
         }
         return View();

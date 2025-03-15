@@ -17,17 +17,17 @@
         <form action="/Account/Register" method="post">
             <div class="form-email-password">
                 <label for="Name">Họ và tên <span>*</span></label><br />
-                <input type="text" id="name" name="Username" placeholder="Nhập họ và tên của bạn" required>
+                <input type="text" id="name" name="Username" placeholder="Nhập họ và tên của bạn" required oninvalid="this.setCustomValidity('Vui lòng nhập tên của bạn!')" oninput="this.setCustomValidity('')">
             </div>
 
             <div class="form-email-password">
                 <label for="Phone">Số điện thoại <span>*</span></label><br />
-                <input type="tel" id="phone" name="Phone" placeholder="Nhập số điện thoại của bạn" required>
+                <input type="tel" id="phone" name="Phone" placeholder="Nhập số điện thoại của bạn" required oninvalid="this.setCustomValidity('Hãy cung cấp số điện thoại của bạn!')" oninput="this.setCustomValidity('')">
             </div>
 
             <div class="form-email-password">
                 <label for="email">Email <span>*</span></label><br />
-                <input type="email" id="email" name="Email" placeholder="Nhập email của bạn" required>
+                <input type="email" id="email" name="Email" placeholder="Nhập email của bạn" required oninvalid="this.setCustomValidity('Bạn chưa nhập Email')" oninput="this.setCustomValidity('')">
                 @if (!string.IsNullOrEmpty(ViewBag.Error))
                 {
                     <div style="color: red">@ViewBag.Error</div>
@@ -36,7 +36,7 @@
 
             <div class="form-email-password">
                 <label for="password">Mật khẩu <span>*</span></label><br />
-                <input type="password" id="password" name="Password" placeholder="Nhập mật khẩu" required>
+                <input type="password" id="password" name="Password" placeholder="Nhập mật khẩu" required oninvalid="this.setCustomValidity('Để tăng bảo mật vui lòng nhập mật khẩu!')" oninput="this.setCustomValidity('')">
                 @if (!string.IsNullOrEmpty(ViewBag.Error1))
                 {
                     <div style="color: red">@ViewBag.Error1</div>

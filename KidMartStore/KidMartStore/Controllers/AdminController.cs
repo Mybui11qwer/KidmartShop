@@ -21,16 +21,17 @@ namespace KidMartStore.Controllers
         }
         public ActionResult Dashboard()
         {
-            // Lấy tổng số người dùng
-            var totalUsers = database.Customers.Count(c => c.Role == "Khách Hàng");
-            // Lấy tổng số nhân viên
-            var totalAdmins = database.Customers.Count(c => c.Role == "Nhân Viên" || c.Role == "Quản Lý");
+            // Lấy tổng số người dùng (nếu không có, trả về 0)
+            var totalUsers = database.Customers?.Count(c => c.Role == "Khách Hàng") ?? 0;
 
-            // Lấy tổng số sản phẩm
-            var totalProducts = database.Products.Count();
+            // Lấy tổng số nhân viên (nếu không có, trả về 0)
+            var totalAdmins = database.Customers?.Count(c => c.Role == "Nhân Viên" || c.Role == "Quản Lý") ?? 0;
 
-            // Lấy tổng số đơn hàng
-            var totalOrders = database.Orders.Count();
+            // Lấy tổng số sản phẩm (nếu không có, trả về 0)
+            var totalProducts = database.Products?.Count() ?? 0;
+
+            // Lấy tổng số đơn hàng (nếu không có, trả về 0)
+            var totalOrders = database.Orders?.Count() ?? 0;
 
             // Truyền dữ liệu qua ViewBag
             ViewBag.TotalAdmins = totalAdmins;

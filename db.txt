@@ -36,6 +36,13 @@ CREATE TABLE Warranty_Policy
   Content TEXT NOT NULL
 );
 
+-- Size Table
+CREATE TABLE Size
+(
+  ID_Size INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+  Size_Name NVARCHAR(50) NOT NULL
+);
+
 -- Product Table
 CREATE TABLE Product
 (
@@ -43,6 +50,7 @@ CREATE TABLE Product
   ID_Category INT NOT NULL,
   ID_Material INT NULL,
   ID_Warranty INT NULL,
+  ID_Size INT NULL,
   Name NVARCHAR(100) NOT NULL,
   Price DECIMAL(10, 2) NOT NULL,
   Quantity INT NOT NULL,
@@ -50,6 +58,7 @@ CREATE TABLE Product
   Image VARCHAR(255),
   FOREIGN KEY (ID_Category) REFERENCES Category(ID_Category),
   FOREIGN KEY (ID_Material) REFERENCES Material(ID_Material),
+  FOREIGN KEY (ID_Size) REFERENCES Size(ID_Size),
   FOREIGN KEY (ID_Warranty) REFERENCES Warranty_Policy(ID_Warranty)
 );
 
@@ -86,11 +95,4 @@ CREATE TABLE Detail_Order
   Quantity INT NOT NULL,
   Unit_Price DECIMAL(18, 0) NOT NULL,
   FOREIGN KEY (ID_Order) REFERENCES Orders(ID_Order)
-);
-
--- Size Table
-CREATE TABLE Size
-(
-  ID_Size INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
-  Size_Name NVARCHAR(50) NOT NULL
 );
