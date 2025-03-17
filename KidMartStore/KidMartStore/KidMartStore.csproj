@@ -306,7 +306,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -362,10 +361,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Admin\AddNewProduct.css" />
-    <Content Include="Content\Admin\AddNewUser.css" />
-    <Content Include="Content\Admin\ManagerAccount.css" />
-    <Content Include="Content\Admin\ManagerProduct.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -394,11 +389,9 @@
     <Content Include="Content\CSS\Sanpham.css" />
     <Content Include="Content\CSS\Profile.css" />
     <Content Include="Content\CSS\Slider.css" />
-    <Content Include="Content\Admin\Dashboard.css" />
     <Content Include="Content\JS\Change.js" />
     <Content Include="Content\JS\Scroll-index.js" />
     <Content Include="Content\JS\Slider.js" />
-    <Content Include="Content\Layout\AdminLayout.css" />
     <Content Include="Content\Layout\Layout.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -470,28 +463,17 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\UserLayout.cshtml" />
-    <Content Include="Views\Admin\Dashboard.cshtml" />
-    <Content Include="Views\Shared\AdminLayout.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Home\GioiThieu.cshtml" />
     <Content Include="Views\Home\SanPham.cshtml" />
     <Content Include="Views\Home\Profile.cshtml" />
     <Content Include="Views\Home\Address.cshtml" />
-    <Content Include="Views\Admin\ManagerAccount.cshtml" />
-    <Content Include="Views\Admin\AddNewAccount.cshtml" />
-    <Content Include="Views\Admin\ManagerProduct.cshtml" />
-    <Content Include="Views\Admin\AddNewProduct.cshtml" />
-    <Content Include="Views\Admin\UpdateProduct.cshtml" />
-    <Content Include="Views\Admin\ManagerCategory.cshtml" />
-    <Content Include="Views\Admin\AddNewCategory.cshtml" />
-    <Content Include="Views\Admin\ManagerAccountAdmin.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Product\ChiTietSanPham.cshtml" />
     <Content Include="Views\Product\GioHanng.cshtml" />
     <Content Include="Views\Product\CheckOut_Success.cshtml" />
     <Content Include="Views\Home\ShowOrder.cshtml" />
-    <Content Include="Views\Admin\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
