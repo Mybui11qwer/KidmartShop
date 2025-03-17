@@ -3,7 +3,7 @@
     ViewBag.Title = "GioHanng";
     Layout = "~/Views/Shared/UserLayout.cshtml";
 }
-<link rel="stylesheet" href="~/Content/CSS/Cart.css" />
+<link rel="stylesheet" href="~/Content/CSS/_cart.css" />
 @if (Session["Cart"] != null)
 {
     <div class="cart-container">
@@ -22,25 +22,24 @@
                     <div class="item-price">@item._product.Price.ToString("N0") VNĐ</div>
                     <div class="item-quantity">
                         <button class="decrease">-</button>
-                        @if (item._quantity > item._product.Quantity)
-                        {
-                            <input type="text" value="@item._product.Quantity" class="quantity-input">
-                        }
-                        @if (item._quantity < item._product.Quantity)
-                        {
-                            <input type="text" value="@item._quantity" class="quantity-input">
-                        }
-                        <input type="text" value="@item._quantity" class="quantity-input">
+                        <input type="text" value="@item._quantity" class="quantity-input" data-max="@item._product.Quantity">
                         <button class="increase">+</button>
                     </div>
                 </div>
             }
-        </div>         
+        </div>
         <div class="checkout">
             <h3>HẸN GIỜ CHECK ĐƠN</h3>
             <div class="check-time">
-                <label for="check-date">Ngày nhận check đơn</label>
-                <input type="date" id="check-date" value="2024-11-13">
+                <label for="check-date">
+                    Ngày nhận check đơn
+                    <a style="color: red" id="info-link">?</a>
+                    <span id="tooltip" style="display: none; background: yellow; padding: 5px; border: 1px solid black; position: absolute;">
+                        Sản phẩm bên chúng tôi sẽ giao đến bạn trong 3 ngày tới,<br>
+                        nếu không có cản trở gì khác.
+                    </span>
+                </label>
+                <input type="date" id="check-date">
             </div>
             <div class="check-time">
                 <label for="check-time">Thời gian nhận check đơn</label>
@@ -51,13 +50,37 @@
                     <option>16:00</option>
                 </select>
             </div>
+            <div class="voucher">
+                <label for="voucher-select">Chọn mã giảm giá:</label>
+                <select id="voucher-select">
+                    <option value="none">Không áp dụng</option>
+                    <option value="SALE10">Giảm 10%</option>
+                    <option value="SALE20">Giảm 20%</option>
+                </select>
+                <button onclick="applyVoucher()">Áp dụng</button>
+            </div>
             <div class="total">
                 <span>TỔNG CỘNG</span>
                 <span class="total-amount">@Model.TotalMoney().ToString("N0") VNĐ</span>
             </div>
-            <button onclick="window.location.href='/Product/CheckOut'" class="checkout-button">Thanh Toán</button>
+
+            <button onclick="openPaymentModal()" class="checkout-button">Thanh Toán</button>
+
+            <!-- Modal chọn phương thức thanh toán -->
+            <div id="payment-modal" class="modal">
+                <div class="modal-content">
+                    <h3>Chọn phương thức thanh toán</h3>
+                    <select id="payment-method">
+                        <option value="cod">Thanh toán khi nhận hàng (COD)</option>
+                        <option value="bank">Chuyển khoản ngân hàng</option>
+                        <option value="momo">Ví MoMo</option>
+                    </select>
+                    <button onclick="submitPayment()">Xác nhận</button>
+                    <button onclick="closePaymentModal()">Hủy</button>
+                </div>
+            </div>
         </div>
-        </div>
+    </div>
 }
 @if (Session["Cart"] == null)
 {
@@ -67,7 +90,6 @@
     </div>
 }
 <script>
-    // Giảm số lượng
     document.querySelectorAll('.decrease').forEach(button => {
         button.addEventListener('click', function () {
             const quantityInput = this.nextElementSibling;
@@ -76,25 +98,91 @@
             if (quantity > 1) {
                 quantity--;
                 quantityInput.value = quantity;
-
-                // Gọi AJAX cập nhật số lượng
                 updateCartQuantity(productId, quantity);
             }
         });
     });
 
-    // Tăng số lượng
     document.querySelectorAll('.increase').forEach(button => {
         button.addEventListener('click', function () {
             const quantityInput = this.previousElementSibling;
             const productId = this.closest('.cart-item').dataset.productId;
             let quantity = parseInt(quantityInput.value);
-            quantity++;
-            quantityInput.value = quantity;
+            let maxQuantity = parseInt(quantityInput.getAttribute('data-max'));
 
-            // Gọi AJAX cập nhật số lượng
-            updateCartQuantity(productId, quantity);
+            if (quantity < maxQuantity) {
+                quantity++;
+                quantityInput.value = quantity;
+                updateCartQuantity(productId, quantity);
+            } else {
+                alert("Số lượng đã đạt tối đa!");
+            }
         });
     });
+
+    // Hàm cập nhật số lượng trong giỏ hàng bằng AJAX
+    function updateCartQuantity(productId, quantity) {
+        fetch('/Product/Update_Cart_Quantity', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: productId, cartQuantity: quantity })
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.querySelector('.total-amount').innerText = data.totalMoney.toLocaleString() + " VNĐ";
+                } else {
+                    alert("Lỗi cập nhật giỏ hàng!");
+                }
+            });
+    }
+    // Lấy ngày hiện tại theo định dạng YYYY-MM-DD
+    let today = new Date().toISOString().split('T')[0];
+
+    // Gán giá trị vào input date
+    document.getElementById("check-date").value = today;
+
+    document.getElementById("info-link").addEventListener("click", function (event) {
+        event.preventDefault(); // Ngăn chặn load lại trang
+        let tooltip = document.getElementById("tooltip");
+        tooltip.style.display = tooltip.style.display === "none" ? "inline" : "none";
+    });
+
+
+    // Áp dụng voucher từ danh sách chọn
+    function applyVoucher() {
+        let voucherCode = document.getElementById("voucher-select").value;
+
+        fetch('/Product/ApplyVoucher', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ code: voucherCode })
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.querySelector('.total-amount').innerText = data.totalMoney.toLocaleString() + " VNĐ";
+                    alert("Mã giảm giá áp dụng thành công!");
+                } else {
+                    alert("Mã giảm giá không hợp lệ hoặc không có mã!");
+                }
+            });
+    }
+
+    // Mở modal chọn phương thức thanh toán
+    function openPaymentModal() {
+        document.getElementById("payment-modal").style.display = "block";
+    }
+
+    // Đóng modal
+    function closePaymentModal() {
+        document.getElementById("payment-modal").style.display = "none";
+    }
+
+    // Xác nhận thanh toán
+    function submitPayment() {
+        let paymentMethod = document.getElementById("payment-method").value;
+        window.location.href = `/Product/CheckOut?paymentMethod=${paymentMethod}`;
+    }
 </script>
 

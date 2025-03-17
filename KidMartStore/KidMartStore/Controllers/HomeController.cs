@@ -19,9 +19,19 @@ namespace KidMartStore.Controllers
     public class HomeController : Controller
     {
         private readonly KidMartStoreEntities database = new KidMartStoreEntities();
-        public ActionResult Index()
+        public ActionResult Index(string category)
         {
-            List<Product> products = database.Products.ToList();
+            List<Product> products;
+
+            if (!string.IsNullOrEmpty(category))
+            {
+                products = database.Products.Where(p => p.Category.Name_Category == category).ToList();
+            }
+            else
+            {
+                products = database.Products.ToList();
+            }
+
             return View(products);
         }
         public ActionResult GioiThieu()

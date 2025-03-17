@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - KidMartStore</title>
     <link rel="icon" href="~/Image/Avartar_Logo/Avarta-kidmart.png" style="width:32px;height:32px;"/>
-    <link rel="stylesheet" href="~/Content/Layout/Layout.css" />
+    <link rel="stylesheet" href="~/Content/Layout/_layoutUser.css" />
 </head>
 <body>
     <div class="above-header">
@@ -13,11 +13,6 @@
             <a href="~/Home/Index">KIDMART</a>
         </nav>
         <nav class="Location-function">
-            @if (Session["Role"]?.ToString() == "Quản Lý")
-            {
-                <a href="~/Admin/Dashboard">PageAdmin</a>
-                <a style="cursor: default">|</a>
-            }
             <a class="search" id="search"><img src="~/Image/Icons/icon-search.png" /></a>
             @if (Session["Email"] != null)
             {
@@ -45,18 +40,11 @@
             <a href="~/Home/GioiThieu">Giới thiệu</a>
             <nav class="menu-product">
                 <a href="~/Home/SanPham">Sản phẩm <span><img src="~/Image/Icons/Icon-down-arrow.png" style="width: 10px;height: 12px" /></span></a>
-                <div class="menu-content">
-                    <div><a href="#">Quần áo</a></div>
-                    <div><a href="#">Đồ chơi</a></div>
-                    <div><a href="#">Sữa cho bé</a></div>
-                    <div><a href="#">Học tập</a></div>
-                    <div><a href="#">Tả của bé</a></div>
-                    <div><a href="#">Dụng cụ khác</a></div>
-                </div>
+                
             </nav>
             <a href="#">Blog</a>
             <a href="#">Liên hệ</a>
-            <a href="~/Home/ShowOrder">Kiểm tra đơn hàng</a>
+            <a href="~/Home/ShowOrder" class = "OrderChecking">Kiểm tra đơn hàng</a>
         </nav>
         <div></div>
     </header>

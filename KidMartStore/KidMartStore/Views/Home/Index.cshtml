@@ -13,10 +13,39 @@
     <div class="firstContent">
         <nav class="selectForm">
             <h2>Danh Mục Hàng</h2>
+            @{
+                var selectedCategory = Request.QueryString["category"]; // Lấy danh mục hiện tại từ URL
+                var title = string.IsNullOrEmpty(selectedCategory) ? "Danh sách sản phẩm" : $"Danh sách loại: {selectedCategory}";
+            }
             <div class="tab-content">
-                @foreach (var category in Model.Select(m => m.Category).GroupBy(c => c.Name_Category).Select(g => g.First()))
+                @if (string.IsNullOrEmpty(selectedCategory))
                 {
-                    <div><span>- Danh mục @category.Name_Category</span></div>
+                    <!-- Nếu chưa chọn danh mục, hiển thị nút mở/đóng danh mục -->
+                    <div>
+                        <a id="toggleCategories" style="text-decoration: none; color: black; font-weight: bold; cursor: pointer;">
+                            Tất cả sản phẩm ▼
+                        </a>
+                    </div>
+                    <div id="categoryList" style="display: none; padding-left: 10px;">
+                        @foreach (var category in Model.Select(m => m.Category).GroupBy(c => c.Name_Category).Select(g => g.First()))
+                        {
+                            <div>
+                                <a class="category-link" style="text-decoration: none; color: black;"
+                                   href="@Url.Action("Index", "Home", new { category = category.Name_Category })">
+                                    Danh mục @category.Name_Category
+                                </a>
+                            </div>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <!-- Nếu đã chọn danh mục, chỉ hiển thị Tất cả sản phẩm dưới dạng link -->
+                    <div>
+                        <a style="text-decoration: none; color: black; font-weight: bold;" href="@Url.Action("Index", "Home")">
+                            Tất cả sản phẩm
+                        </a>
+                    </div>
                 }
             </div>
         </nav>
@@ -83,7 +112,7 @@
         </div>
     </div>
     <section class="ProductList" style="padding-bottom: 20px;">
-        <h1>Danh sách sản phẩm</h1>
+        <h1>@title</h1>
         <div class="Product-Items">
             @foreach (var product in Model)
             {
@@ -104,4 +133,16 @@
         </div>
     </section>
 </div>
+<script>
+    document.getElementById("toggleCategories")?.addEventListener("click", function () {
+        var categoryList = document.getElementById("categoryList");
+        if (categoryList.style.display === "none") {
+            categoryList.style.display = "block";
+            this.innerHTML = "Tất cả sản phẩm ▲";
+        } else {
+            categoryList.style.display = "none";
+            this.innerHTML = "Tất cả sản phẩm ▼";
+        }
+    });
+</script>
 

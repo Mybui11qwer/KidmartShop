@@ -128,7 +128,7 @@ h2 {
     .check-time input,
     .check-time select {
         width: 100%;
-        padding: 8px;
+        padding: 8px 0px;
         border: 1px solid #ddd;
         border-radius: 4px;
         font-size: 14px;

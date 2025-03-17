@@ -306,6 +306,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Admin\AdminController.cs" />
+    <Compile Include="Controllers\Admin\FunctionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -378,7 +380,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\CSS\address.css" />
-    <Content Include="Content\CSS\Cart.css" />
+    <Content Include="Content\CSS\_cart.css" />
     <Content Include="Content\CSS\detailProduct.css" />
     <Content Include="Content\CSS\Introduce.css" />
     <Content Include="Content\CSS\Order.css" />
@@ -386,13 +388,21 @@
     <Content Include="Content\CSS\index.css" />
     <Content Include="Content\CSS\infor.css" />
     <Content Include="Content\CSS\Login.css" />
-    <Content Include="Content\CSS\Sanpham.css" />
+    <Content Include="Content\CSS\_productPage.css" />
     <Content Include="Content\CSS\Profile.css" />
     <Content Include="Content\CSS\Slider.css" />
+    <Content Include="Content\CSS\_addnewadmin.css" />
+    <Content Include="Content\CSS\_addnewproduct.css" />
+    <Content Include="Content\CSS\_dashboard.css" />
+    <Content Include="Content\CSS\_login.css" />
+    <Content Include="Content\CSS\_manageraccount.css" />
+    <Content Include="Content\CSS\_manageradmin.css" />
+    <Content Include="Content\CSS\_managerproduct.css" />
     <Content Include="Content\JS\Change.js" />
     <Content Include="Content\JS\Scroll-index.js" />
     <Content Include="Content\JS\Slider.js" />
-    <Content Include="Content\Layout\Layout.css" />
+    <Content Include="Content\Layout\_layoutUser.css" />
+    <Content Include="Content\Layout\_layout.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Image\Avartar_Logo\Avarta-kidmart.png" />
@@ -415,6 +425,8 @@
     <Content Include="Image\Policies\policies_icon_3.png" />
     <Content Include="Image\Policies\policies_icon_4.png" />
     <Content Include="Image\Icons\Icon-user.png" />
+    <Content Include="Image\Product\5b632a31-ebe7-4a33-b482-d8f2dd0a3c59.jpg" />
+    <Content Include="Image\Product\5fde370c-b942-45f2-a657-a6a7a576fe03.jpg" />
     <Content Include="Image\Product\ao-polo-tre-em-KPF008S3-3-W01-1.jpg" />
     <Content Include="Image\Product\Áo-thun-cho-bé-trai-2.jpg" />
     <Content Include="Models\KidMartStore.Context.tt">
@@ -440,6 +452,7 @@
     <Content Include="Models\KidMartStore.edmx.diagram">
       <DependentUpon>KidMartStore.edmx</DependentUpon>
     </Content>
+    <Content Include="Image\Product\e0a4a92f-492d-40d2-b0d6-5405c5e08cb4.webp" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -474,9 +487,20 @@
     <Content Include="Views\Product\GioHanng.cshtml" />
     <Content Include="Views\Product\CheckOut_Success.cshtml" />
     <Content Include="Views\Home\ShowOrder.cshtml" />
+    <Content Include="Views\Function\AddNewAccount.cshtml" />
+    <Content Include="Views\Function\AddNewProduct.cshtml" />
+    <Content Include="Views\Admin\Dashboard.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Admin\ManagerAccount.cshtml" />
+    <Content Include="Views\Admin\ManagerAccountAdmin.cshtml" />
+    <Content Include="Views\Admin\ManagerProduct.cshtml" />
+    <Content Include="Views\Function\UpdateAccount.cshtml" />
+    <Content Include="Views\Function\UpdateProduct.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Image\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

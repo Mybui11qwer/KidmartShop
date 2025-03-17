@@ -1,0 +1,76 @@
+﻿.product-list {
+    display: flex;
+    margin: 10px 0px 10px 10px;
+}
+
+
+    .product-list .content2 {
+        width: 100%;
+        margin-left: 20px;
+        position: relative;
+        height: max-content;
+    }
+
+        .product-list .content2 h2 {
+            border-bottom: 2px solid black;
+            font-family: Arial;
+            font-weight: bolder;
+        }
+
+        .product-list .content2 .Product-Items {
+            text-align: center;
+        }
+
+        .product-list .content2 .Product-Items {
+            margin: 30px 25px 10px 25px;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 60px
+        }
+
+            .product-list .content2 .Product-Items .item {
+                max-width: max-content;
+                display: grid;
+                flex: 1 0 50%;
+                padding: 8px;
+            }
+
+a.button {
+    border-radius: 18px;
+    margin-top: 10px;
+    padding: 8px;
+    background-color: #B0E0E6;
+    border: none;
+    transition: 0.5s ease;
+    color: black;
+    text-decoration: none;
+    font-family: Arial;
+}
+
+    a.button:hover {
+        background-color: #ADD8E6;
+        color: black;
+        font-weight: bold;
+    }
+
+.product-list .content2 .Product-Items .item img {
+    width: 250px;
+    height: 300px;
+    transition: 1s ease;
+    border-radius: 25px;
+}
+
+    .product-list .content2 .Product-Items .item img:hover {
+        transform: scale(1.1);
+        border: 1px solid #FFC0CB;
+        border-radius: 360px;
+    }
+
+.product-list .content2 .Product-Items .item h5 {
+    font-size: 15px;
+    font-family: Arial;
+    font-weight: bold;
+    margin: 10px 0px 5px 0px;
+    padding: 0;
+}
