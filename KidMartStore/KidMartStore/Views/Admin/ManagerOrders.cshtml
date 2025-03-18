@@ -1,0 +1,107 @@
+﻿@model List<KidMartStore.Models.Order>
+@{
+    ViewBag.Title = "ManagerOrders";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Quản lý đơn hàng</h2>
+
+<div class="search-bar">
+    <input type="text" id="searchOrder" placeholder="Tìm kiếm theo Mã đơn hàng hoặc Tên khách hàng...">
+</div>
+
+<table class="order-table">
+    <thead>
+        <tr>
+            <th>Mã đơn hàng</th>
+            <th>Khách hàng</th>
+            <th>Ngày đặt</th>
+            <th>Tổng tiền</th>
+            <th>Trạng thái</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model)
+        {
+            <tr>
+                <td>@order.ID_Order</td>
+                <td>@order.Customer.Username</td>
+                <td>@order.Order_Date.ToString("dd/MM/yyyy")</td>
+                <td>@order.Total.ToString("N0") VNĐ</td>
+                <td>
+                    <select class="order-status" data-id="@order.ID_Order">
+                        <option value="Chờ xác nhận" @(order.Status == "Chờ xác nhận" ? "selected" : "")>Chờ xác nhận</option>
+                        <option value="Đang giao" @(order.Status == "Đang giao" ? "selected" : "")>Đang giao</option>
+                        <option value="Hoàn thành" @(order.Status == "Hoàn thành" ? "selected" : "")>Hoàn thành</option>
+                        <option value="Hủy" @(order.Status == "Hủy" ? "selected" : "")>Hủy</option>
+                    </select>
+                </td>
+                <td><button class="btn-delete" onclick="deleteOrder(@order.ID_Order)">Xóa</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".order-status").change(function () {
+            var orderId = $(this).data("id");
+            var status = $(this).val();
+            $.post("/Admin/UpdateOrderStatus", { orderId: orderId, status: status }, function (response) {
+                alert(response.message);
+            });
+        });
+
+        $("#searchOrder").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $(".order-table tbody tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+            });
+        });
+    });
+
+    function deleteOrder(orderId) {
+        if (confirm("Bạn có chắc muốn xóa đơn hàng này?")) {
+            $.post("/Admin/DeleteOrder", { orderId: orderId }, function (response) {
+                if (response.success) {
+                    alert("Đã xóa đơn hàng!");
+                    location.reload();
+                } else {
+                    alert(response.message);
+                }
+            });
+        }
+    }
+</script>
+
+<style>
+    .search-bar {
+        margin-bottom: 15px;
+    }
+
+    .order-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .order-table th, .order-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .order-table th {
+            background-color: #f4f4f4;
+        }
+
+    .btn-delete {
+        color: white;
+        background: red;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+</style>
+

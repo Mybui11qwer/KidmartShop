@@ -141,5 +141,24 @@ namespace KidMartStore.Controllers
             List<Category> categories = database.Categories.ToList();
             return View(categories);
         }
+
+        public ActionResult ManagerOrders()
+        {
+            var orders = database.Orders.OrderByDescending(o => o.Order_Date).ToList();
+            return View(orders);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateOrderStatus(int orderId, string status)
+        {
+            var order = database.Orders.Find(orderId);
+            if (order != null)
+            {
+                order.Status = status;
+                database.SaveChanges();
+                return Json(new { success = true, message = "Cập nhật trạng thái thành công!" });
+            }
+            return Json(new { success = false, message = "Đơn hàng không tồn tại!" });
+        }
     }
 }

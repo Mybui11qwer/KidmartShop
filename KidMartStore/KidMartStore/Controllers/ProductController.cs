@@ -142,19 +142,5 @@ namespace KidMartStore.Controllers
 
             return Json(new { success = true, totalMoney = newTotal });
         }
-
-        [HttpPost]
-        public JsonResult ConfirmBankPayment([FromBody] PaymentConfirmationModel request)
-        {
-            var order = db.Orders.FirstOrDefault(o => o.Id == request.OrderId);
-            if (order != null && request.PaymentProof != null)
-            {
-                order.Status = "Waiting for Confirmation"; // Chờ xác nhận
-                order.PaymentProof = request.PaymentProof; // Ảnh chụp giao dịch
-                db.SaveChanges();
-                return Json(new { success = true, message = "Đã gửi yêu cầu xác nhận. Chúng tôi sẽ kiểm tra!" });
-            }
-            return Json(new { success = false, message = "Lỗi xác nhận thanh toán!" });
-        }
     }
 }
