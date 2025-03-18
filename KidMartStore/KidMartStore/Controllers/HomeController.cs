@@ -19,21 +19,25 @@ namespace KidMartStore.Controllers
     public class HomeController : Controller
     {
         private readonly KidMartStoreEntities database = new KidMartStoreEntities();
-        public ActionResult Index(string category)
+        public ActionResult Index(string category, string query)
         {
-            List<Product> products;
+            List<Product> products = database.Products.ToList();
 
+            // Lọc theo danh mục nếu có
             if (!string.IsNullOrEmpty(category))
             {
-                products = database.Products.Where(p => p.Category.Name_Category == category).ToList();
+                products = products.Where(p => p.Category.Name_Category == category).ToList();
             }
-            else
+
+            // Tìm kiếm sản phẩm nếu có từ khóa query
+            if (!string.IsNullOrEmpty(query))
             {
-                products = database.Products.ToList();
+                products = products.Where(p => p.Name.Contains(query) || p.Description.Contains(query)).ToList();
             }
 
             return View(products);
         }
+
         public ActionResult GioiThieu()
         {
             return View();
