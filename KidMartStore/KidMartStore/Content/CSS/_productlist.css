@@ -1,12 +1,10 @@
 ﻿.product-list {
     display: flex;
-    margin: 10px 0px 10px 10px;
 }
 
 
     .product-list .content2 {
         width: 100%;
-        margin-left: 20px;
         position: relative;
         height: max-content;
     }
@@ -22,9 +20,8 @@
         }
 
         .product-list .content2 .Product-Items {
-            margin: 30px 25px 10px 25px;
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
             flex-wrap: wrap;
             gap: 60px
         }
@@ -36,7 +33,7 @@
                 padding: 8px;
             }
 
-a.button {
+.list-content .Product-Items .item .buttonBuy {
     border-radius: 18px;
     margin-top: 10px;
     padding: 8px;
@@ -48,9 +45,9 @@ a.button {
     font-family: Arial;
 }
 
-    a.button:hover {
-        background-color: #ADD8E6;
-        color: black;
+    .list-content .Product-Items .item .buttonBuy:hover {
+        background-color: #808080;
+        color: white;
         font-weight: bold;
     }
 
@@ -74,15 +71,47 @@ a.button {
     margin: 10px 0px 5px 0px;
     padding: 0;
 }
+
+/*Phân trang*/
+.pagination {
+    text-align: right; /* Căn phải */
+    margin-top: 20px;
+    margin-right: 20px; /* Đẩy về bên phải */
+}
+
+    .pagination a, .pagination .current-page {
+        display: inline-block;
+        padding: 8px 12px;
+        margin: 0 5px;
+        color: #333;
+        text-decoration: none;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+        .pagination a:hover {
+            background-color: #f1f1f1;
+        }
+
+    .pagination .current-page {
+        background-color: #ff6600;
+        color: white;
+        font-weight: bold;
+    }
+
+
 /* Responsive cho PC lớn hơn */
 @media (min-width: 1600px) {
     .product-list .content2 .Product-Items {
-        gap: 70px;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        gap: 80px;
     }
 
         .product-list .content2 .Product-Items .item img {
-            width: 280px;
-            height: auto;
+            width: 300px;
+            height: 350px;
         }
 
     .product-list .content2 h2 {

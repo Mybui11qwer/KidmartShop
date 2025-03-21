@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/UserLayout.cshtml";
     ViewBag.Title = "Sản phẩm";
 }
-<link rel="stylesheet" href="~/Content/CSS/_productpage.css"/>
+<link rel="stylesheet" href="~/Content/CSS/_productlist.css" />
 <section class="infor-promotion"></section>
 <main class="product-list">
     <div class="content2">
@@ -18,7 +18,7 @@
                         <h5>@product.Price.ToString("N0") <span>VNĐ</span></h5>
                         @if (product.Quantity > 0)
                         {
-                            <a href="@Url.Action("ChiTietSanPham", "Product", new { id = product.ID_Product })" class="button">Mua Hàng</a>
+                            <a href="@Url.Action("ChiTietSanPham", "Product", new { id = product.ID_Product })" class="buttonBuy">Mua Hàng</a>
                         }
                         @if (product.Quantity == 0)
                         {
@@ -27,6 +27,30 @@
                     </nav>
                 }
             </div>
+            <div class="pagination">
+                @if (ViewBag.CurrentPage > 1)
+                {
+                    <a href="@Url.Action("SanPham", new { page = ViewBag.CurrentPage - 1 })">« Trước</a>
+                }
+
+                @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                {
+                    if (i == ViewBag.CurrentPage)
+                    {
+                        <span class="current-page">@i</span>
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("SanPham", new { page = i })">@i</a>
+                    }
+                }
+
+                @if (ViewBag.CurrentPage < ViewBag.TotalPages)
+                {
+                    <a href="@Url.Action("SanPham", new { page = ViewBag.CurrentPage + 1 })">Sau »</a>
+                }
+            </div>
+
         </section>
     </div>
 </main>

@@ -13,14 +13,16 @@ using System.Globalization;
 using System.Data.Entity;
 using Microsoft.Ajax.Utilities;
 using System.Runtime.Remoting.Contexts;
+using System.Web.UI;
 
 namespace KidMartStore.Controllers
 {
     public class HomeController : Controller
     {
         private readonly KidMartStoreEntities database = new KidMartStoreEntities();
-        public ActionResult Index(string category, string query)
+        public ActionResult Index(string category, string query, int page = 1)
         {
+            int pageSize = 4;
             List<Product> products = database.Products.ToList();
 
             // Lọc theo danh mục nếu có
@@ -35,6 +37,13 @@ namespace KidMartStore.Controllers
                 products = products.Where(p => p.Name.Contains(query) || p.Description.Contains(query)).ToList();
             }
 
+            int totalProducts = products.Count(); // Tổng số sản phẩm
+            products = products.Skip((page - 1) * pageSize).Take(pageSize).ToList();
+            ViewBag.CurrentPage = page;
+            ViewBag.TotalPages = (int)Math.Ceiling((double)totalProducts / pageSize);
+            ViewBag.Category = category;
+            ViewBag.Query = query;
+
             return View(products);
         }
 
@@ -42,9 +51,24 @@ namespace KidMartStore.Controllers
         {
             return View();
         }
-        public ActionResult SanPham()
+        public ActionResult SanPham(int? page)
         {
+            int pageSize = 16; // Số sản phẩm mỗi trang
+            int pageNumber = page ?? 1; // Nếu không có page, mặc định là 1
+
             List<Product> products = database.Products.ToList();
+            int totalProducts = products.Count();
+            int totalPages = (int)Math.Ceiling((double)totalProducts / pageSize);
+
+            // Kiểm tra giới hạn của pageNumber
+            if (pageNumber < 1) pageNumber = 1;
+            if (pageNumber > totalPages) pageNumber = totalPages;
+
+            ViewBag.TotalPages = totalPages;
+            ViewBag.CurrentPage = pageNumber;
+
+            products = products.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
+
             return View(products);
         }
         public ActionResult Profile()

@@ -43,11 +43,8 @@
                 }
 
                     .bodyFrame .firstContent .selectForm .tab-content div:hover {
-                        color: black;
-                        background-color: #ADD8E6;
-                        border-radius: 20px;
+                        color: white;
                     }
-
                     .bodyFrame .firstContent .selectForm .tab-content div span {
                         margin-left: 20px;
                     }
@@ -123,6 +120,43 @@
                     padding: 0;
                 }
 
+/*Phân trang*/
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination-list {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+}
+
+    .pagination-list li {
+        display: inline;
+        margin: 0 5px;
+    }
+
+        .pagination-list li a {
+            text-decoration: none;
+            color: black;
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .pagination-list li.active a {
+            background-color: #000;
+            color: white;
+            font-weight: bold;
+        }
+
+        .pagination-list li a:hover {
+            background-color: #ddd;
+        }
+
+
 /* Responsive Adjustments */
 @media (max-width: 1200px) {
     .bodyFrame .ProductList .Product-Items {
@@ -181,12 +215,14 @@
         }
 
         .bodyFrame .ProductList .Product-Items {
-            margin: 40px 8%;
-            gap: 80px;
+            display: flex;
+            justify-content: center;
+            gap: 60px;
         }
 
             .bodyFrame .ProductList .Product-Items .item img {
                 width: 300px;
+                height: 350px;
             }
 
         .bodyFrame .ProductList h1 {

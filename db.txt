@@ -100,3 +100,18 @@ CREATE TABLE Detail_Order
 INSERT INTO Customer (Username, Email, Password, Phone, Address, Gender, Avatar, Role)
 VALUES 
 ('admin', 'admin@kidmartstore.com', 'Admin@123', '0123456789', '123 Đường ABC, TP.HCM', 'Nam', NULL, 'Quản Lý');
+
+
+INSERT INTO Category (Name_Category) VALUES 
+(N'Áo thun'),
+(N'Áo sơ mi'),
+(N'Áo khoác'),
+(N'Quần jean'),
+(N'Quần tây'),
+(N'Quần short'),
+(N'Váy'),
+(N'Đầm'),
+(N'Bộ đồ thể thao'),
+(N'Đồ ngủ'),
+(N'Giày dép'),
+(N'Phụ kiện thời trang');

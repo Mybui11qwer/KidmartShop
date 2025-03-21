@@ -388,7 +388,7 @@
     <Content Include="Content\CSS\_index.css" />
     <Content Include="Content\CSS\infor.css" />
     <Content Include="Content\CSS\Login.css" />
-    <Content Include="Content\CSS\_productpage.css" />
+    <Content Include="Content\CSS\_productlist.css" />
     <Content Include="Content\CSS\Profile.css" />
     <Content Include="Content\CSS\Slider.css" />
     <Content Include="Content\CSS\_addnewadmin.css" />
