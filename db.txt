@@ -65,7 +65,7 @@ CREATE TABLE Product
 -- Promotion Table
 CREATE TABLE Promotion
 (
-  ID_Promotion INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+  ID_Sale INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
   Percent_Discount DECIMAL(5, 0) NOT NULL,
   Name_Promotion NVARCHAR(50),
   Start_Date DATE NOT NULL,
@@ -74,16 +74,16 @@ CREATE TABLE Promotion
 );
 
 -- Orders Table
-CREATE TABLE Orders
+CREATE TABLE [Order]
 (
   ID_Order INT NOT NULL IDENTITY(1000,1) PRIMARY KEY,
   ID_Customer INT NOT NULL,
   Order_Date DATE NOT NULL,
   Total DECIMAL(10, 2) NOT NULL,
   Status NVARCHAR(20) NOT NULL,
-  ID_Promotion INT,
+  ID_Sale INT,
   FOREIGN KEY (ID_Customer) REFERENCES Customer(ID_Customer),
-  FOREIGN KEY (ID_Promotion) REFERENCES Promotion(ID_Promotion)
+  FOREIGN KEY (ID_Sale) REFERENCES Promotion(ID_Sale)
 );
 
 -- Detail_Order Table
@@ -94,5 +94,9 @@ CREATE TABLE Detail_Order
   ID_Product INT NOT NULL,
   Quantity INT NOT NULL,
   Unit_Price DECIMAL(18, 0) NOT NULL,
-  FOREIGN KEY (ID_Order) REFERENCES Orders(ID_Order)
+  FOREIGN KEY (ID_Order) REFERENCES [Order](ID_Order)
 );
+
+INSERT INTO Customer (Username, Email, Password, Phone, Address, Gender, Avatar, Role)
+VALUES 
+('admin', 'admin@kidmartstore.com', 'Admin@123', '0123456789', '123 Đường ABC, TP.HCM', 'Nam', NULL, 'Quản Lý');

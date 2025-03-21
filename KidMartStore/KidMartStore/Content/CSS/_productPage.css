@@ -74,3 +74,18 @@ a.button {
     margin: 10px 0px 5px 0px;
     padding: 0;
 }
+/* Responsive cho PC lớn hơn */
+@media (min-width: 1600px) {
+    .product-list .content2 .Product-Items {
+        gap: 70px;
+    }
+
+        .product-list .content2 .Product-Items .item img {
+            width: 280px;
+            height: auto;
+        }
+
+    .product-list .content2 h2 {
+        font-size: 28px;
+    }
+}

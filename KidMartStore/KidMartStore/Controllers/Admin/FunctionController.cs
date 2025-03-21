@@ -48,7 +48,7 @@ namespace AdminWebKidMart.Controllers
 
                 database.Products.Add(NewProduct);
                 database.SaveChanges();
-                return RedirectToAction("ManagerProduct");
+                return RedirectToAction("ManagerProduct", "Admin");
             }
             catch
             {
@@ -82,7 +82,7 @@ namespace AdminWebKidMart.Controllers
                     database.SaveChanges(); // Save changes to the database
                 }
             } // Redirect to the product list
-            return RedirectToAction("ManagerProduct");
+            return RedirectToAction("ManagerProduct", "Admin");
         }
 
         public ActionResult UpdateAccount(int id)
@@ -113,7 +113,7 @@ namespace AdminWebKidMart.Controllers
                     database.SaveChanges(); // Save changes to the database
                 }
 
-                return RedirectToAction("ManagerAccount"); // Redirect back to the customer manager
+                return RedirectToAction("ManagerAccount", "Admin"); // Redirect back to the customer manager
             } // Redirect to the customer list
             return View(customer);
         }
@@ -129,7 +129,7 @@ namespace AdminWebKidMart.Controllers
             {
                 database.Customers.Add(NewCustomer);
                 database.SaveChanges();
-                return RedirectToAction("ManagerAccount");
+                return RedirectToAction("ManagerAccount", "Admin");
             }
             catch
             {
@@ -144,7 +144,7 @@ namespace AdminWebKidMart.Controllers
                 database.Customers.Remove(customer);
                 database.SaveChanges();
             }
-            return RedirectToAction("ManagerAccount"); // Hoặc trang danh sách người dùng.
+            return RedirectToAction("ManagerAccount", "Admin"); // Hoặc trang danh sách người dùng.
         }
     }
 }
