@@ -13,7 +13,7 @@
       <PropertyRef Name="ID_Customer" />
     </Key>
     <Property Name="ID_Customer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Phone" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
     <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -254,5 +254,18 @@
       <End Role="Warranty_Policy" EntitySet="Warranty_Policy" />
       <End Role="Product" EntitySet="Products" />
     </AssociationSet>
+    <EntitySet Name="Sliders" EntityType="KidMartStoreModel.Slider" />
   </EntityContainer>
+  <EntityType Name="Slider">
+    <Key>
+      <PropertyRef Name="ID_Slider" />
+    </Key>
+    <Property Name="ID_Slider" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Image_Url" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Link" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Position" Type="Int32" Nullable="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+  </EntityType>
 </Schema>

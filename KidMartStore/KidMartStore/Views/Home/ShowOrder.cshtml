@@ -15,10 +15,10 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    .Order-content-right h2 {
-        text-align: center;
-        color: #333;
-        margin-bottom: 20px;
+    .table-wrapper {
+        max-height: 500px; /* Giới hạn chiều cao */
+        overflow-y: auto; /* Hiển thị thanh cuộn dọc nếu vượt quá chiều cao */
+        border: 1px solid #ddd;
     }
 
     .tableOrder {
@@ -69,59 +69,53 @@
         <section class="Order-content-right">
             <h2>Lịch sử đơn hàng</h2>
             <div class="content2" style="margin: auto">
-                <table class="tableOrder" style="border: 1px solid">
-                    <tr>
-                        <td>Mã Order</td>
-                        <td>Tên sản phẩm</td>
-                        <td>Số lượng</td>
-                        <td>Tổng giá</td>
-                        <td>Ngày đặt</td>
-                        <td>Status</td>
-                        <td>Yêu cầu</td>
-                    </tr>
-                    @foreach (var List in Model)
-                    {
-                        foreach (var product in List.Detail_Order)
+                <div class="table-wrapper">
+                    <table class="tableOrder">
+                        <tr>
+                            <td style="background-color: gray; font-weight: bold">Mã Order</td>
+                            <td style="background-color: gray; font-weight: bold">Tên sản phẩm</td>
+                            <td style="background-color: gray; font-weight: bold">Số lượng</td>
+                            <td style="background-color: gray; font-weight: bold">Tổng giá</td>
+                            <td style="background-color: gray; font-weight: bold">Ngày đặt</td>
+                            <td style="background-color: gray; font-weight: bold ">Status</td>
+                            <td style="background-color: gray; font-weight: bold">Yêu cầu</td>
+                        </tr>
+                        @foreach (var List in Model)
                         {
-                            <tr>
-                                <td>@List.ID_Order</td>
-                                <td>@product.Product.Name</td>
-                                <td>@product.Quantity</td>
-                                <td>@List.Total.ToString("N0") <span>VNĐ</span></td>
-                                <td>@List.Order_Date.ToString("dd/MM/yyyy")</td>
-                                <td>@List.Status</td>
-                                <td>
-                                    @{
-                                        switch (List.Status)
-                                        {
-                                            case "Đã giao":
-                                                <text>
-                                                    <a>Không thể hủy</a>
-                                                </text>;
-                                                break;
-                                            case "Đang xử lý":
-                                            case "Chờ xác nhận":
-                                                <text>
-                                                    <a style="cursor: pointer" class="cancel-order" data-id="@List.ID_Order">Hủy</a>
-                                                </text>;
-                                                break;
-                                            case "Đã hủy":
-                                                <text>
-                                                    <a>Đã hủy đơn</a>
-                                                </text>;
-                                                break;
-                                            default:
-                                                <text>
-                                                    <a>Không thể thao tác</a>
-                                                </text>;
-                                                break;
+                            foreach (var product in List.Detail_Order)
+                            {
+                                <tr>
+                                    <td>@List.ID_Order</td>
+                                    <td>@product.Product.Name</td>
+                                    <td>@product.Quantity</td>
+                                    <td>@List.Total.ToString("N0") <span>VNĐ</span></td>
+                                    <td>@List.Order_Date.ToString("dd/MM/yyyy")</td>
+                                    <td>@List.Status</td>
+                                    <td>
+                                        @{
+                                            switch (List.Status)
+                                            {
+                                                case "Đã giao":
+                                                    <text><a>Không thể hủy</a></text>;
+                                                    break;
+                                                case "Đang xử lý":
+                                                case "Chờ xác nhận":
+                                                    <text><a style="cursor: pointer" class="cancel-order" data-id="@List.ID_Order">Hủy</a></text>;
+                                                    break;
+                                                case "Đã hủy":
+                                                    <text><a>Đã hủy đơn</a></text>;
+                                                    break;
+                                                default:
+                                                    <text><a>Không thể thao tác</a></text>;
+                                                    break;
+                                            }
                                         }
-                                    }
-                                </td>
-                            </tr>
+                                    </td>
+                                </tr>
+                            }
                         }
-                    }
-                </table>
+                    </table>
+                </div>
             </div>
         </section>
     </div>

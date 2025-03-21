@@ -23,6 +23,7 @@
         <AssociationConnector Association="KidMartStoreModel.FK__Order__ID_Sale__3E52440B" ManuallyRouted="false" />
         <AssociationConnector Association="KidMartStoreModel.FK__Product__ID_Size__4AB81AF0" ManuallyRouted="false" />
         <AssociationConnector Association="KidMartStoreModel.FK__Product__ID_Warr__4CA06362" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="KidMartStoreModel.Slider" Width="1.5" PointX="7.75" PointY="4.625" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

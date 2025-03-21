@@ -3,7 +3,7 @@
     ViewBag.Title = "Chi Tiết Sản Phẩm";
     Layout = "~/Views/Shared/UserLayout.cshtml";
 }
-<link rel="stylesheet" href="~/Content/CSS/detailProduct.css" />
+<link rel="stylesheet" href="~/Content/CSS/_detailProduct.css" />
 <div class="Details">
     <section class="Image-Product">
         <img src="~/Image/Product/@Model.Image" alt="@Model.Image" />
@@ -126,17 +126,18 @@ function showTemporaryMessage(message, duration) {
     let messageDiv = document.createElement("div");
     messageDiv.innerText = message;
     messageDiv.style.position = "fixed";
-    messageDiv.style.top = "50%";
-    messageDiv.style.left = "50%";
+    messageDiv.style.top = "20%";
+    messageDiv.style.left = "35%";
     messageDiv.style.transform = "translate(-50%, -50%)"; // Canh giữa màn hình
     messageDiv.style.backgroundColor = "none";
-    messageDiv.style.color = "black";
+    messageDiv.style.color = "red";
     messageDiv.style.padding = "15px 30px";
     messageDiv.style.borderRadius = "8px";
     messageDiv.style.zIndex = "1000";
     messageDiv.style.fontSize = "18px";
     messageDiv.style.fontWeight = "bold";
     messageDiv.style.textAlign = "center";
+    messageDiv.style.zIndex = "2000";
 
     document.body.appendChild(messageDiv);
 

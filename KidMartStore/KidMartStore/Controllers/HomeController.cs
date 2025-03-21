@@ -44,6 +44,9 @@ namespace KidMartStore.Controllers
             ViewBag.Category = category;
             ViewBag.Query = query;
 
+            var sliders = database.Sliders.Where(s => s.Active).OrderBy(s => s.Position).ToList();
+            ViewBag.Sliders = sliders;
+
             return View(products);
         }
 

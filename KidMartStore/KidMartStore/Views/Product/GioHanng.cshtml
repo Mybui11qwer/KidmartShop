@@ -4,6 +4,83 @@
     Layout = "~/Views/Shared/UserLayout.cshtml";
 }
 <link rel="stylesheet" href="~/Content/CSS/_cart.css" />
+<style>
+/* Nền mờ khi mở modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Làm mờ nền */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Nội dung modal */
+    .modal-content {
+        background: #fff;
+        padding: 20px;
+        width: 400px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        animation: fadeIn 0.3s ease-in-out;
+        position: relative;
+        top: 30%;
+        left: 40%;
+    }
+
+/* Tiêu đề modal */
+.modal-content h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Select chọn phương thức thanh toán */
+.modal-content select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Nút trong modal */
+.modal-content button {
+    width: 45%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-content button:first-child {
+    background-color: #28a745;
+    color: white;
+    margin-right: 5%;
+}
+
+.modal-content button:first-child:hover {
+    background-color: #218838;
+}
+
+.modal-content button:last-child {
+    background-color: #dc3545;
+    color: white;
+}
+
+.modal-content button:last-child:hover {
+    background-color: #c82333;
+}
+</style>
 @if (Session["Cart"] != null)
 {
     <div class="cart-container">
@@ -67,7 +144,7 @@
             <button onclick="openPaymentModal()" class="checkout-button">Thanh Toán</button>
 
             <!-- Modal chọn phương thức thanh toán -->
-            <div id="payment-modal" class="modal">
+            <div id="payment-modal" class="modal" style="display: none;">
                 <div class="modal-content">
                     <h3>Chọn phương thức thanh toán</h3>
                     <select id="payment-method">
@@ -182,7 +259,36 @@
     // Xác nhận thanh toán
     function submitPayment() {
         let paymentMethod = document.getElementById("payment-method").value;
-        window.location.href = `/Product/CheckOut?paymentMethod=${paymentMethod}`;
+        let cartItems = document.querySelectorAll(".cart-item");
+        let hasExceededStock = false;
+        let adjustedCart = [];
+
+        cartItems.forEach(item => {
+            let productId = item.dataset.productId;
+            let quantity = parseInt(item.querySelector(".quantity-input").value);
+            let maxStock = parseInt(item.querySelector(".quantity-input").getAttribute("data-max"));
+
+            if (quantity > maxStock) {
+                hasExceededStock = true;
+                adjustedCart.push({ id: productId, newQuantity: maxStock });
+            }
+        });
+
+        if (hasExceededStock) {
+            let confirmOrder = confirm("Một số sản phẩm đã vượt quá số lượng trong kho. Bạn có muốn đặt tối đa số lượng có sẵn không?");
+            if (confirmOrder) {
+                adjustedCart.forEach(item => {
+                    updateCartQuantity(item.id, item.newQuantity);
+                });
+
+                setTimeout(() => {
+                    window.location.href = `/Product/CheckOut?paymentMethod=${paymentMethod}`;
+                }, 1000);
+            }
+        } else {
+            window.location.href = `/Product/CheckOut?paymentMethod=${paymentMethod}`;
+        }
     }
+
 </script>
 

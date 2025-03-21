@@ -12,7 +12,7 @@
       <PropertyRef Name="ID_Customer" />
     </Key>
     <Property Name="ID_Customer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="Phone" Type="varchar" MaxLength="12" />
     <Property Name="Address" Type="nvarchar(max)" />
@@ -81,6 +81,18 @@
     </Key>
     <Property Name="ID_Size" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="3" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Slider">
+    <Key>
+      <PropertyRef Name="ID_Slider" />
+    </Key>
+    <Property Name="ID_Slider" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Image_Url" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="Link" Type="varchar" MaxLength="255" />
+    <Property Name="Position" Type="int" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -204,6 +216,7 @@
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Promotion" EntityType="Self.Promotion" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Size" EntityType="Self.Size" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Warranty_Policy" EntityType="Self.Warranty_Policy" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__Detail_Or__ID_Or__412EB0B6" Association="Self.FK__Detail_Or__ID_Or__412EB0B6">

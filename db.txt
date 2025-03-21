@@ -97,6 +97,16 @@ CREATE TABLE Detail_Order
   FOREIGN KEY (ID_Order) REFERENCES [Order](ID_Order)
 );
 
+CREATE TABLE Slider (
+  ID_Slider INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+  Image_Url VARCHAR(255) NOT NULL,
+  Title NVARCHAR(100),
+  Description NVARCHAR(255),
+  Link VARCHAR(255), 
+  Position INT NOT NULL, 
+  Active BIT NOT NULL DEFAULT 1
+);
+
 INSERT INTO Customer (Username, Email, Password, Phone, Address, Gender, Avatar, Role)
 VALUES 
 ('admin', 'admin@kidmartstore.com', 'Admin@123', '0123456789', '123 Đường ABC, TP.HCM', 'Nam', NULL, 'Quản Lý');
