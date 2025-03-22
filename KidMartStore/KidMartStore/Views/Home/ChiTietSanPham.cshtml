@@ -43,10 +43,10 @@
                             <input type="text" id="quantity" value="1" max="@Model.Quantity">
                             <button class="plus">+</button>
                         </div>
-                        <button class="AddToCart" onclick="addToCart('@Url.Action("AddToCart", "Product", new { id = Model.ID_Product })')">Thêm vào giỏ hàng</button>
+                        <button class="AddToCart" onclick="addToCart('@Url.Action("AddToCart", "FunctionCart", new { id = Model.ID_Product })')">Thêm vào giỏ hàng</button>
                     </div>
                     <div class="btn-buy">
-                        <button class="btn-buynow" onclick="buyNow('@Url.Action("AddToCart", "Product", new { id = Model.ID_Product })')">Mua Ngay</button>
+                        <button class="btn-buynow" onclick="buyNow('@Url.Action("AddToCart", "FunctionCart", new { id = Model.ID_Product })')">Mua Ngay</button>
                     </div>
                 </div>
             }

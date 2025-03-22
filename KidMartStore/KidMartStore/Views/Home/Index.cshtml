@@ -111,14 +111,14 @@
             @foreach (var product in Model)
             {
                 <nav class="item">
-                    <a href="@Url.Action("ChiTietSanPham", "Product", new { id = product.ID_Product })">
+                    <a href="@Url.Action("ChiTietSanPham", "Home", new { id = product.ID_Product })">
                         <img src="~/Image/Product/@product.Image" alt="@product.Name" />
                     </a>
                     <h5>@product.Name</h5>
                     <h5>@product.Price.ToString("N0") <span>VNĐ</span></h5>
                     @if (product.Quantity > 0)
                     {
-                        <a href="@Url.Action("ChiTietSanPham", "Product", new { id = product.ID_Product })" class="button">Mua Hàng</a>
+                        <a href="@Url.Action("ChiTietSanPham", "Home", new { id = product.ID_Product })" class="button">Mua Hàng</a>
                     }
                     @if (product.Quantity == 0)
                     {
@@ -163,14 +163,14 @@
             @foreach (var product in Model)
             {
                 <nav class="item">
-                    <a href="@Url.Action("ChiTietSanPham", "Product", new { id = product.ID_Product })">
+                    <a href="@Url.Action("ChiTietSanPham", "Home", new { id = product.ID_Product })">
                         <img src="~/Image/Product/@product.Image" alt="@product.Name" />
                     </a>
                     <h5>@product.Name</h5>
                     <h5>@product.Price.ToString("N0") <span>VNĐ</span></h5>
                     @if (product.Quantity > 0)
                     {
-                        <a href="@Url.Action("ChiTietSanPham", "Product", new { id = product.ID_Product })" class="button">Mua Hàng</a>
+                        <a href="@Url.Action("ChiTietSanPham", "Home", new { id = product.ID_Product })" class="button">Mua Hàng</a>
                     }
                     @if (product.Quantity == 0)
                     {

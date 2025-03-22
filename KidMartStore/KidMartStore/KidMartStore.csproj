@@ -318,12 +318,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FunctionUser.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Admin\AdminController.cs" />
     <Compile Include="Controllers\Admin\FunctionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ProductController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\FunctionCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -499,9 +499,9 @@
     <Content Include="Views\Home\Profile.cshtml" />
     <Content Include="Views\Home\Address.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Product\ChiTietSanPham.cshtml" />
-    <Content Include="Views\Product\GioHanng.cshtml" />
-    <Content Include="Views\Product\CheckOut_Success.cshtml" />
+    <Content Include="Views\Home\ChiTietSanPham.cshtml" />
+    <Content Include="Views\Home\GioHang.cshtml" />
+    <Content Include="Views\Home\CheckOut_Success.cshtml" />
     <Content Include="Views\Home\ShowOrder.cshtml" />
     <Content Include="Views\Function\AddNewAccount.cshtml" />
     <Content Include="Views\Function\AddNewProduct.cshtml" />

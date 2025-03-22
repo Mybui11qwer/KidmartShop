@@ -74,14 +74,14 @@ namespace KidMartStore.Controllers
 
             return View(products);
         }
-        public ActionResult Profile()
+        public new ActionResult Profile()
         {
             var MaKH = Session["ID_Customer"];
             var customer = database.Customers.Find(MaKH);
             return View(customer);
         }
         [HttpPost]
-        public ActionResult Profile(Customer customer)
+        public new ActionResult Profile(Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -113,6 +113,29 @@ namespace KidMartStore.Controllers
         {
             return View();
         }
+
+        public ActionResult GioHang()
+        {
+            Cart _cart = Session["Cart"] as Cart;
+            return View(_cart);
+        }
+        public ActionResult ChiTietSanPham(int id)
+        {
+            // Retrieve the product from the database based on the product ID
+            var product = database.Products.FirstOrDefault(p => p.ID_Product == id);
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+
+            // Pass product data to the view
+            return View(product);
+        }
+        public ActionResult CheckOut_Success(string paymentMethod)
+        {
+            ViewBag.PaymentMethod = paymentMethod;
+            return View();
+        }
         public ActionResult ShowOrder()
         {
             if (Session["ID_Customer"] != null)
@@ -130,37 +153,5 @@ namespace KidMartStore.Controllers
             }
             return View();
         }
-        public ActionResult CancelOrder(int id)
-        {
-            var order = database.Orders.FirstOrDefault(o => o.ID_Order == id);
-
-            if (order != null && order.Status != "Đã giao")
-            {
-                // Lấy danh sách sản phẩm trong đơn hàng
-                var orderDetails = database.Detail_Order.Where(od => od.ID_Order == id).ToList();
-
-                foreach (var item in orderDetails)
-                {
-                    var product = database.Products.FirstOrDefault(p => p.ID_Product == item.ID_Product);
-                    if (product != null)
-                    {
-                        product.Quantity += item.Quantity; // Cộng lại số lượng sản phẩm vào kho
-                    }
-                }
-
-                // Cập nhật trạng thái đơn hàng
-                order.Status = "Đã hủy";
-                database.SaveChanges();
-
-                TempData["Message"] = "Đơn hàng đã được hủy thành công! Số lượng sản phẩm đã được cập nhật.";
-            }
-            else
-            {
-                TempData["Error"] = "Không thể hủy đơn hàng này!";
-            }
-
-            return RedirectToAction("ShowOrder");
-        }
-
     }
 }

@@ -128,7 +128,7 @@
 
             if (confirm("Bạn có chắc chắn muốn hủy đơn hàng này không?")) {
                 $.ajax({
-                    url: '@Url.Action("CancelOrder", "Home")',
+                    url: '@Url.Action("CancelOrder", "FunctionUser")',
                     type: 'POST',
                     data: { id: orderId },
                     success: function (response) {

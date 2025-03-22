@@ -18,7 +18,7 @@
                         <h5>@product.Price.ToString("N0") <span>VNĐ</span></h5>
                         @if (product.Quantity > 0)
                         {
-                            <a href="@Url.Action("ChiTietSanPham", "Product", new { id = product.ID_Product })" class="buttonBuy">Mua Hàng</a>
+                            <a href="@Url.Action("ChiTietSanPham", "Home", new { id = product.ID_Product })" class="buttonBuy">Mua Hàng</a>
                         }
                         @if (product.Quantity == 0)
                         {

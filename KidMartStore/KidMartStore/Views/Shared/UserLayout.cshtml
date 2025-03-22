@@ -11,13 +11,13 @@
 
     <div class="above-header">
         <nav class="Logo-text">
-            <a href="~/Home/Index">KIDMART</a>
+            <a href="~/Home/Index" class="title">KIDMART</a>
         </nav>
         <nav class="Location-function">
             <a class="search" id="search"><img src="~/Image/Icons/icon-search.png" /></a>
             @if (Session["Email"] != null)
             {
-                <a href="~/Product/GioHanng"><img src="~/Image/Icons/icon-cart.png" /></a>
+                <a href="~/Home/GioHang"><img src="~/Image/Icons/icon-cart.png" /></a>
                 <a href="~/Home/Profile"><img src="~/Image/Icons/Icon-user.png" /></a>
                 <a href="~/Home/Profile" id="WelcomeUser">Hello <span class="NameUser">@(Session["Name"] ?? "Guest")</span>!</a>
                 <a href="~/Account/Logout">Logout</a>

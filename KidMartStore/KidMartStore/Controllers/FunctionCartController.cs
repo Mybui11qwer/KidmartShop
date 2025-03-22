@@ -7,31 +7,16 @@ using System.Web.Mvc;
 
 namespace KidMartStore.Controllers
 {
-    public class ProductController : Controller
+    public class FunctionCartController : Controller
     {
         private readonly KidMartStoreEntities database = new KidMartStoreEntities();
         // GET: User
-        public ActionResult ChiTietSanPham(int id)
-        {
-            // Retrieve the product from the database based on the product ID
-            var product = database.Products.FirstOrDefault(p => p.ID_Product == id);
-            if (product == null)
-            {
-                return HttpNotFound();
-            }
+        
 
-            // Pass product data to the view
-            return View(product);
-        }
-        public ActionResult GioHanng()
-        {
-            Cart _cart = Session["Cart"] as Cart;
-            return View(_cart);
-        }
         public Cart GetCart()
         {
             Cart cart = Session["Cart"] as Cart;
-            if(cart == null | Session["Cart"] == null)
+            if (cart == null | Session["Cart"] == null)
             {
                 cart = new Cart();
                 Session["Cart"] = cart;
@@ -47,11 +32,11 @@ namespace KidMartStore.Controllers
                 {
                     GetCart().Add_Product_Cart(product, quantity);
                 }
-                return RedirectToAction("GioHanng", "Product");
+                return RedirectToAction("GioHang", "Home");
             }
             if (Session["ID_Customer"] == null)
             {
-                
+
                 return RedirectToAction("Login", "Account");
             }
             return View();
@@ -77,7 +62,7 @@ namespace KidMartStore.Controllers
                 // Xóa Session nếu giỏ hàng không còn sản phẩm
                 Session["Cart"] = null;
             }
-            return RedirectToAction("GioHanng", "Product");
+            return RedirectToAction("GioHang", "Home");
         }
         public ActionResult CheckOut()
         {
@@ -115,19 +100,13 @@ namespace KidMartStore.Controllers
                 database.SaveChanges();
                 cart.ClearCart();
                 Session["Cart"] = null;
-                return RedirectToAction("CheckOut_Success", "Product");
+                return RedirectToAction("CheckOut_Success", "Home");
             }
             catch
             {
                 return Content("Error checkout. Please check information of Customer...Thanks.");
             }
-        }
-        
-        public ActionResult CheckOut_Success(string paymentMethod)
-        {
-            ViewBag.PaymentMethod = paymentMethod;
-            return View();
-        }
+        }      
 
         [HttpPost]
         public JsonResult ApplyVoucher(string code)
