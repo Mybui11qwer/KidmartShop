@@ -157,6 +157,58 @@
             }
         </div>
     </section>
+    <section class="ProductList" style="padding-bottom: 20px;">
+        <h1>Danh sách sản phẩm Sale</h1>
+        <div class="Product-Items">
+            @foreach (var product in Model)
+            {
+                <nav class="item">
+                    <a href="@Url.Action("ChiTietSanPham", "Product", new { id = product.ID_Product })">
+                        <img src="~/Image/Product/@product.Image" alt="@product.Name" />
+                    </a>
+                    <h5>@product.Name</h5>
+                    <h5>@product.Price.ToString("N0") <span>VNĐ</span></h5>
+                    @if (product.Quantity > 0)
+                    {
+                        <a href="@Url.Action("ChiTietSanPham", "Product", new { id = product.ID_Product })" class="button">Mua Hàng</a>
+                    }
+                    @if (product.Quantity == 0)
+                    {
+                        <a style="color: red; font-weight: bold">Đã hết hàng !</a>
+                    }
+                </nav>
+            }
+        </div>
+
+        <!-- Hiển thị phân trang -->
+        <div class="pagination">
+            @if (ViewBag.TotalPages > 1)
+            {
+                <ul class="pagination-list">
+                    @if (ViewBag.CurrentPage > 1)
+                    {
+                        <li>
+                            <a href="@Url.Action("Index", new { category = ViewBag.Category, query = ViewBag.Query, page = ViewBag.CurrentPage - 1 })">« Trước</a>
+                        </li>
+                    }
+
+                    @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                    {
+                        <li class="@(i == ViewBag.CurrentPage ? "active" : "")">
+                            <a href="@Url.Action("Index", new { category = ViewBag.Category, query = ViewBag.Query, page = i })">@i</a>
+                        </li>
+                    }
+
+                    @if (ViewBag.CurrentPage < ViewBag.TotalPages)
+                    {
+                        <li>
+                            <a href="@Url.Action("Index", new { category = ViewBag.Category, query = ViewBag.Query, page = ViewBag.CurrentPage + 1 })">Sau »</a>
+                        </li>
+                    }
+                </ul>
+            }
+        </div>
+    </section>
 </div>
 <script>
     document.getElementById("toggleCategories")?.addEventListener("click", function () {

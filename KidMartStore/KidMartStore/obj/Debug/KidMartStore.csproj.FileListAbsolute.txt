@@ -1527,3 +1527,9 @@ D:\HK1-2025\ShopQuanAo\KidMartStore\KidMartStore\bin\EPPlus.System.Drawing.dll
 D:\HK1-2025\ShopQuanAo\KidMartStore\KidMartStore\bin\Microsoft.IO.RecyclableMemoryStream.dll
 D:\HK1-2025\ShopQuanAo\KidMartStore\KidMartStore\bin\EPPlus.xml
 D:\HK1-2025\ShopQuanAo\KidMartStore\KidMartStore\bin\Microsoft.IO.RecyclableMemoryStream.xml
+D:\ShopBanQuanAo\KidMartStore\KidMartStore\bin\EPPlus.dll
+D:\ShopBanQuanAo\KidMartStore\KidMartStore\bin\EPPlus.Interfaces.dll
+D:\ShopBanQuanAo\KidMartStore\KidMartStore\bin\EPPlus.System.Drawing.dll
+D:\ShopBanQuanAo\KidMartStore\KidMartStore\bin\Microsoft.IO.RecyclableMemoryStream.dll
+D:\ShopBanQuanAo\KidMartStore\KidMartStore\bin\EPPlus.xml
+D:\ShopBanQuanAo\KidMartStore\KidMartStore\bin\Microsoft.IO.RecyclableMemoryStream.xml
