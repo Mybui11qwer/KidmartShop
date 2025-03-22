@@ -14,16 +14,19 @@ using System.Data.Entity;
 using Microsoft.Ajax.Utilities;
 using System.Runtime.Remoting.Contexts;
 using System.Web.UI;
+using KidMartStore.Controllers.Class;
 
 namespace KidMartStore.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly KidMartStoreEntities database = new KidMartStoreEntities();
-        public ActionResult Index(string category, string query, int page = 1)
+        private readonly KidMartStoreEntities db = DatabaseContextSingleton.Instance;
+        public ActionResult Index(string category, string query, int page = 1, string filter = "Default")
         {
             int pageSize = 4;
-            List<Product> products = database.Products.ToList();
+
+            IProductFactory factory = ProductFactory.CreateFactory(filter);
+            List<Product> products = factory.GetProducts(db);
 
             // Lọc theo danh mục nếu có
             if (!string.IsNullOrEmpty(category))
@@ -44,7 +47,7 @@ namespace KidMartStore.Controllers
             ViewBag.Category = category;
             ViewBag.Query = query;
 
-            var sliders = database.Sliders.Where(s => s.Active).OrderBy(s => s.Position).ToList();
+            var sliders =   db.Sliders.Where(s => s.Active).OrderBy(s => s.Position).ToList();
             ViewBag.Sliders = sliders;
 
             return View(products);
@@ -59,7 +62,7 @@ namespace KidMartStore.Controllers
             int pageSize = 16; // Số sản phẩm mỗi trang
             int pageNumber = page ?? 1; // Nếu không có page, mặc định là 1
 
-            List<Product> products = database.Products.ToList();
+            List<Product> products = db.Products.ToList();
             int totalProducts = products.Count();
             int totalPages = (int)Math.Ceiling((double)totalProducts / pageSize);
 
@@ -77,7 +80,7 @@ namespace KidMartStore.Controllers
         public new ActionResult Profile()
         {
             var MaKH = Session["ID_Customer"];
-            var customer = database.Customers.Find(MaKH);
+            var customer = db.Customers.Find(MaKH);
             return View(customer);
         }
         [HttpPost]
@@ -86,7 +89,7 @@ namespace KidMartStore.Controllers
             if (ModelState.IsValid)
             {
                 var userId = Convert.ToInt64(Session["ID_Customer"]); // Retrieve the current user ID
-                var user = database.Customers.Find(userId);
+                var user = db.Customers.Find(userId);
 
                 if (user != null)
                 {
@@ -95,7 +98,7 @@ namespace KidMartStore.Controllers
                     user.Phone = customer.Phone;
                     // Update other properties
 
-                    database.SaveChanges();
+                    db.SaveChanges();
 
                     Session["Email"] = user.Email;
                     Session["Name"] = user.Username;
@@ -122,7 +125,7 @@ namespace KidMartStore.Controllers
         public ActionResult ChiTietSanPham(int id)
         {
             // Retrieve the product from the database based on the product ID
-            var product = database.Products.FirstOrDefault(p => p.ID_Product == id);
+            var product = db.Products.FirstOrDefault(p => p.ID_Product == id);
             if (product == null)
             {
                 return HttpNotFound();
@@ -141,7 +144,7 @@ namespace KidMartStore.Controllers
             if (Session["ID_Customer"] != null)
             {
                 var customerID = Convert.ToInt64(Session["ID_Customer"]);
-                var orders = database.Orders
+                var orders = db.Orders
                     .Where(d => d.ID_Customer == customerID)
                     .Include(o => o.Detail_Order.Select(p => p.Product))
                     .ToList();

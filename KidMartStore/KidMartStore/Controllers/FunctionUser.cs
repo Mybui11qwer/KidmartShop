@@ -7,24 +7,25 @@ using System.Net.PeerToPeer;
 using System.Web.UI.WebControls;
 using System.Data.Entity;
 using System;
+using KidMartStore.Controllers.Class;
 
 public class FunctionUser : Controller
 {
-    public KidMartStoreEntities database = new KidMartStoreEntities();
+    private readonly KidMartStoreEntities db = DatabaseContextSingleton.Instance;
 
     //Hủy đơn hàng.
     public ActionResult CancelOrder(int id)
     {
-        var order = database.Orders.FirstOrDefault(o => o.ID_Order == id);
+        var order = db.Orders.FirstOrDefault(o => o.ID_Order == id);
 
         if (order != null && order.Status != "Đã giao")
         {
             // Lấy danh sách sản phẩm trong đơn hàng
-            var orderDetails = database.Detail_Order.Where(od => od.ID_Order == id).ToList();
+            var orderDetails = db.Detail_Order.Where(od => od.ID_Order == id).ToList();
 
             foreach (var item in orderDetails)
             {
-                var product = database.Products.FirstOrDefault(p => p.ID_Product == item.ID_Product);
+                var product = db.Products.FirstOrDefault(p => p.ID_Product == item.ID_Product);
                 if (product != null)
                 {
                     product.Quantity += item.Quantity; // Cộng lại số lượng sản phẩm vào kho
@@ -33,7 +34,7 @@ public class FunctionUser : Controller
 
             // Cập nhật trạng thái đơn hàng
             order.Status = "Đã hủy";
-            database.SaveChanges();
+            db.SaveChanges();
 
             TempData["Message"] = "Đơn hàng đã được hủy thành công! Số lượng sản phẩm đã được cập nhật.";
         }

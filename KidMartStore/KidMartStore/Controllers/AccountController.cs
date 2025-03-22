@@ -5,94 +5,70 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Net.PeerToPeer;
 using System.Web.UI.WebControls;
+using KidMartStore.Controllers.Class;
 
 public class AccountController : Controller
 {
-    public KidMartStoreEntities db = new KidMartStoreEntities();
+    private readonly KidMartStoreEntities db;
+    private readonly IUserFactory _userFactory;
+    private readonly LoginStrategy _loginStrategy;
+
+    public AccountController(LoginStrategy loginStrategy, KidMartStoreEntities _db, IUserFactory userFactory)
+    {
+        db = _db;
+        _userFactory = userFactory;
+        _loginStrategy = loginStrategy;
+    }
 
     public ActionResult Login()
     {
         return View();
     }
     [HttpPost]
-    public ActionResult Login(Customer customer)
+    public ActionResult Login(string identifier, string password)
     {
-        if (ModelState.IsValid)
+        var user = _loginStrategy.Authenticate(identifier, password);
+        if (user != null)
         {
-            // Kiểm tra thông tin đăng nhập
-            var checkUser = db.Customers.FirstOrDefault(u => u.Email == customer.Email && u.Password == customer.Password);
-            if (checkUser != null)
-            {
-                // Lưu tên người dùng vào session
-                Session["Email"] = checkUser.Email;
-                Session["Name"] = checkUser.Username;
-                Session["Address"] = checkUser.Address;
-                Session["Phone"] = checkUser.Phone;
-                Session["ID_Customer"] = checkUser.ID_Customer;
-                Session["Role"] = checkUser.Role;
-                if (checkUser.Role == "Khách Hàng")
-                {
-                    return RedirectToAction("Index", "Home");
-                }
-                if(checkUser.Role != "Khách Hàng")
-                {
-                    return RedirectToAction("Dashboard", "Admin");
-                }
-            }
-            else
-            {
-                // Kiểm tra nếu email không tồn tại
-                var user = db.Customers.FirstOrDefault(u => u.Email == customer.Email);
-                if (user == null)
-                {
-                    ViewBag.ErrorEmail = "Email không tồn tại";
-                    return View();
-                }
-                else
-                {
-                    ViewBag.ErrorPassword = "Sai mật khẩu";
-                    return View();
-                }
-            }
+            Session["Email"] = user.Email;
+            Session["Name"] = user.Username;
+            return RedirectToAction("Index", "Home");
         }
+        ViewBag.ErrorEmail = user == null ? "Email không tồn tại" : null;
+        ViewBag.ErrorPassword = user != null ? "Sai mật khẩu" : null;
         return View();
     }
+
     public ActionResult Register()
     {
         return View();
     }
 
     [HttpPost]
-    public ActionResult Register(Customer NewCustomer)
+    public ActionResult Register(string email, string password, string username, string address, string phone)
     {
-        var existingCustomer = db.Customers.FirstOrDefault(c => c.Email == NewCustomer.Email);
+        var existingCustomer = db.Customers.FirstOrDefault(c => c.Email == email);
         if (existingCustomer != null)
         {
             ViewBag.Error = "Email đã tồn tại";
             return View();
         }
-        if(NewCustomer.Password.ToString().Length <= 9)
+        if (password.Length <= 9)
         {
             ViewBag.Error1 = "Mật khẩu phải dài hơn 9 ký tự";
             return View();
         }
-        try
-        {
-            NewCustomer.Role = "Khách Hàng";
-            db.Customers.Add(NewCustomer);
-            db.SaveChanges();
-            return RedirectToAction("Login");
-        }
-        catch
-        {
-            return View("Register");
-        }       
+
+        var newCustomer = _userFactory.CreateUser(email, password, username, address, phone);
+        db.Customers.Add(newCustomer);
+        db.SaveChanges();
+        return RedirectToAction("Login");
     }
 
-    // Đăng xuất
     public ActionResult Logout()
     {
-        Session.Clear(); // Xóa tất cả session khi đăng xuất
+        Session.Clear();
         return RedirectToAction("Login");
     }
 }
+

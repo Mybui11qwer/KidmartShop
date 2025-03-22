@@ -11,12 +11,13 @@ using KidMartStore.Models;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using System.Drawing;
+using KidMartStore.Controllers.Class;
 
 namespace KidMartStore.Controllers
 {
     public class AdminController : Controller
     {
-        public KidMartStoreEntities database = new KidMartStoreEntities();
+        private readonly KidMartStoreEntities db = DatabaseContextSingleton.Instance;
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
@@ -44,7 +45,7 @@ namespace KidMartStore.Controllers
             if (ModelState.IsValid)
             {
                 // Kiểm tra thông tin đăng nhập
-                var checkUser = database.Customers.FirstOrDefault(u => u.Email == customer.Email && u.Password == customer.Password);
+                var checkUser = db.Customers.FirstOrDefault(u => u.Email == customer.Email && u.Password == customer.Password);
                 if (checkUser != null)
                 {
                     // Lưu tên người dùng vào session
@@ -67,7 +68,7 @@ namespace KidMartStore.Controllers
                 else
                 {
                     // Kiểm tra nếu email không tồn tại
-                    var user = database.Customers.FirstOrDefault(u => u.Email == customer.Email);
+                    var user = db.Customers.FirstOrDefault(u => u.Email == customer.Email);
                     if (user == null)
                     {
                         ViewBag.ErrorEmail = "Email không tồn tại";
@@ -91,16 +92,16 @@ namespace KidMartStore.Controllers
         public ActionResult Dashboard()
         {
             // Lấy tổng số người dùng (nếu không có, trả về 0)
-            var totalUsers = database.Customers?.Count(c => c.Role == "Khách Hàng") ?? 0;
+            var totalUsers = db.Customers?.Count(c => c.Role == "Khách Hàng") ?? 0;
 
             // Lấy tổng số nhân viên (nếu không có, trả về 0)
-            var totalAdmins = database.Customers?.Count(c => c.Role == "Nhân Viên" || c.Role == "Quản Lý") ?? 0;
+            var totalAdmins = db.Customers?.Count(c => c.Role == "Nhân Viên" || c.Role == "Quản Lý") ?? 0;
 
             // Lấy tổng số sản phẩm (nếu không có, trả về 0)
-            var totalProducts = database.Products?.Count() ?? 0;
+            var totalProducts = db.Products?.Count() ?? 0;
 
             // Lấy tổng số đơn hàng (nếu không có, trả về 0)
-            var totalOrders = database.Orders?.Count() ?? 0;
+            var totalOrders = db.Orders?.Count() ?? 0;
 
             // Truyền dữ liệu qua ViewBag
             ViewBag.TotalAdmins = totalAdmins;
@@ -112,12 +113,12 @@ namespace KidMartStore.Controllers
         }
         public ActionResult ManagerAccount()
         {
-            List<Customer> customers = database.Customers.ToList();
+            List<Customer> customers = db.Customers.ToList();
             return View(customers);
         }
         public ActionResult ExportCustomersToExcel()
         {
-            var customers = database.Customers
+            var customers = db.Customers
                             .Where(c => c.Role == "Quản Lý" || c.Role == "Nhân Viên")
                             .ToList();
             if (customers.Count == 0)
@@ -170,41 +171,41 @@ namespace KidMartStore.Controllers
         }
         public ActionResult ManagerAccountAdmin()
         {
-            List<Customer> customers = database.Customers.ToList();
+            List<Customer> customers = db.Customers.ToList();
             return View(customers);
         }
 
         public ActionResult DeleteAccountAdmin(int id)
         {
-            var customer = database.Customers.Find(id);
+            var customer = db.Customers.Find(id);
             if (customer != null)
             {
-                database.Customers.Remove(customer);
-                database.SaveChanges();
+                db.Customers.Remove(customer);
+                db.SaveChanges();
             }
             return RedirectToAction("ManagerAccountAdmin"); // Hoặc trang danh sách người dùng.
         }
 
         public ActionResult ManagerProduct()
         {
-            List<Product> products = database.Products.ToList();
+            List<Product> products = db.Products.ToList();
             return View(products);
         }
         
         public ActionResult ManagerCategory()
         {
-            List<Category> categories = database.Categories.ToList();
+            List<Category> categories = db.Categories.ToList();
             return View(categories);
         }
 
         public ActionResult ManagerOrders()
         {
-            var orders = database.Orders.OrderByDescending(o => o.Order_Date).ToList();
+            var orders = db.Orders.OrderByDescending(o => o.Order_Date).ToList();
             return View(orders);
         }
         public ActionResult ExportOrdersToExcel()
         {
-            var orders = database.Orders.ToList();
+            var orders = db.Orders.ToList();
 
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
@@ -243,11 +244,11 @@ namespace KidMartStore.Controllers
         [HttpPost]
         public ActionResult UpdateOrderStatus(int orderId, string status)
         {
-            var order = database.Orders.Find(orderId);
+            var order = db.Orders.Find(orderId);
             if (order != null)
             {
                 order.Status = status;
-                database.SaveChanges();
+                db.SaveChanges();
                 return Json(new { success = true, message = "Cập nhật trạng thái thành công!" });
             }
             return Json(new { success = false, message = "Đơn hàng không tồn tại!" });

@@ -1,4 +1,5 @@
-﻿using KidMartStore.Models;
+﻿using KidMartStore.Controllers.Class;
+using KidMartStore.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -11,10 +12,10 @@ namespace AdminWebKidMart.Controllers
 {
     public class FunctionController : Controller
     {
-        private readonly KidMartStoreEntities database = new KidMartStoreEntities();
+        private readonly KidMartStoreEntities db = DatabaseContextSingleton.Instance;
         public ActionResult AddNewProduct()
         {
-            List<Category> categories = database.Categories.ToList();
+            List<Category> categories = db.Categories.ToList();
             return View(categories);
         }
         [HttpPost]
@@ -46,8 +47,8 @@ namespace AdminWebKidMart.Controllers
                     }
                 }
 
-                database.Products.Add(NewProduct);
-                database.SaveChanges();
+                db.Products.Add(NewProduct);
+                db.SaveChanges();
                 return RedirectToAction("ManagerProduct", "Admin");
             }
             catch
@@ -57,7 +58,7 @@ namespace AdminWebKidMart.Controllers
         }
         public ActionResult UpdateProduct(int id)
         {
-            var product = database.Products.Find(id); // Adjust this line based on your data access method
+            var product = db.Products.Find(id); // Adjust this line based on your data access method
             if (product == null)
             {
                 return HttpNotFound();
@@ -71,7 +72,7 @@ namespace AdminWebKidMart.Controllers
             {
 
                 // Update the product in the database
-                var existingProduct = database.Products.Find(product.ID_Product);
+                var existingProduct = db.Products.Find(product.ID_Product);
                 if (existingProduct != null)
                 {
                     existingProduct.Name = product.Name;
@@ -79,7 +80,7 @@ namespace AdminWebKidMart.Controllers
                     existingProduct.Price = product.Price;
                     existingProduct.Quantity = product.Quantity;
 
-                    database.SaveChanges(); // Save changes to the database
+                    db.SaveChanges(); // Save changes to the database
                 }
             } // Redirect to the product list
             return RedirectToAction("ManagerProduct", "Admin");
@@ -87,7 +88,7 @@ namespace AdminWebKidMart.Controllers
 
         public ActionResult UpdateAccount(int id)
         {
-            var customer = database.Products.Find(id); // Adjust this line based on your data access method
+            var customer = db.Products.Find(id); // Adjust this line based on your data access method
             if (customer == null)
             {
                 return HttpNotFound();
@@ -101,7 +102,7 @@ namespace AdminWebKidMart.Controllers
             {
 
                 // Update the customer in the database
-                var existingCustomer = database.Customers.Find(customer.ID_Customer);
+                var existingCustomer = db.Customers.Find(customer.ID_Customer);
                 if (existingCustomer != null)
                 {
                     existingCustomer.Username = customer.Username;
@@ -110,7 +111,7 @@ namespace AdminWebKidMart.Controllers
                     existingCustomer.Address = customer.Address;
                     existingCustomer.Gender = customer.Gender;
 
-                    database.SaveChanges(); // Save changes to the database
+                    db.SaveChanges(); // Save changes to the database
                 }
 
                 return RedirectToAction("ManagerAccount", "Admin"); // Redirect back to the customer manager
@@ -127,8 +128,8 @@ namespace AdminWebKidMart.Controllers
         {
             try
             {
-                database.Customers.Add(NewCustomer);
-                database.SaveChanges();
+                db.Customers.Add(NewCustomer);
+                db.SaveChanges();
                 return RedirectToAction("ManagerAccount", "Admin");
             }
             catch
@@ -138,11 +139,11 @@ namespace AdminWebKidMart.Controllers
         }
         public ActionResult DeleteAccount(int id)
         {
-            var customer = database.Customers.Find(id);
+            var customer = db.Customers.Find(id);
             if (customer != null)
             {
-                database.Customers.Remove(customer);
-                database.SaveChanges();
+                db.Customers.Remove(customer);
+                db.SaveChanges();
             }
             return RedirectToAction("ManagerAccount", "Admin"); // Hoặc trang danh sách người dùng.
         }

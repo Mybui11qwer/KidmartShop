@@ -1,4 +1,5 @@
-﻿using KidMartStore.Models;
+﻿using KidMartStore.Controllers.Class;
+using KidMartStore.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,7 @@ namespace KidMartStore.Controllers
 {
     public class FunctionCartController : Controller
     {
-        private readonly KidMartStoreEntities database = new KidMartStoreEntities();
-        // GET: User
-        
+        private readonly KidMartStoreEntities db = DatabaseContextSingleton.Instance;
 
         public Cart GetCart()
         {
@@ -27,7 +26,7 @@ namespace KidMartStore.Controllers
         {
             if (Session["ID_Customer"] != null)
             {
-                var product = database.Products.SingleOrDefault(s => s.ID_Product == id);
+                var product = db.Products.SingleOrDefault(s => s.ID_Product == id);
                 if (product != null)
                 {
                     GetCart().Add_Product_Cart(product, quantity);
@@ -75,7 +74,8 @@ namespace KidMartStore.Controllers
                 _order.ID_Customer = (int)MaKH;
                 _order.Total = (int)cart.TotalMoney();
                 _order.Status = "Chờ xác nhận";
-                database.Orders.Add(_order);
+                db.Orders.Add(_order);
+                db.SaveChanges();
 
                 foreach (var item in cart.Items)
                 {
@@ -84,10 +84,10 @@ namespace KidMartStore.Controllers
                     _order_detail.ID_Product = item._product.ID_Product;
                     _order_detail.Unit_Price = (int)item._product.Price;
                     _order_detail.Quantity = item._quantity;
-                    database.Detail_Order.Add(_order_detail);
+                    db.Detail_Order.Add(_order_detail);
 
                     // Giảm số lượng sản phẩm trong kho
-                    var product = database.Products.SingleOrDefault(p => p.ID_Product == item._product.ID_Product);
+                    var product = db.Products.SingleOrDefault(p => p.ID_Product == item._product.ID_Product);
                     if (product != null)
                     {
                         product.Quantity -= item._quantity;
@@ -96,8 +96,8 @@ namespace KidMartStore.Controllers
                             product.Quantity = 0;
                         }
                     }
-                }
-                database.SaveChanges();
+                    db.SaveChanges();
+                }               
                 cart.ClearCart();
                 Session["Cart"] = null;
                 return RedirectToAction("CheckOut_Success", "Home");
