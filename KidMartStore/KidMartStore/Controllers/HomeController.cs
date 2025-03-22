@@ -21,62 +21,59 @@ namespace KidMartStore.Controllers
     public class HomeController : Controller
     {
         private readonly KidMartStoreEntities db = DatabaseContextSingleton.Instance;
-        public ActionResult Index(string category, string query, int page = 1, string filter = "Default")
+        private readonly ProductService _productService;
+        private readonly IAddressService _addressService = new ProxyAddressService(new KidMartStoreEntities());
+
+        public HomeController()
+        {
+            _productService = new ProductService(db);
+        }
+        // Áp dụng Facade và Factory
+        public ActionResult Index(string category, string query, string filter, int page = 1)
         {
             int pageSize = 4;
+            int totalProducts;
+            var products = _productService.GetFilteredProducts(category, query, filter, page, pageSize, out totalProducts);
 
-            IProductFactory factory = ProductFactory.CreateFactory(filter);
-            List<Product> products = factory.GetProducts(db);
-
-            // Lọc theo danh mục nếu có
-            if (!string.IsNullOrEmpty(category))
-            {
-                products = products.Where(p => p.Category.Name_Category == category).ToList();
-            }
-
-            // Tìm kiếm sản phẩm nếu có từ khóa query
-            if (!string.IsNullOrEmpty(query))
-            {
-                products = products.Where(p => p.Name.Contains(query) || p.Description.Contains(query)).ToList();
-            }
-
-            int totalProducts = products.Count(); // Tổng số sản phẩm
-            products = products.Skip((page - 1) * pageSize).Take(pageSize).ToList();
             ViewBag.CurrentPage = page;
             ViewBag.TotalPages = (int)Math.Ceiling((double)totalProducts / pageSize);
             ViewBag.Category = category;
             ViewBag.Query = query;
-
-            var sliders =   db.Sliders.Where(s => s.Active).OrderBy(s => s.Position).ToList();
-            ViewBag.Sliders = sliders;
+            ViewBag.Sliders = _productService.GetActiveSliders();
 
             return View(products);
+        }
+        //Áp dụng Facade
+        public ActionResult ChiTietSanPham(int id)
+        {
+            var product = _productService.GetProductById(id);
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            return View(product);
         }
 
         public ActionResult GioiThieu()
         {
             return View();
         }
+
+        // Áp dụng Facade và Factory
         public ActionResult SanPham(int? page)
         {
-            int pageSize = 16; // Số sản phẩm mỗi trang
-            int pageNumber = page ?? 1; // Nếu không có page, mặc định là 1
+            int pageSize = 16;
+            int pageNumber = page ?? 1;
+            int totalProducts;
 
-            List<Product> products = db.Products.ToList();
-            int totalProducts = products.Count();
-            int totalPages = (int)Math.Ceiling((double)totalProducts / pageSize);
+            var products = _productService.GetPagedProducts(pageNumber, pageSize, out totalProducts);
 
-            // Kiểm tra giới hạn của pageNumber
-            if (pageNumber < 1) pageNumber = 1;
-            if (pageNumber > totalPages) pageNumber = totalPages;
-
-            ViewBag.TotalPages = totalPages;
+            ViewBag.TotalPages = (int)Math.Ceiling((double)totalProducts / pageSize);
             ViewBag.CurrentPage = pageNumber;
-
-            products = products.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
 
             return View(products);
         }
+
         public new ActionResult Profile()
         {
             var MaKH = Session["ID_Customer"];
@@ -111,9 +108,11 @@ namespace KidMartStore.Controllers
             }
             return View(customer);
         }
-
+        // Áp dụng mẫu Proxy
         public ActionResult Address()
         {
+            var customerId = Convert.ToInt64(Session["ID_Customer"]);
+            ViewBag.Address = _addressService.GetCustomerAddress(customerId);
             return View();
         }
 
@@ -121,18 +120,6 @@ namespace KidMartStore.Controllers
         {
             Cart _cart = Session["Cart"] as Cart;
             return View(_cart);
-        }
-        public ActionResult ChiTietSanPham(int id)
-        {
-            // Retrieve the product from the database based on the product ID
-            var product = db.Products.FirstOrDefault(p => p.ID_Product == id);
-            if (product == null)
-            {
-                return HttpNotFound();
-            }
-
-            // Pass product data to the view
-            return View(product);
         }
         public ActionResult CheckOut_Success(string paymentMethod)
         {

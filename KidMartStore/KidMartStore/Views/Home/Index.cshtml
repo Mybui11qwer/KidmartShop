@@ -107,6 +107,16 @@
     </div>
     <section class="ProductList" style="padding-bottom: 20px;">
         <h1>@title</h1>
+        <form method="get" action="@Url.Action("Index")">
+            <select name="filter" onchange="this.form.submit()">
+                <option value="">Tất cả</option>
+                <option value="Available" @(ViewBag.Filter == "Available" ? "selected" : "")>Còn hàng</option>
+                <option value="Default" @(ViewBag.Filter == "Default" ? "selected" : "")>Tất cả sản phẩm</option>
+            </select>
+            <input type="hidden" name="category" value="@ViewBag.Category" />
+            <input type="hidden" name="query" value="@ViewBag.Query" />
+            <input type="hidden" name="page" value="@ViewBag.CurrentPage" />
+        </form>
         <div class="Product-Items">
             @foreach (var product in Model)
             {
@@ -136,27 +146,29 @@
                     @if (ViewBag.CurrentPage > 1)
                     {
                         <li>
-                            <a href="@Url.Action("Index", new { category = ViewBag.Category, query = ViewBag.Query, page = ViewBag.CurrentPage - 1 })">« Trước</a>
+                            <a href="@Url.Action("Index", new { filter = Request.QueryString["filter"], category = ViewBag.Category, query = ViewBag.Query, page = ViewBag.CurrentPage - 1 })">« Trước</a>
                         </li>
                     }
 
                     @for (int i = 1; i <= ViewBag.TotalPages; i++)
                     {
                         <li class="@(i == ViewBag.CurrentPage ? "active" : "")">
-                            <a href="@Url.Action("Index", new { category = ViewBag.Category, query = ViewBag.Query, page = i })">@i</a>
+                            <a href="@Url.Action("Index", new { filter = Request.QueryString["filter"], category = ViewBag.Category, query = ViewBag.Query, page = i })">@i</a>
                         </li>
                     }
 
                     @if (ViewBag.CurrentPage < ViewBag.TotalPages)
                     {
                         <li>
-                            <a href="@Url.Action("Index", new { category = ViewBag.Category, query = ViewBag.Query, page = ViewBag.CurrentPage + 1 })">Sau »</a>
+                            <a href="@Url.Action("Index", new { filter = Request.QueryString["filter"], category = ViewBag.Category, query = ViewBag.Query, page = ViewBag.CurrentPage + 1 })">Sau »</a>
                         </li>
                     }
                 </ul>
             }
         </div>
+
     </section>
+
     <section class="ProductList" style="padding-bottom: 20px;">
         <h1>Danh sách sản phẩm Sale</h1>
         <div class="Product-Items">

@@ -9,66 +9,70 @@ using KidMartStore.Controllers.Class;
 
 public class AccountController : Controller
 {
-    private readonly KidMartStoreEntities db;
-    private readonly IUserFactory _userFactory;
-    private readonly LoginStrategy _loginStrategy;
-
-    public AccountController(LoginStrategy loginStrategy, KidMartStoreEntities _db, IUserFactory userFactory)
-    {
-        db = _db;
-        _userFactory = userFactory;
-        _loginStrategy = loginStrategy;
-    }
-
+    private readonly KidMartStoreEntities db = DatabaseContextSingleton.Instance;
+    private readonly IAccountService _accountService = new AccountServiceProxy();
     public ActionResult Login()
     {
         return View();
     }
     [HttpPost]
-    public ActionResult Login(string identifier, string password)
+    public ActionResult Login(Customer customer)
     {
-        var user = _loginStrategy.Authenticate(identifier, password);
-        if (user != null)
+        if (ModelState.IsValid)
         {
-            Session["Email"] = user.Email;
-            Session["Name"] = user.Username;
-            return RedirectToAction("Index", "Home");
+            //Áp dụng proxy
+            var checkUser = _accountService.Login(customer.Email, customer.Password);
+
+            if (checkUser != null)
+            {
+                Session["Email"] = checkUser.Email;
+                Session["Name"] = checkUser.Username;
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                ViewBag.Error = "Email hoặc mật khẩu không đúng!";
+                return View();
+            }
         }
-        ViewBag.ErrorEmail = user == null ? "Email không tồn tại" : null;
-        ViewBag.ErrorPassword = user != null ? "Sai mật khẩu" : null;
         return View();
     }
-
     public ActionResult Register()
     {
         return View();
     }
 
     [HttpPost]
-    public ActionResult Register(string email, string password, string username, string address, string phone)
+    public ActionResult Register(Customer NewCustomer)
     {
-        var existingCustomer = db.Customers.FirstOrDefault(c => c.Email == email);
+        var existingCustomer = db.Customers.FirstOrDefault(c => c.Email == NewCustomer.Email);
         if (existingCustomer != null)
         {
             ViewBag.Error = "Email đã tồn tại";
             return View();
         }
-        if (password.Length <= 9)
+        if (NewCustomer.Password.ToString().Length <= 9)
         {
             ViewBag.Error1 = "Mật khẩu phải dài hơn 9 ký tự";
             return View();
         }
-
-        var newCustomer = _userFactory.CreateUser(email, password, username, address, phone);
-        db.Customers.Add(newCustomer);
-        db.SaveChanges();
-        return RedirectToAction("Login");
+        try
+        {
+            NewCustomer.Role = "Khách Hàng";
+            db.Customers.Add(NewCustomer);
+            db.SaveChanges();
+            return RedirectToAction("Login");
+        }
+        catch
+        {
+            return View("Register");
+        }
     }
 
+    // Đăng xuất
     public ActionResult Logout()
     {
-        Session.Clear();
+        Session.Clear(); // Xóa tất cả session khi đăng xuất
         return RedirectToAction("Login");
     }
 }
-

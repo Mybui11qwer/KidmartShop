@@ -318,9 +318,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\Class\LoginStrategy.cs" />
-    <Compile Include="Controllers\Class\IUserFactory.cs" />
+    <Compile Include="Controllers\Class\IAccountService.cs" />
     <Compile Include="Controllers\Class\IProductFactory.cs" />
+    <Compile Include="Controllers\Class\ProductService.cs" />
+    <Compile Include="Controllers\Class\ProxyAddressService.cs" />
     <Compile Include="Controllers\Class\Singleton.cs" />
     <Compile Include="Controllers\FunctionUser.cs" />
     <Compile Include="Controllers\AccountController.cs" />
