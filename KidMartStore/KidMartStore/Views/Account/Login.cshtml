@@ -20,7 +20,7 @@
                 <input type="email" id="email" name="Email" placeholder="Nhập email của bạn" required oninvalid="this.setCustomValidity('Bạn chưa nhập Email')" oninput="this.setCustomValidity('')">
                 @if (!string.IsNullOrEmpty(ViewBag.ErrorEmail))
                 {
-                    <div style="color: red">@ViewBag.ErrorEmail</div>
+                    <div style="color: red" class="Error">@ViewBag.ErrorEmail</div>
                 }
             </div>
 
@@ -29,7 +29,7 @@
                 <input type="password" id="password" name="Password" placeholder="Nhập mật khẩu" required oninvalid="this.setCustomValidity('Vui lòng nhập mật khẩu của bạn!')" oninput="this.setCustomValidity('')">
                 @if (!string.IsNullOrEmpty(ViewBag.ErrorPassword))
                 {
-                    <div style="color: red">@ViewBag.ErrorPassword</div>
+                    <div style="color: red" class="Error">@ViewBag.ErrorPassword</div>
                 }
             </div>
 

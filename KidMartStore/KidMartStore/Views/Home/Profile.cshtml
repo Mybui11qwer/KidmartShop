@@ -20,10 +20,10 @@
         <section class="Information-content-right">
             <div class="Information-User" id="section1">
                 <h2>Tài khoản của bạn</h2>
-                <h4>Tên người dùng: <span>@Session["Name"]</span></h4>
-                <h4>Địa chỉ: <span>@(Model.Address ?? "Người dùng chưa đăng ký địa chỉ")</span></h4>
-                <h4>Địa chỉ Email: <span>@Session["Email"]</span></h4>
-                <h4>Số điện thoại: <span>@Session["Phone"]</span></h4>
+                <h4 id="1">Tên người dùng: <span>@Session["Name"]</span></h4>
+                <h4 id="2">Địa chỉ: <span>@(Model.Address ?? "Người dùng chưa đăng ký địa chỉ")</span></h4>
+                <h4 id="3">Địa chỉ Email: <span>@Session["Email"]</span></h4>
+                <h4 id="4">Số điện thoại: <span>@Session["Phone"]</span></h4>
                 <button class="SetProfile" onclick="changeSection()">Chỉnh sửa thông tin</button>
             </div>
             <div class="Information-User" id="section2" style="display: none">
