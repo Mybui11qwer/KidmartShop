@@ -17,7 +17,7 @@ public class ExportExcelController : Controller
     {
         var order = database.Orders.FirstOrDefault(o => o.ID_Order == id);
 
-        if (order != null && order.Status != "Đã giao")
+        if (order != null && order.Status != "Đã giao" && order.Status != "Đang giao")
         {
             // Lấy danh sách sản phẩm trong đơn hàng
             var orderDetails = database.Detail_Order.Where(od => od.ID_Order == id).ToList();
@@ -28,6 +28,7 @@ public class ExportExcelController : Controller
                 if (product != null)
                 {
                     product.Quantity += item.Quantity; // Cộng lại số lượng sản phẩm vào kho
+                    database.Entry(product).State = EntityState.Modified;
                 }
             }
 

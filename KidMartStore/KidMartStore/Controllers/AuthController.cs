@@ -79,11 +79,11 @@ namespace KidMartStore.Controllers
                 NewCustomer.Role = "Khách Hàng";
                 db.Customers.Add(NewCustomer);
                 db.SaveChanges();
-                return RedirectToAction("Login");
+                return RedirectToAction("Login", new { area = "" });
             }
             catch
             {
-                return View("Register");
+                return View("Register", new { area = "" });
             }
         }
 

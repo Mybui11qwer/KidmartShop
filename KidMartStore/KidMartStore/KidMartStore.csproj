@@ -320,8 +320,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SettingOrderController.cs" />
     <Compile Include="Areas\Admin\Controllers\ExportExcelController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Controllers\FunctionUser.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -2436,6 +2438,12 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Views\Account\AddNewAccount.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\ManagerProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\ManagerOrders.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\UpdateAccount.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\AddNewProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\UpdateProduct.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />

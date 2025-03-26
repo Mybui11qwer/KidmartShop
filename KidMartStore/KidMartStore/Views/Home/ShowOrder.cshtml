@@ -95,18 +95,21 @@
                                         @{
                                             switch (List.Status)
                                             {
+                                                case "Đang giao":
                                                 case "Đã giao":
                                                     <text><a>Không thể hủy</a></text>;
                                                     break;
                                                 case "Đang xử lý":
+                                                case "Đã xác nhận":
                                                 case "Chờ xác nhận":
+                                                case "Đã thanh toán":
                                                     <text><a style="cursor: pointer" class="cancel-order" data-id="@List.ID_Order">Hủy</a></text>;
                                                     break;
                                                 case "Đã hủy":
                                                     <text><a>Đã hủy đơn</a></text>;
                                                     break;
                                                 default:
-                                                    <text><a>Không thể thao tác</a></text>;
+                                                    <text><a>Không thể hủy</a></text>;
                                                     break;
                                             }
                                         }

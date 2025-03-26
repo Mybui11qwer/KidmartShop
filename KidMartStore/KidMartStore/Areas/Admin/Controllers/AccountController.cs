@@ -35,7 +35,7 @@ namespace KidMartStore.Areas.Admin.Controllers
         //Sửa
         public ActionResult UpdateAccount(int id)
         {
-            var customer = database.Products.Find(id);
+            var customer = database.Customers.Find(id);
             if (customer == null)
             {
                 return HttpNotFound();
@@ -58,7 +58,6 @@ namespace KidMartStore.Areas.Admin.Controllers
 
                     database.SaveChanges();
                 }
-
                 return RedirectToAction("ManagerAccount", "Home", new { area = "Admin" });
             }
             return View(customer);

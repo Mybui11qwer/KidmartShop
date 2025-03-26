@@ -88,7 +88,7 @@
             @foreach (var item in Model.Items)
             {
                 <div class="cart-item" data-product-id="@item._product.ID_Product">
-                    <div class="item-remove"><a href="/Product/RemoveCart/@item._product.ID_Product">x</a></div>
+                    <div class="item-remove"><a href="/FunctionCart/RemoveCart/@item._product.ID_Product">x</a></div>
                     <div class="item-image">
                         <img src="~/Image/Product/@item._product.Image" alt="Product Image">
                     </div>

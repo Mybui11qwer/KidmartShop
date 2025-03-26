@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using KidMartStore.Models;
+using System.Data.Entity;
+
 
 namespace KidMartStore.Areas.Admin.Controllers
 {
@@ -48,7 +50,8 @@ namespace KidMartStore.Areas.Admin.Controllers
 
         public ActionResult ManagerOrders()
         {
-            var orders = database.Orders.OrderByDescending(o => o.Order_Date).ToList();
+            var orders = database.Orders.Include(o => o.Detail_Order.Select(d => d.Product))
+                .OrderByDescending(o => o.Order_Date).ToList();
             return View(orders);
         }
     }

@@ -1,54 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\HK1-2025\\ShopQuanAo\\KidMartStore\\",
+  "WorkspaceRootPath": "D:\\ShopBanQuanAo\\KidMartStore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\hk1-2025\\shopquanao\\kidmartstore\\kidmartstore\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|D:\\ShopBanQuanAo\\KidMartStore\\kidmartstore\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\hk1-2025\\shopquanao\\kidmartstore\\kidmartstore\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\hk1-2025\\shopquanao\\kidmartstore\\kidmartstore\\views\\shared\\userlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\views\\shared\\userlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\hk1-2025\\shopquanao\\kidmartstore\\kidmartstore\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\hk1-2025\\shopquanao\\kidmartstore\\kidmartstore\\views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\hk1-2025\\shopquanao\\kidmartstore\\kidmartstore\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\hk1-2025\\shopquanao\\kidmartstore\\kidmartstore\\areas\\admin\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\areas\\admin\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|D:\\HK1-2025\\ShopQuanAo\\KidMartStore\\kidmartstore\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\hk1-2025\\shopquanao\\kidmartstore\\kidmartstore\\controllers\\functionuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\shopbanquanao\\kidmartstore\\kidmartstore\\controllers\\functionuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\controllers\\functionuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\hk1-2025\\shopquanao\\kidmartstore\\kidmartstore\\areas\\admin\\views\\home\\manageraccount.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\areas\\admin\\views\\home\\manageraccount.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\shopbanquanao\\kidmartstore\\kidmartstore\\views\\home\\showorder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\views\\home\\showorder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|D:\\HK1-2025\\ShopQuanAo\\KidMartStore\\kidmartstore\\areas\\admin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\areas\\admin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|D:\\HK1-2025\\ShopQuanAo\\KidMartStore\\kidmartstore\\areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\shopbanquanao\\kidmartstore\\kidmartstore\\areas\\admin\\controllers\\settingordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\areas\\admin\\controllers\\settingordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -64,11 +32,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\HK1-2025\\ShopQuanAo\\KidMartStore\\KidMartStore\\Views\\Home\\Index.cshtml",
+              "DocumentMoniker": "D:\\ShopBanQuanAo\\KidMartStore\\KidMartStore\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "KidMartStore\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\HK1-2025\\ShopQuanAo\\KidMartStore\\KidMartStore\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\ShopBanQuanAo\\KidMartStore\\KidMartStore\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "KidMartStore\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAAAKYAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-26T10:24:20.836Z",
               "IsPinned": true,
@@ -76,145 +44,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\HK1-2025\\ShopQuanAo\\KidMartStore\\KidMartStore\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "KidMartStore\\Controllers\\HomeController.cs",
-              "ToolTip": "D:\\HK1-2025\\ShopQuanAo\\KidMartStore\\KidMartStore\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "KidMartStore\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAHwAAAAAAAAAAAAAAJMAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T10:34:34.993Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "UserLayout.cshtml",
-              "DocumentMoniker": "D:\\HK1-2025\\ShopQuanAo\\KidMartStore\\KidMartStore\\Views\\Shared\\UserLayout.cshtml",
-              "RelativeDocumentMoniker": "KidMartStore\\Views\\Shared\\UserLayout.cshtml",
-              "ToolTip": "D:\\HK1-2025\\ShopQuanAo\\KidMartStore\\KidMartStore\\Views\\Shared\\UserLayout.cshtml",
-              "RelativeToolTip": "KidMartStore\\Views\\Shared\\UserLayout.cshtml",
-              "ViewState": "AgIAABYAAAAAAAAAAAAAAC8AAAAlAAAAAAAAAA==",
+              "Title": "ShowOrder.cshtml",
+              "DocumentMoniker": "D:\\ShopBanQuanAo\\KidMartStore\\KidMartStore\\Views\\Home\\ShowOrder.cshtml",
+              "RelativeDocumentMoniker": "KidMartStore\\Views\\Home\\ShowOrder.cshtml",
+              "ToolTip": "D:\\ShopBanQuanAo\\KidMartStore\\KidMartStore\\Views\\Home\\ShowOrder.cshtml",
+              "RelativeToolTip": "KidMartStore\\Views\\Home\\ShowOrder.cshtml",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAAAIcAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-26T10:33:46.404Z",
+              "WhenOpened": "2025-03-26T15:18:42.229Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "RouteConfig.cs",
-              "DocumentMoniker": "D:\\HK1-2025\\ShopQuanAo\\KidMartStore\\KidMartStore\\App_Start\\RouteConfig.cs",
-              "RelativeDocumentMoniker": "KidMartStore\\App_Start\\RouteConfig.cs",
-              "ToolTip": "D:\\HK1-2025\\ShopQuanAo\\KidMartStore\\KidMartStore\\App_Start\\RouteConfig.cs",
-              "RelativeToolTip": "KidMartStore\\App_Start\\RouteConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAcAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "FunctionUser.cs",
+              "DocumentMoniker": "D:\\ShopBanQuanAo\\KidMartStore\\KidMartStore\\Controllers\\FunctionUser.cs",
+              "RelativeDocumentMoniker": "KidMartStore\\Controllers\\FunctionUser.cs",
+              "ToolTip": "D:\\ShopBanQuanAo\\KidMartStore\\KidMartStore\\Controllers\\FunctionUser.cs",
+              "RelativeToolTip": "KidMartStore\\Controllers\\FunctionUser.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAxwBEAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T10:25:32.212Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "D:\\HK1-2025\\ShopQuanAo\\KidMartStore\\KidMartStore\\Views\\Auth\\Login.cshtml",
-              "RelativeDocumentMoniker": "KidMartStore\\Views\\Auth\\Login.cshtml",
-              "ToolTip": "D:\\HK1-2025\\ShopQuanAo\\KidMartStore\\KidMartStore\\Views\\Auth\\Login.cshtml",
-              "RelativeToolTip": "KidMartStore\\Views\\Auth\\Login.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACQAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-26T10:19:19.492Z",
+              "WhenOpened": "2025-03-26T14:48:12.69Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "D:\\HK1-2025\\ShopQuanAo\\KidMartStore\\KidMartStore\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "KidMartStore\\Controllers\\AuthController.cs",
-              "ToolTip": "D:\\HK1-2025\\ShopQuanAo\\KidMartStore\\KidMartStore\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "KidMartStore\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAAAF0AAAA+AAAAAAAAAA==",
+              "Title": "SettingOrderController.cs",
+              "DocumentMoniker": "D:\\ShopBanQuanAo\\KidMartStore\\KidMartStore\\Areas\\Admin\\Controllers\\SettingOrderController.cs",
+              "RelativeDocumentMoniker": "KidMartStore\\Areas\\Admin\\Controllers\\SettingOrderController.cs",
+              "ToolTip": "D:\\ShopBanQuanAo\\KidMartStore\\KidMartStore\\Areas\\Admin\\Controllers\\SettingOrderController.cs",
+              "RelativeToolTip": "KidMartStore\\Areas\\Admin\\Controllers\\SettingOrderController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwCIAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T09:56:52.592Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FunctionUser.cs",
-              "DocumentMoniker": "D:\\HK1-2025\\ShopQuanAo\\KidMartStore\\KidMartStore\\Controllers\\FunctionUser.cs",
-              "RelativeDocumentMoniker": "KidMartStore\\Controllers\\FunctionUser.cs",
-              "ToolTip": "D:\\HK1-2025\\ShopQuanAo\\KidMartStore\\KidMartStore\\Controllers\\FunctionUser.cs",
-              "RelativeToolTip": "KidMartStore\\Controllers\\FunctionUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T09:51:31.289Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "D:\\HK1-2025\\ShopQuanAo\\KidMartStore\\KidMartStore\\Areas\\Admin\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "KidMartStore\\Areas\\Admin\\Controllers\\AccountController.cs",
-              "ToolTip": "D:\\HK1-2025\\ShopQuanAo\\KidMartStore\\KidMartStore\\Areas\\Admin\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "KidMartStore\\Areas\\Admin\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAABAAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T09:51:43.942Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\HK1-2025\\ShopQuanAo\\KidMartStore\\KidMartStore\\Areas\\Admin\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "KidMartStore\\Areas\\Admin\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\HK1-2025\\ShopQuanAo\\KidMartStore\\KidMartStore\\Areas\\Admin\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "KidMartStore\\Areas\\Admin\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-26T07:32:31.769Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ManagerAccount.cshtml",
-              "DocumentMoniker": "D:\\HK1-2025\\ShopQuanAo\\KidMartStore\\KidMartStore\\Areas\\Admin\\Views\\Home\\ManagerAccount.cshtml",
-              "RelativeDocumentMoniker": "KidMartStore\\Areas\\Admin\\Views\\Home\\ManagerAccount.cshtml",
-              "ToolTip": "D:\\HK1-2025\\ShopQuanAo\\KidMartStore\\KidMartStore\\Areas\\Admin\\Views\\Home\\ManagerAccount.cshtml",
-              "RelativeToolTip": "KidMartStore\\Areas\\Admin\\Views\\Home\\ManagerAccount.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-26T07:26:38.45Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\HK1-2025\\ShopQuanAo\\KidMartStore\\KidMartStore\\Areas\\Admin\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "KidMartStore\\Areas\\Admin\\Controllers\\HomeController.cs",
-              "ToolTip": "D:\\HK1-2025\\ShopQuanAo\\KidMartStore\\KidMartStore\\Areas\\Admin\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "KidMartStore\\Areas\\Admin\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T06:37:46.935Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\HK1-2025\\ShopQuanAo\\KidMartStore\\KidMartStore\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "KidMartStore\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\HK1-2025\\ShopQuanAo\\KidMartStore\\KidMartStore\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "KidMartStore\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABQAAAAAAAAAAAAAABwAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-26T04:52:48.215Z",
+              "WhenOpened": "2025-03-26T14:47:17.347Z",
               "EditorCaption": ""
             }
           ]
