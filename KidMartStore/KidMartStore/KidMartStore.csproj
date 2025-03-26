@@ -2284,6 +2284,9 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\CSS\address.css" />
+    <Content Include="Content\CSS\CheckOutSuccess.css" />
+    <Content Include="Content\CSS\Contact.css" />
+    <Content Include="Content\CSS\_blog.css" />
     <Content Include="Content\CSS\_cart.css" />
     <Content Include="Content\CSS\_detailProduct.css" />
     <Content Include="Content\CSS\Introduce.css" />
@@ -2305,7 +2308,7 @@
     <Content Include="Content\JS\Change.js" />
     <Content Include="Content\JS\Scroll-index.js" />
     <Content Include="Content\JS\Slider.js" />
-    <Content Include="Content\Layout\_layoutUser.css" />
+    <Content Include="Content\Layout\_layoutuser.css" />
     <Content Include="Content\Layout\_layout.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -2478,6 +2481,8 @@
     <Content Include="Views\Home\GioHang.cshtml" />
     <Content Include="Views\Home\CheckOut_Success.cshtml" />
     <Content Include="Views\Home\ShowOrder.cshtml" />
+    <Content Include="Views\Home\Blog.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
