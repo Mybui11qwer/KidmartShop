@@ -39,5 +39,17 @@ namespace KidMartStore.Areas.Admin.Controllers
             List<Customer> customers = database.Customers.ToList();
             return View(customers);
         }
+
+        public ActionResult ManagerProduct()
+        {
+            List<Product> products = database.Products.ToList();
+            return View(products);
+        }
+
+        public ActionResult ManagerOrders()
+        {
+            var orders = database.Orders.OrderByDescending(o => o.Order_Date).ToList();
+            return View(orders);
+        }
     }
 }

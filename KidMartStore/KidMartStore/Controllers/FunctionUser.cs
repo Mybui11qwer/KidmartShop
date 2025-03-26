@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 using System.Data.Entity;
 using System;
 
-public class FunctionUser : Controller
+public class ExportExcelController : Controller
 {
     public KidMartStoreEntities database = new KidMartStoreEntities();
 

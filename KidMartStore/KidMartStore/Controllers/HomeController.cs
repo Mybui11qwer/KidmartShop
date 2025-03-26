@@ -26,19 +26,17 @@ namespace KidMartStore.Controllers
             int pageSize = 4;
             List<Product> products = database.Products.ToList();
 
-            // Lọc theo danh mục nếu có
             if (!string.IsNullOrEmpty(category))
             {
                 products = products.Where(p => p.Category.Name_Category == category).ToList();
             }
 
-            // Tìm kiếm sản phẩm nếu có từ khóa query
             if (!string.IsNullOrEmpty(query))
             {
                 products = products.Where(p => p.Name.Contains(query) || p.Description.Contains(query)).ToList();
             }
 
-            int totalProducts = products.Count(); // Tổng số sản phẩm
+            int totalProducts = products.Count();
             products = products.Skip((page - 1) * pageSize).Take(pageSize).ToList();
             ViewBag.CurrentPage = page;
             ViewBag.TotalPages = (int)Math.Ceiling((double)totalProducts / pageSize);
@@ -57,14 +55,13 @@ namespace KidMartStore.Controllers
         }
         public ActionResult SanPham(int? page)
         {
-            int pageSize = 16; // Số sản phẩm mỗi trang
-            int pageNumber = page ?? 1; // Nếu không có page, mặc định là 1
+            int pageSize = 16; 
+            int pageNumber = page ?? 1; 
 
             List<Product> products = database.Products.ToList();
             int totalProducts = products.Count();
             int totalPages = (int)Math.Ceiling((double)totalProducts / pageSize);
 
-            // Kiểm tra giới hạn của pageNumber
             if (pageNumber < 1) pageNumber = 1;
             if (pageNumber > totalPages) pageNumber = totalPages;
 
@@ -150,7 +147,7 @@ namespace KidMartStore.Controllers
             }
             if (Session["ID_Customer"] == null)
             {
-                return RedirectToAction("Login", "Account");
+                return RedirectToAction("Login", "Auth");
             }
             return View();
         }
