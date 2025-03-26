@@ -13,10 +13,20 @@ namespace KidMartStore
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            // Ưu tiên admin trước
+            routes.MapRoute(
+                name: "Admin",
+                url: "Admin/{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "KidMartStore.Areas.Admin.Controllers" } // Xác định namespace
+            );
+
+            // Route mặc định cho user
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "KidMartStore.Controllers" } // Xác định namespace
             );
         }
     }

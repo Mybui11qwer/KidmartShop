@@ -17,6 +17,7 @@ using System.Web.UI;
 
 namespace KidMartStore.Controllers
 {
+    [Route("Home")]
     public class HomeController : Controller
     {
         private readonly KidMartStoreEntities database = new KidMartStoreEntities();
