@@ -52,6 +52,7 @@
           <ScalarProperty Name="Total" ColumnName="Total" />
           <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="ID_Sale" ColumnName="ID_Sale" />
+          <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -65,7 +66,6 @@
           <ScalarProperty Name="Quantity" ColumnName="Quantity" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Image" ColumnName="Image" />
-          <ScalarProperty Name="ID_Size" ColumnName="ID_Size" />
           <ScalarProperty Name="ID_Material" ColumnName="ID_Material" />
           <ScalarProperty Name="ID_Warranty" ColumnName="ID_Warranty" />
         </MappingFragment>
@@ -91,6 +91,19 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Sliders">
+      <EntityTypeMapping TypeName="KidMartStoreModel.Slider">
+        <MappingFragment StoreEntitySet="Slider">
+          <ScalarProperty Name="ID_Slider" ColumnName="ID_Slider" />
+          <ScalarProperty Name="Image_Url" ColumnName="Image_Url" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="KidMartStoreModel.sysdiagram">
         <MappingFragment StoreEntitySet="sysdiagrams">
@@ -107,19 +120,6 @@
         <MappingFragment StoreEntitySet="Warranty_Policy">
           <ScalarProperty Name="ID_Warranty" ColumnName="ID_Warranty" />
           <ScalarProperty Name="Content" ColumnName="Content" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Sliders">
-      <EntityTypeMapping TypeName="KidMartStoreModel.Slider">
-        <MappingFragment StoreEntitySet="Slider">
-          <ScalarProperty Name="Active" ColumnName="Active" />
-          <ScalarProperty Name="Position" ColumnName="Position" />
-          <ScalarProperty Name="Link" ColumnName="Link" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="Image_Url" ColumnName="Image_Url" />
-          <ScalarProperty Name="ID_Slider" ColumnName="ID_Slider" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

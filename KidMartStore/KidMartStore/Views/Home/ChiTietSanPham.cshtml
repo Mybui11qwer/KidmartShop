@@ -3,6 +3,51 @@
     ViewBag.Title = "Chi Tiết Sản Phẩm";
     Layout = "~/Views/Shared/UserLayout.cshtml";
 }
+<style>
+    .size-selector {
+        display: flex;
+        align-items: center;
+    }
+
+        .size-selector span {
+            font-size: 16px;
+            margin-right: 8px;
+        }
+
+    .size-option {
+        border: 2px solid #ccc;
+        padding: 8px 12px;
+        cursor: pointer;
+        margin: 0px 5px 7px 0px;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+        .size-option:hover {
+            border-color: black;
+        }
+
+        .size-option.active {
+            border-color: black;
+            position: relative;
+        }
+
+            .size-option.active::after {
+                content: "✔";
+                position: absolute;
+                top: -5px;
+                right: -5px;
+                background: black;
+                color: white;
+                border-radius: 50%;
+                width: 16px;
+                height: 16px;
+                font-size: 12px;
+                text-align: center;
+                line-height: 16px;
+            }
+</style>
 <link rel="stylesheet" href="~/Content/CSS/_detailProduct.css" />
 <div class="Details">
     <section class="Image-Product">
@@ -32,7 +77,13 @@
             </ul>
         </div>
         <h3>Mã giảm: </h3>
-        <h3>Kích cỡ: </h3>
+        <h3>Kích cỡ: <span id="selected-size">M</span></h3>
+        <div class="size-selector">
+            <div class="size-option" onclick="selectSize(this)">S</div>
+            <div class="size-option" onclick="selectSize(this)">M</div>
+            <div class="size-option" onclick="selectSize(this)">L</div>
+            <div class="size-option" onclick="selectSize(this)">XL</div>
+        </div>
         <div class="form-buy">
             @if (Model.Quantity > 0)
             {
@@ -158,6 +209,15 @@ function showTemporaryMessage(message, duration) {
         }
 
         window.location.href = url + "?quantity=" + quantity;
+    }
+</script>
+
+<script>
+    function selectSize(element) {
+        document.querySelectorAll('.size-option').forEach(el => el.classList.remove('active'));
+        element.classList.add('active');
+
+        document.getElementById('selected-size').textContent = element.textContent;
     }
 </script>
 

@@ -18,6 +18,7 @@ namespace KidMartStore.Models
         public Customer()
         {
             this.Orders = new HashSet<Order>();
+            this.Orders1 = new HashSet<Order>();
         }
     
         public int ID_Customer { get; set; }
@@ -32,5 +33,7 @@ namespace KidMartStore.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order> Orders1 { get; set; }
     }
 }

@@ -3,28 +3,12 @@
   "WorkspaceRootPath": "D:\\ShopBanQuanAo\\KidMartStore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\shopbanquanao\\kidmartstore\\kidmartstore\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|D:\\ShopBanQuanAo\\KidMartStore\\kidmartstore\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\shopbanquanao\\kidmartstore\\kidmartstore\\content\\css\\slider.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\content\\css\\slider.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\shopbanquanao\\kidmartstore\\kidmartstore\\content\\css\\_index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\content\\css\\_index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\shopbanquanao\\kidmartstore\\kidmartstore\\content\\layout\\_layoutuser.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\content\\layout\\_layoutuser.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\shopbanquanao\\kidmartstore\\kidmartstore\\views\\shared\\userlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\views\\shared\\userlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\shopbanquanao\\kidmartstore\\kidmartstore\\content\\js\\slider.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\content\\js\\slider.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|d:\\shopbanquanao\\kidmartstore\\kidmartstore\\views\\home\\chitietsanpham.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9323ACD7-DDCE-42E4-B6A7-40D8DEB9C2B8}|KidMartStore\\KidMartStore.csproj|solutionrelative:kidmartstore\\views\\home\\chitietsanpham.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -44,7 +28,7 @@
               "RelativeDocumentMoniker": "KidMartStore\\Views\\Home\\Index.cshtml",
               "ToolTip": "D:\\ShopBanQuanAo\\KidMartStore\\KidMartStore\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "KidMartStore\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAAEoAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-26T10:24:20.836Z",
               "IsPinned": true,
@@ -53,66 +37,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Slider.css",
-              "DocumentMoniker": "D:\\ShopBanQuanAo\\KidMartStore\\KidMartStore\\Content\\CSS\\Slider.css",
-              "RelativeDocumentMoniker": "KidMartStore\\Content\\CSS\\Slider.css",
-              "ToolTip": "D:\\ShopBanQuanAo\\KidMartStore\\KidMartStore\\Content\\CSS\\Slider.css",
-              "RelativeToolTip": "KidMartStore\\Content\\CSS\\Slider.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-03-26T18:47:08.734Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_index.css",
-              "DocumentMoniker": "D:\\ShopBanQuanAo\\KidMartStore\\KidMartStore\\Content\\CSS\\_index.css",
-              "RelativeDocumentMoniker": "KidMartStore\\Content\\CSS\\_index.css",
-              "ToolTip": "D:\\ShopBanQuanAo\\KidMartStore\\KidMartStore\\Content\\CSS\\_index.css",
-              "RelativeToolTip": "KidMartStore\\Content\\CSS\\_index.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-03-26T18:46:15.295Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UserLayout.cshtml",
-              "DocumentMoniker": "D:\\ShopBanQuanAo\\KidMartStore\\KidMartStore\\Views\\Shared\\UserLayout.cshtml",
-              "RelativeDocumentMoniker": "KidMartStore\\Views\\Shared\\UserLayout.cshtml",
-              "ToolTip": "D:\\ShopBanQuanAo\\KidMartStore\\KidMartStore\\Views\\Shared\\UserLayout.cshtml",
-              "RelativeToolTip": "KidMartStore\\Views\\Shared\\UserLayout.cshtml",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAADUAAAALAAAAAAAAAA==",
+              "Title": "ChiTietSanPham.cshtml",
+              "DocumentMoniker": "D:\\ShopBanQuanAo\\KidMartStore\\KidMartStore\\Views\\Home\\ChiTietSanPham.cshtml",
+              "RelativeDocumentMoniker": "KidMartStore\\Views\\Home\\ChiTietSanPham.cshtml",
+              "ToolTip": "D:\\ShopBanQuanAo\\KidMartStore\\KidMartStore\\Views\\Home\\ChiTietSanPham.cshtml",
+              "RelativeToolTip": "KidMartStore\\Views\\Home\\ChiTietSanPham.cshtml",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAFQAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-26T18:41:19.917Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_layoutuser.css",
-              "DocumentMoniker": "D:\\ShopBanQuanAo\\KidMartStore\\KidMartStore\\Content\\Layout\\_layoutuser.css",
-              "RelativeDocumentMoniker": "KidMartStore\\Content\\Layout\\_layoutuser.css",
-              "ToolTip": "D:\\ShopBanQuanAo\\KidMartStore\\KidMartStore\\Content\\Layout\\_layoutuser.css",
-              "RelativeToolTip": "KidMartStore\\Content\\Layout\\_layoutuser.css",
-              "ViewState": "AgIAAPkAAAAAAAAAAAAAAO4AAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-03-26T18:40:17.755Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Slider.js",
-              "DocumentMoniker": "D:\\ShopBanQuanAo\\KidMartStore\\KidMartStore\\Content\\JS\\Slider.js",
-              "RelativeDocumentMoniker": "KidMartStore\\Content\\JS\\Slider.js",
-              "ToolTip": "D:\\ShopBanQuanAo\\KidMartStore\\KidMartStore\\Content\\JS\\Slider.js",
-              "RelativeToolTip": "KidMartStore\\Content\\JS\\Slider.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-03-26T18:37:18.869Z",
+              "WhenOpened": "2025-03-27T04:57:16.505Z",
               "EditorCaption": ""
             }
           ]

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="KidMartStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="KidMartStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="ID_Category" />
@@ -53,6 +53,7 @@
           <Property Name="Total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Status" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="ID_Sale" Type="int" />
+          <Property Name="PaymentMethod" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -65,7 +66,6 @@
           <Property Name="Quantity" Type="int" Nullable="false" />
           <Property Name="Description" Type="text" />
           <Property Name="Image" Type="varchar(max)" />
-          <Property Name="ID_Size" Type="int" />
           <Property Name="ID_Material" Type="int" />
           <Property Name="ID_Warranty" Type="int" />
         </EntityType>
@@ -176,18 +176,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Product__ID_Size__4AB81AF0">
-          <End Role="Size" Type="Self.Size" Multiplicity="0..1" />
-          <End Role="Product" Type="Self.Product" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Size">
-              <PropertyRef Name="ID_Size" />
-            </Principal>
-            <Dependent Role="Product">
-              <PropertyRef Name="ID_Size" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Product__ID_Warr__4CA06362">
           <End Role="Warranty_Policy" Type="Self.Warranty_Policy" Multiplicity="0..1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
@@ -209,6 +197,34 @@
             </Principal>
             <Dependent Role="Detail_Order">
               <PropertyRef Name="ID_Product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DetailOrder_Order">
+          <End Role="Order" Type="Self.Order" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Detail_Order" Type="Self.Detail_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="ID_Order" />
+            </Principal>
+            <Dependent Role="Detail_Order">
+              <PropertyRef Name="ID_Order" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="ID_Customer" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ID_Customer" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -244,10 +260,6 @@
             <End Role="Material" EntitySet="Material" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product__ID_Size__4AB81AF0" Association="Self.FK__Product__ID_Size__4AB81AF0">
-            <End Role="Size" EntitySet="Size" />
-            <End Role="Product" EntitySet="Product" />
-          </AssociationSet>
           <AssociationSet Name="FK__Product__ID_Warr__4CA06362" Association="Self.FK__Product__ID_Warr__4CA06362">
             <End Role="Warranty_Policy" EntitySet="Warranty_Policy" />
             <End Role="Product" EntitySet="Product" />
@@ -256,8 +268,17 @@
             <End Role="Product" EntitySet="Product" />
             <End Role="Detail_Order" EntitySet="Detail_Order" />
           </AssociationSet>
+          <AssociationSet Name="FK_DetailOrder_Order" Association="Self.FK_DetailOrder_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="Detail_Order" EntitySet="Detail_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Customer" Association="Self.FK_Order_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="KidMartStoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -283,6 +304,7 @@
           <Property Name="Avatar" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="Role" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Orders" Relationship="Self.FK__Order__ID_Custom__3D5E1FD2" FromRole="Customer" ToRole="Order" />
+          <NavigationProperty Name="Orders1" Relationship="Self.FK_Order_Customer" FromRole="Customer" ToRole="Order" />
         </EntityType>
         <EntityType Name="Detail_Order">
           <Key>
@@ -295,6 +317,7 @@
           <Property Name="Unit_Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <NavigationProperty Name="Order" Relationship="Self.FK__Detail_Or__ID_Or__412EB0B6" FromRole="Detail_Order" ToRole="Order" />
           <NavigationProperty Name="Product" Relationship="Self.FK_Detail_Order_Product" FromRole="Detail_Order" ToRole="Product" />
+          <NavigationProperty Name="Order1" Relationship="Self.FK_DetailOrder_Order" FromRole="Detail_Order" ToRole="Order" />
         </EntityType>
         <EntityType Name="Material">
           <Key>
@@ -314,8 +337,11 @@
           <Property Name="Total" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ID_Sale" Type="Int32" />
+          <Property Name="PaymentMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Customer" Relationship="Self.FK__Order__ID_Custom__3D5E1FD2" FromRole="Order" ToRole="Customer" />
+          <NavigationProperty Name="Customer1" Relationship="Self.FK_Order_Customer" FromRole="Order" ToRole="Customer" />
           <NavigationProperty Name="Detail_Order" Relationship="Self.FK__Detail_Or__ID_Or__412EB0B6" FromRole="Order" ToRole="Detail_Order" />
+          <NavigationProperty Name="Detail_Order1" Relationship="Self.FK_DetailOrder_Order" FromRole="Order" ToRole="Detail_Order" />
           <NavigationProperty Name="Promotion" Relationship="Self.FK__Order__ID_Sale__3E52440B" FromRole="Order" ToRole="Promotion" />
         </EntityType>
         <EntityType Name="Product">
@@ -329,13 +355,11 @@
           <Property Name="Quantity" Type="Int32" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="ID_Size" Type="Int32" />
           <Property Name="ID_Material" Type="Int32" />
           <Property Name="ID_Warranty" Type="Int32" />
           <NavigationProperty Name="Category" Relationship="Self.FK__Product__ID_Cate__49C3F6B7" FromRole="Product" ToRole="Category" />
           <NavigationProperty Name="Detail_Order" Relationship="Self.FK_Detail_Order_Product" FromRole="Product" ToRole="Detail_Order" />
           <NavigationProperty Name="Material" Relationship="Self.FK__Product__ID_Mate__4BAC3F29" FromRole="Product" ToRole="Material" />
-          <NavigationProperty Name="Size" Relationship="Self.FK__Product__ID_Size__4AB81AF0" FromRole="Product" ToRole="Size" />
           <NavigationProperty Name="Warranty_Policy" Relationship="Self.FK__Product__ID_Warr__4CA06362" FromRole="Product" ToRole="Warranty_Policy" />
         </EntityType>
         <EntityType Name="Promotion">
@@ -356,7 +380,18 @@
           </Key>
           <Property Name="ID_Size" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Products" Relationship="Self.FK__Product__ID_Size__4AB81AF0" FromRole="Size" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Slider">
+          <Key>
+            <PropertyRef Name="ID_Slider" />
+          </Key>
+          <Property Name="ID_Slider" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image_Url" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Link" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Position" Type="Int32" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -400,6 +435,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Order_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="ID_Customer" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ID_Customer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Detail_Or__ID_Or__412EB0B6">
           <End Role="Order" Type="Self.Order" Multiplicity="1" />
           <End Role="Detail_Order" Type="Self.Detail_Order" Multiplicity="*" />
@@ -421,6 +470,20 @@
             </Principal>
             <Dependent Role="Detail_Order">
               <PropertyRef Name="ID_Product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DetailOrder_Order">
+          <End Role="Order" Type="Self.Order" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Detail_Order" Type="Self.Detail_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="ID_Order" />
+            </Principal>
+            <Dependent Role="Detail_Order">
+              <PropertyRef Name="ID_Order" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -448,18 +511,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Product__ID_Size__4AB81AF0">
-          <End Role="Size" Type="Self.Size" Multiplicity="0..1" />
-          <End Role="Product" Type="Self.Product" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Size">
-              <PropertyRef Name="ID_Size" />
-            </Principal>
-            <Dependent Role="Product">
-              <PropertyRef Name="ID_Size" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Product__ID_Warr__4CA06362">
           <End Role="Warranty_Policy" Type="Self.Warranty_Policy" Multiplicity="0..1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
@@ -481,6 +532,7 @@
           <EntitySet Name="Products" EntityType="Self.Product" />
           <EntitySet Name="Promotions" EntityType="Self.Promotion" />
           <EntitySet Name="Sizes" EntityType="Self.Size" />
+          <EntitySet Name="Sliders" EntityType="Self.Slider" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="Warranty_Policy" EntityType="Self.Warranty_Policy" />
           <AssociationSet Name="FK__Product__ID_Cate__49C3F6B7" Association="Self.FK__Product__ID_Cate__49C3F6B7">
@@ -488,6 +540,10 @@
             <End Role="Product" EntitySet="Products" />
           </AssociationSet>
           <AssociationSet Name="FK__Order__ID_Custom__3D5E1FD2" Association="Self.FK__Order__ID_Custom__3D5E1FD2">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Customer" Association="Self.FK_Order_Customer">
             <End Role="Customer" EntitySet="Customers" />
             <End Role="Order" EntitySet="Orders" />
           </AssociationSet>
@@ -499,6 +555,10 @@
             <End Role="Product" EntitySet="Products" />
             <End Role="Detail_Order" EntitySet="Detail_Order" />
           </AssociationSet>
+          <AssociationSet Name="FK_DetailOrder_Order" Association="Self.FK_DetailOrder_Order">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="Detail_Order" EntitySet="Detail_Order" />
+          </AssociationSet>
           <AssociationSet Name="FK__Product__ID_Mate__4BAC3F29" Association="Self.FK__Product__ID_Mate__4BAC3F29">
             <End Role="Material" EntitySet="Materials" />
             <End Role="Product" EntitySet="Products" />
@@ -507,28 +567,11 @@
             <End Role="Promotion" EntitySet="Promotions" />
             <End Role="Order" EntitySet="Orders" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product__ID_Size__4AB81AF0" Association="Self.FK__Product__ID_Size__4AB81AF0">
-            <End Role="Size" EntitySet="Sizes" />
-            <End Role="Product" EntitySet="Products" />
-          </AssociationSet>
           <AssociationSet Name="FK__Product__ID_Warr__4CA06362" Association="Self.FK__Product__ID_Warr__4CA06362">
             <End Role="Warranty_Policy" EntitySet="Warranty_Policy" />
             <End Role="Product" EntitySet="Products" />
           </AssociationSet>
-          <EntitySet Name="Sliders" EntityType="KidMartStoreModel.Slider" />
         </EntityContainer>
-        <EntityType Name="Slider">
-          <Key>
-            <PropertyRef Name="ID_Slider" />
-          </Key>
-          <Property Name="ID_Slider" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Image_Url" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Link" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Position" Type="Int32" Nullable="false" />
-          <Property Name="Active" Type="Boolean" Nullable="false" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -586,6 +629,7 @@
                 <ScalarProperty Name="Total" ColumnName="Total" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="ID_Sale" ColumnName="ID_Sale" />
+                <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -599,7 +643,6 @@
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Image" ColumnName="Image" />
-                <ScalarProperty Name="ID_Size" ColumnName="ID_Size" />
                 <ScalarProperty Name="ID_Material" ColumnName="ID_Material" />
                 <ScalarProperty Name="ID_Warranty" ColumnName="ID_Warranty" />
               </MappingFragment>
@@ -625,6 +668,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Sliders">
+            <EntityTypeMapping TypeName="KidMartStoreModel.Slider">
+              <MappingFragment StoreEntitySet="Slider">
+                <ScalarProperty Name="ID_Slider" ColumnName="ID_Slider" />
+                <ScalarProperty Name="Image_Url" ColumnName="Image_Url" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="KidMartStoreModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -641,19 +697,6 @@
               <MappingFragment StoreEntitySet="Warranty_Policy">
                 <ScalarProperty Name="ID_Warranty" ColumnName="ID_Warranty" />
                 <ScalarProperty Name="Content" ColumnName="Content" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Sliders">
-            <EntityTypeMapping TypeName="KidMartStoreModel.Slider">
-              <MappingFragment StoreEntitySet="Slider">
-                <ScalarProperty Name="Active" ColumnName="Active" />
-                <ScalarProperty Name="Position" ColumnName="Position" />
-                <ScalarProperty Name="Link" ColumnName="Link" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Image_Url" ColumnName="Image_Url" />
-                <ScalarProperty Name="ID_Slider" ColumnName="ID_Slider" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

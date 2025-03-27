@@ -33,8 +33,8 @@ namespace KidMartStore.Models
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Promotion> Promotions { get; set; }
         public virtual DbSet<Size> Sizes { get; set; }
+        public virtual DbSet<Slider> Sliders { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Warranty_Policy> Warranty_Policy { get; set; }
-        public virtual DbSet<Slider> Sliders { get; set; }
     }
 }

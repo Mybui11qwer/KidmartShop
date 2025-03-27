@@ -2336,23 +2336,6 @@
     <Content Include="Image\Product\5fde370c-b942-45f2-a657-a6a7a576fe03.jpg" />
     <Content Include="Image\Product\ao-polo-tre-em-KPF008S3-3-W01-1.jpg" />
     <Content Include="Image\Product\Áo-thun-cho-bé-trai-2.jpg" />
-    <Content Include="Models\KidMartStore.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>KidMartStore.edmx</DependentUpon>
-      <LastGenOutput>KidMartStore.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\KidMartStore.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>KidMartStore.edmx</DependentUpon>
-      <LastGenOutput>KidMartStore.cs</LastGenOutput>
-    </Content>
-    <EntityDeploy Include="Models\KidMartStore.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>KidMartStore.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\KidMartStore.edmx.diagram">
-      <DependentUpon>KidMartStore.edmx</DependentUpon>
-    </Content>
     <Content Include="Image\Product\e0a4a92f-492d-40d2-b0d6-5405c5e08cb4.webp" />
     <Content Include="Content\Admin\dist\css\adminlte.css.map" />
     <Content Include="Content\Admin\dist\css\adminlte.min.css.map" />
@@ -2435,6 +2418,16 @@
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Home\ManagerAccount.cshtml" />
+    <Content Include="Models\KidMartStore.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KidMartStore.edmx</DependentUpon>
+      <LastGenOutput>KidMartStore.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\KidMartStore.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KidMartStore.edmx</DependentUpon>
+      <LastGenOutput>KidMartStore.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -2447,6 +2440,13 @@
     <Content Include="Areas\Admin\Views\Account\UpdateAccount.cshtml" />
     <Content Include="Areas\Admin\Views\Product\AddNewProduct.cshtml" />
     <Content Include="Areas\Admin\Views\Product\UpdateProduct.cshtml" />
+    <EntityDeploy Include="Models\KidMartStore.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KidMartStore.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\KidMartStore.edmx.diagram">
+      <DependentUpon>KidMartStore.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
