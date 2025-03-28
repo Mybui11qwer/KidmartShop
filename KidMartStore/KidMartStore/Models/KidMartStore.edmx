@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="KidMartStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="KidMartStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="ID_Category" />
@@ -35,6 +35,7 @@
           <Property Name="ID_Product" Type="int" Nullable="false" />
           <Property Name="Quantity" Type="int" Nullable="false" />
           <Property Name="Unit_Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="ID_Size" Type="int" />
         </EntityType>
         <EntityType Name="Material">
           <Key>
@@ -200,6 +201,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Detail_Order_Size">
+          <End Role="Size" Type="Self.Size" Multiplicity="0..1" />
+          <End Role="Detail_Order" Type="Self.Detail_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Size">
+              <PropertyRef Name="ID_Size" />
+            </Principal>
+            <Dependent Role="Detail_Order">
+              <PropertyRef Name="ID_Size" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_DetailOrder_Order">
           <End Role="Order" Type="Self.Order" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -268,6 +281,10 @@
             <End Role="Product" EntitySet="Product" />
             <End Role="Detail_Order" EntitySet="Detail_Order" />
           </AssociationSet>
+          <AssociationSet Name="FK_Detail_Order_Size" Association="Self.FK_Detail_Order_Size">
+            <End Role="Size" EntitySet="Size" />
+            <End Role="Detail_Order" EntitySet="Detail_Order" />
+          </AssociationSet>
           <AssociationSet Name="FK_DetailOrder_Order" Association="Self.FK_DetailOrder_Order">
             <End Role="Order" EntitySet="Order" />
             <End Role="Detail_Order" EntitySet="Detail_Order" />
@@ -277,8 +294,7 @@
             <End Role="Order" EntitySet="Order" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="KidMartStoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -318,6 +334,8 @@
           <NavigationProperty Name="Order" Relationship="Self.FK__Detail_Or__ID_Or__412EB0B6" FromRole="Detail_Order" ToRole="Order" />
           <NavigationProperty Name="Product" Relationship="Self.FK_Detail_Order_Product" FromRole="Detail_Order" ToRole="Product" />
           <NavigationProperty Name="Order1" Relationship="Self.FK_DetailOrder_Order" FromRole="Detail_Order" ToRole="Order" />
+          <Property Name="ID_Size" Type="Int32" />
+          <NavigationProperty Name="Size" Relationship="KidMartStoreModel.FK_Detail_Order_Size" FromRole="Detail_Order" ToRole="Size" />
         </EntityType>
         <EntityType Name="Material">
           <Key>
@@ -380,6 +398,7 @@
           </Key>
           <Property Name="ID_Size" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Detail_Order" Relationship="KidMartStoreModel.FK_Detail_Order_Size" FromRole="Size" ToRole="Detail_Order" />
         </EntityType>
         <EntityType Name="Slider">
           <Key>
@@ -571,7 +590,23 @@
             <End Role="Warranty_Policy" EntitySet="Warranty_Policy" />
             <End Role="Product" EntitySet="Products" />
           </AssociationSet>
+          <AssociationSet Name="FK_Detail_Order_Size" Association="KidMartStoreModel.FK_Detail_Order_Size">
+            <End Role="Size" EntitySet="Sizes" />
+            <End Role="Detail_Order" EntitySet="Detail_Order" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_Detail_Order_Size">
+          <End Type="KidMartStoreModel.Size" Role="Size" Multiplicity="0..1" />
+          <End Type="KidMartStoreModel.Detail_Order" Role="Detail_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Size">
+              <PropertyRef Name="ID_Size" />
+            </Principal>
+            <Dependent Role="Detail_Order">
+              <PropertyRef Name="ID_Size" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -604,6 +639,7 @@
           <EntitySetMapping Name="Detail_Order">
             <EntityTypeMapping TypeName="KidMartStoreModel.Detail_Order">
               <MappingFragment StoreEntitySet="Detail_Order">
+                <ScalarProperty Name="ID_Size" ColumnName="ID_Size" />
                 <ScalarProperty Name="ID_Detail_Order" ColumnName="ID_Detail_Order" />
                 <ScalarProperty Name="ID_Order" ColumnName="ID_Order" />
                 <ScalarProperty Name="ID_Product" ColumnName="ID_Product" />

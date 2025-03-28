@@ -1533,3 +1533,8 @@ D:\ShopBanQuanAo\KidMartStore\KidMartStore\obj\Debug\KidMartStore.csproj.CoreCom
 D:\ShopBanQuanAo\KidMartStore\KidMartStore\obj\Debug\KidMartS.C5D20549.Up2Date
 D:\ShopBanQuanAo\KidMartStore\KidMartStore\obj\Debug\KidMartStore.dll
 D:\ShopBanQuanAo\KidMartStore\KidMartStore\obj\Debug\KidMartStore.pdb
+D:\ShopBanQuanAo\KidMartStore\KidMartStore\bin\PayPal.dll
+D:\ShopBanQuanAo\KidMartStore\KidMartStore\bin\Stripe.net.dll
+D:\ShopBanQuanAo\KidMartStore\KidMartStore\bin\Microsoft.Bcl.AsyncInterfaces.xml
+D:\ShopBanQuanAo\KidMartStore\KidMartStore\bin\PayPal.xml
+D:\ShopBanQuanAo\KidMartStore\KidMartStore\bin\Stripe.net.xml

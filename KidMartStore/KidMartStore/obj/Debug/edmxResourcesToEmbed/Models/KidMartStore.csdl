@@ -36,6 +36,8 @@
     <NavigationProperty Name="Order" Relationship="Self.FK__Detail_Or__ID_Or__412EB0B6" FromRole="Detail_Order" ToRole="Order" />
     <NavigationProperty Name="Product" Relationship="Self.FK_Detail_Order_Product" FromRole="Detail_Order" ToRole="Product" />
     <NavigationProperty Name="Order1" Relationship="Self.FK_DetailOrder_Order" FromRole="Detail_Order" ToRole="Order" />
+    <Property Name="ID_Size" Type="Int32" />
+    <NavigationProperty Name="Size" Relationship="KidMartStoreModel.FK_Detail_Order_Size" FromRole="Detail_Order" ToRole="Size" />
   </EntityType>
   <EntityType Name="Material">
     <Key>
@@ -98,6 +100,7 @@
     </Key>
     <Property Name="ID_Size" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Detail_Order" Relationship="KidMartStoreModel.FK_Detail_Order_Size" FromRole="Size" ToRole="Detail_Order" />
   </EntityType>
   <EntityType Name="Slider">
     <Key>
@@ -289,5 +292,21 @@
       <End Role="Warranty_Policy" EntitySet="Warranty_Policy" />
       <End Role="Product" EntitySet="Products" />
     </AssociationSet>
+    <AssociationSet Name="FK_Detail_Order_Size" Association="KidMartStoreModel.FK_Detail_Order_Size">
+      <End Role="Size" EntitySet="Sizes" />
+      <End Role="Detail_Order" EntitySet="Detail_Order" />
+    </AssociationSet>
   </EntityContainer>
+  <Association Name="FK_Detail_Order_Size">
+    <End Type="KidMartStoreModel.Size" Role="Size" Multiplicity="0..1" />
+    <End Type="KidMartStoreModel.Detail_Order" Role="Detail_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Size">
+        <PropertyRef Name="ID_Size" />
+      </Principal>
+      <Dependent Role="Detail_Order">
+        <PropertyRef Name="ID_Size" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

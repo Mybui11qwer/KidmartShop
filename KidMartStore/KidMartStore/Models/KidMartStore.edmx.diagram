@@ -25,6 +25,7 @@
         <AssociationConnector Association="KidMartStoreModel.FK__Product__ID_Mate__4BAC3F29" ManuallyRouted="false" />
         <AssociationConnector Association="KidMartStoreModel.FK__Order__ID_Sale__3E52440B" ManuallyRouted="false" />
         <AssociationConnector Association="KidMartStoreModel.FK__Product__ID_Warr__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="KidMartStoreModel.FK_Detail_Order_Size" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -24,7 +24,8 @@ namespace KidMartStore.Areas.Admin.Controllers
                         var product = database.Products.Find(item.ID_Product);
                         if (product != null)
                         {
-                            product.Quantity += item.Quantity; // Hoàn trả số lượng sản phẩm
+                            product.Quantity += item.Quantity;
+                            database.SaveChanges();
                         }
                     }
                 }

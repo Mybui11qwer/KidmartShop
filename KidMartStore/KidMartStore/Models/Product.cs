@@ -32,7 +32,6 @@ namespace KidMartStore.Models
         public Nullable<int> ID_Material { get; set; }
         public Nullable<int> ID_Warranty { get; set; }
 
-
         [NotMapped]
         public HttpPostedFileBase UploadImage { get; set; }
         public virtual Category Category { get; set; }

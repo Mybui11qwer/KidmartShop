@@ -14,7 +14,16 @@ namespace KidMartStore.Models
     
     public partial class Size
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Size()
+        {
+            this.Detail_Order = new HashSet<Detail_Order>();
+        }
+    
         public int ID_Size { get; set; }
         public string Name { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Detail_Order> Detail_Order { get; set; }
     }
 }

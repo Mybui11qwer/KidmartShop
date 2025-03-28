@@ -27,6 +27,7 @@
     <EntitySetMapping Name="Detail_Order">
       <EntityTypeMapping TypeName="KidMartStoreModel.Detail_Order">
         <MappingFragment StoreEntitySet="Detail_Order">
+          <ScalarProperty Name="ID_Size" ColumnName="ID_Size" />
           <ScalarProperty Name="ID_Detail_Order" ColumnName="ID_Detail_Order" />
           <ScalarProperty Name="ID_Order" ColumnName="ID_Order" />
           <ScalarProperty Name="ID_Product" ColumnName="ID_Product" />

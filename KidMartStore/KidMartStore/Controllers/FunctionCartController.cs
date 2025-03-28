@@ -60,7 +60,7 @@ namespace KidMartStore.Controllers
             if (cart.Items.Count() == 0)
             {
                 // Xóa Session nếu giỏ hàng không còn sản phẩm
-                Session["Cart"] = null;
+                Session["Cart"] = null; 
             }
             return RedirectToAction("GioHang", "Home");
         }
@@ -75,6 +75,7 @@ namespace KidMartStore.Controllers
                 _order.ID_Customer = (int)MaKH;
                 _order.Total = (int)cart.TotalMoney();
                 _order.Status = "Chờ xác nhận";
+                _order.PaymentMethod = "cod";
                 database.Orders.Add(_order);
 
                 foreach (var item in cart.Items)
@@ -84,6 +85,7 @@ namespace KidMartStore.Controllers
                     _order_detail.ID_Product = item._product.ID_Product;
                     _order_detail.Unit_Price = (int)item._product.Price;
                     _order_detail.Quantity = item._quantity;
+                    _order_detail.ID_Size = 1;
                     database.Detail_Order.Add(_order_detail);
 
                     // Giảm số lượng sản phẩm trong kho
@@ -106,8 +108,7 @@ namespace KidMartStore.Controllers
             {
                 return Content("Error checkout. Please check information of Customer...Thanks.");
             }
-        }      
-
+        }
         [HttpPost]
         public JsonResult ApplyVoucher(string code)
         {

@@ -19,9 +19,11 @@ namespace KidMartStore.Models
         public int ID_Product { get; set; }
         public int Quantity { get; set; }
         public decimal Unit_Price { get; set; }
+        public Nullable<int> ID_Size { get; set; }
     
         public virtual Order Order { get; set; }
         public virtual Product Product { get; set; }
         public virtual Order Order1 { get; set; }
+        public virtual Size Size { get; set; }
     }
 }
