@@ -5,12 +5,17 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Net.PeerToPeer;
 using System.Web.UI.WebControls;
+using KidMartStore.Patterns.Singleton;
+using KidMartStore.Patterns.Proxy;
 
 namespace KidMartStore.Controllers
 {
     public class AuthController : Controller
     {
-        public KidMartStoreEntities db = new KidMartStoreEntities();
+        private readonly KidMartStoreEntities db = DatabaseContextSingleton.Instance;
+        
+        //Áp dụng proxy Account
+        private readonly IAccountService _accountService = new AccountServiceProxy();
 
         public ActionResult Login()
         {
@@ -21,8 +26,9 @@ namespace KidMartStore.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Kiểm tra thông tin đăng nhập
-                var checkUser = db.Customers.FirstOrDefault(u => u.Email == customer.Email && u.Password == customer.Password);
+                //Áp dụng proxy
+                var checkUser = _accountService.Login(customer.Email, customer.Password);
+
                 if (checkUser != null)
                 {
                     // Lưu tên người dùng vào session
@@ -32,25 +38,12 @@ namespace KidMartStore.Controllers
                     Session["Phone"] = checkUser.Phone;
                     Session["ID_Customer"] = checkUser.ID_Customer;
                     Session["Role"] = checkUser.Role;
-                    if (checkUser.Role == "Khách Hàng")
-                    {
-                        return RedirectToAction("Index", "Home", new { area = "" });
-                    }
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {
-                    // Kiểm tra nếu email không tồn tại
-                    var user = db.Customers.FirstOrDefault(u => u.Email == customer.Email);
-                    if (user == null)
-                    {
-                        ViewBag.ErrorEmail = "Email không tồn tại";
-                        return View();
-                    }
-                    else
-                    {
-                        ViewBag.ErrorPassword = "Sai mật khẩu";
-                        return View();
-                    }
+                    ViewBag.Error = "Email hoặc mật khẩu không đúng!";
+                    return View();
                 }
             }
             return View();

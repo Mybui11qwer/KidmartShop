@@ -14,6 +14,130 @@ using System.Drawing;
 
 namespace KidMartStore.Areas.Admin.Controllers
 {
+    // Áp dụng Abstract Factory Pattern cho việc tạo các export khác nhau
+    public interface IExportFactory
+    {
+        byte[] CreateExport();
+        string GetContentType();
+        string GetFileName();
+    }
+
+    // Các factory cụ thể cho từng loại export
+    public class OrderExportFactory : IExportFactory
+    {
+        private readonly KidMartStoreEntities _database;
+
+        public OrderExportFactory(KidMartStoreEntities database)
+        {
+            _database = database;
+        }
+
+        public byte[] CreateExport()
+        {
+            var orders = _database.Orders.Include(o => o.Customer).Include(o => o.Detail_Order).ToList();
+
+            using (var package = new ExcelPackage())
+            {
+                var worksheet = package.Workbook.Worksheets.Add("Đơn Hàng");
+
+                // Định dạng header
+                worksheet.Cells["A1"].Value = "Mã Đơn";
+                worksheet.Cells["B1"].Value = "Khách Hàng";
+                worksheet.Cells["C1"].Value = "Ngày Đặt";
+                worksheet.Cells["D1"].Value = "Tổng Tiền";
+                worksheet.Cells["E1"].Value = "Trạng Thái";
+
+                // Style cho header
+                using (var range = worksheet.Cells["A1:E1"])
+                {
+                    range.Style.Font.Bold = true;
+                    range.Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    range.Style.Fill.BackgroundColor.SetColor(Color.DarkBlue);
+                    range.Style.Font.Color.SetColor(Color.White);
+                }
+
+                int row = 2;
+                foreach (var order in orders)
+                {
+                    worksheet.Cells[row, 1].Value = order.ID_Order;
+                    worksheet.Cells[row, 2].Value = order.Customer?.Username;
+                    worksheet.Cells[row, 3].Value = order.Order_Date;
+                    worksheet.Cells[row, 3].Style.Numberformat.Format = "dd/mm/yyyy";
+                    worksheet.Cells[row, 4].Value = order.Total;
+                    worksheet.Cells[row, 4].Style.Numberformat.Format = "#,##0 đ";
+                    worksheet.Cells[row, 5].Value = order.Status;
+                    row++;
+                }
+
+                // Auto-fit columns
+                worksheet.Cells.AutoFitColumns();
+
+                return package.GetAsByteArray();
+            }
+        }
+
+        public string GetContentType() => "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+
+        public string GetFileName() => $"DanhSachDonHang_{DateTime.Now:yyyyMMdd}.xlsx";
+    }
+
+    public class ProductExportFactory : IExportFactory
+    {
+        private readonly KidMartStoreEntities _database;
+
+        public ProductExportFactory(KidMartStoreEntities database)
+        {
+            _database = database;
+        }
+
+        public byte[] CreateExport()
+        {
+            var products = _database.Products.Include(p => p.Category).ToList();
+
+            using (var package = new ExcelPackage())
+            {
+                var worksheet = package.Workbook.Worksheets.Add("Sản Phẩm");
+
+                // Định dạng header
+                worksheet.Cells["A1"].Value = "Mã SP";
+                worksheet.Cells["B1"].Value = "Tên Sản Phẩm";
+                worksheet.Cells["C1"].Value = "Danh Mục";
+                worksheet.Cells["D1"].Value = "Giá";
+                worksheet.Cells["E1"].Value = "Tồn Kho";
+
+                // Style cho header
+                using (var range = worksheet.Cells["A1:E1"])
+                {
+                    range.Style.Font.Bold = true;
+                    range.Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    range.Style.Fill.BackgroundColor.SetColor(Color.DarkGreen);
+                    range.Style.Font.Color.SetColor(Color.White);
+                }
+
+                int row = 2;
+                foreach (var product in products)
+                {
+                    worksheet.Cells[row, 1].Value = product.ID_Product;
+                    worksheet.Cells[row, 2].Value = product.Name;
+                    worksheet.Cells[row, 3].Value = product.Category?.Name_Category;
+                    worksheet.Cells[row, 4].Value = product.Price;
+                    worksheet.Cells[row, 4].Style.Numberformat.Format = "#,##0 đ";
+                    worksheet.Cells[row, 5].Value = product.Quantity;
+                    row++;
+                }
+
+                // Auto-fit columns
+                worksheet.Cells.AutoFitColumns();
+
+                return package.GetAsByteArray();
+            }
+        }
+
+        public string GetContentType() => "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+
+        public string GetFileName() => $"DanhSachSanPham_{DateTime.Now:yyyyMMdd}.xlsx";
+    }
+
     public class ExportExcelController : Controller
     {
         public KidMartStoreEntities database = new KidMartStoreEntities();

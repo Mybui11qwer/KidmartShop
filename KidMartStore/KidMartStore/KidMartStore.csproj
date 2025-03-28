@@ -334,6 +334,16 @@
     <Compile Include="Areas\Admin\Controllers\ExportExcelController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
+    <Compile Include="Areas\Admin\Repositories\CustomerRepository.cs" />
+    <Compile Include="Areas\Admin\Repositories\ICustomerRepository.cs" />
+    <Compile Include="Areas\Admin\Repositories\IOrderRepository.cs" />
+    <Compile Include="Areas\Admin\Repositories\IProductRepository.cs" />
+    <Compile Include="Areas\Admin\Repositories\IRepository.cs" />
+    <Compile Include="Areas\Admin\Repositories\IUnitOfWork.cs" />
+    <Compile Include="Areas\Admin\Repositories\OrderRepository.cs" />
+    <Compile Include="Areas\Admin\Repositories\ProductRepository.cs" />
+    <Compile Include="Areas\Admin\Repositories\Repository.cs" />
+    <Compile Include="Areas\Admin\Repositories\UnitOfWork.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\FunctionUserController.cs" />
@@ -391,6 +401,15 @@
     <Compile Include="Models\Warranty_Policy.cs">
       <DependentUpon>KidMartStore.tt</DependentUpon>
     </Compile>
+    <Compile Include="Patterns\Adapter\IPaymentAdapter.cs" />
+    <Compile Include="Patterns\Builder\OrderBuilder.cs" />
+    <Compile Include="Patterns\Command\CancelOrderCommand.cs" />
+    <Compile Include="Patterns\Decorator\IVoucher.cs" />
+    <Compile Include="Patterns\Factory\IProductFactory.cs" />
+    <Compile Include="Patterns\Factory\ProductService.cs" />
+    <Compile Include="Patterns\Proxy\ICustomerService.cs" />
+    <Compile Include="Patterns\Proxy\IAccountService.cs" />
+    <Compile Include="Patterns\Singleton\DatabaseContextSingleton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

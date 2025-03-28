@@ -1,4 +1,6 @@
 ﻿using KidMartStore.Models;
+using KidMartStore.Patterns.Decorator;
+using KidMartStore.Patterns.Singleton;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +11,9 @@ namespace KidMartStore.Controllers
 {
     public class FunctionCartController : Controller
     {
-        private readonly KidMartStoreEntities database = new KidMartStoreEntities();
+        private readonly KidMartStoreEntities database = DatabaseContextSingleton.Instance;
         // GET: User
-        
+
 
         public Cart GetCart()
         {
@@ -108,17 +110,23 @@ namespace KidMartStore.Controllers
             {
                 return Content("Error checkout. Please check information of Customer...Thanks.");
             }
-        }
+        }        
         [HttpPost]
         public JsonResult ApplyVoucher(string code)
         {
-            decimal discount = 0;
+            IVoucher voucher = new BaseVoucher(); // Mặc định không có giảm giá
 
-            if (code == "SALE10") discount = 0.1m;
-            else if (code == "SALE20") discount = 0.2m;
+            if (code == "SALE10")
+            {
+                voucher = new Sale10Voucher();
+            }
+            else if (code == "SALE20")
+            {
+                voucher = new Sale20Voucher();
+            }
 
             var cart = (Cart)Session["Cart"];
-            decimal newTotal = cart.TotalMoney() * (1 - discount);
+            decimal newTotal = voucher.ApplyDiscount(cart.TotalMoney());
 
             return Json(new { success = true, totalMoney = newTotal });
         }
