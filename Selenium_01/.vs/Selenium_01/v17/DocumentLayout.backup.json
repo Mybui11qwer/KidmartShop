@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mybui\\Downloads\\Selenium_01\\Selenium_01\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D787CF53-E345-4486-922B-5B955D131B38}|Selenium_01\\Selenium_01.csproj|c:\\users\\mybui\\downloads\\selenium_01\\selenium_01\\selenium_01\\webtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D787CF53-E345-4486-922B-5B955D131B38}|Selenium_01\\Selenium_01.csproj|solutionrelative:selenium_01\\webtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06E5A2E2-1963-4A42-917C-232478A9E7DC}|Selenium_02\\Selenium_02.csproj|C:\\Users\\mybui\\Downloads\\Selenium_01\\Selenium_01\\selenium_02\\admintest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06E5A2E2-1963-4A42-917C-232478A9E7DC}|Selenium_02\\Selenium_02.csproj|solutionrelative:selenium_02\\admintest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdminTest.cs",
+              "DocumentMoniker": "C:\\Users\\mybui\\Downloads\\Selenium_01\\Selenium_01\\Selenium_02\\AdminTest.cs",
+              "RelativeDocumentMoniker": "Selenium_02\\AdminTest.cs",
+              "ToolTip": "C:\\Users\\mybui\\Downloads\\Selenium_01\\Selenium_01\\Selenium_02\\AdminTest.cs",
+              "RelativeToolTip": "Selenium_02\\AdminTest.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAwwDQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T01:11:35.079Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WebTest.cs",
+              "DocumentMoniker": "C:\\Users\\mybui\\Downloads\\Selenium_01\\Selenium_01\\Selenium_01\\WebTest.cs",
+              "RelativeDocumentMoniker": "Selenium_01\\WebTest.cs",
+              "ToolTip": "C:\\Users\\mybui\\Downloads\\Selenium_01\\Selenium_01\\Selenium_01\\WebTest.cs",
+              "RelativeToolTip": "Selenium_01\\WebTest.cs",
+              "ViewState": "AgIAAGoCAAAAAAAAAAAcwHECAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-10T09:38:24.324Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
