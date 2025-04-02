@@ -11,18 +11,18 @@
             @foreach (var item in Model.Items)
             {
                 <div class="cart-item" data-product-id="@item._product.ID_Product">
-                    <div class="item-remove"><a href="/Product/RemoveCart/@item._product.ID_Product">x</a></div>
+                    <div class="item-remove"><a href="/FunctionCart/RemoveCart/@item._product.ID_Product">x</a></div>
                     <div class="item-image">
                         <img src="~/Image/Product/@item._product.Image" alt="Product Image">
                     </div>
                     <div class="item-details">
-                        <p>@item._product.Name</p>
+                        <p class="nameProduct">@item._product.Name</p>
                         <span class="item-size">L</span>
                     </div>
                     <div class="item-price">@item._product.Price.ToString("N0") VNĐ</div>
                     <div class="item-quantity">
                         <button class="decrease">-</button>
-                        <input type="text" value="@item._quantity" class="quantity-input" data-max="@item._product.Quantity">
+                        <input id="quantity" type="text" value="@item._quantity" class="quantity-input" data-max="@item._product.Quantity">
                         <button class="increase">+</button>
                     </div>
                 </div>

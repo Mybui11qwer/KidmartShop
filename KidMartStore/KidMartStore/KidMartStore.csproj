@@ -2323,6 +2323,8 @@
     <Content Include="Content\Layout\_layout.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Image\Advertisement\img1.png" />
+    <Content Include="Image\Advertisement\img2.png" />
     <Content Include="Image\Avartar_Logo\Avarta-kidmart.png" />
     <Content Include="Image\Icons\gift.png" />
     <Content Include="Image\Icons\Icon-down-arrow.png" />
@@ -2332,8 +2334,6 @@
     <Content Include="Image\Icons\icon-cart.png" />
     <Content Include="Image\Icons\icon-heart.png" />
     <Content Include="Image\Icons\icon-search.png" />
-    <Content Include="Image\Advertisement\img1.jpg" />
-    <Content Include="Image\Advertisement\img2.jpg" />
     <Content Include="Image\Advertisement\img3.jpg" />
     <Content Include="Image\Advertisement\img4.jpg" />
     <Content Include="Image\Advertisement\img5.jpg" />

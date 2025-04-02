@@ -70,7 +70,7 @@ namespace KidMartStore.Controllers
                 return ProcessOrderAfterPayment();
             }
 
-            return RedirectToAction("GioHanng", "Product");
+            return RedirectToAction("GioHang", "Home");
         }
 
         private ActionResult ProcessOrderAfterPayment()
@@ -141,8 +141,12 @@ namespace KidMartStore.Controllers
                 return Content("Checkout failed: " + ex.Message);
             }
         }
-
-
+        //Chuyển đổi tiền tệ
+        private decimal ConvertVNDToUSD(decimal amountVND)
+        {
+            decimal exchangeRate = 25000;
+            return amountVND / exchangeRate;
+        }
 
 
         public ActionResult PayWithPayPal()
@@ -150,7 +154,7 @@ namespace KidMartStore.Controllers
             var cart = Session["Cart"] as Cart;
             if (cart == null || cart.Items.Count() == 0)
             {
-                return RedirectToAction("GioHanng", "Product");
+                return RedirectToAction("GioHang", "Home");
             }
 
             var clientId = System.Configuration.ConfigurationManager.AppSettings["PayPalClientID"];
@@ -166,7 +170,8 @@ namespace KidMartStore.Controllers
             var apiContext = new APIContext(accessToken) { Config = config };
 
             // Create PayPal transaction
-            var totalAmount = cart.TotalMoney().ToString("F2", CultureInfo.InvariantCulture);
+            var totalAmountVND = cart.TotalMoney();
+            var totalAmountUSD = ConvertVNDToUSD(totalAmountVND).ToString("F2", CultureInfo.InvariantCulture);
             var payment = new Payment
             {
                 intent = "sale",
@@ -178,15 +183,15 @@ namespace KidMartStore.Controllers
                 amount = new Amount
                 {
                     currency = "USD",
-                    total = totalAmount
+                    total = totalAmountUSD
                 },
                 description = "Purchase from KidMartStore"
             }
         },
                 redirect_urls = new RedirectUrls
                 {
-                    return_url = Url.Action("PayPalSuccess", "Product", null, Request.Url.Scheme),
-                    cancel_url = Url.Action("GioHanng", "Product", null, Request.Url.Scheme)
+                    return_url = Url.Action("PayPalSuccess", "Checkout", null, Request.Url.Scheme),
+                    cancel_url = Url.Action("GioHang", "Home", null, Request.Url.Scheme)
                 }
             };
 
@@ -239,7 +244,8 @@ namespace KidMartStore.Controllers
                     Order_Date = DateTime.Now,
                     ID_Customer = customer.ID_Customer,
                     Total = (int)cart.TotalMoney(),
-                    Status = "Paid"
+                    Status = "Đã thanh toán",
+                    PaymentMethod = "Paypal"
                 };
                 database.Orders.Add(_order);
                 database.SaveChanges();
@@ -251,7 +257,8 @@ namespace KidMartStore.Controllers
                         ID_Order = _order.ID_Order,
                         ID_Product = item._product.ID_Product,
                         Unit_Price = (int)item._product.Price,
-                        Quantity = item._quantity
+                        Quantity = item._quantity,
+                        ID_Size = 1
                     };
                     database.Detail_Order.Add(_order_detail);
 
@@ -269,7 +276,7 @@ namespace KidMartStore.Controllers
                 cart.ClearCart();
                 Session["Cart"] = null;
 
-                return RedirectToAction("CheckOut_Success", new { orderId = _order.ID_Order });
+                return RedirectToAction("CheckOut_Success", "Home", new { orderId = _order.ID_Order });
             }
             catch (Exception ex)
             {

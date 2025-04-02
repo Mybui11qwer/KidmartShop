@@ -1027,7 +1027,6 @@ D:\ShopQuanAo\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.Imaging.Inter
 D:\ShopQuanAo\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.Shell.Design.dll
 D:\ShopQuanAo\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.TextTemplating.Interfaces.11.0.dll
 D:\ShopQuanAo\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.TextTemplating.Interfaces.10.0.dll
-D:\ShopQuanAo\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.ComponentModelHost.dll
 D:\ShopQuanAo\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.Shell.Framework.dll
 D:\ShopQuanAo\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.Shell.15.0.dll
 D:\ShopQuanAo\KidMartStore\KidMartStore\bin\Microsoft.VisualStudio.Telemetry.dll
@@ -1538,3 +1537,14 @@ D:\ShopBanQuanAo\KidMartStore\KidMartStore\bin\Stripe.net.dll
 D:\ShopBanQuanAo\KidMartStore\KidMartStore\bin\Microsoft.Bcl.AsyncInterfaces.xml
 D:\ShopBanQuanAo\KidMartStore\KidMartStore\bin\PayPal.xml
 D:\ShopBanQuanAo\KidMartStore\KidMartStore\bin\Stripe.net.xml
+D:\ShopQuanAo\KidMartStore\KidMartStore\bin\EPPlus.dll
+D:\ShopQuanAo\KidMartStore\KidMartStore\bin\EPPlus.Interfaces.dll
+D:\ShopQuanAo\KidMartStore\KidMartStore\bin\EPPlus.System.Drawing.dll
+D:\ShopQuanAo\KidMartStore\KidMartStore\bin\Microsoft.IO.RecyclableMemoryStream.dll
+D:\ShopQuanAo\KidMartStore\KidMartStore\bin\PayPal.dll
+D:\ShopQuanAo\KidMartStore\KidMartStore\bin\Stripe.net.dll
+D:\ShopQuanAo\KidMartStore\KidMartStore\bin\EPPlus.xml
+D:\ShopQuanAo\KidMartStore\KidMartStore\bin\Microsoft.Bcl.AsyncInterfaces.xml
+D:\ShopQuanAo\KidMartStore\KidMartStore\bin\Microsoft.IO.RecyclableMemoryStream.xml
+D:\ShopQuanAo\KidMartStore\KidMartStore\bin\PayPal.xml
+D:\ShopQuanAo\KidMartStore\KidMartStore\bin\Stripe.net.xml

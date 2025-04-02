@@ -204,7 +204,7 @@ function showTemporaryMessage(message, duration) {
 
         if (!isLoggedIn) {
             alert("Bạn cần đăng nhập để mua hàng!");
-            window.location.href = "@Url.Action("Login", "Account")";
+            window.location.href = "@Url.Action("Login", "Auth")";
             return;
         }
 

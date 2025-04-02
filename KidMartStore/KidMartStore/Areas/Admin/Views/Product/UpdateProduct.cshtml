@@ -7,35 +7,40 @@
 
 
 <link rel="stylesheet" href="~/Content/CSS/_addnewadmin.css" />
-<section class="add-user-form">
-    <form action="/Product/UpdateProduct" method="POST">
-        <div class="form-group">
-            <label for="product-name">Tên sản phẩm</label>
-            <input type="text" id="product-name" name="Name" value="@Model.Name" required>
-        </div>
+<div class="container">
+    <h2 class="text-center mb-4">Cập Nhật Tài Khoản</h2>
+    <div class="card p-4">
+        @using (Html.BeginForm("UpdateProduct", "Product", FormMethod.Post))
+        {
+            @Html.HiddenFor(model => model.ID_Product)
 
-        <div class="form-group">
-            <label for="product-price">Giá</label>
-            <input type="number" id="product-price" name="Price" value="@Model.Price" required min="1000" step="1000">
-        </div>
+            <div class="mb-3">
+                <label class="form-label">Tên sản phẩm</label>
+                @Html.TextBoxFor(model => model.Name, new { @class = "form-control", required = "required" })
+            </div>
 
-        <div class="form-group">
-            <label for="product-description">Mô tả</label>
-            <textarea id="product-description" name="Description" class="form-control" @Model.Description rows="4"></textarea>
-        </div>
+            <div class="mb-3">
+                <label class="form-label">Giá sản phẩm</label>
+                @Html.TextBoxFor(model => model.Price, new { @class = "form-control", required = "required" })
+            </div>
 
-        <div class="form-group">
-            <label for="product-quantity">Số lượng</label>
-            <input type="number" id="product-quantity" name="Quantity" value="@Model.Quantity" required>
-        </div>
+            <div class="mb-3">
+                <label class="form-label">Số lượng tồn kho</label>
+                @Html.TextBoxFor(model => model.Quantity, new { @class = "form-control", required = "required" })
+            </div>
 
-        <div class="form-group">
-            <label for="product-image">Hình ảnh</label>
-            <img id="preview" src="~/Image/Product/@Model.Image" alt="Image Preview" style="width: 200px; height: 200px; margin-top: 10px;">
-        </div>
+            <div class="mb-3">
+                <label class="form-label">Thông tin sản phẩm</label>
+                @Html.TextBoxFor(model => model.Description, new { @class = "form-control"})
+            </div>
 
-        <button type="submit" class="submit-button">Cập nhật sản phẩm</button>
-        <button type="button" class="submit-button" onclick="window.location.href='ManagerProduct'">Danh sách sản phẩm</button>
-    </form>
-</section>
+            <div class="form-group">
+                <label for="product-image">Hình ảnh</label>
+                <img id="preview" src="~/Image/Product/@Model.Image" alt="Image Preview" style="width: 200px; height: 200px; margin-top: 10px;">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Cập Nhật</button>
+        }
+    </div>
+</div>
 

@@ -1,6 +1,7 @@
 ﻿using KidMartStore.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -47,7 +48,7 @@ namespace KidMartStore.Areas.Admin.Controllers
 
                 database.Products.Add(NewProduct);
                 database.SaveChanges();
-                return RedirectToAction("ManagerProduct", "Admin", new { area = "Admin" });
+                return RedirectToAction("ManagerProduct", "Home", new { area = "Admin" });
             }
             catch
             {
@@ -70,17 +71,22 @@ namespace KidMartStore.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 var existingProduct = database.Products.Find(product.ID_Product);
+                Debug.WriteLine("ID_Product: " + product.ID_Product);
+
                 if (existingProduct != null)
                 {
                     existingProduct.Name = product.Name;
                     existingProduct.Description = product.Description;
                     existingProduct.Price = product.Price;
                     existingProduct.Quantity = product.Quantity;
-
                     database.SaveChanges();
                 }
+                else {
+                    return Content("Có lỗi xảy ra vui lòng thử lại");
+                }
+                return RedirectToAction("ManagerProduct", "Home", new { area = "Admin" });
             }
-            return RedirectToAction("ManagerProduct", "Home", new { area = "Admin" });
+            return View(product);
         }
 
         //Xóa
