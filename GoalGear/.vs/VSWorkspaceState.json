@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\GoalGear",
+    "\\GoalGear\\Controllers",
+    "\\GoalGear\\Views",
+    "\\GoalGear\\Views\\Auth",
+    "\\GoalGear\\Views\\Home"
+  ],
+  "SelectedNode": "\\GoalGear\\Views\\Home\\Index.cshtml",
+  "PreviewInSolutionExplorer": false
+}
